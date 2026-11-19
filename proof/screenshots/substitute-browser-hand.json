@@ -1,17 +1,17 @@
 {
-  "hand": 1,
+  "hand": 2,
   "action": "fold",
   "chips": 10000,
   "result": {
-    "no": 1,
+    "no": 2,
     "board": [],
     "pots": [
       {
-        "amount": 100,
+        "amount": 50,
         "winners": [
           {
             "playerId": "computer-robin",
-            "amount": 100,
+            "amount": 50,
             "handName": null
           }
         ]
@@ -24,13 +24,13 @@
   },
   "players": [
     {
-      "id": "de20efd8",
-      "stack": 4950,
+      "id": "computer-robin",
+      "stack": 5000,
       "totalIn": 0
     },
     {
-      "id": "computer-robin",
-      "stack": 5050,
+      "id": "c6289a2e",
+      "stack": 5000,
       "totalIn": 0
     }
   ]

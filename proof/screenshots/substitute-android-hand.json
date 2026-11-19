@@ -1,9 +1,9 @@
 {
-  "hand": 1,
+  "hand": 2,
   "action": "fold",
   "chips": 10000,
   "result": {
-    "no": 1,
+    "no": 2,
     "board": [],
     "pots": [
       {

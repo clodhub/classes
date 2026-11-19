@@ -9,25 +9,25 @@ Each package repository holds one local commit, `<name> <version>: <scope>`; the
 | Package | Version | Commit | Package | Version | Commit |
 |---|---|---|---|---|---|
 | android-host | 0.7.0 | 29c7b45 | presence | 0.7.0 | 63e5191 |
-| apple-host | 0.8.0 | e7e1194 | private-views | 0.7.0 | b7823b8 |
+| apple-host | 0.9.0 | b1116ad | private-views | 0.7.0 | b7823b8 |
 | card-deck | 0.7.0 | 2768291 | realtime-rooms | 0.9.0 | 882bab9 |
-| card-graphics | 0.7.0 | 4fa9048 | room-directory | 0.7.0 | 0601a79 |
-| chip-graphics | 0.7.0 | 344cdff | round-history | 0.7.0 | c5ae7bf |
+| card-graphics | 0.8.0 | cf809ab | room-directory | 0.7.0 | 0601a79 |
+| chip-graphics | 0.8.0 | 090932f | round-history | 0.7.0 | c5ae7bf |
 | chip-ledger | 0.8.0 | c66e622 | rules-settings | 0.7.0 | dccc1b1 |
 | computer-players | 0.8.0 | da2dbd9 | seating | 0.7.0 | 92eaa09 |
-| controls | 0.7.0 | 5f20508 | server-host | 0.8.0 | 90474e8 |
-| display-mode | 0.8.0 | c1592d0 | sound-cues | 0.7.0 | de4902b |
+| controls | 0.8.0 | 8a7bae7 | server-host | 0.8.0 | 90474e8 |
+| display-mode | 0.8.0 | c1592d0 | sound-cues | 0.8.0 | 1d93c10 |
 | fair-shuffle | 0.7.0 | 1cfc530 | store-update | 0.8.0 | 538d755 |
-| game-clock | 0.7.0 | 346e44a | table-layout | 0.7.0 | 7d73cd4 |
-| guest-identity | 0.8.0 | 6db29d6 | theme | 0.7.0 | ffbbcdd |
-| guided-tour | 0.7.0 | a867394 | theme-high-contrast | 0.3.0 | 4ec2001 |
+| game-clock | 0.7.0 | 346e44a | table-layout | 0.8.0 | f476cec |
+| guest-identity | 0.8.0 | 6db29d6 | theme | 0.8.0 | 788293b |
+| guided-tour | 0.8.0 | efc1077 | theme-high-contrast | 0.4.0 | 609e9b1 |
 | holdem-rules | 0.7.0 | ed06745 | tournament | 0.7.0 | a9ac43a |
 | invitations | 0.5.0 | 8b95c7b | translations | 0.8.0 | 9f6afc0 |
 | level-schedule | 0.7.0 | 8cd601e | turn-engine | 0.8.0 | b8a0a7b |
-| ourapps-release | 0.7.0 | 4ce1009 | video-calls | 0.8.0 | a4b44d5 |
+| ourapps-release | 0.8.0 | ae84719 | video-calls | 0.9.0 | 820edea |
 | poker-hand-ranking | 0.7.0 | 33abd46 | web-host | 0.7.0 | 95f8055 |
 | poker-odds | 0.7.0 | 79bb525 | windows-desktop | 0.8.0 | d81c6ce |
-| poker-strategy | 0.7.0 | a952bce | ourpoker (recipe) | 0.7.0 | 31185ee |
+| poker-strategy | 0.7.0 | a952bce | ourpoker (recipe) | 0.8.0 | 5598662 |
 | preferences | 0.5.0 | 4a2a334 | | | |
 
 ## Toolchains and doctor
@@ -61,6 +61,22 @@ aepm 3b6c185, installed `local-web` application (33 components, serverAddress an
 ## Workflows
 
 Recipe `implementation/repository/workflows/` and ourapps-release templates (rendered with `renderRelease` and `renderMaintenance`) pass actionlint with shellcheck. ci-web plays `web/test/browser.mjs` against a server started on the runner; ci-android builds against `10.0.2.2:8788`, boots an API 36 emulator with KVM and runs `android_screen.py` until the room list shows (run here against a local server: PASS from a fresh install); apple-builds builds iOS Simulator, Mac Catalyst and tvOS unsigned on macos-26 with Xcode 27 on tags and by hand; aepm-update proposes weekly as a pull request and applies on merge with `AEPM_OWNER_KEY`. Every check workflow has `workflow_dispatch`. Not run on GitHub.
+
+## GitHub runs (0.8.0 candidate, throwaway repository ourapps-ae/ourpoker-cloud-2)
+
+| Workflow | Runner | Result | Run |
+|---|---|---|---|
+| ci-server | ubuntu-latest | passed, 33 s | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44498422375 |
+| ci-web (browser hand against the runner's server) | ubuntu-latest | passed, 52 s | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44498422342 |
+| ci-android (API 36 emulator reaches the room list) | ubuntu-latest | passed, 7 min 32 s | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44498422353 |
+| platform-packages (Windows installer installed, started, removed) | windows-latest | passed, 2 min 7 s | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44498422335 |
+| apple-builds by hand (iOS Simulator, Mac Catalyst, tvOS, unsigned) | xcode-27 | passed, 15 min 28 s | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44498447646 |
+| release on tag v0.1.0 (web.zip, ourpoker.apk, Windows installer, my-app.json, icon.png, CHANGELOG.md) | ubuntu, windows | passed, 3 min 56 s | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44498459071 |
+| aepm-update propose, answers {"languages":["en","fr"]}, aepm 201c35a | ubuntu-latest | passed, opened pull request 1 | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44502252500 |
+| aepm-update apply after merging pull request 1 | ubuntu-latest | passed, committed d29068e (10 files) | https://github.com/ourapps-ae/ourpoker-cloud-2/actions/runs/44503519546 |
+| ci-server, ci-web, ci-android by hand after the apply | ubuntu-latest | passed | runs 44505192677, 44505199064, 44505206026 |
+
+The update runs used a test copy of `aepm_update.py` and `aepm-update.yml` that read the candidate packages, disposable release and guardian keys and aepm 201c35a from a release attached to the throwaway repository; the published workflow reads them from ourapps.app and github.com/ourapps-ae/aepm.
 
 ## Classes and coverage
 
@@ -139,7 +155,7 @@ Commands use Python 3.12 with bytecode disabled and the aepm checkout on the mod
 
 ## Installation proofs
 
-`try_install.py default local-web --android` and `try_install.py default --substitute theme=ourapps-ae/theme-high-contrast@0.3.0 --android` pass on the release archives:
+`try_install.py default local-web --android` and `try_install.py default --substitute theme=ourapps-ae/theme-high-contrast@0.4.0 --android` pass on the release archives:
 
 - Default: server and web type checks and builds; 37 server tests; desktop web build; iOS, Mac Catalyst and television builds with all four selected languages and resolved Swift pins; Android build and unit tests with locked Gradle inputs, using `/opt/homebrew/share/android-commandlinetools` and Temurin 26.
 - Local-web: 33 components; server and web type checks and builds; 34 server tests.
@@ -156,7 +172,7 @@ Commands use Python 3.12 with bytecode disabled and the aepm checkout on the mod
 - Retained whole-tree verification rejects dependency-created links such as `web/node_modules/.bin/nanoid`.
 - Build and gameplay logs are retained local evidence, not signed application execution attestations. The completed hands are uncontested Fold settlements.
 - Apple applications compile; Apple application runtime and permissions are not exercised.
-- Live video/provider interaction, the Windows installer built or run on Windows, Cloudflare deployment and GitHub workflow runs are not exercised. The aepm-update workflow's fetch from ourapps.app is not exercised; its aepm steps are.
+- Live video/provider interaction, the Windows installer run on a Windows desktop and Cloudflare deployment are not exercised. The published aepm-update workflow's fetch from ourapps.app of 0.8.0 is not exercised before release; the test copy ran its aepm steps on GitHub.
 - Standalone Kotlin component scripts require their declared compiler, which is not installed. The locked Gradle compiler builds both native profiles and runs the application unit tests.
 - Shared native drawing and exhaustive behavioural equivalence are not claimed; the coverage table names the operations checked.
 - Nothing is pushed or published; no application repository is created.
