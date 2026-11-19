@@ -1,0 +1,11 @@
+{
+  "name": "kotlinx-coroutines-bom",
+  "version": "1.9.0",
+  "revision": null,
+  "repository": "https://github.com/Kotlin/kotlinx.coroutines",
+  "purl": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.9.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

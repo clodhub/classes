@@ -1,0 +1,11 @@
+{
+  "name": "fastinfoset-project",
+  "version": "1.2.16",
+  "revision": null,
+  "repository": "https://github.com/eclipse-ee4j/jaxb-fi",
+  "purl": "pkg:maven/com.sun.xml.fastinfoset/fastinfoset-project@1.2.16",
+  "licence": "Apache-2.0 AND LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

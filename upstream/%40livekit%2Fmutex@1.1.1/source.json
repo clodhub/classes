@@ -1,0 +1,12 @@
+{
+  "name": "@livekit/mutex",
+  "version": "1.1.1",
+  "revision": "sha512:12cb2102e724966a6e5007e40013f124d8738fdbf6b06ec9bb31432f830bd68250495d78b2aae94d89ec68eb9d300c3dc8e696e77354dd041395442846ce1ccf",
+  "repository": "https://github.com/livekit/ts-mutex.git",
+  "purl": "pkg:npm/@livekit/mutex@1.1.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-EsshAucklmpuUAfkABPxJNhzj9v2sG7JuzFDL4ML1oJQSV14sqrpTYnsaOudMAw9yOaW53NU3QQTlUQoRs4czw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "builder-util-runtime",
+  "version": "9.7.0",
+  "revision": "sha512:83f911e76d208801589125d3cdc985de4a90abbc22f05e8de92cde0e066ba9304df951dd9a058ec93743d720fb0004c321dff25cbbee3f7e02c56e3afc1c0277",
+  "repository": "https://github.com/electron-userland/electron-builder.git",
+  "purl": "pkg:npm/builder-util-runtime@9.7.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-g/kR520giAFYkSXTzcmF3kqQq7wi8F6N6SzeDgZrqTBN+VHdmgWOyTdD1yD7AATDId/yXLvuP34CxW46/BwCdw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "env-paths",
+  "version": "3.0.0",
+  "revision": "f1729272888f45f6584e74dc4d0af3aecba9e7e8",
+  "repository": "https://github.com/sindresorhus/env-paths.git",
+  "purl": "pkg:npm/env-paths@3.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A=="
+}

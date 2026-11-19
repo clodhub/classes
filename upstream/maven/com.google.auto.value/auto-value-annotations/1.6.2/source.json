@@ -1,0 +1,13 @@
+{
+  "name": "auto-value-annotations",
+  "version": "1.6.2",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/auto/value/auto-value-annotations",
+  "purl": "pkg:maven/com.google.auto.value/auto-value-annotations@1.6.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml",
+    "parent-1-parent-0-pom.xml"
+  ]
+}

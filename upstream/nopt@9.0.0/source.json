@@ -1,0 +1,12 @@
+{
+  "name": "nopt",
+  "version": "9.0.0",
+  "revision": "9d8161aae17d52fce9f5122fd706856ded294940",
+  "repository": "https://github.com/npm/nopt.git",
+  "purl": "pkg:npm/nopt@9.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Zhq3a+yFKrYwSBluL4H9XP3m3y5uvQkB/09CwDruCiRmR/UJYnn9W4R48ry0uGC70aeTPKLynBtscP9efFFcPw=="
+}

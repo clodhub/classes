@@ -1,0 +1,12 @@
+{
+  "name": "@emnapi/core",
+  "version": "2.0.0-beta.2",
+  "revision": "5afb65887f6463bbef7a13607bf86406c33218e5",
+  "repository": "https://github.com/toyobayashi/emnapi.git",
+  "purl": "pkg:npm/@emnapi/core@2.0.0-beta.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-MzCVoWtcg4Pm2B3je5mMvYMvj3MmBKw+fU7vbsJc9/iT8ip6/eYIHo/Dsm/mr+wsHB6SEyJDuxB09Yy6r/8+4A=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/darwin-x64",
+  "version": "0.25.12",
+  "revision": "208f539945b145e7c9d6d844290f81c3fe5af320",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/darwin-x64@0.25.12",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-HQ9ka4Kx21qHXwtlTUVbKJOAnmG1ipXhdWTmNXiPzPfWKpXqASVcWdnf2bnL73wgjNrFXAa3yYvBSd9pzfEIpA=="
+}

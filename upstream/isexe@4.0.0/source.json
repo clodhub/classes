@@ -1,0 +1,12 @@
+{
+  "name": "isexe",
+  "version": "4.0.0",
+  "revision": "2e7df7dabc4f68e88cf6b32b9029225ba52c6b0c",
+  "repository": "https://github.com/isaacs/isexe.git",
+  "purl": "pkg:npm/isexe@4.0.0",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw=="
+}

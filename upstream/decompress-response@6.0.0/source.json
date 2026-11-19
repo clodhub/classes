@@ -1,0 +1,12 @@
+{
+  "name": "decompress-response",
+  "version": "6.0.0",
+  "revision": "279d53e59fae44eec709e1891d9cf8c2d863f6f3",
+  "repository": "https://github.com/sindresorhus/decompress-response.git",
+  "purl": "pkg:npm/decompress-response@6.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-aW35yZM6Bb/4oJlZncMH2LCoZtJXTRxES17vE3hoRiowU2kWHaJKFkSBDnDR+cm9J+9QhXmREyIfv0pji9ejCQ=="
+}

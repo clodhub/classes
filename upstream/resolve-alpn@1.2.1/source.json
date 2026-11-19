@@ -1,0 +1,12 @@
+{
+  "name": "resolve-alpn",
+  "version": "1.2.1",
+  "revision": "778781a0521c713ca7605fc3ba31fb8e4be37d6b",
+  "repository": "https://github.com/szmarczak/resolve-alpn.git",
+  "purl": "pkg:npm/resolve-alpn@1.2.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-0a1F4l73/ZFZOakJnQ3FvkJ2+gSTQWz/r2KE5OdDY0TxPm5h4GkqkWWfM47T7HsbnOtcJVEF4epCVy6u7Q3K+g=="
+}

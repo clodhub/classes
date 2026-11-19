@@ -1,0 +1,12 @@
+{
+  "name": "sanitize-filename",
+  "version": "1.6.4",
+  "revision": "4cee8c6fe56e9ead2387b0ce70b95028c4ecd87d",
+  "repository": "https://github.com/parshap/node-sanitize-filename.git",
+  "purl": "pkg:npm/sanitize-filename@1.6.4",
+  "licence": "WTFPL OR ISC",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-9ZyI08PsvdQl2r/bBIGubpVdR3RR9sY6RDiWFPreA21C/EFlQhmgo20UZlNjZMMZNubusLhAQozkA0Od5J21Eg=="
+}

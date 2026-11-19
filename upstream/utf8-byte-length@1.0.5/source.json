@@ -1,0 +1,13 @@
+{
+  "name": "utf8-byte-length",
+  "version": "1.0.5",
+  "revision": "7683664e3fcfb88f81ec6b05f40c541a2e2495be",
+  "repository": "https://github.com/parshap/utf8-byte-length.git",
+  "purl": "pkg:npm/utf8-byte-length@1.0.5",
+  "licence": "(WTFPL OR MIT)",
+  "notices": [
+    "0-LICENSE.MIT.txt",
+    "1-LICENSE.WTFPL.txt"
+  ],
+  "integrity": "sha512-Xn0w3MtiQ6zoz2vFyUVruaCL53O/DwUvkEeOvj+uulMm0BkUGYWmBYVyElqZaSLhY6ZD0ulfU3aBra2aVT4xfA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "base64-js",
+  "version": "1.5.1",
+  "revision": "88957c9943c7e2a0f03cdf73e71d579e433627d3",
+  "repository": "https://github.com/beatgammit/base64-js.git",
+  "purl": "pkg:npm/base64-js@1.5.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA=="
+}

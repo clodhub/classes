@@ -1,0 +1,11 @@
+{
+  "name": "objenesis-parent",
+  "version": "3.3",
+  "revision": null,
+  "repository": "https://github.com/easymock/objenesis",
+  "purl": "pkg:maven/org.objenesis/objenesis-parent@3.3",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

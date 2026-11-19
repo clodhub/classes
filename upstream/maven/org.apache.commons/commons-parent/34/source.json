@@ -1,0 +1,12 @@
+{
+  "name": "commons-parent",
+  "version": "34",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/apache/commons/commons-parent",
+  "purl": "pkg:maven/org.apache.commons/commons-parent@34",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

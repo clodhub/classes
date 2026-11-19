@@ -1,0 +1,12 @@
+{
+  "name": "wrap-ansi",
+  "version": "7.0.0",
+  "revision": "c81bf7d6d0a9c1a49f7ce6413fbc8fbcf9938330",
+  "repository": "https://github.com/chalk/wrap-ansi.git",
+  "purl": "pkg:npm/wrap-ansi@7.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q=="
+}

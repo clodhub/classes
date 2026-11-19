@@ -1,0 +1,12 @@
+{
+  "name": "@cloudflare/kv-asset-handler",
+  "version": "0.5.0",
+  "revision": "sha512:8f1418923f1d488cdcd1c0fa70c30d74e7355158ea4aabbc059768af9b3c7068d6d88f018ce0edfe458f55d63ebbdce3de6b3be50e6a699827c5469df37f9e02",
+  "repository": "https://github.com/cloudflare/workers-sdk.git",
+  "purl": "pkg:npm/@cloudflare/kv-asset-handler@0.5.0",
+  "licence": "MIT OR Apache-2.0",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-jxQYkj8dSIzc0cD6cMMNdOc1UVjqSqu8BZdor5s8cGjW2I8BjODt/kWPVdY+u9zj3ms75Q5qaZgnxUad83+eAg=="
+}

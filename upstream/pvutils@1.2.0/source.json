@@ -1,0 +1,12 @@
+{
+  "name": "pvutils",
+  "version": "1.2.0",
+  "revision": "sha512:05bb9b7821324ee42354c6a4bc943f4b16dcf77176a7099bb3138d4ff651af053b51adfc77cba7613c17a5354b00a278043b87f481b3b428d071dfcdff7f43be",
+  "repository": "https://github.com/PeculiarVentures/pvutils.git",
+  "purl": "pkg:npm/pvutils@1.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-BbubeCEyTuQjVMakvJQ/Sxbc93F2pwmbsxONT/ZRrwU7Ua38d8unYTwXpTVLAKJ4BDuH9IGztCjQcd/N/39Dvg=="
+}

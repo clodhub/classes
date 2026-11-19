@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/poker-strategy-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/player-strategy",
+      "version": "1.0.0",
+      "path": "classes/poker-strategy-class/player-strategy.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/hand-ranking",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/poker-odds",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "aggression": {
+        "type": "integer"
+      },
+      "difficulty": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "aggression",
+      "difficulty"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/poker-strategy-class/check.mjs",
+      "digest": "ed06e77d7d76edd4e21715fe6dc397fd420392bab4d3a1ba1b1a1dcab1160a3e"
+    },
+    {
+      "path": "classes/poker-strategy-class/player-strategy.json",
+      "digest": "2fc41faee431394460b3889c0dd4ab0c1032d962d85bcb82c412d2a46828704f"
+    },
+    {
+      "path": "classes/poker-strategy-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/poker-strategy-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/poker-strategy-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

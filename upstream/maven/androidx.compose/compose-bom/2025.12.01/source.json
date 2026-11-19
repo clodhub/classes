@@ -1,0 +1,11 @@
+{
+  "name": "compose-bom",
+  "version": "2025.12.01",
+  "revision": null,
+  "repository": "https://developer.android.com/jetpack",
+  "purl": "pkg:maven/androidx.compose/compose-bom@2025.12.01",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

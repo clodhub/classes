@@ -1,0 +1,12 @@
+{
+  "name": "duplexer2",
+  "version": "0.1.4",
+  "revision": "7d008c10499de01ba85636b5f77085ced015c37a",
+  "repository": "https://github.com/deoxxa/duplexer2.git",
+  "purl": "pkg:npm/duplexer2@0.1.4",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-asLFVfWWtJ90ZyOUHMqk7/S2w2guQKxUI2itj3d92ADHhxUSbCMGi1f1cBcJ7xM1To+pE/Khbwo1yuNbMEPKeA=="
+}

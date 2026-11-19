@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/display-mode-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/display-policy",
+      "version": "1.0.0",
+      "path": "classes/display-mode-class/display-policy.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/display-mode-configuration",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/display-mode-class/check.mjs",
+      "digest": "370223b4d0ecfeab780ce8a977f0ef05a16c5d0b24d7054a151c26c7d281039d"
+    },
+    {
+      "path": "classes/display-mode-class/display-policy.json",
+      "digest": "a816562c1ec86f34ac9d1e2b38b2553fa82dbb7407c31ea28f87a44f40f8dd48"
+    },
+    {
+      "path": "classes/display-mode-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/display-mode-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/display-mode-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

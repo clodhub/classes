@@ -1,0 +1,11 @@
+{
+  "name": "emoji2",
+  "version": "1.4.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.emoji2/emoji2@1.4.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

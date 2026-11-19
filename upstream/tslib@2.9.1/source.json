@@ -1,0 +1,12 @@
+{
+  "name": "tslib",
+  "version": "2.9.1",
+  "revision": "sha512:6b8531f552ae20c1ec392ec435b12aea12b66466084f6ed1b65d04e1e0fd2aac3184a89078c644ffdc5bdc8758c166923b220140b1318508170d3628882c6758",
+  "repository": "https://github.com/Microsoft/tslib.git",
+  "purl": "pkg:npm/tslib@2.9.1",
+  "licence": "0BSD",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-a4Ux9VKuIMHsOS7ENbEq6hK2ZGYIT27Rtl0E4eD9KqwxhKiQeMZE/9xb3IdYwWaSOyIBQLExhQgXDTYoiCxnWA=="
+}

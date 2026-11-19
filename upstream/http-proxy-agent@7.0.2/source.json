@@ -1,0 +1,12 @@
+{
+  "name": "http-proxy-agent",
+  "version": "7.0.2",
+  "revision": "sha512:4f58240226180d6631dd5e419b2bbb1dc7dcbcbee652b4d688ceb239f6b73c8a6156227f8053dbbe2750faf7aa48e1dc8bf3f105c0da6de50d0b3a4e3832598a",
+  "repository": "https://github.com/TooTallNate/proxy-agents.git",
+  "purl": "pkg:npm/http-proxy-agent@7.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-T1gkAiYYDWYx3V5Bmyu7HcfcvL7mUrTWiM6yOfa3PIphViJ/gFPbvidQ+veqSOHci/PxBcDabeUNCzpOODJZig=="
+}

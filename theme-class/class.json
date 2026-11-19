@@ -1,0 +1,127 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/theme-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0",
+      "path": "classes/theme-class/theme.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "themeName": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "primaryColour": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "tableColour": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [
+      "themeName"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/theme-class/apple.mjs",
+      "digest": "a788e32728ba9abff66b7b38b0e936b975ae5efd02fcf33f839937991d8c0d82"
+    },
+    {
+      "path": "classes/theme-class/check.mjs",
+      "digest": "0055a1d893a0600f7b713866218412b69516f526c0f8fdb85be70c80201470c2"
+    },
+    {
+      "path": "classes/theme-class/main.swift",
+      "digest": "d9b46e513962142b2f188779f120fbd98a4a5cd959f8c67cf3b3f456551fb81a"
+    },
+    {
+      "path": "classes/theme-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    },
+    {
+      "path": "classes/theme-class/theme.json",
+      "digest": "fc9cb9d907ad9c5e2fc7cfa888c744b16dbdbfde5714b744807bdc2cd78ce078"
+    }
+  ],
+  "verification": [
+    {
+      "id": "apple-values",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/theme-class/apple.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5",
+        "swiftc": "6.4"
+      },
+      "fixtures": [
+        "classes/theme-class/apple.mjs",
+        "classes/theme-class/main.swift"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 120,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    },
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/theme-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/theme-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "juniversalchardet",
+  "version": "1.0.3",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/googlecode/juniversalchardet/juniversalchardet",
+  "purl": "pkg:maven/com.googlecode.juniversalchardet/juniversalchardet@1.0.3",
+  "licence": "LicenseRef-Mozilla-Public-License-1.1-MPL-1.1",
+  "notices": [
+    "pom.xml"
+  ]
+}

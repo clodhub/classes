@@ -1,0 +1,12 @@
+{
+  "name": "cross-dirname",
+  "version": "0.1.0",
+  "revision": "cf2a0674f338e21e53d752933e748849399cd104",
+  "repository": "https://github.com/JumpLink/cross-dirname.git",
+  "purl": "pkg:npm/cross-dirname@0.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-+R08/oI0nl3vfPcqftZRpytksBXDzOUveBq/NBVx0sUp1axwzPQrKinNx5yd5sxPu8j1wIy8AfnVQ+5eFdha6Q=="
+}

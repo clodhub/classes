@@ -1,0 +1,11 @@
+{
+  "name": "netty-parent",
+  "version": "4.1.110.Final",
+  "revision": null,
+  "repository": "https://github.com/netty/netty",
+  "purl": "pkg:maven/io.netty/netty-parent@4.1.110.Final",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

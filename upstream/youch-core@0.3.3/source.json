@@ -1,0 +1,12 @@
+{
+  "name": "youch-core",
+  "version": "0.3.3",
+  "revision": "c8ba30227c902ee5c0d9231b5afd9604886706c3",
+  "repository": "https://github.com/poppinss/youch-core.git",
+  "purl": "pkg:npm/youch-core@0.3.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-ho7XuGjLaJ2hWHoK8yFnsUGy2Y5uDpqSTq1FkHLK4/oqKtyUU1AFbOOxY4IpC9f0fTLjwYbslUz0Po5BpD1wrA=="
+}

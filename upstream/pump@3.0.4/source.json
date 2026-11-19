@@ -1,0 +1,12 @@
+{
+  "name": "pump",
+  "version": "3.0.4",
+  "revision": "714c0a70a8199104bf65a57582009d42f81d8d94",
+  "repository": "https://github.com/mafintosh/pump.git",
+  "purl": "pkg:npm/pump@3.0.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-VS7sjc6KR7e1ukRFhQSY5LM2uBWAUPiOPa/A3mkKmiMwSmRFUITt0xuj+/lesgnCv+dPIEYlkzrcyXgquIHMcA=="
+}

@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/chip-ledger-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/chip-ledger",
+      "version": "1.0.0",
+      "path": "classes/chip-ledger-class/chip-ledger.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "seats": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "seats"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/chip-ledger-class/check.mjs",
+      "digest": "41fc928d962500d759f0e9b937eb932369c81c276f94b0424506572a29c257d3"
+    },
+    {
+      "path": "classes/chip-ledger-class/chip-ledger.json",
+      "digest": "2a9fb27145d5372117bc6a95d7e64fd426abf83fb2d025ff459c51378dad1ded"
+    },
+    {
+      "path": "classes/chip-ledger-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/chip-ledger-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/chip-ledger-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

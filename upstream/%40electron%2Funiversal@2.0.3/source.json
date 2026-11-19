@@ -1,0 +1,12 @@
+{
+  "name": "@electron/universal",
+  "version": "2.0.3",
+  "revision": "64be29d2f7fc64f8b93b9c87cd5460a5d422f72c",
+  "repository": "https://github.com/electron/universal.git",
+  "purl": "pkg:npm/@electron/universal@2.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Wn9sPYIVFRFl5HmwMJkARCCf7rqK/EurkfQ/rJZ14mHP3iYTjZSIOSVonEAnhWeAXwtw7zOekGRlc6yTtZ0t+g=="
+}

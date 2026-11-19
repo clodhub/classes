@@ -1,0 +1,12 @@
+{
+  "name": "defer-to-connect",
+  "version": "2.0.1",
+  "revision": "d808957298521b7bb142a3e45f1c13016b26c762",
+  "repository": "https://github.com/szmarczak/defer-to-connect.git",
+  "purl": "pkg:npm/defer-to-connect@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-4tvttepXG1VaYGrRibk5EwJd1t4udunSOVMdLSAL6mId1ix438oPwPZMALY41FCijukO1L0twNcGsdzS7dHgDg=="
+}

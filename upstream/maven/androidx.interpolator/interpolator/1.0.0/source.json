@@ -1,0 +1,11 @@
+{
+  "name": "interpolator",
+  "version": "1.0.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/androidx/interpolator/interpolator",
+  "purl": "pkg:maven/androidx.interpolator/interpolator@1.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@electron/rebuild",
+  "version": "4.2.1",
+  "revision": "d62d5a2c9dbee5dd27234490f695412d36ca65e2",
+  "repository": "https://github.com/electron/rebuild.git",
+  "purl": "pkg:npm/@electron/rebuild@4.2.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-IS4pG3BysRrCLJ8xTAfvg+IQDbiUoAzdJy2SfjcYKnLDy5DpCdjnPdhS5Zf5UMfrkB24xu0KC+TqcOxg+eG+6w=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@jridgewell/trace-mapping",
+  "version": "0.3.9",
+  "revision": "c9dbb54ca2de28d864cf47459aa34328d94fc915",
+  "repository": "https://github.com/jridgewell/trace-mapping.git",
+  "purl": "pkg:npm/@jridgewell/trace-mapping@0.3.9",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "universalify",
+  "version": "2.0.1",
+  "revision": "dc17e0e00fb39c8d52e97ce77e494cdadfa8d19c",
+  "repository": "https://github.com/RyanZim/universalify.git",
+  "purl": "pkg:npm/universalify@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw=="
+}

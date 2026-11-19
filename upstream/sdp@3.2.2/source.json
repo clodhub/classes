@@ -1,0 +1,12 @@
+{
+  "name": "sdp",
+  "version": "3.2.2",
+  "revision": "0882c38e422e2155eea832dc018f2d52de29e197",
+  "repository": "https://github.com/fippo/sdp.git",
+  "purl": "pkg:npm/sdp@3.2.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-xZocWwfyp4hkbN4hLWxMjmv2Q8aNa9MhmOZ7L9aCZPT+dZsgRr6wZRrSYE3HTdyk/2pZKPSgqI7ns7Een1xMSA=="
+}

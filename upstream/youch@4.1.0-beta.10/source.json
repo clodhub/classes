@@ -1,0 +1,12 @@
+{
+  "name": "youch",
+  "version": "4.1.0-beta.10",
+  "revision": "97b22fa29e93a91e7833a2ab3ab04ccd35a10364",
+  "repository": "https://github.com/poppinss/youch.git",
+  "purl": "pkg:npm/youch@4.1.0-beta.10",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-rLfVLB4FgQneDr0dv1oddCVZmKjcJ6yX6mS4pU82Mq/Dt9a3cLZQ62pDBL4AUO+uVrCvtWz3ZFUL2HFAFJ/BXQ=="
+}

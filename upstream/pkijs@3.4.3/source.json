@@ -1,0 +1,12 @@
+{
+  "name": "pkijs",
+  "version": "3.4.3",
+  "revision": "0b663eb79ea98beff22e5f13e41f526dfb37a75e",
+  "repository": "https://github.com/PeculiarVentures/PKI.js.git",
+  "purl": "pkg:npm/pkijs@3.4.3",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-V9kOzaItwDgqlryhXysQsAXUEKi5O7kqWUaP3dXI7MLvkPqWWMb4wVb1QAtmEDCKI+XIAINsZoNKMFF7sZb1eg=="
+}

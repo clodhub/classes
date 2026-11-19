@@ -1,0 +1,11 @@
+{
+  "name": "jna",
+  "version": "5.19.1",
+  "revision": null,
+  "repository": "https://github.com/java-native-access/jna",
+  "purl": "pkg:maven/net.java.dev.jna/jna@5.19.1",
+  "licence": "LicenseRef-LGPL-2.1-or-later AND Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

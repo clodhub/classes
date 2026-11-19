@@ -1,0 +1,12 @@
+{
+  "name": "semver",
+  "version": "7.7.4",
+  "revision": "5993c2e42bdf17c5f03e6360da51bc707fcee460",
+  "repository": "https://github.com/npm/node-semver.git",
+  "purl": "pkg:npm/semver@7.7.4",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA=="
+}

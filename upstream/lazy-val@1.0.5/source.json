@@ -1,0 +1,12 @@
+{
+  "name": "lazy-val",
+  "version": "1.0.5",
+  "revision": "b69ad4119f1b19bdab13c61ee2fcc88d46b89071",
+  "repository": "https://github.com/develar/lazy-val.git",
+  "purl": "pkg:npm/lazy-val@1.0.5",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-0/BnGCCfyUMkBpeDgWihanIAF9JmZhHBgUhEqzvf+adhNGLoP6TaiI5oF8oyb3I45P+PcnrqihSf01M0l0G5+Q=="
+}

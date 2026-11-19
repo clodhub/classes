@@ -1,0 +1,12 @@
+{
+  "name": "sax",
+  "version": "1.6.1",
+  "revision": "961ceeefcc5186005466f2085aeb36f31b161e37",
+  "repository": "https://github.com/isaacs/sax-js.git",
+  "purl": "pkg:npm/sax@1.6.1",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-42tBVwLWnaQvW5zc4HbZrTuWccECCZfBi92FDuwtqxasH+JbPB3/FOKb1m222K42R4WxuxzzMsTswfzgtSu64Q=="
+}

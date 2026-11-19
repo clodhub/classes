@@ -1,0 +1,11 @@
+{
+  "name": "javawriter",
+  "version": "2.5.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/squareup/javawriter",
+  "purl": "pkg:maven/com.squareup/javawriter@2.5.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

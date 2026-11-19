@@ -1,0 +1,12 @@
+{
+  "name": "@rolldown/binding-android-arm-eabi",
+  "version": "1.2.14",
+  "revision": "sha512:69647e5ca1fdfab5bb9b97d6abfe77eb4277987c9caf1fe8eb164cd834057499d331dc8feff5b3c4f8e1b4b6d559d2a8db2eb5dbfe14d5b5aa6f71d086217bbe",
+  "repository": "https://github.com/rolldown/rolldown.git",
+  "purl": "pkg:npm/@rolldown/binding-android-arm-eabi@1.2.14",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-aWR+XKH9+rW7m5fWq/5360J3mHycrx/o6xZM2DQFdJnTMdyP7/WzxPjhtLbVWdKo2y612/4U1bWqb3HQhiF7vg=="
+}

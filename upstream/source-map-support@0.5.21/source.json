@@ -1,0 +1,12 @@
+{
+  "name": "source-map-support",
+  "version": "0.5.21",
+  "revision": "888339343236f0912ddc2f635e356e4ed9c0ddf3",
+  "repository": "https://github.com/evanw/node-source-map-support.git",
+  "purl": "pkg:npm/source-map-support@0.5.21",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-uBHU3L3czsIyYXKX88fdrGovxdSCoTGDRZ6SYXtSRxLZUzHg5P/66Ht6uoUlHu9EZod+inXhKo3qQgwXUT/y1w=="
+}

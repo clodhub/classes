@@ -1,0 +1,11 @@
+{
+  "name": "android-prefixed",
+  "version": "144.7559.14",
+  "revision": null,
+  "repository": "https://github.com/webrtc-sdk/android",
+  "purl": "pkg:maven/io.github.webrtc-sdk/android-prefixed@144.7559.14",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "pom.xml"
+  ]
+}

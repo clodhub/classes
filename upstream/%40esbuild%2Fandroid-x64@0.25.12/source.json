@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/android-x64",
+  "version": "0.25.12",
+  "revision": "208f539945b145e7c9d6d844290f81c3fe5af320",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/android-x64@0.25.12",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-5jbb+2hhDHx5phYR2By8GTWEzn6I9UqR11Kwf22iKbNpYrsmRB18aX/9ivc5cabcUiAT/wM+YIZ6SG9QO6a8kg=="
+}

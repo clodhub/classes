@@ -1,0 +1,12 @@
+{
+  "name": "node-api-version",
+  "version": "0.2.1",
+  "revision": "sha512:db13ff20618c9a6490a48d7e3bf93bda317fca4bd9f3d25eb8a5f74cb24060f0d52d46a5aec86b2c791e55c08266a1bf7846badf972bf08058ce09c3bccd8ef1",
+  "repository": "https://github.com/timfish/node-api-version",
+  "purl": "pkg:npm/node-api-version@0.2.1",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-2xP/IGGMmmSQpI1+O/k72jF/ykvZ89JeuKX3TLJAYPDVLUalrshrLHkeVcCCZqG/eEa635cr8IBYzgnDvM2O8Q=="
+}

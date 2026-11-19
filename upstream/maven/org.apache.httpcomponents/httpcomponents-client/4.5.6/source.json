@@ -1,0 +1,11 @@
+{
+  "name": "httpcomponents-client",
+  "version": "4.5.6",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-client",
+  "purl": "pkg:maven/org.apache.httpcomponents/httpcomponents-client@4.5.6",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

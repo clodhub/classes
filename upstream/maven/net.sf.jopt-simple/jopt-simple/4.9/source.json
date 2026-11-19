@@ -1,0 +1,11 @@
+{
+  "name": "jopt-simple",
+  "version": "4.9",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/net/sf/jopt-simple/jopt-simple",
+  "purl": "pkg:maven/net.sf.jopt-simple/jopt-simple@4.9",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml"
+  ]
+}

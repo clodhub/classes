@@ -1,0 +1,12 @@
+{
+  "name": "rolldown",
+  "version": "1.2.14",
+  "revision": "sha512:7930534ea311eae1ca2e0714aa924ff27b730c8e95e0b600f277a000c04423b824815bce76bc7a56cbd2d989bef372a138f74b087589bb4c3b5101496611ca37",
+  "repository": "https://github.com/rolldown/rolldown.git",
+  "purl": "pkg:npm/rolldown@1.2.14",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-eTBTTqMR6uHKLgcUqpJP8ntzDI6V4LYA8negAMBEI7gkgVvOdrx6VsvS2Ym+83KhOPdLCHWJu0w7UQFJZhHKNw=="
+}

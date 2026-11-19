@@ -1,0 +1,12 @@
+{
+  "name": "async",
+  "version": "3.2.6",
+  "revision": "85fb18f3d319d14d893ec24648929ff0eb908768",
+  "repository": "https://github.com/caolan/async.git",
+  "purl": "pkg:npm/async@3.2.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-htCUDlxyyCLMgaM3xXg0C0LW2xqfuQ6p05pCEIsXuyQ+a1koYKTuBMzRNwmybfLgvJDMd0r1LTn4+E0Ti6C2AA=="
+}

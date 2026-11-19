@@ -1,0 +1,12 @@
+{
+  "name": "@rolldown/binding-linux-arm-gnueabihf",
+  "version": "1.2.19",
+  "revision": "sha512:fe56026dae4d3b4caae12d2318c1fc41306d92f431a178e8416cc5e41716a7d32307d8f15510f51900cda1f9158dc3a3df40d6ca12c837fe0e7bad092b368e37",
+  "repository": "https://github.com/rolldown/rolldown.git",
+  "purl": "pkg:npm/@rolldown/binding-linux-arm-gnueabihf@1.2.19",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-/lYCba5NO0yq4S0jGMH8QTBtkvQxoXjoQWzF5BcWp9MjB9jxVRD1GQDNofkVjcOj30DWyhLIN/4Oe60JKzaONw=="
+}

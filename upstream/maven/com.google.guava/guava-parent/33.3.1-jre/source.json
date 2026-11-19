@@ -1,0 +1,11 @@
+{
+  "name": "guava-parent",
+  "version": "33.3.1-jre",
+  "revision": null,
+  "repository": "https://github.com/google/guava",
+  "purl": "pkg:maven/com.google.guava/guava-parent@33.3.1-jre",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

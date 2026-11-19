@@ -1,0 +1,11 @@
+{
+  "name": "slf4j-parent",
+  "version": "1.7.30",
+  "revision": null,
+  "repository": "https://github.com/qos-ch/slf4j",
+  "purl": "pkg:maven/org.slf4j/slf4j-parent@1.7.30",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml"
+  ]
+}

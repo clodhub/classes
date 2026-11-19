@@ -1,0 +1,12 @@
+{
+  "name": "cacheable-lookup",
+  "version": "5.0.4",
+  "revision": "c257b0489b37385f8dc18aa5512a6e748effea2f",
+  "repository": "https://github.com/szmarczak/cacheable-lookup.git",
+  "purl": "pkg:npm/cacheable-lookup@5.0.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-2/kNscPhpcxrOigMZzbiWF7dz8ilhb/nIHU3EyZiXWXpeq/au8qJ8VhdftMkty3n7Gj6HIGalQG8oiBNB3AJgA=="
+}

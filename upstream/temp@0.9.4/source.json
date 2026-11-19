@@ -1,0 +1,12 @@
+{
+  "name": "temp",
+  "version": "0.9.4",
+  "revision": "6448b77bb187a6bd72cb9e592d49a587fa6c5639",
+  "repository": "https://github.com/bruce/node-temp.git",
+  "purl": "pkg:npm/temp@0.9.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-yYrrsWnrXMcdsnu/7YMYAofM1ktpL5By7vZhf15CrXijWWrEYZks5AXBudalfSWJLlnen/QUJUB5aoB0kqZUGA=="
+}

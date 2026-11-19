@@ -1,0 +1,11 @@
+{
+  "name": "tink",
+  "version": "1.7.0",
+  "revision": null,
+  "repository": "https://github.com/google/tink.git",
+  "purl": "pkg:maven/com.google.crypto.tink/tink@1.7.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

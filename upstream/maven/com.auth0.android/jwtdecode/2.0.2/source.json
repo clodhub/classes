@@ -1,0 +1,11 @@
+{
+  "name": "jwtdecode",
+  "version": "2.0.2",
+  "revision": null,
+  "repository": "https://github.com/auth0/jwtdecode.android",
+  "purl": "pkg:maven/com.auth0.android/jwtdecode@2.0.2",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml"
+  ]
+}

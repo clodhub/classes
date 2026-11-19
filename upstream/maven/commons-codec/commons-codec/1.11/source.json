@@ -1,0 +1,13 @@
+{
+  "name": "commons-codec",
+  "version": "1.11",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/commons-codec/commons-codec",
+  "purl": "pkg:maven/commons-codec/commons-codec@1.11",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml",
+    "parent-1-parent-0-pom.xml"
+  ]
+}

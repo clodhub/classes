@@ -1,0 +1,108 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/ourapps-release-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/release-pipeline",
+      "version": "1.0.0",
+      "path": "classes/ourapps-release-class/release-pipeline.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "androidSigning": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "applicationId": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "applicationName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "bundleIdentifier": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)+$"
+      },
+      "hostingAccount": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "manifestUrl": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      },
+      "repository": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      },
+      "storeCredentials": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "targets": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "webDeploy": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      }
+    },
+    "required": [
+      "applicationId",
+      "applicationName",
+      "bundleIdentifier",
+      "targets"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/ourapps-release-class/check.mjs",
+      "digest": "96f5e171351e16d41c4597a38150f9cb76e3a5628fda0bd0c780768013b9930e"
+    },
+    {
+      "path": "classes/ourapps-release-class/release-pipeline.json",
+      "digest": "c1aefaecf1b213261d9c8a7726c6133dd35d515d2481d6615aab907cfc361763"
+    },
+    {
+      "path": "classes/ourapps-release-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/ourapps-release-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/ourapps-release-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

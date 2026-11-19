@@ -1,0 +1,13 @@
+{
+  "name": "undici",
+  "version": "7.29.1",
+  "revision": "d39a83e7b0d631590c3b85b5cc0dbeab66c3a1d8",
+  "repository": "https://github.com/nodejs/undici.git",
+  "purl": "pkg:npm/undici@7.29.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE",
+    "1-LICENSE"
+  ],
+  "integrity": "sha512-RYONW2MeafgYlkVOKYKkA/Ag7BmXqgIWCa8t1m0JcxrQg9pI9lEqRhAOruOBCbAohOa/gkCF+iPi9hrgvTzu6Q=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "chownr",
+  "version": "3.0.0",
+  "revision": "8b9800ac5fe4da0b58bffc9c66dd618f0721472d",
+  "repository": "https://github.com/isaacs/chownr.git",
+  "purl": "pkg:npm/chownr@3.0.0",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g=="
+}

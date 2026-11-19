@@ -1,0 +1,11 @@
+{
+  "name": "annotation-jvm",
+  "version": "1.9.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.annotation/annotation-jvm@1.9.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

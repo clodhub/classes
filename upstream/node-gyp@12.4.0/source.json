@@ -1,0 +1,16 @@
+{
+  "name": "node-gyp",
+  "version": "12.4.0",
+  "revision": "ee9b5448f61f66629f0f5faa3ef2f57311797a9d",
+  "repository": "https://github.com/nodejs/node-gyp.git",
+  "purl": "pkg:npm/node-gyp@12.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE",
+    "1-LICENSE",
+    "2-LICENSE",
+    "3-LICENSE.APACHE",
+    "4-LICENSE.BSD"
+  ],
+  "integrity": "sha512-OMcPNvqTCFUnNaBlmdgq+lfNqY7gTiSmNRDjY3uAXRyudeKZEZxu3CLtjMQrx4zZxCX2b/mpNqTtwuCJgXhHkw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@electron/fuses",
+  "version": "1.8.0",
+  "revision": "b38d2e80d9267b52d6db99cd9c9e616da3d037e8",
+  "repository": "https://github.com/electron/fuses.git",
+  "purl": "pkg:npm/@electron/fuses@1.8.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-zx0EIq78WlY/lBb1uXlziZmDZI4ubcCXIMJ4uGjXzZW0nS19TjSPeXPAjzzTmKQlJUZm0SbmZhPKP7tuQ1SsEw=="
+}

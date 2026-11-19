@@ -1,0 +1,12 @@
+{
+  "name": "@malept/cross-spawn-promise",
+  "version": "2.0.0",
+  "revision": "d2357c58322dd07ee5a54780b4fa8f00bbf9f65e",
+  "repository": "https://github.com/malept/cross-spawn-promise.git",
+  "purl": "pkg:npm/@malept/cross-spawn-promise@2.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-1DpKU0Z5ThltBwjNySMC14g0CkbyhCaz9FkhxqNsZI6uAPJXFS8cMXlBKo26FJ8ZuW6S9GCMcR9IO5k2X5/9Fg=="
+}

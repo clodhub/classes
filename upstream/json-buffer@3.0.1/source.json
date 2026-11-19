@@ -1,0 +1,12 @@
+{
+  "name": "json-buffer",
+  "version": "3.0.1",
+  "revision": "39146e89172469d5700f06e6b569574827d77fed",
+  "repository": "https://github.com/dominictarr/json-buffer.git",
+  "purl": "pkg:npm/json-buffer@3.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-4bV5BfR2mqfQTJm+V5tPPdf+ZpuhiIvTuAB5g8kcrXOZpTT/QwwVRWBywX1ozr6lEuPdbHxwaJlm9G6mI2sfSQ=="
+}

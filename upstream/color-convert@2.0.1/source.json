@@ -1,0 +1,12 @@
+{
+  "name": "color-convert",
+  "version": "2.0.1",
+  "revision": "e1cb7846258e1d7aa25873814684d4fbbbca53ed",
+  "repository": "https://github.com/Qix-/color-convert.git",
+  "purl": "pkg:npm/color-convert@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ=="
+}

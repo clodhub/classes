@@ -1,0 +1,11 @@
+{
+  "name": "transform-api",
+  "version": "2.0.0-deprecated-use-gradle-api",
+  "revision": null,
+  "repository": "https://android.googlesource.com/platform/tools/base",
+  "purl": "pkg:maven/com.android.tools.build/transform-api@2.0.0-deprecated-use-gradle-api",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

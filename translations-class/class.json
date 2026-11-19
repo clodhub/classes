@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/translations-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/language",
+      "version": "1.0.0",
+      "path": "classes/translations-class/language.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "languages": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [
+      "languages"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/translations-class/check.mjs",
+      "digest": "1017ba730b8cb382af2f1f21e595d8ee8696d96ed3e71dde0b3c39c5b06f3e6d"
+    },
+    {
+      "path": "classes/translations-class/language.json",
+      "digest": "11b9209c3d1bee055de8f65b4009ea5a7b9080e38fb67bd7b56c5e3e8dfde677"
+    },
+    {
+      "path": "classes/translations-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/translations-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/translations-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

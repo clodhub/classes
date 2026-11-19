@@ -1,0 +1,12 @@
+{
+  "name": "type-fest",
+  "version": "0.13.1",
+  "revision": "0824c0c521f38ecd02f94b1e371ab754e7b5dfc7",
+  "repository": "https://github.com/sindresorhus/type-fest.git",
+  "purl": "pkg:npm/type-fest@0.13.1",
+  "licence": "(MIT OR CC0-1.0)",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-34R7HTnG0XIJcBSn5XhDd7nNFPRcXYRZrBB2O2jdKqYODldSzBAqzsWoZYYvduky73toYS/ESqxPvkDf/F0XMg=="
+}

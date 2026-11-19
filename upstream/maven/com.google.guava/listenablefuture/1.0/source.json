@@ -1,0 +1,12 @@
+{
+  "name": "listenablefuture",
+  "version": "1.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/guava/listenablefuture",
+  "purl": "pkg:maven/com.google.guava/listenablefuture@1.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

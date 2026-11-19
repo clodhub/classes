@@ -1,0 +1,11 @@
+{
+  "name": "android-device-provider-local",
+  "version": "0.0.9-alpha03",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/com.google.testing.platform/android-device-provider-local@0.0.9-alpha03",
+  "licence": "LicenseRef-Android-Software-Development-Kit-License-Agreement",
+  "notices": [
+    "pom.xml"
+  ]
+}

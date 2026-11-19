@@ -1,0 +1,12 @@
+{
+  "name": "picocolors",
+  "version": "1.1.1",
+  "revision": "6f0a4638348ed20633d623ee973f9c9a96f65104",
+  "repository": "https://github.com/alexeyraspopov/picocolors.git",
+  "purl": "pkg:npm/picocolors@1.1.1",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA=="
+}

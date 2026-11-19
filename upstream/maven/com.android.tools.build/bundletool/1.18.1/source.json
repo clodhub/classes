@@ -1,0 +1,11 @@
+{
+  "name": "bundletool",
+  "version": "1.18.1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/android/tools/build/bundletool",
+  "purl": "pkg:maven/com.android.tools.build/bundletool@1.18.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

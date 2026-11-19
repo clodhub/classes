@@ -1,0 +1,68 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/level-schedule-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/level-schedule",
+      "version": "1.0.0",
+      "path": "classes/level-schedule-class/level-schedule.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "levelSeconds": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "levelSeconds"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/level-schedule-class/check.mjs",
+      "digest": "c5907879f159253340a9a1265868cd1f1aa67b29f95522b57c95ca89c2957875"
+    },
+    {
+      "path": "classes/level-schedule-class/level-schedule.json",
+      "digest": "ac03dde9dc1d0adb1def3f557c209a5841c06a46eadd0e1e28214cbb41f135e7"
+    },
+    {
+      "path": "classes/level-schedule-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/level-schedule-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/level-schedule-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/windows-desktop-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/desktop-host",
+      "version": "1.0.0",
+      "path": "classes/windows-desktop-class/desktop-host.json",
+      "modules": {
+        "windows": [
+          "desktop/index.cjs"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/windows-desktop-configuration",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/windows-desktop-class/check.mjs",
+      "digest": "d039bb1289ab0cadc560aad96b7fe64bd924988fa8932ca9a49a288bba9b1dea"
+    },
+    {
+      "path": "classes/windows-desktop-class/desktop-host.json",
+      "digest": "f4e64b07c541506367b6d543ee1df92b001a2f7b32f1f900ab6382b9f08738c8"
+    },
+    {
+      "path": "classes/windows-desktop-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/windows-desktop-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/windows-desktop-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

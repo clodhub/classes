@@ -1,0 +1,11 @@
+{
+  "name": "grpc-core",
+  "version": "1.69.1",
+  "revision": null,
+  "repository": "https://github.com/grpc/grpc-java",
+  "purl": "pkg:maven/io.grpc/grpc-core@1.69.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

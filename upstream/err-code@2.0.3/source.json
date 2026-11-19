@@ -1,0 +1,12 @@
+{
+  "name": "err-code",
+  "version": "2.0.3",
+  "revision": "92511d41a6a926c94c9d11493404867b1e92a77a",
+  "repository": "https://github.com/IndigoUnited/js-err-code.git",
+  "purl": "pkg:npm/err-code@2.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-README.md"
+  ],
+  "integrity": "sha512-2bmlRpNKBxT/CRmPOlyISQpNj+qSeYvcym/uT0Jx2bMOlKLtSy1ZmLuVxSEKKyor/N5yhvp/ZiG1oE3DEYMSFA=="
+}

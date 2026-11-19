@@ -1,0 +1,12 @@
+{
+  "name": "auto-service-annotations",
+  "version": "1.1.1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/auto/service/auto-service-annotations",
+  "purl": "pkg:maven/com.google.auto.service/auto-service-annotations@1.1.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

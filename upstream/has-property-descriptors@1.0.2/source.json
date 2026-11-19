@@ -1,0 +1,12 @@
+{
+  "name": "has-property-descriptors",
+  "version": "1.0.2",
+  "revision": "69037fc06a4ec7a5a14e66ea029f2769e243c454",
+  "repository": "https://github.com/inspect-js/has-property-descriptors.git",
+  "purl": "pkg:npm/has-property-descriptors@1.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-55JNKuIW+vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS+erby5ipJdgrg=="
+}

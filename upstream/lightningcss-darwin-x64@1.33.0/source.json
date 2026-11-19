@@ -1,0 +1,12 @@
+{
+  "name": "lightningcss-darwin-x64",
+  "version": "1.33.0",
+  "revision": "1d680fa14e9a089c92dc0929f869d6757ae91c30",
+  "repository": "https://github.com/parcel-bundler/lightningcss.git",
+  "purl": "pkg:npm/lightningcss-darwin-x64@1.33.0",
+  "licence": "MPL-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Z5UPAxzrjlWNNyGy6i65cJzzvgJ5D3T6wMvs+gWpY9d7qRhANrxqAp6LhxIgZhWEw18RfJTGcRxjuLIBr+m8XQ=="
+}

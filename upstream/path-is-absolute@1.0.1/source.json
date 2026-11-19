@@ -1,0 +1,12 @@
+{
+  "name": "path-is-absolute",
+  "version": "1.0.1",
+  "revision": "edc91d348b21dac2ab65ea2fbec2868e2eff5eb6",
+  "repository": "https://github.com/sindresorhus/path-is-absolute.git",
+  "purl": "pkg:npm/path-is-absolute@1.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-AVbw3UJ2e9bq64vSaS9Am0fje1Pa8pbGqTTsmXfaIiMpnr5DlDhfJOuLj9Sf95ZPVDAUerDfEk88MPmPe7UCQg=="
+}

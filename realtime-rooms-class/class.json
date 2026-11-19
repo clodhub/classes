@@ -1,0 +1,89 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/realtime-rooms-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/room-session",
+      "version": "1.0.0",
+      "path": "classes/realtime-rooms-class/room-session.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/game-adapter",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/guest-identity",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/realtime-rooms-class/check.mjs",
+      "digest": "db268bbcfa33aac66134ce4d0f478a2b0eb6f5365ffd854840d3e2271bf6008a"
+    },
+    {
+      "path": "classes/realtime-rooms-class/room-session.json",
+      "digest": "e31d13f2d632525fa3e738485ca8eeff4f29411408618b2d1972c56ca324a0b7"
+    },
+    {
+      "path": "classes/realtime-rooms-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/realtime-rooms-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/realtime-rooms-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

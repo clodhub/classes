@@ -1,0 +1,12 @@
+{
+  "name": "@peculiar/webcrypto",
+  "version": "1.7.1",
+  "revision": "sha512:3833a8bf4b0630931fde33e89ce9201aa3e49d3b2ef83750ee40fefa0cfc688f9a14c38c1c56d6000dad6aa5d755374ff8e4ce411ff39c6bd2a6691e23459361",
+  "repository": "https://github.com/PeculiarVentures/webcrypto.git",
+  "purl": "pkg:npm/@peculiar/webcrypto@1.7.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-ODOov0sGMJMf3jPonOkgGqPknTsu+DdQ7kD++gz8aI+aFMOMHFbWAA2taqXXVTdP+OTOQR/znGvSpmkeI0WTYQ=="
+}

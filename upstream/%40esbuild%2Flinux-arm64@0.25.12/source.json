@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/linux-arm64",
+  "version": "0.25.12",
+  "revision": "208f539945b145e7c9d6d844290f81c3fe5af320",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/linux-arm64@0.25.12",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-8bwX7a8FghIgrupcxb4aUmYDLp8pX06rGh5HqDT7bB+8Rdells6mHvrFHHW2JAOPZUbnjUpKTLg6ECyzvas2AQ=="
+}

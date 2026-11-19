@@ -1,0 +1,12 @@
+{
+  "name": "inflight",
+  "version": "1.0.6",
+  "revision": "a547881738c8f57b27795e584071d67cf6ac1a57",
+  "repository": "https://github.com/npm/inflight.git",
+  "purl": "pkg:npm/inflight@1.0.6",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA=="
+}

@@ -1,0 +1,85 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/store-update-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/updates",
+      "version": "1.0.0",
+      "path": "classes/store-update-class/updates.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "inviteAddress": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/store-update-class/check.mjs",
+      "digest": "76e5cea1fcef38883ce767f4e1ad5478d48d78178f2a0122b45d0e821cc33225"
+    },
+    {
+      "path": "classes/store-update-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    },
+    {
+      "path": "classes/store-update-class/updates.json",
+      "digest": "561b97b9e53fa04b1320b28307167d005d83d08e9145d9cd161ad4974d810776"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/store-update-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/store-update-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

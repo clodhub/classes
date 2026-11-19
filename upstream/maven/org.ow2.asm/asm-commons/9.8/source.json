@@ -1,0 +1,11 @@
+{
+  "name": "asm-commons",
+  "version": "9.8",
+  "revision": null,
+  "repository": "https://gitlab.ow2.org/asm/asm/",
+  "purl": "pkg:maven/org.ow2.asm/asm-commons@9.8",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "pom.xml"
+  ]
+}

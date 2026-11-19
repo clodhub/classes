@@ -1,0 +1,12 @@
+{
+  "name": "@rolldown/binding-darwin-x64",
+  "version": "1.2.14",
+  "revision": "sha512:87230a1066ad8e60580acfd0e2c6c870bfc6aa9144aac5f7c1cf8761543ff39038af1735a3bacf9b80d4238195e24fe1d084dd7701521a9a90ba7235e065e34c",
+  "repository": "https://github.com/rolldown/rolldown.git",
+  "purl": "pkg:npm/@rolldown/binding-darwin-x64@1.2.14",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-hyMKEGatjmBYCs/Q4sbIcL/GqpFEqsX3wc+HYVQ/85A4rxc1o7rPm4DUI4GV4k/h0ITddwFSGpqQunI14GXjTA=="
+}

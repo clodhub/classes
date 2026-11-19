@@ -1,0 +1,12 @@
+{
+  "name": "supports-color",
+  "version": "10.2.2",
+  "revision": "d4068e70f02d9bf3813fc877bdad7360d8e51d71",
+  "repository": "https://github.com/chalk/supports-color.git",
+  "purl": "pkg:npm/supports-color@10.2.2",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-SS+jx45GF1QjgEXQx4NJZV9ImqmO2NPz5FNsIHrsDjh2YsHnawpan7SNQ1o8NuhrbHZy9AZhIoCUiCeaW/C80g=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@img/sharp-darwin-arm64",
+  "version": "0.35.5",
+  "revision": "51a990faa26ade5586a4934ac9673c98d8893326",
+  "repository": "https://github.com/lovell/sharp.git",
+  "purl": "pkg:npm/@img/sharp-darwin-arm64@0.35.5",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-QRUlFQ0WxvdWyqqG/WtI3iupfD5rBzmCHXSdPsY91sAtVtTo7Q4cb6zOccZ3gqEqkr0f1As1ehLqmEpDsRf+lg=="
+}

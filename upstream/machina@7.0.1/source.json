@@ -1,0 +1,12 @@
+{
+  "name": "machina",
+  "version": "7.0.1",
+  "revision": "sha512:d17920b3c35e06f3b6856e9b8c94fc7b02d6acc7e1d6168c3ecb5a821a404968d790b8d186d0e26891b529bee6b2568e1f1658c691fb3c88e99a2ad15586cc30",
+  "repository": "https://github.com/ifandelse/machina.js.git",
+  "purl": "pkg:npm/machina@7.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-0Xkgs8NeBvO2hW6bjJT8ewLWrMfh1haMPstaghpASWjXkLjRhtDiaJG1Kb7mslaOHxZYxpH7PIjpmirRVYbMMA=="
+}

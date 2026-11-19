@@ -1,0 +1,12 @@
+{
+  "name": "@jridgewell/resolve-uri",
+  "version": "3.1.2",
+  "revision": "caa7a299d6c688570773c81732f77d3c7035ded6",
+  "repository": "https://github.com/jridgewell/resolve-uri.git",
+  "purl": "pkg:npm/@jridgewell/resolve-uri@3.1.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw=="
+}

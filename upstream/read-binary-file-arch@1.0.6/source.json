@@ -1,0 +1,12 @@
+{
+  "name": "read-binary-file-arch",
+  "version": "1.0.6",
+  "revision": "sha512:04d83d10ddc30f71ac0d75fb01af0ee29f76b2bca3926cd86209a04c073a080e2e18b103cc57f13b1ba0bb6d5a90ec697171e2120b18902ea73ec42f2cb2e612",
+  "repository": "https://github.com/samuelmaddock/read-binary-file-arch.git",
+  "purl": "pkg:npm/read-binary-file-arch@1.0.6",
+  "licence": "MIT",
+  "notices": [
+    "0-README.md"
+  ],
+  "integrity": "sha512-BNg9EN3DD3GsDXX7Aa8O4p92sryjkmzYYgmgTAc6CA4uGLEDzFfxOxugu21akOxpcXHiEgsYkC6nPsQvLLLmEg=="
+}

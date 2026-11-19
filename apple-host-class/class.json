@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/apple-host-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/apple-shell",
+      "version": "1.0.0",
+      "path": "classes/apple-host-class/apple-shell.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "bundleIdentifier": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)+$"
+      },
+      "displayName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "scheme": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "targets": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [
+      "bundleIdentifier",
+      "displayName",
+      "scheme",
+      "targets"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/apple-host-class/apple-shell.json",
+      "digest": "4dc8aea13aa9724e898fc6befa790578b84f3ff8cd4e90a0dc5459895ace3987"
+    },
+    {
+      "path": "classes/apple-host-class/check.mjs",
+      "digest": "e95efc1eb01a179d90575162da7748af44be905f0b971ad328b2c80681bf5716"
+    },
+    {
+      "path": "classes/apple-host-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/apple-host-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/apple-host-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

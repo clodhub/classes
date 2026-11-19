@@ -1,0 +1,12 @@
+{
+  "name": "rxjs",
+  "version": "7.8.2",
+  "revision": "e5351d02e225e275ac0e497c7b66eaa5f0c88791",
+  "repository": "https://github.com/reactivex/rxjs.git",
+  "purl": "pkg:npm/rxjs@7.8.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA=="
+}

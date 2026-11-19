@@ -1,0 +1,12 @@
+{
+  "name": "es-set-tostringtag",
+  "version": "2.1.0",
+  "revision": "90e506fbfe24630e6fe3871639000d2f0ba09d6f",
+  "repository": "https://github.com/es-shims/es-set-tostringtag.git",
+  "purl": "pkg:npm/es-set-tostringtag@2.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-j6vWzfrGVfyXxge+O0x5sh6cvxAog0a/4Rdd2K36zCMV5eJ+/+tOAngRO8cODMNWbVRdVlmGZQL2YS3yR8bIUA=="
+}

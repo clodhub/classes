@@ -1,0 +1,12 @@
+{
+  "name": "source-map-js",
+  "version": "1.2.2",
+  "revision": "0a1d334fd1e55a47df97fcd60a7915d46df3b08a",
+  "repository": "https://github.com/7rulnik/source-map-js.git",
+  "purl": "pkg:npm/source-map-js@1.2.2",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw=="
+}

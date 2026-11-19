@@ -1,0 +1,12 @@
+{
+  "name": "dotenv",
+  "version": "16.6.1",
+  "revision": "076ba3b6a225b8cb878c1cd0a222674b6e5ef87d",
+  "repository": "https://github.com/motdotla/dotenv.git",
+  "purl": "pkg:npm/dotenv@16.6.1",
+  "licence": "BSD-2-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-uBq4egWHTcTt33a72vpSG0z3HnPuIl6NqYcTrKEg2azoEyl2hpW0zqlxysq2pK9HlDIHyHyakeYaYnSAwd8bow=="
+}

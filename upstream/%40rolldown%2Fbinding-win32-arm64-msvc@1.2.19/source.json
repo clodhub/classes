@@ -1,0 +1,12 @@
+{
+  "name": "@rolldown/binding-win32-arm64-msvc",
+  "version": "1.2.19",
+  "revision": "sha512:dd0d5883543bb44bc15a865fe6b16f1bf18a6503e0c1faeefa9e3005a8c37c9141b344870a92fef9d7d38d6f60c8029dd53ed9a4862f75a51ac7b3dafc884555",
+  "repository": "https://github.com/rolldown/rolldown.git",
+  "purl": "pkg:npm/@rolldown/binding-win32-arm64-msvc@1.2.19",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-3Q1Yg1Q7tEvBWoZf5rFvG/GKZQPgwfru+p4wBajDfJFBs0SHCpL++dfTjW9gyAKd1T7ZpIYvdaUax7Pa/IhFVQ=="
+}

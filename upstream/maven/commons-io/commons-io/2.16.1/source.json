@@ -1,0 +1,13 @@
+{
+  "name": "commons-io",
+  "version": "2.16.1",
+  "revision": null,
+  "repository": "https://gitbox.apache.org/repos/asf?p=commons-io.git",
+  "purl": "pkg:maven/commons-io/commons-io@2.16.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml",
+    "parent-1-parent-0-pom.xml"
+  ]
+}

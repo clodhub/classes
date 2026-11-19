@@ -1,0 +1,12 @@
+{
+  "name": "@rolldown/pluginutils",
+  "version": "1.0.1",
+  "revision": "sha512:da3f5b1ade4987c863faf3ed8333ed97bda3d324711c0cae9a8a3a4cd7c08ec2c1d3852da52bcf6cf703701331cfb9fef42601d1cd46c501716118368e29aa1b",
+  "repository": "https://github.com/rolldown/plugins.git",
+  "purl": "pkg:npm/@rolldown/pluginutils@1.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw=="
+}

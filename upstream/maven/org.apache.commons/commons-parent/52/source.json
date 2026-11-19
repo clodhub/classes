@@ -1,0 +1,12 @@
+{
+  "name": "commons-parent",
+  "version": "52",
+  "revision": null,
+  "repository": "https://gitbox.apache.org/repos/asf?p=commons-parent.git",
+  "purl": "pkg:maven/org.apache.commons/commons-parent@52",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

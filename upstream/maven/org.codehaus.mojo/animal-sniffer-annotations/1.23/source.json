@@ -1,0 +1,12 @@
+{
+  "name": "animal-sniffer-annotations",
+  "version": "1.23",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/codehaus/mojo/animal-sniffer-annotations",
+  "purl": "pkg:maven/org.codehaus.mojo/animal-sniffer-annotations@1.23",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

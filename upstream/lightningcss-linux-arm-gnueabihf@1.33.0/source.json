@@ -1,0 +1,12 @@
+{
+  "name": "lightningcss-linux-arm-gnueabihf",
+  "version": "1.33.0",
+  "revision": "1d680fa14e9a089c92dc0929f869d6757ae91c30",
+  "repository": "https://github.com/parcel-bundler/lightningcss.git",
+  "purl": "pkg:npm/lightningcss-linux-arm-gnueabihf@1.33.0",
+  "licence": "MPL-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-N7FVBe6iS24MlM6R/4RBTxGhQheZGs7tiQ9U32UtF75NzP5Q7xWPRqLBCKxlRQRk3rY1jCIPLzx7WzOhuUIRLQ=="
+}

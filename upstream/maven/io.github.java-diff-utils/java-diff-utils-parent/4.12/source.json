@@ -1,0 +1,11 @@
+{
+  "name": "java-diff-utils-parent",
+  "version": "4.12",
+  "revision": null,
+  "repository": "https://github.com/java-diff-utils/java-diff-utils.git",
+  "purl": "pkg:maven/io.github.java-diff-utils/java-diff-utils-parent@4.12",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

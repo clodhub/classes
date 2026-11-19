@@ -1,0 +1,12 @@
+{
+  "name": "pe-library",
+  "version": "0.4.1",
+  "revision": "94974834fc131c99963fd1635e5bfbc135b160bd",
+  "repository": "https://github.com/jet2jet/pe-library-js.git",
+  "purl": "pkg:npm/pe-library@0.4.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-eRWB5LBz7PpDu4PUlwT0PhnQfTQJlDDdPa35urV4Osrm0t0AqQFGn+UIkU3klZvwJ8KPO3VbBFsXquA6p6kqZw=="
+}

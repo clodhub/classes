@@ -1,0 +1,12 @@
+{
+  "name": "require-from-string",
+  "version": "2.0.2",
+  "revision": "d1575a49065eb7a49b86b4de963f04f1a14dfd60",
+  "repository": "https://github.com/floatdrop/require-from-string.git",
+  "purl": "pkg:npm/require-from-string@2.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="
+}

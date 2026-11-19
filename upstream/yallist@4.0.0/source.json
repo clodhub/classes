@@ -1,0 +1,12 @@
+{
+  "name": "yallist",
+  "version": "4.0.0",
+  "revision": "1649cc57394b5affeca2c573943ebe3ed7d39119",
+  "repository": "https://github.com/isaacs/yallist.git",
+  "purl": "pkg:npm/yallist@4.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A=="
+}

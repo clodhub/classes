@@ -1,0 +1,12 @@
+{
+  "name": "path-key",
+  "version": "3.1.1",
+  "revision": "caea269db3a5eb0c09c793f4be5435312971d2fa",
+  "repository": "https://github.com/sindresorhus/path-key.git",
+  "purl": "pkg:npm/path-key@3.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
+}

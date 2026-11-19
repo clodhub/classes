@@ -1,0 +1,11 @@
+{
+  "name": "byte-buddy-parent",
+  "version": "1.17.7",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/net/bytebuddy/byte-buddy-parent",
+  "purl": "pkg:maven/net.bytebuddy/byte-buddy-parent@1.17.7",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

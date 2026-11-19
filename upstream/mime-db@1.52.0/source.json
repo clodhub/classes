@@ -1,0 +1,12 @@
+{
+  "name": "mime-db",
+  "version": "1.52.0",
+  "revision": "ebb6bf92ea39d3168a50942295d5edfdcdce641a",
+  "repository": "https://github.com/jshttp/mime-db.git",
+  "purl": "pkg:npm/mime-db@1.52.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-sPU4uV7dYlvtWJxwwxHD0PuihVNiE7TyAbQ5SWxDCB9mUYvOgroQOwYQQOKPJ8CIbE+1ETVlOoK1UC2nU3gYvg=="
+}

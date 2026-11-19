@@ -1,0 +1,12 @@
+{
+  "name": "ajv",
+  "version": "8.20.0",
+  "revision": "0fba0b8e649909613cfce0999b149cd08f4a4987",
+  "repository": "https://github.com/ajv-validator/ajv.git",
+  "purl": "pkg:npm/ajv@8.20.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA=="
+}

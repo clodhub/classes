@@ -1,0 +1,12 @@
+{
+  "name": "path-to-regexp",
+  "version": "6.3.0",
+  "revision": "75a92c3d7c42159f459ab42f346899152906ea8c",
+  "repository": "https://github.com/pillarjs/path-to-regexp.git",
+  "purl": "pkg:npm/path-to-regexp@6.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Yhpw4T9C6hPpgPeA28us07OJeqZ5EzQTkbfwuhsUg0c237RomFoETJgmp2sa3F/41gfLE6G5cqcYwznmeEeOlQ=="
+}

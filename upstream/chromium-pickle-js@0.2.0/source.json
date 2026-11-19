@@ -1,0 +1,12 @@
+{
+  "name": "chromium-pickle-js",
+  "version": "0.2.0",
+  "revision": "72ecd4d52d8e676a595636e1ec9ba74060344137",
+  "repository": "https://github.com/electron/node-chromium-pickle-js.git",
+  "purl": "pkg:npm/chromium-pickle-js@0.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-1R5Fho+jBq0DDydt+/vHWj5KJNJCKdARKOCwZUen84I5BreWoLqRLANH1U87eJy1tiASPtMnGqJJq0ZsLoRPOw=="
+}

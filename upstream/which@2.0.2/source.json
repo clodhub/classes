@@ -1,0 +1,12 @@
+{
+  "name": "which",
+  "version": "2.0.2",
+  "revision": "6a822d836de79f92fb3170f685a6e283fbfeff87",
+  "repository": "https://github.com/isaacs/node-which.git",
+  "purl": "pkg:npm/which@2.0.2",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-BLI3Tl1TW3Pvl70l3yq3Y64i+awpwXqsGBYWkkqMtnbXgrMD+yj7rhW0kuEDxzJaYXGjEW5ogapKNMEKNMjibA=="
+}

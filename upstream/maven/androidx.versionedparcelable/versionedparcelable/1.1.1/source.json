@@ -1,0 +1,11 @@
+{
+  "name": "versionedparcelable",
+  "version": "1.1.1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/androidx/versionedparcelable/versionedparcelable",
+  "purl": "pkg:maven/androidx.versionedparcelable/versionedparcelable@1.1.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

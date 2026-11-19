@@ -1,0 +1,11 @@
+{
+  "name": "jaxb-parent",
+  "version": "2.3.2",
+  "revision": null,
+  "repository": "https://github.com/eclipse-ee4j/jaxb-ri.git",
+  "purl": "pkg:maven/com.sun.xml.bind.mvn/jaxb-parent@2.3.2",
+  "licence": "LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,206 @@
+[
+  {
+    "component": "android-host",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "apple-host",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "card-deck",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "card-graphics",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "chip-graphics",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "chip-ledger",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "computer-players",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "controls",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "fair-shuffle",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "game-clock",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "guest-identity",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "guided-tour",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "holdem-rules",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "invitations",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "level-schedule",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "ourapps-release",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "poker-hand-ranking",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "poker-odds",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "poker-strategy",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "preferences",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "presence",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "private-views",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "room-directory",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "round-history",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "rules-settings",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "seating",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "server-host",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "sound-cues",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "table-layout",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "theme",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "theme-high-contrast",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "tournament",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "turn-engine",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "web-host",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  }
+]

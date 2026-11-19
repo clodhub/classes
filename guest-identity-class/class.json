@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/guest-identity-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/guest-identity",
+      "version": "1.0.0",
+      "path": "classes/guest-identity-class/guest-identity.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/guest-identity-class/check.mjs",
+      "digest": "185fa1b68bc4382a0b194ecf05f3ecc4df4bafe78a133bcc724c2faba859359a"
+    },
+    {
+      "path": "classes/guest-identity-class/guest-identity.json",
+      "digest": "1bbc2885818ff536216e69837b325043d0a9ca757774aaf76cdf7e9fa654ce71"
+    },
+    {
+      "path": "classes/guest-identity-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/guest-identity-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/guest-identity-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "livekit-client",
+  "version": "2.23.0",
+  "revision": "sha512:8fd2a0f3a9c98c18cd1540feba4a768f030219ad24f980f9814fff47300cf99637a5b1badf5402b5eedf423c2a58c9ad07384324bf67298b8e2ccbfff486c0c6",
+  "repository": "https://github.com/livekit/client-sdk-js.git",
+  "purl": "pkg:npm/livekit-client@2.23.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-j9Kg86nJjBjNFUD+ukp2jwMCGa0k+YD5gU//RzAM+ZY3pbG631QCte7fQjwqWMmtBzhDJL9nKYuOLMv/9IbAxg=="
+}

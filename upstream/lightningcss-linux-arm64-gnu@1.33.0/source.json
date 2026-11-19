@@ -1,0 +1,12 @@
+{
+  "name": "lightningcss-linux-arm64-gnu",
+  "version": "1.33.0",
+  "revision": "1d680fa14e9a089c92dc0929f869d6757ae91c30",
+  "repository": "https://github.com/parcel-bundler/lightningcss.git",
+  "purl": "pkg:npm/lightningcss-linux-arm64-gnu@1.33.0",
+  "licence": "MPL-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-j2v/itmy4HlNxlc6voKXYgBqNi0Ng2LShg4z7GufpEgs05P+2suBVyi9I6YHq5uoVFx9ETin3eCEhLVyXGQnKg=="
+}

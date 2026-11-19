@@ -1,0 +1,12 @@
+{
+  "name": "temp-file",
+  "version": "3.4.0",
+  "revision": "3534650dce58cb671fe3b4655e5eeeb036ff1839",
+  "repository": "https://github.com/develar/temp-file.git",
+  "purl": "pkg:npm/temp-file@3.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-C5tjlC/HCtVUOi3KWVokd4vHVViOmGjtLwIh4MuzPo/nMYTV/p1urt3RnMz2IWXDdKEGJH3k5+KPxtqRsUYGtg=="
+}

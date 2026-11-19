@@ -1,0 +1,12 @@
+{
+  "name": "magic-string",
+  "version": "1.4.5",
+  "revision": "sha512:a0b2c2dbe62f4147c06bebf1a2e7c4ff273589c6fceccf625c846a02847fd84844ffc71bdd217ff868b4736072d41fb9573d9edaf42d52f1e2bb5fbadd99e1fb",
+  "repository": "https://github.com/Rich-Harris/magic-string.git",
+  "purl": "pkg:npm/magic-string@1.4.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-oLLC2+YvQUfAa+vxoufE/yc1icb87M9iXIRqAoR/2EhE/8cb3SF/+Gi0c2By1B+5Vz2e2vQtUvHiu1+63Znh+w=="
+}

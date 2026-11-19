@@ -1,0 +1,12 @@
+{
+  "name": "rimraf",
+  "version": "2.6.3",
+  "revision": "9442819908e52f2c32620e8fa609d7a5d472cc2c",
+  "repository": "https://github.com/isaacs/rimraf.git",
+  "purl": "pkg:npm/rimraf@2.6.3",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-mwqeW5XsA2qAejG46gYdENaxXjx9onRNCfn7L0duuP4hCuTIi/QO7PDK07KJfp1d+izWPrzEJDcSqBa0OZQriA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@jridgewell/sourcemap-codec",
+  "version": "1.6.0",
+  "revision": "94c82a925ca79d5eb193ce45d7f0824a4d91e77d",
+  "repository": "https://github.com/jridgewell/sourcemaps.git",
+  "purl": "pkg:npm/@jridgewell/sourcemap-codec@1.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw=="
+}

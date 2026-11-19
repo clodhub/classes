@@ -1,0 +1,12 @@
+{
+  "name": "serialize-error",
+  "version": "7.0.1",
+  "revision": "9592a668a011cde29a2f60e39f54c6a4eed6f1db",
+  "repository": "https://github.com/sindresorhus/serialize-error.git",
+  "purl": "pkg:npm/serialize-error@7.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-8I8TjW5KMOKsZQTvoxjuSIa7foAwPWGOts+6o7sgjz41/qMD9VQHEDxi6PBvK2l0MXUmqZyNpUK+T2tQaaElvw=="
+}

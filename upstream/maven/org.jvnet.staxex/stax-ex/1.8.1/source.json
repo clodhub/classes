@@ -1,0 +1,11 @@
+{
+  "name": "stax-ex",
+  "version": "1.8.1",
+  "revision": null,
+  "repository": "https://github.com/eclipse-ee4j/jaxb-stax-ex",
+  "purl": "pkg:maven/org.jvnet.staxex/stax-ex@1.8.1",
+  "licence": "LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

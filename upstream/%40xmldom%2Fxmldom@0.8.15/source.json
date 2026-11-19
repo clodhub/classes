@@ -1,0 +1,12 @@
+{
+  "name": "@xmldom/xmldom",
+  "version": "0.8.15",
+  "revision": "b5b8fb5b579ae1183b34e74b3bc39d7eb50a226a",
+  "repository": "https://github.com/xmldom/xmldom.git",
+  "purl": "pkg:npm/@xmldom/xmldom@0.8.15",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-/5NV/vDALVFDXgLmfsy9TRCBlKwO2LNBFzpzvb9iIj+jR+eSc6DLYYvVOdivT/jm7MtU6TebYuRmzEOI7w40UA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/linux-loong64",
+  "version": "0.28.2",
+  "revision": "609683d892977362a0f99026cb74b96263d728a9",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/linux-loong64@0.28.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-buwkd8nsph4R+ajRvw0qM5Hja/TXQow3ptzWO2EbG/cqcIkHloRrdlBtQlshyYGTNFvfkfJ5tpPLVkY4DtsPfQ=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "kxml2",
+  "version": "2.3.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/net/sf/kxml/kxml2",
+  "purl": "pkg:maven/net.sf.kxml/kxml2@2.3.0",
+  "licence": "LicenseRef-BSD-style AND Unlicense",
+  "notices": [
+    "pom.xml",
+    "source-KXmlParser.java"
+  ]
+}

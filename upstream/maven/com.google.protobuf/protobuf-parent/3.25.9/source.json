@@ -1,0 +1,11 @@
+{
+  "name": "protobuf-parent",
+  "version": "3.25.9",
+  "revision": null,
+  "repository": "https://github.com/protocolbuffers/protobuf",
+  "purl": "pkg:maven/com.google.protobuf/protobuf-parent@3.25.9",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "pom.xml"
+  ]
+}

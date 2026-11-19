@@ -1,0 +1,12 @@
+{
+  "name": "lodash",
+  "version": "4.18.1",
+  "revision": "4f0b76e2eca13de1c1fe8b4305abc1f7d63f4b86",
+  "repository": "https://github.com/lodash/lodash.git",
+  "purl": "pkg:npm/lodash@4.18.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q=="
+}

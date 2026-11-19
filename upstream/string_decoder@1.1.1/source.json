@@ -1,0 +1,12 @@
+{
+  "name": "string_decoder",
+  "version": "1.1.1",
+  "revision": "18c7f89c894ced5f610505bb006dfde9a3d1ac5e",
+  "repository": "https://github.com/nodejs/string_decoder.git",
+  "purl": "pkg:npm/string_decoder@1.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg=="
+}

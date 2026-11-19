@@ -1,0 +1,12 @@
+{
+  "name": "yargs-parser",
+  "version": "21.1.1",
+  "revision": "ba6421b843ea5271d84489168314bba26ffa757f",
+  "repository": "https://github.com/yargs/yargs-parser.git",
+  "purl": "pkg:npm/yargs-parser@21.1.1",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw=="
+}

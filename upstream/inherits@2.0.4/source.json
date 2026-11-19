@@ -1,0 +1,12 @@
+{
+  "name": "inherits",
+  "version": "2.0.4",
+  "revision": "9a2c29400c6d491e0b7beefe0c32efa3b462545d",
+  "repository": "https://github.com/isaacs/inherits.git",
+  "purl": "pkg:npm/inherits@2.0.4",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ=="
+}

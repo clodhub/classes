@@ -1,0 +1,12 @@
+{
+  "name": "xmlbuilder",
+  "version": "15.1.1",
+  "revision": "e4ddc615b3668c63c63e627fb1b6fc078d586ba3",
+  "repository": "https://github.com/oozcitak/xmlbuilder-js.git",
+  "purl": "pkg:npm/xmlbuilder@15.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-yMqGBqtXyeN1e3TGYvgNgDVZ3j84W4cwkOXQswghol6APgZWaff9lnbvN7MHYJOiXsvGPXtjTYJEiC9J2wv9Eg=="
+}

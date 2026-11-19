@@ -1,0 +1,12 @@
+{
+  "name": "detect-node",
+  "version": "2.1.0",
+  "revision": "00381fd0fdbdefa625ac7b8230adfc1df11d49ad",
+  "repository": "https://github.com/iliakan/detect-node.git",
+  "purl": "pkg:npm/detect-node@2.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g=="
+}

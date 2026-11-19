@@ -1,0 +1,12 @@
+{
+  "name": "undici-types",
+  "version": "8.9.0",
+  "revision": "21a8e1ed1843e74c3004a2926c12bb0ceaca6b71",
+  "repository": "https://github.com/nodejs/undici.git",
+  "purl": "pkg:npm/undici-types@8.9.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg=="
+}

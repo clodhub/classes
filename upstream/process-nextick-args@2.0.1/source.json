@@ -1,0 +1,12 @@
+{
+  "name": "process-nextick-args",
+  "version": "2.0.1",
+  "revision": "b96d59913025441b00c4fd40e6894ddfa8e1c398",
+  "repository": "https://github.com/calvinmetcalf/process-nextick-args.git",
+  "purl": "pkg:npm/process-nextick-args@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license.md"
+  ],
+  "integrity": "sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag=="
+}

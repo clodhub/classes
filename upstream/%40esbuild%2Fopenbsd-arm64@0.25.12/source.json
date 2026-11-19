@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/openbsd-arm64",
+  "version": "0.25.12",
+  "revision": "208f539945b145e7c9d6d844290f81c3fe5af320",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/openbsd-arm64@0.25.12",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-fF96T6KsBo/pkQI950FARU9apGNTSlZGsv1jZBAlcLL1MLjLNIWPBkj5NlSz8aAzYKg+eNqknrUJ24QBybeR5A=="
+}

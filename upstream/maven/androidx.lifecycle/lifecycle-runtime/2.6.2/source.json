@@ -1,0 +1,11 @@
+{
+  "name": "lifecycle-runtime",
+  "version": "2.6.2",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.lifecycle/lifecycle-runtime@2.6.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

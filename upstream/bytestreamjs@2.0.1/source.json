@@ -1,0 +1,12 @@
+{
+  "name": "bytestreamjs",
+  "version": "2.0.1",
+  "revision": "f11570f4f7011dd5f9079d5e7ba4a7dbb0d73fbc",
+  "repository": "https://github.com/PeculiarVentures/ByteStream.js.git",
+  "purl": "pkg:npm/bytestreamjs@2.0.1",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-U1Z/ob71V/bXfVABvNr/Kumf5VyeQRBEm6Txb0PQ6S7V5GpBM3w4Cbqz/xPDicR5tN0uvDifng8C+5qECeGwyQ=="
+}

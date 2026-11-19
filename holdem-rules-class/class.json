@@ -1,0 +1,115 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/holdem-rules-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/game-rules",
+      "version": "1.0.0",
+      "path": "classes/holdem-rules-class/game-rules.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/card-deck",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/chip-ledger",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/level-schedule",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/hand-ranking",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/rules-settings",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "revealAtRunout": {
+        "type": "boolean"
+      },
+      "seats": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "revealAtRunout",
+      "seats"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/holdem-rules-class/check.mjs",
+      "digest": "eb2b8265e6c5b96a027ed00ea396eeeec9fb37c33735d4c28726721666cee453"
+    },
+    {
+      "path": "classes/holdem-rules-class/game-rules.json",
+      "digest": "a52a0fc94e63c45e902cd98a36adb424d21a571ed2c805c4741156baa721336a"
+    },
+    {
+      "path": "classes/holdem-rules-class/ledger.mjs",
+      "digest": "cba61ff0fe61ae821ecf8c0886f7591000ad275509420758c363a4bf7f559595"
+    },
+    {
+      "path": "classes/holdem-rules-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/holdem-rules-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/holdem-rules-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

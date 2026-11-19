@@ -1,0 +1,95 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/card-deck-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/card-deck",
+      "version": "1.0.0",
+      "path": "classes/card-deck-class/card-deck.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/random-source",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "decks": {
+        "type": "integer"
+      },
+      "jokers": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "decks",
+      "jokers"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/card-deck-class/card-deck.json",
+      "digest": "4c163190762cd8be45e536754adf4c63eee83f70f5dcc2e051d735ab6005fa0a"
+    },
+    {
+      "path": "classes/card-deck-class/check.mjs",
+      "digest": "cec771fc1309fbb49fa49acd84011d8136d1d854cc7b001de4cfc227c6004fb7"
+    },
+    {
+      "path": "classes/card-deck-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/card-deck-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/card-deck-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

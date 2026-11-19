@@ -1,0 +1,121 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/turn-engine-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/game-adapter",
+      "version": "1.0.0",
+      "path": "classes/turn-engine-class/game-adapter.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/game-rules",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/seating",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/game-clock",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/private-views",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/presence",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/tournament",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/computer-players",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/round-history",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/rules-settings",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "decisionSeconds": {
+        "type": "integer"
+      },
+      "lobbyDropSeconds": {
+        "type": "integer"
+      },
+      "settleMs": {
+        "type": "integer"
+      },
+      "staleMinutes": {
+        "type": "integer"
+      },
+      "standingsSeconds": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "decisionSeconds",
+      "lobbyDropSeconds",
+      "settleMs",
+      "staleMinutes",
+      "standingsSeconds"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/turn-engine-class/check.mjs",
+      "digest": "dd06030d6c63d87de2f39b29a2e87447ffd15dadefeea53f8209af3d7aec395a"
+    },
+    {
+      "path": "classes/turn-engine-class/game-adapter.json",
+      "digest": "1943f4d6f3e2352af7280fe444059c2095c7d074f890bdd20aede74e079705f7"
+    },
+    {
+      "path": "classes/turn-engine-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/turn-engine-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/turn-engine-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "responselike",
+  "version": "2.0.1",
+  "revision": "07ece79927bb2deb6f3b9a73d6894298f664dcff",
+  "repository": "https://github.com/sindresorhus/responselike.git",
+  "purl": "pkg:npm/responselike@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-4gl03wn3hj1HP3yzgdI7d3lCkF95F21Pz4BPGvKHinyQzALR5CapwC8yIi0Rh58DEMQ/SguC03wFj2k0M/mHhw=="
+}

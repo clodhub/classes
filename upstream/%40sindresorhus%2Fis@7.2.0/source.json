@@ -1,0 +1,12 @@
+{
+  "name": "@sindresorhus/is",
+  "version": "7.2.0",
+  "revision": "eff8e6b318d098317d5673b9d391f8e72cb15363",
+  "repository": "https://github.com/sindresorhus/is.git",
+  "purl": "pkg:npm/@sindresorhus/is@7.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-P1Cz1dWaFfR4IR+U13mqqiGsLFf1KbayybWwdd2vfctdV6hDpUkgCY0nKOLLTMSoRd/jJNjtbqzf13K8DCCXQw=="
+}

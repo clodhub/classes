@@ -1,0 +1,12 @@
+{
+  "name": "@img/sharp-libvips-linux-riscv64",
+  "version": "1.3.4",
+  "revision": "ebb95f8add54eee8bed840e3fb587e4cbec857d7",
+  "repository": "https://github.com/lovell/sharp-libvips.git",
+  "purl": "pkg:npm/@img/sharp-libvips-linux-riscv64@1.3.4",
+  "licence": "LGPL-3.0-or-later",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-aHkkIEHPRdQEegJN20MLmGtxYD9R2wQr3Cwpddnu5+YKMt6Uzax7S9h5gpZTo8wyrGuZSlfQ63OevL5mTyOC7Q=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "normalize-url",
+  "version": "6.1.0",
+  "revision": "437bf1773993bc19b82218050bbfa76f98a014f9",
+  "repository": "https://github.com/sindresorhus/normalize-url.git",
+  "purl": "pkg:npm/normalize-url@6.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-DlL+XwOy3NxAQ8xuC0okPgK46iuVNAK01YN7RueYBqqFeGsBjV9XmCAzAdgt+667bCl5kPh9EqKKDwnaPG1I7A=="
+}

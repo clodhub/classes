@@ -1,0 +1,12 @@
+{
+  "name": "@peculiar/utils",
+  "version": "2.0.3",
+  "revision": "sha512:fa82f71cf151219d52b762b9d255825e28a82204a8c73cfb475277b85ea778edb2975b209a9818e975c91f805da680e4316ce741379817aa1634364b09d43879",
+  "repository": "https://github.com/PeculiarVentures/pvtsutils.git",
+  "purl": "pkg:npm/@peculiar/utils@2.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-+oL3HPFRIZ1St2K50lWCXiioIgSoxzz7R1J3uF6neO2yl1sgmpgY6XXJH4BdpoDkMWznQTeYF6oWNDZLCdQ4eQ=="
+}

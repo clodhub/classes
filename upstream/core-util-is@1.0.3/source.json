@@ -1,0 +1,12 @@
+{
+  "name": "core-util-is",
+  "version": "1.0.3",
+  "revision": "85f4620829d1b6079fd7b351f040b6ea7e184970",
+  "repository": "https://github.com/isaacs/core-util-is.git",
+  "purl": "pkg:npm/core-util-is@1.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ=="
+}

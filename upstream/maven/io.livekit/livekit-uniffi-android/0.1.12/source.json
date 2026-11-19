@@ -1,0 +1,11 @@
+{
+  "name": "livekit-uniffi-android",
+  "version": "0.1.12",
+  "revision": null,
+  "repository": "https://github.com/livekit/rust-sdks/tree/main/livekit-uniffi",
+  "purl": "pkg:maven/io.livekit/livekit-uniffi-android@0.1.12",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

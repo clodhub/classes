@@ -1,0 +1,11 @@
+{
+  "name": "apache",
+  "version": "13",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/apache/apache",
+  "purl": "pkg:maven/org.apache/apache@13",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

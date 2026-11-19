@@ -1,0 +1,12 @@
+{
+  "name": "jake",
+  "version": "10.9.4",
+  "revision": "sha512:c291d8ce1c625502fe215d3904b1365e7df8cd6d52db6de1be3b6a934fa0b0faf077ff0934b5c981964cfe23c5b18735c72a6117ee8ce84bdd13913d3011a40c",
+  "repository": "https://github.com/jakejs/jake.git",
+  "purl": "pkg:npm/jake@10.9.4",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-wpHYzhxiVQL+IV05BLE2Xn34zW1S223hvjtqk0+gsPrwd/8JNLXJgZZM/iPFsYc1xyphF+6M6EvdE5E9MBGkDA=="
+}

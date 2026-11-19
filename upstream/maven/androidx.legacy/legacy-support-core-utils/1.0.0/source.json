@@ -1,0 +1,11 @@
+{
+  "name": "legacy-support-core-utils",
+  "version": "1.0.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/androidx/legacy/legacy-support-core-utils",
+  "purl": "pkg:maven/androidx.legacy/legacy-support-core-utils@1.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

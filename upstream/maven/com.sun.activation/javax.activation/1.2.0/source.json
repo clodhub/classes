@@ -1,0 +1,12 @@
+{
+  "name": "javax.activation",
+  "version": "1.2.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/sun/activation/javax.activation",
+  "purl": "pkg:maven/com.sun.activation/javax.activation@1.2.0",
+  "licence": "LicenseRef-CDDL-GPLv2-CE",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

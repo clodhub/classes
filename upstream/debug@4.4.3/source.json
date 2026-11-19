@@ -1,0 +1,12 @@
+{
+  "name": "debug",
+  "version": "4.4.3",
+  "revision": "6b2c5fbdb7d414483d9e306ef234acb4cd7ea67c",
+  "repository": "https://github.com/debug-js/debug.git",
+  "purl": "pkg:npm/debug@4.4.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RGwwWnwQvkVfavKVt22FGLw+xYSdzARwm0ru6DhTVA3umU5hZc28V3kO4stgYryrTlLpuvgI9GiijltAjNbcqA=="
+}

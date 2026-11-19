@@ -1,0 +1,11 @@
+{
+  "name": "customview-poolingcontainer",
+  "version": "1.0.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.customview/customview-poolingcontainer@1.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

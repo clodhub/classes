@@ -1,0 +1,12 @@
+{
+  "name": "objenesis",
+  "version": "3.3",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/objenesis/objenesis",
+  "purl": "pkg:maven/org.objenesis/objenesis@3.3",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

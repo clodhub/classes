@@ -1,0 +1,12 @@
+{
+  "name": "ci-info",
+  "version": "4.4.0",
+  "revision": "c4e1d0565552fb20ea3c133db2e056a574e78e6b",
+  "repository": "https://github.com/watson/ci-info.git",
+  "purl": "pkg:npm/ci-info@4.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-77PSwercCZU2Fc4sX94eF8k8Pxte6JAwL4/ICZLFjJLqegs7kCuAsqqj/70NQF6TvDpgFjkubQB2FW2ZZddvQg=="
+}

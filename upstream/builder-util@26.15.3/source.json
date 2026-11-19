@@ -1,0 +1,12 @@
+{
+  "name": "builder-util",
+  "version": "26.15.3",
+  "revision": "sha512:ab6867ecc6e8da714d9157a43e21c5c7a35fa37854466112ded7c19fe9393eac65d919263f7406a995211ffabd3dc87fe06d3935184f8c39558f53bcab84f1bf",
+  "repository": "https://github.com/electron-userland/electron-builder.git",
+  "purl": "pkg:npm/builder-util@26.15.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-q2hn7Mbo2nFNkVekPiHFx6Nfo3hURmES3tfBn+k5Pqxl2RkmP3QGqZUhH/q9Pch/4G05NRhPjDlVj1O8q4Txvw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@img/colour",
+  "version": "1.1.0",
+  "revision": "179fa91fbdb8786b661f6bfb2b6de2885d4860f8",
+  "repository": "https://github.com/lovell/colour.git",
+  "purl": "pkg:npm/@img/colour@1.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ=="
+}

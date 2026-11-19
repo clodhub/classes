@@ -1,0 +1,12 @@
+{
+  "name": "@electron/windows-sign",
+  "version": "1.2.2",
+  "revision": "c2a0c7897da0e24ac3d231b35e6860a2e1aa2eda",
+  "repository": "https://github.com/electron/windows-sign.git",
+  "purl": "pkg:npm/@electron/windows-sign@1.2.2",
+  "licence": "BSD-2-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-dfZeox66AvdPtb2lD8OsIIQh12Tp0GNCRUDfBHIKGpbmopZto2/A8nSpYYLoedPIHpqkeblZ/k8OV0Gy7PYuyQ=="
+}

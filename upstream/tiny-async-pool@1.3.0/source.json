@@ -1,0 +1,12 @@
+{
+  "name": "tiny-async-pool",
+  "version": "1.3.0",
+  "revision": "0fde0fefa538210432d14ebdb3b750fe10c2094c",
+  "repository": "https://github.com/rxaviers/async-pool.git",
+  "purl": "pkg:npm/tiny-async-pool@1.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-01EAw5EDrcVrdgyCLgoSPvqznC0sVxDSVeiOz09FUpjh71G79VCqneOr+xvt7T1r76CF6ZZfPjHorN2+d+3mqA=="
+}

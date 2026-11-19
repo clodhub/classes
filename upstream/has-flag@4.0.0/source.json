@@ -1,0 +1,12 @@
+{
+  "name": "has-flag",
+  "version": "4.0.0",
+  "revision": "474aa39afca7333d356c022fc5be4d31732bbba3",
+  "repository": "https://github.com/sindresorhus/has-flag.git",
+  "purl": "pkg:npm/has-flag@4.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ=="
+}

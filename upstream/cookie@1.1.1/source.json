@@ -1,0 +1,12 @@
+{
+  "name": "cookie",
+  "version": "1.1.1",
+  "revision": "1b89eec4e33256ac31962f4c0d6e711fff478803",
+  "repository": "https://github.com/jshttp/cookie.git",
+  "purl": "pkg:npm/cookie@1.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ=="
+}

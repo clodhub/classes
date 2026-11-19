@@ -1,0 +1,12 @@
+{
+  "name": "has-symbols",
+  "version": "1.1.0",
+  "revision": "270f0a67b5f4cb12715e0a84e672aaee64d1b4f1",
+  "repository": "https://github.com/inspect-js/has-symbols.git",
+  "purl": "pkg:npm/has-symbols@1.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ=="
+}

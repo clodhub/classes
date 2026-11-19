@@ -1,0 +1,12 @@
+{
+  "name": "has-tostringtag",
+  "version": "1.0.2",
+  "revision": "690da6a3afbddcf018aa162c42869dcf4f8375f1",
+  "repository": "https://github.com/inspect-js/has-tostringtag.git",
+  "purl": "pkg:npm/has-tostringtag@1.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-NqADB8VjPFLM2V0VvHUewwwsw0ZWBaIdgo+ieHtK3hasLz4qeCRjYcqfB6AQrBggRKppKF8L52/VqdVsO47Dlw=="
+}

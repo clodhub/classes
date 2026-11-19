@@ -1,0 +1,12 @@
+{
+  "name": "unzipper",
+  "version": "0.12.5",
+  "revision": "aaf77f0c7b4d29af500b0aa9c0e2aa2ade0a2618",
+  "repository": "https://github.com/ZJONSSON/node-unzipper.git",
+  "purl": "pkg:npm/unzipper@0.12.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-tXYOi9R57Uj/2Z25SOs5RRSzq886MBQj2gY8dPL+xl/kv6s6SvByoKfAtvfVeEuhntWDgjd2o9p2lb4TVPAz0A=="
+}

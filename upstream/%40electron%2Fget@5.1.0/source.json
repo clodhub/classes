@@ -1,0 +1,12 @@
+{
+  "name": "@electron/get",
+  "version": "5.1.0",
+  "revision": "da84467eacf58f36a8d43de64a09dd2cfe491d3f",
+  "repository": "https://github.com/electron/get.git",
+  "purl": "pkg:npm/@electron/get@5.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-3kSBtG8ObcTVfXanm5vVJ6UnBLEVmVsRk1M+vGqCuMBV+XLCbJYuWQful+yIy0GQDsSlK0kHEriEHn7SPk4EnA=="
+}

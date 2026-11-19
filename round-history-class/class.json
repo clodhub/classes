@@ -1,0 +1,80 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/round-history-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/round-history",
+      "version": "1.0.0",
+      "path": "classes/round-history-class/round-history.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "maxRounds": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "maxRounds"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/round-history-class/check.mjs",
+      "digest": "e9c920fbc8e7c742801ebe46acf10f534be7d101e01fca3fe13c1b4b1bbb4ed1"
+    },
+    {
+      "path": "classes/round-history-class/round-history.json",
+      "digest": "dc6e258eda990761554a5374e0255a7e7a2fd60a780d18214ea74e693d8f6654"
+    },
+    {
+      "path": "classes/round-history-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/round-history-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/round-history-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "yallist",
+  "version": "5.0.0",
+  "revision": "a082c2dd872bb3cd8fb92359ed66605064957cd4",
+  "repository": "https://github.com/isaacs/yallist.git",
+  "purl": "pkg:npm/yallist@5.0.0",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-YgvUTfwqyc7UXVMrB+SImsVYSmTS8X/tSrtdNZMImM+n7+QTriRXyXim0mBrTXNeqzVF0KWGgHPeiyViFFrNDw=="
+}

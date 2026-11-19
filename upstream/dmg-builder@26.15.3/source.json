@@ -1,0 +1,12 @@
+{
+  "name": "dmg-builder",
+  "version": "26.15.3",
+  "revision": "sha512:3b7cc95055181c92a0ccfaa2a07c5fc730739520b5797092afbf6031204a04fe408238e99abc9d32c30ba2d120f5f009177eaf7549dc6fee27751371a0f76549",
+  "repository": "https://github.com/electron-userland/electron-builder.git",
+  "purl": "pkg:npm/dmg-builder@26.15.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-O3zJUFUYHJKgzPqioHxfxzBzlSC1eXCSr79gMSBKBP5AgjjpmrydMsMLotEg9fAJF36vdUncb+4ndRNxoPdlSQ=="
+}

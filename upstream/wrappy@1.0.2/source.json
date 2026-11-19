@@ -1,0 +1,12 @@
+{
+  "name": "wrappy",
+  "version": "1.0.2",
+  "revision": "71d91b6dc5bdeac37e218c2cf03f9ab55b60d214",
+  "repository": "https://github.com/npm/wrappy.git",
+  "purl": "pkg:npm/wrappy@1.0.2",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
+}

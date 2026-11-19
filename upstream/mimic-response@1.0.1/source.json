@@ -1,0 +1,12 @@
+{
+  "name": "mimic-response",
+  "version": "1.0.1",
+  "revision": "687b4544afddca3d3e9e61a455ca5efe0e27851e",
+  "repository": "https://github.com/sindresorhus/mimic-response.git",
+  "purl": "pkg:npm/mimic-response@1.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-j5EctnkH7amfV/q5Hgmoal1g2QHFJRraOtmx0JpIqkxhBhI/lJSl1nMpQ45hVarwNETOoWEimndZ4QK0RHxuxQ=="
+}

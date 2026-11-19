@@ -1,0 +1,12 @@
+{
+  "name": "vitest",
+  "version": "5.0.5",
+  "revision": "sha512:70f38338c17c627922898b43747a3a9f8c16981ace0416ce2181f6777dcce25dc274d9fbda1faa3263bab977df50de80e406455cd343fddfa4ad2f668245d17e",
+  "repository": "https://github.com/vitest-dev/vitest.git",
+  "purl": "pkg:npm/vitest@5.0.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-cPODOMF8YnkiiYtDdHo6n4wWmBrOBBbOIYH2d33M4l3CdNn72h+qMmO6uXffUN6A5AZFXNND/d+krS9mgkXRfg=="
+}

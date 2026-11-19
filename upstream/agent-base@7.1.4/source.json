@@ -1,0 +1,12 @@
+{
+  "name": "agent-base",
+  "version": "7.1.4",
+  "revision": "sha512:32703e613f1fc1f24f801c779bad0c36a6a49b7d173a4c88a07d72ea1b9342f0b43f0646ee48bc35a70b05cacf6cda28f2f119cbb269ba4efe8cc3be094a2f4d",
+  "repository": "https://github.com/TooTallNate/proxy-agents.git",
+  "purl": "pkg:npm/agent-base@7.1.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-MnA+YT8fwfJPgBx3m60MNqakm30XOkyIoH1y6huTQvC0PwZG7ki8NacLBcrPbNoo8vEZy7Jpuk7+jMO+CUovTQ=="
+}

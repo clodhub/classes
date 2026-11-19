@@ -1,0 +1,12 @@
+{
+  "name": "lru-cache",
+  "version": "6.0.0",
+  "revision": "a71e08008f2d25442426d0d26e8133dccc2ca9a5",
+  "repository": "https://github.com/isaacs/node-lru-cache.git",
+  "purl": "pkg:npm/lru-cache@6.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "assertion-error",
+  "version": "2.0.1",
+  "revision": "08a1f16ece0c5d4b916c9ce1479a776df0e203e0",
+  "repository": "https://github.com/chaijs/assertion-error.git",
+  "purl": "pkg:npm/assertion-error@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA=="
+}

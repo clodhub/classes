@@ -1,0 +1,12 @@
+{
+  "name": "@noble/hashes",
+  "version": "1.8.0",
+  "revision": "32f700f38ec49d7e6b2ab687904d6b2d7d60d80a",
+  "repository": "https://github.com/paulmillr/noble-hashes.git",
+  "purl": "pkg:npm/@noble/hashes@1.8.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-jCs9ldd7NwzpgXDIf6P3+NrHh9/sD6CQdxHyjQI+h/6rDNo88ypBxxz45UDuZHz9r3tNz7N/VInSVoVdtXEI4A=="
+}

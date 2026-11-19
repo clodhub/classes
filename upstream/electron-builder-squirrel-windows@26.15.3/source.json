@@ -1,0 +1,12 @@
+{
+  "name": "electron-builder-squirrel-windows",
+  "version": "26.15.3",
+  "revision": "sha512:25cd7d5cf57dcbdfb66c07593e45ee54d18d204141abda681c2eb597c2afe8574aec3446dfe21cd2b7ab0b40d739a787373f325b47e0fc99c5f0641138e17930",
+  "repository": "https://github.com/electron-userland/electron-builder.git",
+  "purl": "pkg:npm/electron-builder-squirrel-windows@26.15.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Jc19XPV9y9+2bAdZPkXuVNGNIEFBq9poHC61l8Kv6FdK7DRG3+Ic0rerC0DXOaeHNz8yW0fg/JnF8GQROOF5MA=="
+}

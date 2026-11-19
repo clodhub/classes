@@ -1,0 +1,12 @@
+{
+  "name": "tmp-promise",
+  "version": "3.0.3",
+  "revision": "7a9d92612d24791664669596c2705313d459ce7f",
+  "repository": "https://github.com/benjamingr/tmp-promise.git",
+  "purl": "pkg:npm/tmp-promise@3.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-RwM7MoPojPxsOBYnyd2hy0bxtIlVrihNs9pj5SUvY8Zz1sQcQG2tG1hSr8PDxfgEB8RNKDhqbIlroIarSNDNsQ=="
+}

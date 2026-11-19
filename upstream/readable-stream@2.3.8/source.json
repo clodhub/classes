@@ -1,0 +1,12 @@
+{
+  "name": "readable-stream",
+  "version": "2.3.8",
+  "revision": "c85db76d4c41f64fd082c9263c3a918bec6f38a0",
+  "repository": "https://github.com/nodejs/readable-stream.git",
+  "purl": "pkg:npm/readable-stream@2.3.8",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-8p0AUk4XODgIewSi0l8Epjs+EVnWiK7NoDIEGU0HhE7+ZyY8D1IMY7odu5lRrFXGg71L15KG8QrPmum45RTtdA=="
+}

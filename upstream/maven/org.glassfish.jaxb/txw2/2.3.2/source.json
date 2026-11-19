@@ -1,0 +1,13 @@
+{
+  "name": "txw2",
+  "version": "2.3.2",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/glassfish/jaxb/txw2",
+  "purl": "pkg:maven/org.glassfish.jaxb/txw2@2.3.2",
+  "licence": "LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml",
+    "parent-1-parent-0-pom.xml"
+  ]
+}

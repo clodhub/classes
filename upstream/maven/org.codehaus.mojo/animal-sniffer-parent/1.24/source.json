@@ -1,0 +1,11 @@
+{
+  "name": "animal-sniffer-parent",
+  "version": "1.24",
+  "revision": null,
+  "repository": "https://github.com/mojohaus/animal-sniffer/tree/master",
+  "purl": "pkg:maven/org.codehaus.mojo/animal-sniffer-parent@1.24",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml"
+  ]
+}

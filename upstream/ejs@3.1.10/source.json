@@ -1,0 +1,12 @@
+{
+  "name": "ejs",
+  "version": "3.1.10",
+  "revision": "sha512:51e26615f3ab0104bc38958f678aad807c961316b4f3cfccb4ae54132a091851faedc0c45e4652be23a2291099e178a3d33c48dc9102818b37a0ac7e022cd004",
+  "repository": "https://github.com/mde/ejs.git",
+  "purl": "pkg:npm/ejs@3.1.10",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA=="
+}

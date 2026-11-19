@@ -1,0 +1,12 @@
+{
+  "name": "typed-emitter",
+  "version": "2.1.0",
+  "revision": "9a139b6fa0ec6b0db6141b5b756b784e4f7ef4e4",
+  "repository": "https://github.com/andywer/typed-emitter.git",
+  "purl": "pkg:npm/typed-emitter@2.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-g/KzbYKbH5C2vPkaXGu8DJlHrGKHLsM25Zg9WuC9pMGfuvT+X25tZQWo5fK1BjBm8+UrVE9LDCvaY0CQk+fXDA=="
+}

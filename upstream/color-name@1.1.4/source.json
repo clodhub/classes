@@ -1,0 +1,12 @@
+{
+  "name": "color-name",
+  "version": "1.1.4",
+  "revision": "4536ce5944f56659a2dfb2198eaf81b5ad5f2ad9",
+  "repository": "https://github.com/colorjs/color-name.git",
+  "purl": "pkg:npm/color-name@1.1.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA=="
+}

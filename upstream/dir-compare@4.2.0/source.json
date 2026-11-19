@@ -1,0 +1,12 @@
+{
+  "name": "dir-compare",
+  "version": "4.2.0",
+  "revision": "e144d806386f9b54e849a4788f6c0e8eecbe41a4",
+  "repository": "https://github.com/gliviu/dir-compare.git",
+  "purl": "pkg:npm/dir-compare@4.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-2xMCmOoMrdQIPHdsTawECdNPwlVFB9zGcz3kuhmBO6U3oU+UQjsue0i8ayLKpgBcm+hcXPMVSGUN9d+pvJ6+VQ=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "escape-string-regexp",
+  "version": "4.0.0",
+  "revision": "71083e89129bcf72a10656508de5442d3f97966d",
+  "repository": "https://github.com/sindresorhus/escape-string-regexp.git",
+  "purl": "pkg:npm/escape-string-regexp@4.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA=="
+}

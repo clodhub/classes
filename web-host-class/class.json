@@ -1,0 +1,105 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/web-host-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/web-shell",
+      "version": "1.0.0",
+      "path": "classes/web-host-class/web-shell.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "applicationId": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "applicationName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "backgroundColour": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "shortName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "themeColour": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "webAddress": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      }
+    },
+    "required": [
+      "applicationId",
+      "applicationName",
+      "backgroundColour",
+      "shortName",
+      "themeColour",
+      "webAddress"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/web-host-class/check.mjs",
+      "digest": "74e355767af6d99b3de8aeecdd74e22c79a94eab7d3141573aab7720d6c79030"
+    },
+    {
+      "path": "classes/web-host-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    },
+    {
+      "path": "classes/web-host-class/web-shell.json",
+      "digest": "96438dd6623fe70381116073063aefe7a95aafa0c22cfd2e4d28ed1388eb18ab"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/web-host-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/web-host-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

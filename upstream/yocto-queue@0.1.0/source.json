@@ -1,0 +1,12 @@
+{
+  "name": "yocto-queue",
+  "version": "0.1.0",
+  "revision": "af91c37f51aecf607ca2261b907b9d86b6a69e77",
+  "repository": "https://github.com/sindresorhus/yocto-queue.git",
+  "purl": "pkg:npm/yocto-queue@0.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
+}

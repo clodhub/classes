@@ -1,0 +1,12 @@
+{
+  "name": "fs-extra",
+  "version": "11.4.1",
+  "revision": "1e223d3b1e26b7ebef7f402acf0e3b5533cc5833",
+  "repository": "https://github.com/jprichardson/node-fs-extra.git",
+  "purl": "pkg:npm/fs-extra@11.4.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KYAb4c9BJQI6QqGKthV68OHe0badztdXJWKo0WtBA9IuCFPTKvE5ZdUBglP833aMjhaSPNO4A5j/EkzZtGlKjA=="
+}

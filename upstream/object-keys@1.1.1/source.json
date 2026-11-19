@@ -1,0 +1,12 @@
+{
+  "name": "object-keys",
+  "version": "1.1.1",
+  "revision": "ba2c1989270c7de969aa8498fc3b7c8e677806f3",
+  "repository": "https://github.com/ljharb/object-keys.git",
+  "purl": "pkg:npm/object-keys@1.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-NuAESUOUMrlIXOfHKzD6bpPu3tYt3xvjNdRIQ+FeT0lNb4K8WR70CaDxhuNguS2XG+GjkyMwOzsN5ZktImfhLA=="
+}

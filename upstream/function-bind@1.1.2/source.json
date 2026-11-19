@@ -1,0 +1,12 @@
+{
+  "name": "function-bind",
+  "version": "1.1.2",
+  "revision": "40197beb5f4cf89dd005f0b268256c1e4716ea81",
+  "repository": "https://github.com/Raynos/function-bind.git",
+  "purl": "pkg:npm/function-bind@1.1.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA=="
+}

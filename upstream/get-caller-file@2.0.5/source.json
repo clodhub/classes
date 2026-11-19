@@ -1,0 +1,12 @@
+{
+  "name": "get-caller-file",
+  "version": "2.0.5",
+  "revision": "2383bf9e98ed3c568ff69d7586cf59c0f1dcb9d3",
+  "repository": "https://github.com/stefanpenner/get-caller-file.git",
+  "purl": "pkg:npm/get-caller-file@2.0.5",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg=="
+}

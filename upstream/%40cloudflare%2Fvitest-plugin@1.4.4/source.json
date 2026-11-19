@@ -1,0 +1,12 @@
+{
+  "name": "@cloudflare/vitest-plugin",
+  "version": "1.4.4",
+  "revision": "sha512:9d734894f88bbd8171fc01f8fc16ffca7b5591e96861c7f5fad062de5e86a774c3083b4bc5702e82b52d3bb7933966c73fa508c797fd9e9cb4e4eac009b679c2",
+  "repository": "https://github.com/cloudflare/workers-sdk.git",
+  "purl": "pkg:npm/@cloudflare/vitest-plugin@1.4.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-nXNIlPiLvYFx/AH4/Bb/yntVkeloYcf1+tBi3l6Gp3TDCDtLxXAugrUtO7eTOWbHP6UIx5f9npy05OrACbZ5wg=="
+}

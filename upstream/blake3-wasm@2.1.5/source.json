@@ -1,0 +1,12 @@
+{
+  "name": "blake3-wasm",
+  "version": "2.1.5",
+  "revision": "245994b1304c57c23ad7399e71e7f503b518bf43",
+  "repository": "https://github.com/connor4312/blake3.git",
+  "purl": "pkg:npm/blake3-wasm@2.1.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-F1+K8EbfOZE49dtoPtmxUQrpXaBIl3ICvasLh+nJta0xkz+9kF/7uet9fLnwKqhDrmj6g+6K3Tw9yQPUg2ka5g=="
+}

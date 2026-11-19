@@ -1,0 +1,12 @@
+{
+  "name": "util-deprecate",
+  "version": "1.0.2",
+  "revision": "475fb6857cd23fafff20c1be846c1350abf8e6d4",
+  "repository": "https://github.com/TooTallNate/util-deprecate.git",
+  "purl": "pkg:npm/util-deprecate@1.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw=="
+}

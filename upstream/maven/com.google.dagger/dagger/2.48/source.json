@@ -1,0 +1,11 @@
+{
+  "name": "dagger",
+  "version": "2.48",
+  "revision": null,
+  "repository": "https://github.com/google/dagger/",
+  "purl": "pkg:maven/com.google.dagger/dagger@2.48",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

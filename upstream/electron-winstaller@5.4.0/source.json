@@ -1,0 +1,12 @@
+{
+  "name": "electron-winstaller",
+  "version": "5.4.0",
+  "revision": "a18e3c6df4387973d2773d8bbd493c74b9b79801",
+  "repository": "https://github.com/electron/windows-installer.git",
+  "purl": "pkg:npm/electron-winstaller@5.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-bO3y10YikuUwUuDUQRM4KfwNkKhnpVO7IPdbsrejwN9/AABJzzTQ4GeHwyzNSrVO+tEH3/Np255a3sVZpZDjvg=="
+}

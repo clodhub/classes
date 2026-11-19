@@ -1,0 +1,12 @@
+{
+  "name": "webrtc-adapter",
+  "version": "9.0.6",
+  "revision": "c2d3c50815c2c61ed7db9885ce34ecae4cae631a",
+  "repository": "https://github.com/webrtchacks/adapter.git",
+  "purl": "pkg:npm/webrtc-adapter@9.0.6",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-CHbl2ZQbxx164IgWRgzJno4hWtM4tFbRam1QfI3Yxhs3w/DvqluVxVWeXs3oL5/fbGkSNLKo0Ty5MgUWceNhog=="
+}

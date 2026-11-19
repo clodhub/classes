@@ -1,0 +1,11 @@
+{
+  "name": "tensorflow-lite-metadata",
+  "version": "0.2.0",
+  "revision": null,
+  "repository": "https://github.com/tensorflow/tflite-support/tree/master",
+  "purl": "pkg:maven/org.tensorflow/tensorflow-lite-metadata@0.2.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

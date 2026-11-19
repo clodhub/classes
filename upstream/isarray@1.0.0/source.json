@@ -1,0 +1,12 @@
+{
+  "name": "isarray",
+  "version": "1.0.0",
+  "revision": "2a23a281f369e9ae06394c0fb4d2381355a6ba33",
+  "repository": "https://github.com/juliangruber/isarray.git",
+  "purl": "pkg:npm/isarray@1.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-README.md"
+  ],
+  "integrity": "sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ=="
+}

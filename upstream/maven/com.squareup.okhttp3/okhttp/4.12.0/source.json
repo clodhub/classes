@@ -1,0 +1,11 @@
+{
+  "name": "okhttp",
+  "version": "4.12.0",
+  "revision": null,
+  "repository": "https://github.com/square/okhttp",
+  "purl": "pkg:maven/com.squareup.okhttp3/okhttp@4.12.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

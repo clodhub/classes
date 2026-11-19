@@ -1,0 +1,12 @@
+{
+  "name": "detect-libc",
+  "version": "2.1.2",
+  "revision": "98928b7d26bd5c50dee12af0e433b47825d84df0",
+  "repository": "https://github.com/lovell/detect-libc.git",
+  "purl": "pkg:npm/detect-libc@2.1.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Btj2BOOO83o3WyH59e8MgXsxEQVcarkUOpEYrubB0urwnN10yQ364rsiByU11nZlqWYZm05i/of7io4mzihBtQ=="
+}

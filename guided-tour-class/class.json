@@ -1,0 +1,90 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/guided-tour-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/guided-tour",
+      "version": "1.0.0",
+      "path": "classes/guided-tour-class/guided-tour.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/controls",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/preferences",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/language",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/guided-tour-class/check.mjs",
+      "digest": "c01881bd9c94dc45d49b429f32944bdb7199421c16618641cf8ad6ddff29866e"
+    },
+    {
+      "path": "classes/guided-tour-class/guided-tour.json",
+      "digest": "0e6c4e75c33567bb00e60b9aa71dacd1c3a0c7422bd50107023db4a8ac9a271e"
+    },
+    {
+      "path": "classes/guided-tour-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/guided-tour-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/guided-tour-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

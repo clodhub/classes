@@ -1,0 +1,12 @@
+{
+  "name": "@img/sharp-linux-riscv64",
+  "version": "0.35.5",
+  "revision": "51a990faa26ade5586a4934ac9673c98d8893326",
+  "repository": "https://github.com/lovell/sharp.git",
+  "purl": "pkg:npm/@img/sharp-linux-riscv64@0.35.5",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-LtdreXguaavKODPIfzJ4kffx7UNt1omwtK0rch4EBbbSTXPnxWmYSayXdLJw0fJzQ97kHt1gL/yh4tvU+nCyRQ=="
+}

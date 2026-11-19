@@ -1,0 +1,11 @@
+{
+  "name": "livekit-android-compose-components",
+  "version": "2.4.2",
+  "revision": null,
+  "repository": "https://github.com/livekit/components-android",
+  "purl": "pkg:maven/io.livekit/livekit-android-compose-components@2.4.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

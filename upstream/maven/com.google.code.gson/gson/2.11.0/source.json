@@ -1,0 +1,11 @@
+{
+  "name": "gson",
+  "version": "2.11.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/code/gson/gson",
+  "purl": "pkg:maven/com.google.code.gson/gson@2.11.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

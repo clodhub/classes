@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/win32-x64",
+  "version": "0.28.2",
+  "revision": "609683d892977362a0f99026cb74b96263d728a9",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/win32-x64@0.28.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-5ebpxr3nWMzrL/rnUI755Jkuee0bHL/Gq0WTF9lvcpv73wAp5eu8MfBUgWK9bhWvZjj7yX8etf/8tI8Ney695g=="
+}

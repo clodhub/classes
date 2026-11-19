@@ -1,0 +1,12 @@
+{
+  "name": "js-yaml",
+  "version": "4.3.2",
+  "revision": "79ca68d90f333fbe6d9e42827527e62636200191",
+  "repository": "https://github.com/nodeca/js-yaml.git",
+  "purl": "pkg:npm/js-yaml@4.3.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA=="
+}

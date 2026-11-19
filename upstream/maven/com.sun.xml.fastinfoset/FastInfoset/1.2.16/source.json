@@ -1,0 +1,12 @@
+{
+  "name": "FastInfoset",
+  "version": "1.2.16",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/sun/xml/fastinfoset/FastInfoset",
+  "purl": "pkg:maven/com.sun.xml.fastinfoset/FastInfoset@1.2.16",
+  "licence": "Apache-2.0 AND LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

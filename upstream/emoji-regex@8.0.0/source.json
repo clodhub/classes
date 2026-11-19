@@ -1,0 +1,12 @@
+{
+  "name": "emoji-regex",
+  "version": "8.0.0",
+  "revision": "a9f2e514523d4c0931974aff5059052da10c52c5",
+  "repository": "https://github.com/mathiasbynens/emoji-regex.git",
+  "purl": "pkg:npm/emoji-regex@8.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE-MIT.txt"
+  ],
+  "integrity": "sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A=="
+}

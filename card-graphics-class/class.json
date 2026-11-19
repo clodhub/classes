@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/card-graphics-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/card-graphics",
+      "version": "1.0.0",
+      "path": "classes/card-graphics-class/card-graphics.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "backStyle": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "cardWidth": {
+        "type": "integer"
+      },
+      "cornerStyle": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [
+      "backStyle",
+      "cardWidth",
+      "cornerStyle"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/card-graphics-class/card-graphics.json",
+      "digest": "fe3ce396e10ca26ed43d7b8142eaecc464be240fc9aca64e4d36df3271e88484"
+    },
+    {
+      "path": "classes/card-graphics-class/check.mjs",
+      "digest": "463aca425e5e8a0a4b19729102bfebccc612b0e88e9019b333277c08969e2cbc"
+    },
+    {
+      "path": "classes/card-graphics-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/card-graphics-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/card-graphics-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/chip-graphics-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/chip-graphics",
+      "version": "1.0.0",
+      "path": "classes/chip-graphics-class/chip-graphics.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "chipColours": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "denominations": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [
+      "chipColours",
+      "denominations"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/chip-graphics-class/check.mjs",
+      "digest": "367eea1e04c8b148f943092a26352fcba8d56b195bce7a8c2f66859384eb0e49"
+    },
+    {
+      "path": "classes/chip-graphics-class/chip-graphics.json",
+      "digest": "50b4703b3f7c7e8021e6a4bf1106a77646fda5dd2e00404e8ff5946835335c66"
+    },
+    {
+      "path": "classes/chip-graphics-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/chip-graphics-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/chip-graphics-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

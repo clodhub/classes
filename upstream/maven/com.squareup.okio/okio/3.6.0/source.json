@@ -1,0 +1,11 @@
+{
+  "name": "okio",
+  "version": "3.6.0",
+  "revision": null,
+  "repository": "https://github.com/square/okio/",
+  "purl": "pkg:maven/com.squareup.okio/okio@3.6.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

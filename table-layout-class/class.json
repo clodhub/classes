@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/table-layout-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/table-layout",
+      "version": "1.0.0",
+      "path": "classes/table-layout-class/table-layout.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/controls",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/table-layout-class/check.mjs",
+      "digest": "37fc3b19bbbb64758bbff40e59fae328cdb0c08551cab1530f637640e8919eff"
+    },
+    {
+      "path": "classes/table-layout-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    },
+    {
+      "path": "classes/table-layout-class/table-layout.json",
+      "digest": "d80dbd6b570d4e696e391838151daa72c45e4a4911980c567d30a25818fbc284"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/table-layout-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/table-layout-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

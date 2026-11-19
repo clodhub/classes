@@ -1,0 +1,11 @@
+{
+  "name": "j2objc-annotations",
+  "version": "2.8",
+  "revision": null,
+  "repository": "https://github.com/google/j2objc/",
+  "purl": "pkg:maven/com.google.j2objc/j2objc-annotations@2.8",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

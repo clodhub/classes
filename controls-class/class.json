@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/controls-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/controls",
+      "version": "1.0.0",
+      "path": "classes/controls-class/controls.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/controls-class/check.mjs",
+      "digest": "ced90067fd8bb635c651f7f8e885765c7543d553c6a0a485b864a7bf7f177fae"
+    },
+    {
+      "path": "classes/controls-class/controls.json",
+      "digest": "34547afc0e198a0d45cc963c7377998fe1f7064aea8949fba49a1f2c74cafa2e"
+    },
+    {
+      "path": "classes/controls-class/dom.mjs",
+      "digest": "86898738caef0ab7f081f443afda613ddace1ce302a87d19c430e0e19420a913"
+    },
+    {
+      "path": "classes/controls-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/controls-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/controls-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

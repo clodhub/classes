@@ -1,0 +1,11 @@
+{
+  "name": "livekit-android",
+  "version": "2.29.0",
+  "revision": null,
+  "repository": "https://github.com/livekit/client-sdk-android",
+  "purl": "pkg:maven/io.livekit/livekit-android@2.29.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "kotlin-stdlib-jdk8",
+  "version": "1.8.20",
+  "revision": null,
+  "repository": "https://github.com/JetBrains/kotlin",
+  "purl": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib-jdk8@1.8.20",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

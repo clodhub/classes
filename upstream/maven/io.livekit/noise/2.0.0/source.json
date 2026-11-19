@@ -1,0 +1,11 @@
+{
+  "name": "noise",
+  "version": "2.0.0",
+  "revision": null,
+  "repository": "https://github.com/livekit/noise",
+  "purl": "pkg:maven/io.livekit/noise@2.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

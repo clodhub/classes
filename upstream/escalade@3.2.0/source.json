@@ -1,0 +1,12 @@
+{
+  "name": "escalade",
+  "version": "3.2.0",
+  "revision": "fa5be167391581849cff04dbc75dc2978744b642",
+  "repository": "https://github.com/lukeed/escalade.git",
+  "purl": "pkg:npm/escalade@3.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-WUj2qlxaQtO4g6Pq5c29GTcWGDyd8itL8zTlipgECz3JesAiiOKotd8JU6otB3PACgG6xkJUyVhboMS+bje/jA=="
+}

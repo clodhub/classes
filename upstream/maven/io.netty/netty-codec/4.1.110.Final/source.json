@@ -1,0 +1,12 @@
+{
+  "name": "netty-codec",
+  "version": "4.1.110.Final",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/io/netty/netty-codec",
+  "purl": "pkg:maven/io.netty/netty-codec@4.1.110.Final",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "vite",
+  "version": "8.3.8",
+  "revision": "sha512:2f33a7de1f6b1bfd2f84b757ad5e3227840503d784a2a0a5f98c7e90625deda07dc3a9df3605472926302cf6541ebcf86466beb7e9178d5f62b6f7070cb428b8",
+  "repository": "https://github.com/vitejs/vite.git",
+  "purl": "pkg:npm/vite@8.3.8",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-LzOn3h9rG/0vhLdXrV4yJ4QFA9eEoqCl+Yx+kGJd7aB9w6nfNgVHKSYwLPZUHrz4ZGa+t+kXjV9itvcHDLQouA=="
+}

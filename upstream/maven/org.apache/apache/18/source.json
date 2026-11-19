@@ -1,0 +1,11 @@
+{
+  "name": "apache",
+  "version": "18",
+  "revision": null,
+  "repository": "https://svn.apache.org/viewvc/maven/pom/tags/apache-18",
+  "purl": "pkg:maven/org.apache/apache@18",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

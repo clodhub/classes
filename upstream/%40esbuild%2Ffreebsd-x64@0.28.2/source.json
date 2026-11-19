@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/freebsd-x64",
+  "version": "0.28.2",
+  "revision": "609683d892977362a0f99026cb74b96263d728a9",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/freebsd-x64@0.28.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-78XJTJkvPs0kz2w61301PJjXl4g7q3JqiYMZ/M/yVI73EHBrCRTgkhu9oqG7vPqq+a/yadEW8aD+agKlk5xrmg=="
+}

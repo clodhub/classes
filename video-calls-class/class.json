@@ -1,0 +1,98 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/video-calls-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/media-session",
+      "version": "1.0.0",
+      "path": "classes/video-calls-class/media-session.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/video-calls-configuration",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "keyReference": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "secretReference": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "serviceUrl": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/video-calls-class/check.mjs",
+      "digest": "0cfe9bdb7d727bff0c6b8947576cbe12c66e8e1a220a83c2d3a06b4bc518bef1"
+    },
+    {
+      "path": "classes/video-calls-class/media-session.json",
+      "digest": "6ee162341bf63b9ef939f758d72514d36fe8714a65a1dbf351454267b64d1acc"
+    },
+    {
+      "path": "classes/video-calls-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/video-calls-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/video-calls-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

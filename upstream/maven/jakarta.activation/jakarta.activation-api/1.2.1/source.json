@@ -1,0 +1,12 @@
+{
+  "name": "jakarta.activation-api",
+  "version": "1.2.1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/jakarta/activation/jakarta.activation-api",
+  "purl": "pkg:maven/jakarta.activation/jakarta.activation-api@1.2.1",
+  "licence": "LicenseRef-EDL-1.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

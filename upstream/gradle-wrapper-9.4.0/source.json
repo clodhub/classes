@@ -1,0 +1,8 @@
+{
+  "name": "Gradle Wrapper",
+  "version": "9.4.0",
+  "repository": "https://github.com/gradle/gradle",
+  "checksumSource": "https://services.gradle.org/distributions/gradle-9.4.0-wrapper.jar.sha256",
+  "sha256": "55243ef57851f12b070ad14f7f5bb8302daceeebc5bce5ece5fa6edb23e1145c",
+  "licenceSource": "META-INF/LICENSE"
+}

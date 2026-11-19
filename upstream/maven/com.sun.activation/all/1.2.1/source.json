@@ -1,0 +1,11 @@
+{
+  "name": "all",
+  "version": "1.2.1",
+  "revision": null,
+  "repository": "https://github.com/eclipse-ee4j/jaf",
+  "purl": "pkg:maven/com.sun.activation/all@1.2.1",
+  "licence": "LicenseRef-EDL-1.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

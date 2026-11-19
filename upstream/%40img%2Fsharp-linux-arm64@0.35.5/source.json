@@ -1,0 +1,12 @@
+{
+  "name": "@img/sharp-linux-arm64",
+  "version": "0.35.5",
+  "revision": "51a990faa26ade5586a4934ac9673c98d8893326",
+  "repository": "https://github.com/lovell/sharp.git",
+  "purl": "pkg:npm/@img/sharp-linux-arm64@0.35.5",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-LYVx5JTsOM2CBzmxreh+nl64/3H6Xb09iSLknqH47z2T2DFFxDeFLP5y4dJwe6H7uGQlHPyEEtIqyo3DYsRwdQ=="
+}

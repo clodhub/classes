@@ -1,0 +1,12 @@
+{
+  "name": "node-int64",
+  "version": "0.4.0",
+  "revision": "c1567475712cb1cfe100c96813c2a2a92e2b42ce",
+  "repository": "https://github.com/broofa/node-int64",
+  "purl": "pkg:npm/node-int64@0.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw=="
+}

@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/poker-hand-ranking-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/hand-ranking",
+      "version": "1.0.0",
+      "path": "classes/poker-hand-ranking-class/hand-ranking.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/card-deck",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/poker-hand-ranking-class/check.mjs",
+      "digest": "99da8581f099f74d65ed5165e4daff8ed8ad01a294f22446e8b861972fe82465"
+    },
+    {
+      "path": "classes/poker-hand-ranking-class/hand-ranking.json",
+      "digest": "0661a2a4b3986548921ed54988b2028a268dbc4bb34a81f00a1368713c5810ba"
+    },
+    {
+      "path": "classes/poker-hand-ranking-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/poker-hand-ranking-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/poker-hand-ranking-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

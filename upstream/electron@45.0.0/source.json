@@ -1,0 +1,12 @@
+{
+  "name": "electron",
+  "version": "45.0.0",
+  "revision": "sha512:ca3cf8ba130170ee8be57ec25a044ca1b7f610c24f9dbf63e33b9ffa7bbf4d4ffa1384aa7f1edf9ff6b67800a8e2a9e08e697fd099eca1987162ba092f12dddb",
+  "repository": "https://github.com/electron/electron.git",
+  "purl": "pkg:npm/electron@45.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-yjz4uhMBcO6L5X7CWgRMobf2EMJPnb9j4zuf+nu/TU/6E4Sqfx7fn/a2eACo4qngjml/0JnsoZhxYroJLxLd2w=="
+}

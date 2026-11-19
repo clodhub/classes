@@ -1,0 +1,12 @@
+{
+  "name": "pathe",
+  "version": "2.0.3",
+  "revision": "sha512:5948c6700a8fd6041a72841ef8e049b0503b2dde03c97b9422367971cef970b1ef27b76d36c4ee8298712000f0b294be02b68051e3c22ab495b4f2c58ff17cf3",
+  "repository": "https://github.com/unjs/pathe.git",
+  "purl": "pkg:npm/pathe@2.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w=="
+}

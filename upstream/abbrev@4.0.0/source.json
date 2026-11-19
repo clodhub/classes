@@ -1,0 +1,12 @@
+{
+  "name": "abbrev",
+  "version": "4.0.0",
+  "revision": "1f9876814876b6a2b24d72639bd55a2c9ff2763d",
+  "repository": "https://github.com/npm/abbrev-js.git",
+  "purl": "pkg:npm/abbrev@4.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-a1wflyaL0tHtJSmLSOVybYhy22vRih4eduhhrkcjgrWGnRfrZtovJ2FRjxuTtkkj47O/baf0R86QU5OuYpz8fA=="
+}

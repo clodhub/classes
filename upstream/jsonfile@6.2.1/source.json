@@ -1,0 +1,12 @@
+{
+  "name": "jsonfile",
+  "version": "6.2.1",
+  "revision": "97478af83f115359c331119330b418dfb7c5a6e7",
+  "repository": "https://github.com/jprichardson/node-jsonfile.git",
+  "purl": "pkg:npm/jsonfile@6.2.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-zwOTdL3rFQ/lRdBnntKVOX6k5cKJwEc1HdilT71BWEu7J41gXIB2MRp+vxduPSwZJPWBxEzv4yH1wYLJGUHX4Q=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "error-stack-parser-es",
+  "version": "1.0.5",
+  "revision": "97822eb9dc20e658642045abb1f06c38112cd661",
+  "repository": "https://github.com/antfu/error-stack-parser-es.git",
+  "purl": "pkg:npm/error-stack-parser-es@1.0.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-5qucVt2XcuGMcEGgWI7i+yZpmpByQ8J1lHhcL7PwqCwu9FPP3VUXzT4ltHe5i2z9dePwEHcDVOAfSnHsOlCXRA=="
+}

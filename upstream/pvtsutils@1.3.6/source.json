@@ -1,0 +1,12 @@
+{
+  "name": "pvtsutils",
+  "version": "1.3.6",
+  "revision": "ca623179070184f2ad7f463fd9d8a61b41653acf",
+  "repository": "https://github.com/PeculiarVentures/pvtsutils.git",
+  "purl": "pkg:npm/pvtsutils@1.3.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-PLgQXQ6H2FWCaeRak8vvk1GW462lMxB5s3Jm673N82zI4vqtVUPuZdffdZbPDFRoU8kAhItWFtPCWiPpp4/EDg=="
+}

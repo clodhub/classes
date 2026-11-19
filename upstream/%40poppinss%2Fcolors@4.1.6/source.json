@@ -1,0 +1,12 @@
+{
+  "name": "@poppinss/colors",
+  "version": "4.1.6",
+  "revision": "89700f40868e5dcb39d28ee1c50e1064f4bf3bfe",
+  "repository": "https://github.com/poppinss/colors.git",
+  "purl": "pkg:npm/@poppinss/colors@4.1.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-H9xkIdFswbS8n1d6vmRd8+c10t2Qe+rZITbbDHHkQixH5+2x1FDGmi/0K+WgWiqQFKPSlIYB7jlH6Kpfn6Fleg=="
+}

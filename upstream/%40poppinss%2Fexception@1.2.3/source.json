@@ -1,0 +1,12 @@
+{
+  "name": "@poppinss/exception",
+  "version": "1.2.3",
+  "revision": "6e8933ba4397460467dce3a0ad3b0ffa745fd8e2",
+  "repository": "https://github.com/poppinss/exception.git",
+  "purl": "pkg:npm/@poppinss/exception@1.2.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "boolean",
+  "version": "3.2.0",
+  "revision": "919d80f7c987e809270671bbfa99e14da8bdc477",
+  "repository": "https://github.com/thenativeweb/boolean.git",
+  "purl": "pkg:npm/boolean@3.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-d0II/GO9uf9lfUHH2BQsjxzRJZBdsjgsBiW4BvhWk/3qoKwQFjIDVN19PfX8F2D/r9PCMTtLWjYVCFrpeYUzsw=="
+}

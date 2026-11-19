@@ -1,0 +1,11 @@
+{
+  "name": "checker-qual",
+  "version": "3.33.0",
+  "revision": null,
+  "repository": "https://github.com/typetools/checker-framework.git",
+  "purl": "pkg:maven/org.checkerframework/checker-qual@3.33.0",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml"
+  ]
+}

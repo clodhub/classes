@@ -1,0 +1,11 @@
+{
+  "name": "annotations",
+  "version": "4.1.1.4",
+  "revision": null,
+  "repository": "https://android.git.kernel.org/",
+  "purl": "pkg:maven/com.google.android/annotations@4.1.1.4",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

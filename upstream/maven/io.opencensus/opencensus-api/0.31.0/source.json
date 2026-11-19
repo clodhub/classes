@@ -1,0 +1,11 @@
+{
+  "name": "opencensus-api",
+  "version": "0.31.0",
+  "revision": null,
+  "repository": "https://github.com/census-instrumentation/opencensus-java",
+  "purl": "pkg:maven/io.opencensus/opencensus-api@0.31.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

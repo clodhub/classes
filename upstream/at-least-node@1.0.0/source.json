@@ -1,0 +1,12 @@
+{
+  "name": "at-least-node",
+  "version": "1.0.0",
+  "revision": "6b45626accdfe9431ef860c55f07420f7df2aaa7",
+  "repository": "https://github.com/RyanZim/at-least-node.git",
+  "purl": "pkg:npm/at-least-node@1.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg=="
+}

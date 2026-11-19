@@ -1,0 +1,12 @@
+{
+  "name": "matcher",
+  "version": "3.0.0",
+  "revision": "d29550d281885df0b32d53c2b72ec788e3265454",
+  "repository": "https://github.com/sindresorhus/matcher.git",
+  "purl": "pkg:npm/matcher@3.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-OkeDaAZ/bQCxeFAozM55PKcKU0yJMPGifLwV4Qgjitu+5MoAfSQN4lsLJeXZ1b8w0x+/Emda6MZgXS1jvsapng=="
+}

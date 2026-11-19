@@ -1,0 +1,12 @@
+{
+  "name": "javax.inject",
+  "version": "1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/javax/inject/javax.inject",
+  "purl": "pkg:maven/javax.inject/javax.inject@1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "source-Inject.java"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "tinybench",
+  "version": "6.2.2",
+  "revision": "sha512:9c8676376745a6306c8368608ad2aeee603e16fb0826e1893b0cac4678265514665a047f5323e3c098fc73f7d3fdd866f049079c5e443a88117fed19daaae298",
+  "repository": "https://github.com/tinylibs/tinybench#readme",
+  "purl": "pkg:npm/tinybench@6.2.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-nIZ2N2dFpjBsg2hgitKu7mA+FvsIJuGJOwysRngmVRRmWgR/UyPjwJj8c/fT/dhm8EkHnF5EOogRf+0Z2qrimA=="
+}

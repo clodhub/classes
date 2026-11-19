@@ -1,0 +1,12 @@
+{
+  "name": "cacheable-request",
+  "version": "7.0.4",
+  "revision": "83a55c364f44a9f3bffecdcf052545632d722047",
+  "repository": "https://github.com/lukechilds/cacheable-request.git",
+  "purl": "pkg:npm/cacheable-request@7.0.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-v+p6ongsrp0yTGbJXjgxPow2+DL93DASP4kXCDKb8/bwRtt9OEF3whggkkDkGNzgcWy2XaF4a8nZglC7uElscg=="
+}

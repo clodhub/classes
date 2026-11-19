@@ -1,0 +1,11 @@
+{
+  "name": "material-icons-extended-android",
+  "version": "1.7.8",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.compose.material/material-icons-extended-android@1.7.8",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

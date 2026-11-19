@@ -1,0 +1,12 @@
+{
+  "name": "stat-mode",
+  "version": "1.0.0",
+  "revision": "72ea3525bd5f92781de3cefac09c047df397e779",
+  "repository": "https://github.com/TooTallNate/stat-mode.git",
+  "purl": "pkg:npm/stat-mode@1.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-jH9EhtKIjuXZ2cWxmXS8ZP80XyC3iasQxMDV8jzhNJpfDb7VbQLVW4Wvsxz9QZvzV+G4YoSfBUVKDOyxLzi/sg=="
+}

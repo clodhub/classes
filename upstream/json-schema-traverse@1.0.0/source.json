@@ -1,0 +1,12 @@
+{
+  "name": "json-schema-traverse",
+  "version": "1.0.0",
+  "revision": "6b45983cd76270042cc79527da5c8972f13599ec",
+  "repository": "https://github.com/epoberezkin/json-schema-traverse.git",
+  "purl": "pkg:npm/json-schema-traverse@1.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "proper-lockfile",
+  "version": "4.1.2",
+  "revision": "9f8c303c91998e8404a911dc11c54029812bca69",
+  "repository": "https://github.com/moxystudio/node-proper-lockfile.git",
+  "purl": "pkg:npm/proper-lockfile@4.1.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-TjNPblN4BwAWMXU8s9AEz4JmQxnD1NNL7bNOY/AKUzyamc379FWASUhc/K1pL2noVb+XmZKLL68cjzLsiOAMaA=="
+}

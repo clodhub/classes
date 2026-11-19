@@ -1,0 +1,12 @@
+{
+  "name": "proc-log",
+  "version": "6.1.0",
+  "revision": "9a6975d69bda1a1b2123b79d290dfefc245ab050",
+  "repository": "https://github.com/npm/proc-log.git",
+  "purl": "pkg:npm/proc-log@6.1.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-iG+GYldRf2BQ0UDUAd6JQ/RwzaQy6mXmsk/IzlYyal4A4SNFw54MeH4/tLkF4I5WoWG9SQwuqWzS99jaFQHBuQ=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "got",
+  "version": "11.8.6",
+  "revision": "63891d1a9c33f03eac328a14d471e2522b4c33b7",
+  "repository": "https://github.com/sindresorhus/got.git",
+  "purl": "pkg:npm/got@11.8.6",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-6tfZ91bOr7bOXnK7PRDCGBLa1H4U080YHNaAQ2KsMGlLEzRbk44nsZF2E1IeRc3vtJHPVbKCYgdFbaGO2ljd8g=="
+}

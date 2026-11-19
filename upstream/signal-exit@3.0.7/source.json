@@ -1,0 +1,12 @@
+{
+  "name": "signal-exit",
+  "version": "3.0.7",
+  "revision": "03dd77a96caa309c6a02c59274d58c812a2dce45",
+  "repository": "https://github.com/tapjs/signal-exit.git",
+  "purl": "pkg:npm/signal-exit@3.0.7",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ=="
+}

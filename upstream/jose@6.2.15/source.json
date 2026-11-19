@@ -1,0 +1,12 @@
+{
+  "name": "jose",
+  "version": "6.2.15",
+  "revision": "sha512:a9d17a7b0719011b5e7faddf27d00a2993e0c70faded4487e872d761c0f80ab7664af0e9efdae92523c510a73dd1005e192eb7bb5290b4dd8c6501c2d320c8cc",
+  "repository": "https://github.com/panva/jose.git",
+  "purl": "pkg:npm/jose@6.2.15",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-qdF6ewcZARtef63fJ9AKKZPgxw+t7USH6HLXYcD4CrdmSvDp79rpJSPFEKc90QBeGS63u1KQtN2MZQHC0yDIzA=="
+}

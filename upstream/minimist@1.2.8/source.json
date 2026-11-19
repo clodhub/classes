@@ -1,0 +1,12 @@
+{
+  "name": "minimist",
+  "version": "1.2.8",
+  "revision": "6901ee286bc4c16da6830b48b46ce1574703cea1",
+  "repository": "https://github.com/minimistjs/minimist.git",
+  "purl": "pkg:npm/minimist@1.2.8",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA=="
+}

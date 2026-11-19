@@ -1,0 +1,14 @@
+{
+  "name": "app-builder-lib",
+  "version": "26.15.3",
+  "revision": "sha512:d959f25a4aac3f9bf95db0612f7b43e52cb1f2234f058b2853b918e12d9fcfbc20f118ff9f3b5628253318a685453bf45f07f7fc7d39f024752afb5dff7951a3",
+  "repository": "https://github.com/electron-userland/electron-builder.git",
+  "purl": "pkg:npm/app-builder-lib@26.15.3",
+  "licence": "MIT",
+  "notices": [
+    "0-license.js",
+    "1-license.js.map",
+    "2-license.d.ts"
+  ],
+  "integrity": "sha512-2VnyWkqsP5v5XbBhL3tD5Syx8iNPBYsoU7kY4S2fz7wg8Rj/nztWKCUzGKaFRTv0Xwf3/H058CR1Kvtd/3lRow=="
+}

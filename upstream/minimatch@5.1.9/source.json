@@ -1,0 +1,12 @@
+{
+  "name": "minimatch",
+  "version": "5.1.9",
+  "revision": "4419b6e73f21516c6d53ca4165cb7abb3d79ae24",
+  "repository": "https://github.com/isaacs/minimatch.git",
+  "purl": "pkg:npm/minimatch@5.1.9",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7o1wEA2RyMP7Iu7GNba9vc0RWWGACJOCZBJX2GJWip0ikV+wcOsgVuY9uE8CPiyQhkGFSlhuSkZPavN7u1c2Fw=="
+}

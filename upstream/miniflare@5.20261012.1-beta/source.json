@@ -1,0 +1,12 @@
+{
+  "name": "miniflare",
+  "version": "5.20261012.1-beta",
+  "revision": "sha512:f026a7872ea0f7ebc086a31cd28f3462986a608c29880dda029f1a5feb835d4ec9fea6d47a867370823d7365753f8b93fde1c3e1207ddea7add68d5b458dc1b9",
+  "repository": "https://github.com/cloudflare/workers-sdk.git",
+  "purl": "pkg:npm/miniflare@5.20261012.1-beta",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-8Canhy6g9+vAhqMc0o80YphqYIwpiA3aAp8aX+uDXU7J/qbUeoZzcII9c2V1P4uT/eHD4SB93qet1o1bRY3BuQ=="
+}

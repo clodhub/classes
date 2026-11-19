@@ -1,0 +1,92 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/server-host-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/server-host",
+      "version": "1.0.0",
+      "path": "classes/server-host-class/server-host.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/room-session",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/room-directory",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "accountReference": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "allowedOrigins": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      },
+      "provider": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "roomPrefix": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      }
+    },
+    "required": [
+      "allowedOrigins",
+      "provider",
+      "roomPrefix"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/server-host-class/check.mjs",
+      "digest": "ac2055aab56690ad65a57ea4af0b928fa6300c2f425dbe9cc94e473da533dc74"
+    },
+    {
+      "path": "classes/server-host-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    },
+    {
+      "path": "classes/server-host-class/server-host.json",
+      "digest": "9f72a5bde1a55d5deb7f2c62c72a733e56b2f5b40c062b1e884de2b4a8d35ecf"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/server-host-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/server-host-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

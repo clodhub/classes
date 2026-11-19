@@ -1,0 +1,12 @@
+{
+  "name": "ws",
+  "version": "8.21.0",
+  "revision": "bca91adf15677e47dbe4f959653452727be28b94",
+  "repository": "https://github.com/websockets/ws.git",
+  "purl": "pkg:npm/ws@8.21.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Vsp28b7DRcimFQvrqu2Wek3z1iYxDCWqHYB8Qsnk/S4RfaCQzPGPyBNuVjJV3cd6UiKtUtp6sNM77gWvzcCH+g=="
+}

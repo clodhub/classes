@@ -1,0 +1,12 @@
+{
+  "name": "tmp",
+  "version": "0.2.7",
+  "revision": "8ea1f37d75c67569e0f151448330d52f7babf211",
+  "repository": "https://github.com/raszi/node-tmp.git",
+  "purl": "pkg:npm/tmp@0.2.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-e0votIpp4Uo2AJYSzVHV6xCcawuiez3DzqDAbrTc3YxBkplN6e+dM13ZeIcZnDg/QpSuU2zfZ3rzwY8ukEnaXw=="
+}

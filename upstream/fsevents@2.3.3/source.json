@@ -1,0 +1,12 @@
+{
+  "name": "fsevents",
+  "version": "2.3.3",
+  "revision": "2db891e51aa0f2975c5eaaf6aa30f13d720a830a",
+  "repository": "https://github.com/fsevents/fsevents.git",
+  "purl": "pkg:npm/fsevents@2.3.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw=="
+}

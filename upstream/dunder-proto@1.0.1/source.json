@@ -1,0 +1,12 @@
+{
+  "name": "dunder-proto",
+  "version": "1.0.1",
+  "revision": "c6f4b69ab80c495777870f6a5f6a22db16ecaecb",
+  "repository": "https://github.com/es-shims/dunder-proto.git",
+  "purl": "pkg:npm/dunder-proto@1.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A=="
+}

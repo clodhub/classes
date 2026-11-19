@@ -1,0 +1,11 @@
+{
+  "name": "jsr305",
+  "version": "3.0.2",
+  "revision": null,
+  "repository": "https://code.google.com/p/jsr-305/",
+  "purl": "pkg:maven/com.google.code.findbugs/jsr305@3.0.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

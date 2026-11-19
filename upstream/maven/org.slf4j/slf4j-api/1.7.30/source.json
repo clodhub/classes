@@ -1,0 +1,12 @@
+{
+  "name": "slf4j-api",
+  "version": "1.7.30",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/slf4j/slf4j-api",
+  "purl": "pkg:maven/org.slf4j/slf4j-api@1.7.30",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

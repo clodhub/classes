@@ -1,0 +1,12 @@
+{
+  "name": "@peculiar/asn1-schema",
+  "version": "2.11.1",
+  "revision": "sha512:8da53d39a09c6d951dc97c7d84c113641f71a0d9b14c68ce185a9dddc3b02859292a7c8a77d5b1177baa8f83ef5f873238c3fd6d274783963230bdaab71fddfe",
+  "repository": "https://github.com/PeculiarVentures/asn1-schema.git",
+  "purl": "pkg:npm/@peculiar/asn1-schema@2.11.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-jaU9OaCcbZUdyXx9hMETZB9xoNmxTGjOGFqd3cOwKFkpKnyKd9WxF3uqj4PvX4cyOMP9bSdHg5YyML2qtx/d/g=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/linux-riscv64",
+  "version": "0.28.2",
+  "revision": "609683d892977362a0f99026cb74b96263d728a9",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/linux-riscv64@0.28.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-GeXCej4IQtU1B+QlDV8W/RRvbzI3O/Stss+/bCXv4lZls5WGRtu2a+3JkA3i4qIUlMXpcHebWpF8AkJhATowuA=="
+}

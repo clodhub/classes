@@ -1,0 +1,11 @@
+{
+  "name": "aapt2-proto",
+  "version": "8.13.2-14304508",
+  "revision": null,
+  "repository": "https://android.googlesource.com/platform/tools/base",
+  "purl": "pkg:maven/com.android.tools.build/aapt2-proto@8.13.2-14304508",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

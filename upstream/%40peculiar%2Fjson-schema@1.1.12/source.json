@@ -1,0 +1,12 @@
+{
+  "name": "@peculiar/json-schema",
+  "version": "1.1.12",
+  "revision": "0ac71a4abcf23a4b54753f3a5433e41232db551e",
+  "repository": "https://github.com/PeculiarVentures/json-schema.git",
+  "purl": "pkg:npm/@peculiar/json-schema@1.1.12",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-coUfuoMeIB7B8/NMekxaDzLhaYmp0HZNPEjYRm9goRou8UZIC3z21s0sL9AWoCw4EG876QyO3kYrc61WNF9B/w=="
+}

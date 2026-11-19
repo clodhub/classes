@@ -1,0 +1,12 @@
+{
+  "name": "progress",
+  "version": "2.0.3",
+  "revision": "0790207ef077cbfb7ebde24a1dd9895ebf4643e1",
+  "repository": "https://github.com/visionmedia/node-progress.git",
+  "purl": "pkg:npm/progress@2.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA=="
+}

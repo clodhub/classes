@@ -1,0 +1,11 @@
+{
+  "name": "molecule-runtime",
+  "version": "1.4.3",
+  "revision": null,
+  "repository": "https://github.com/cashapp/molecule/",
+  "purl": "pkg:maven/app.cash.molecule/molecule-runtime@1.4.3",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

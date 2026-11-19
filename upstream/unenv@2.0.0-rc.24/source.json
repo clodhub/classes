@@ -1,0 +1,12 @@
+{
+  "name": "unenv",
+  "version": "2.0.0-rc.24",
+  "revision": "6493c25f2fb94b9f2c7dec528a26ac11f7f9b8b0",
+  "repository": "https://github.com/unjs/unenv.git",
+  "purl": "pkg:npm/unenv@2.0.0-rc.24",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-i7qRCmY42zmCwnYlh9H2SvLEypEFGye5iRmEMKjcGi7zk9UquigRjFtTLz0TYqr0ZGLZhaMHl/foy1bZR+Cwlw=="
+}

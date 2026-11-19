@@ -1,0 +1,11 @@
+{
+  "name": "lifecycle-viewmodel-android",
+  "version": "2.10.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.lifecycle/lifecycle-viewmodel-android@2.10.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

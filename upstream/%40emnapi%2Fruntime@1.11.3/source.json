@@ -1,0 +1,12 @@
+{
+  "name": "@emnapi/runtime",
+  "version": "1.11.3",
+  "revision": "b2011ea96d28fe60a6b8eabb82c2d6264daf7460",
+  "repository": "https://github.com/toyobayashi/emnapi.git",
+  "purl": "pkg:npm/@emnapi/runtime@1.11.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Xz4Tpyki7XyrpbUK1jR1AhdAdaXyhhY4lZ3neLodmhpuWfy2PAQN5B46sAiU4liOXGLkHypn/qU+jvfWSCYYLA=="
+}

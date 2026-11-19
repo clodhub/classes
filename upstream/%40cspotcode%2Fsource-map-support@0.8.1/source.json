@@ -1,0 +1,12 @@
+{
+  "name": "@cspotcode/source-map-support",
+  "version": "0.8.1",
+  "revision": "0.8.1",
+  "repository": "https://github.com/cspotcode/node-source-map-support.git",
+  "purl": "pkg:npm/@cspotcode/source-map-support@0.8.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw=="
+}

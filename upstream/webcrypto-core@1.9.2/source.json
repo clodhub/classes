@@ -1,0 +1,12 @@
+{
+  "name": "webcrypto-core",
+  "version": "1.9.2",
+  "revision": "sha512:82c5de726f365103654c1511246baa396cb55b0d3c4b791951caf768e252d363e4d312ed91f7940150b4bb4c6181da271667bcd1e752254209caebcbffbdb9d1",
+  "repository": "https://github.com/PeculiarVentures/webcrypto-core.git",
+  "purl": "pkg:npm/webcrypto-core@1.9.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-gsXecm82UQNlTBURJGuqOWy1Ww08S3kZUcr3aOJS02Pk0xLtkfeUAVC0u0xhgdonFme80edSJUIJyuvL/7250Q=="
+}

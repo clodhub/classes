@@ -1,0 +1,11 @@
+{
+  "name": "ddmlib",
+  "version": "31.13.2",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/android/tools/ddms/ddmlib",
+  "purl": "pkg:maven/com.android.tools.ddms/ddmlib@31.13.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

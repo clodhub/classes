@@ -1,0 +1,12 @@
+{
+  "name": "@types/http-cache-semantics",
+  "version": "4.2.0",
+  "revision": "sha512:2f72e08a62c75ed1a45a290a9ec3e0d3f545c7d38665a0be78dd6ee2bf8e0755d1a87de6781200542db3af559d307f911e69d192a962400387349fc4d23fded1",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/@types/http-cache-semantics@4.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-L3LgimLHXtGkWikKnsPg0/VFx9OGZaC+eN1u4r+OB1XRqH3meBIAVC2zr1WdMH+RHmnRkqliQAOHNJ/E0j/e0Q=="
+}

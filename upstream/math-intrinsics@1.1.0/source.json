@@ -1,0 +1,12 @@
+{
+  "name": "math-intrinsics",
+  "version": "1.1.0",
+  "revision": "84ffc824e044a91da1b847bde30c0286519eabf1",
+  "repository": "https://github.com/es-shims/math-intrinsics.git",
+  "purl": "pkg:npm/math-intrinsics@1.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g=="
+}

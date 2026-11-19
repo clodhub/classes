@@ -1,0 +1,11 @@
+{
+  "name": "httpcomponents-core",
+  "version": "4.4.16",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcomponents-core",
+  "purl": "pkg:maven/org.apache.httpcomponents/httpcomponents-core@4.4.16",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

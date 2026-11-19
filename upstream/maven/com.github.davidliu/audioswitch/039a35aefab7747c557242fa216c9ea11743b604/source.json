@@ -1,0 +1,11 @@
+{
+  "name": "audioswitch",
+  "version": "039a35aefab7747c557242fa216c9ea11743b604",
+  "revision": null,
+  "repository": "https://github.com/twilio/audioswitch/tree/main",
+  "purl": "pkg:maven/com.github.davidliu/audioswitch@039a35aefab7747c557242fa216c9ea11743b604",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

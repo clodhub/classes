@@ -1,0 +1,12 @@
+{
+  "name": "chai",
+  "version": "6.3.0",
+  "revision": "d86de2a9519bdd0d89aa64c9fbcc0e880513b153",
+  "repository": "https://github.com/chaijs/chai.git",
+  "purl": "pkg:npm/chai@6.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-XWAtwJ6OHO+tj0EKCs0Y2UamnyOxseZWltU4x2U2wh8g4AigdjwvtUjvLP2tqkA/avxHEtzxNaqGq/YGNwckKg=="
+}

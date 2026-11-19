@@ -1,0 +1,12 @@
+{
+  "name": "@cloudflare/workers-types",
+  "version": "5.20261018.1",
+  "revision": "8b8ed9f812c6c6ee64a1e6eb531b7ddbc7023a81",
+  "repository": "https://github.com/cloudflare/workerd.git",
+  "purl": "pkg:npm/@cloudflare/workers-types@5.20261018.1",
+  "licence": "MIT OR Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-0o+tp586a2/IJELadYMnuh6kQapnwLsEpsR7yV/eFxp76QdC46ACMmLMILCTwU1hcd/y2b+bnCopuPUeas6OAg=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "loglevel",
+  "version": "1.9.2",
+  "revision": "40d10ef1917710afcc70b5f2115bb336ab4b0580",
+  "repository": "https://github.com/pimterry/loglevel.git",
+  "purl": "pkg:npm/loglevel@1.9.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-HgMmCqIJSAKqo68l0rS2AanEWfkxaZ5wNiEFb5ggm08lDs9Xl2KxBlX3PTcaD2chBM1gXAYf491/M2Rv8Jwayg=="
+}

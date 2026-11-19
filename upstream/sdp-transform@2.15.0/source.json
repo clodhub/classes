@@ -1,0 +1,12 @@
+{
+  "name": "sdp-transform",
+  "version": "2.15.0",
+  "revision": "649ed1279b78a577e6944df2f675e8a285da5dd7",
+  "repository": "https://github.com/clux/sdp-transform.git",
+  "purl": "pkg:npm/sdp-transform@2.15.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KrOH82c/W+GYQ0LHqtr3caRpM3ITglq3ljGUIb8LTki7ByacJZ9z+piSGiwZDsRyhQbYBOBJgr2k6X4BZXi3Kw=="
+}

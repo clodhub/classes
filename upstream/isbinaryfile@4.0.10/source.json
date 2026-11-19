@@ -1,0 +1,12 @@
+{
+  "name": "isbinaryfile",
+  "version": "4.0.10",
+  "revision": "4cb390c03415a6e327c3497a88bd5a88b998d651",
+  "repository": "https://github.com/gjtorikian/isBinaryFile.git",
+  "purl": "pkg:npm/isbinaryfile@4.0.10",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-iHrqe5shvBUcFbmZq9zOQHBoeOhZJu6RQGrDpBgenUm/Am+F3JM2MgQj+rK3Z601fzrL5gLZWtAPH2OBaSVcyw=="
+}

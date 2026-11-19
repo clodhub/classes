@@ -1,0 +1,12 @@
+{
+  "name": "chalk",
+  "version": "4.1.2",
+  "revision": "95d74cbe8d3df3674dec1445a4608d3288d8b73c",
+  "repository": "https://github.com/chalk/chalk.git",
+  "purl": "pkg:npm/chalk@4.1.2",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "tsx",
+  "version": "4.23.15",
+  "revision": "ca66105a17a2a4c6503fe3a12b5b9ec408286011",
+  "repository": "https://github.com/privatenumber/tsx.git",
+  "purl": "pkg:npm/tsx@4.23.15",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Yiex1Ovn8z2xPpOWckIiysV1SSyRMY9BkLF++q0yKiDxCqRhosKfMg3janKkiLBwZ5c/YryloKwGZcrEmtwxKw=="
+}

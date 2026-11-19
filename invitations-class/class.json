@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/invitations-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/invitations",
+      "version": "1.0.0",
+      "path": "classes/invitations-class/invitations.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "codeLength": {
+        "type": "integer"
+      },
+      "inviteAddress": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      }
+    },
+    "required": [
+      "codeLength",
+      "inviteAddress"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/invitations-class/check.mjs",
+      "digest": "1756751d6e3b0504d61abe499a7e6c1f222444b2a38e97f71d69c92c3f5a7236"
+    },
+    {
+      "path": "classes/invitations-class/invitations.json",
+      "digest": "faab3821928607a874482e23fac9466d5bb48e50425e2e5080fe875d3073b950"
+    },
+    {
+      "path": "classes/invitations-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/invitations-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/invitations-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "aaptcompiler",
+  "version": "8.13.2",
+  "revision": null,
+  "repository": "https://android.googlesource.com/platform/tools/base",
+  "purl": "pkg:maven/com.android.tools.build/aaptcompiler@8.13.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

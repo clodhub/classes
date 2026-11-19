@@ -1,0 +1,11 @@
+{
+  "name": "auto-service-aggregator",
+  "version": "1.1.1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/auto/service/auto-service-aggregator",
+  "purl": "pkg:maven/com.google.auto.service/auto-service-aggregator@1.1.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "plist",
+  "version": "3.1.0",
+  "revision": "419c77767df8b1e8255451ce41a0c02cf8ec28f9",
+  "repository": "https://github.com/TooTallNate/node-plist.git",
+  "purl": "pkg:npm/plist@3.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-uysumyrvkUX0rX/dEVqt8gC3sTBzd4zoWfLeS29nb53imdaXVvLINYXTI2GNqzaMuvacNx4uJQ8+b3zXR0pkgQ=="
+}

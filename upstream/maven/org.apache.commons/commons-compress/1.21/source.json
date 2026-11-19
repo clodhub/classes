@@ -1,0 +1,13 @@
+{
+  "name": "commons-compress",
+  "version": "1.21",
+  "revision": null,
+  "repository": "https://gitbox.apache.org/repos/asf?p=commons-compress.git",
+  "purl": "pkg:maven/org.apache.commons/commons-compress@1.21",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml",
+    "parent-1-parent-0-pom.xml"
+  ]
+}

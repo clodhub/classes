@@ -1,0 +1,12 @@
+{
+  "name": "filelist",
+  "version": "1.0.6",
+  "revision": "sha512:e608b2d8f90b618d5c3f7f69d7b11c87edb19694d12fd1cbb2939f1209b42fa0b005705382c2b9a2ed09b7362e7a9c64690fedbe1085209e6e5e8d0eaccd83c4",
+  "repository": "https://github.com/mde/filelist.git",
+  "purl": "pkg:npm/filelist@1.0.6",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-5giy2PkLYY1cP39p17Ech+2xlpTRL9HLspOfEgm0L6CwBXBTgsK5ou0JtzYuepxkaQ/tvhCFIJ5uXo0OrM2DxA=="
+}

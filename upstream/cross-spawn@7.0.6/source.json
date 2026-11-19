@@ -1,0 +1,12 @@
+{
+  "name": "cross-spawn",
+  "version": "7.0.6",
+  "revision": "77cd97f3ca7b62c904a63a698fc4a79bf41977d0",
+  "repository": "https://github.com/moxystudio/node-cross-spawn.git",
+  "purl": "pkg:npm/cross-spawn@7.0.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA=="
+}

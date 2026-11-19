@@ -1,0 +1,11 @@
+{
+  "name": "flatbuffers-java",
+  "version": "1.12.0",
+  "revision": null,
+  "repository": "https://github.com/google/flatbuffers",
+  "purl": "pkg:maven/com.google.flatbuffers/flatbuffers-java@1.12.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "balanced-match",
+  "version": "1.0.2",
+  "revision": "c7412e09b95d6ad97fd1e2996f6adca7626a9ae8",
+  "repository": "https://github.com/juliangruber/balanced-match.git",
+  "purl": "pkg:npm/balanced-match@1.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
+}

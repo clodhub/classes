@@ -1,0 +1,12 @@
+{
+  "name": "@electron/asar",
+  "version": "3.4.1",
+  "revision": "e4fb057678562b7b6170699a046d983ae6d31cb8",
+  "repository": "https://github.com/electron/asar.git",
+  "purl": "pkg:npm/@electron/asar@3.4.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-i4/rNPRS84t0vSRa2HorerGRXWyF4vThfHesw0dmcWHp+cspK743UanA0suA5Q5y8kzY2y6YKrvbIUn69BCAiA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "asn1js",
+  "version": "3.1.0",
+  "revision": "sha512:1d6622d531e43aa82e0a23bebf08f4f59910143da4284b1e8d81c0602b57d03f345957680e7bd173d22e9175ff8de6f44fd3515899d1b6ac1d6c796d9c58f05c",
+  "repository": "https://github.com/PeculiarVentures/ASN1.js.git",
+  "purl": "pkg:npm/asn1js@3.1.0",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-HWYi1THkOqguCiO+vwj09ZkQFD2kKEsejYHAYCtX0D80WVdoDnvRc9IukXX/jeb0T9NRWJnRtqwdbHltnFjwXA=="
+}

@@ -1,0 +1,11 @@
+{
+  "name": "opencensus-proto",
+  "version": "0.2.0",
+  "revision": null,
+  "repository": "https://github.com/census-instrumentation/opencensus-proto",
+  "purl": "pkg:maven/io.opencensus/opencensus-proto@0.2.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

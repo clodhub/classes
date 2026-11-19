@@ -1,0 +1,12 @@
+{
+  "name": "std-env",
+  "version": "4.3.0",
+  "revision": "sha512:3ad53f1204359089b92b0a90a410ba644317ad946e8b5d70f3381f4d6a7c71d3bd07c39a3ec6c0f1b4c73b63fe1cda3556551318c541c0f87276eea9a1e5e26a",
+  "repository": "https://github.com/unjs/std-env",
+  "purl": "pkg:npm/std-env@4.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENCE"
+  ],
+  "integrity": "sha512-OtU/EgQ1kIm5KwqQpBC6ZEMXrZRui11w8zgfTWp8cdO9B8OaPsbA8bTHO2P+HNo1VlUTGMVBwPhydu6poeXiag=="
+}

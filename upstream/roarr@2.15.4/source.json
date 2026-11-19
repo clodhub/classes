@@ -1,0 +1,12 @@
+{
+  "name": "roarr",
+  "version": "2.15.4",
+  "revision": "449dd3d7c10fd87a7c9f332bc3a18b4cd0426418",
+  "repository": "https://github.com/gajus/roarr.git",
+  "purl": "pkg:npm/roarr@2.15.4",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-CHhPh+UNHD2GTXNYhPWLnU8ONHdI+5DI+4EYIAOaiD63rHeYlZvyh8P+in5999TTSFgUYuKUAjzRI4mdh/p+2A=="
+}

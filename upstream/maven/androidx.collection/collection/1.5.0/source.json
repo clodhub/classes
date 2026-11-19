@@ -1,0 +1,11 @@
+{
+  "name": "collection",
+  "version": "1.5.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.collection/collection@1.5.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

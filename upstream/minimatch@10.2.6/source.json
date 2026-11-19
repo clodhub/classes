@@ -1,0 +1,12 @@
+{
+  "name": "minimatch",
+  "version": "10.2.6",
+  "revision": "ded1bbd01beca62a5978bc1650ed0a1ccf9039d5",
+  "repository": "https://github.com/isaacs/minimatch.git",
+  "purl": "pkg:npm/minimatch@10.2.6",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-vpLQEs+VLCr1nU0BXS07maYoFwlDAH0gngQuuttxIwutDFEMHq2blX+8vpgxDdK3J1PwjCJiep77OitTZ4Ll1A=="
+}

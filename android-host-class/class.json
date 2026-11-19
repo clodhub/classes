@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/android-host-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/android-shell",
+      "version": "1.0.0",
+      "path": "classes/android-host-class/android-shell.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/theme",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "applicationName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "packageId": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9]*(\\.[a-z][a-z0-9]*)+$"
+      }
+    },
+    "required": [
+      "applicationName",
+      "packageId"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/android-host-class/android-shell.json",
+      "digest": "e90552b94c435fcdd6885c9745e6fae90031b1a0ca5509ddbbff703dd3063d7f"
+    },
+    {
+      "path": "classes/android-host-class/check.mjs",
+      "digest": "42d7706a6fff054b752ba754e89ab5fd34ff3ca00e30758c41da7e3d1e750868"
+    },
+    {
+      "path": "classes/android-host-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/android-host-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/android-host-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

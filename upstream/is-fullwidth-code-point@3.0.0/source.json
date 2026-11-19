@@ -1,0 +1,12 @@
+{
+  "name": "is-fullwidth-code-point",
+  "version": "3.0.0",
+  "revision": "80e5e314d86e5f76bd1b0573aa9d33e615a372db",
+  "repository": "https://github.com/sindresorhus/is-fullwidth-code-point.git",
+  "purl": "pkg:npm/is-fullwidth-code-point@3.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-zymm5+u+sCsSWyD9qNaejV3DFvhCKclKdizYaJUuHA83RLjb7nSuGnddCHGv0hk+KY7BMAlsWeK4Ueg6EV6XQg=="
+}

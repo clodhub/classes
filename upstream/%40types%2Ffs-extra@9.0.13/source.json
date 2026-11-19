@@ -1,0 +1,12 @@
+{
+  "name": "@types/fs-extra",
+  "version": "9.0.13",
+  "revision": "sha512:9c49f007efb5bb99550ccd94238735fb947e15868a7da0334b83a87287229a3566de7430dd3bb31f950db2872b71305b8677ab6e5c878f8038f6a5db22265da4",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/@types/fs-extra@9.0.13",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA=="
+}

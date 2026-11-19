@@ -1,0 +1,12 @@
+{
+  "name": "string-width",
+  "version": "4.2.3",
+  "revision": "e7a2755c834246c59a4cc5de9471bef2d531a6b1",
+  "repository": "https://github.com/sindresorhus/string-width.git",
+  "purl": "pkg:npm/string-width@4.2.3",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="
+}

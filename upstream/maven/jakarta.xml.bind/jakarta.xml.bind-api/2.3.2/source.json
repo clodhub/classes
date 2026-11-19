@@ -1,0 +1,12 @@
+{
+  "name": "jakarta.xml.bind-api",
+  "version": "2.3.2",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/jakarta/xml/bind/jakarta.xml.bind-api",
+  "purl": "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@2.3.2",
+  "licence": "LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

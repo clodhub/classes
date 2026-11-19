@@ -1,0 +1,11 @@
+{
+  "name": "android-test-plugin-host-emulator-control-proto",
+  "version": "31.13.2",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/android/tools/utp/android-test-plugin-host-emulator-control-proto",
+  "purl": "pkg:maven/com.android.tools.utp/android-test-plugin-host-emulator-control-proto@31.13.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

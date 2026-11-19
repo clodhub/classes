@@ -1,0 +1,11 @@
+{
+  "name": "core-proto",
+  "version": "0.0.9-alpha03",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/com.google.testing.platform/core-proto@0.0.9-alpha03",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

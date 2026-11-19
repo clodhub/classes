@@ -1,0 +1,11 @@
+{
+  "name": "android-test-plugin",
+  "version": "0.0.9-alpha03",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/com.google.testing.platform/android-test-plugin@0.0.9-alpha03",
+  "licence": "LicenseRef-Android-Software-Development-Kit-License-Agreement",
+  "notices": [
+    "pom.xml"
+  ]
+}

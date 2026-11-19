@@ -1,0 +1,12 @@
+{
+  "name": "es-define-property",
+  "version": "1.0.1",
+  "revision": "50ef129225ae17336a774f0eefc4e6bc88c79b8e",
+  "repository": "https://github.com/ljharb/es-define-property.git",
+  "purl": "pkg:npm/es-define-property@1.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g=="
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jose4j",
+  "version": "0.9.5",
+  "revision": null,
+  "repository": "https://bitbucket.org/b_c/jose4j",
+  "purl": "pkg:maven/org.bitbucket.b_c/jose4j@0.9.5",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

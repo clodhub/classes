@@ -1,0 +1,11 @@
+{
+  "name": "annotations",
+  "version": "23.0.0",
+  "revision": null,
+  "repository": "https://github.com/JetBrains/java-annotations",
+  "purl": "pkg:maven/org.jetbrains/annotations@23.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

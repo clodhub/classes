@@ -1,0 +1,59 @@
+[
+  {
+    "identity": "client-sdk-swift",
+    "version": "2.19.0",
+    "revision": "43c1c0870e51eedbfd95b20b1b5c43a767886786",
+    "notices": [
+      {
+        "path": "source/LICENSE",
+        "digest": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "source/NOTICE",
+        "digest": "6d0f7c5e0deb284362296c5da110dd353831da2e67ca77cb5abc051b951b0fac"
+      },
+      {
+        "path": "source/Sources/CLiveKitProto/LICENSE-nanopb.txt",
+        "digest": "adeb936041c8a37940fe68c2ca3734e5d18536da8bf40add782bea7fdb7fd287"
+      },
+      {
+        "path": "source/Sources/LiveKit/Broadcast/NOTICE",
+        "digest": "96128422823059c7895ec30d4f84acacdc62731f794934854279331c6bb4dab5"
+      },
+      {
+        "path": "source/protocol/LICENSE",
+        "digest": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "path": "source/protocol/NOTICE",
+        "digest": "6d0f7c5e0deb284362296c5da110dd353831da2e67ca77cb5abc051b951b0fac"
+      }
+    ]
+  },
+  {
+    "identity": "livekit-ffi-xcframework",
+    "version": "0.13.1",
+    "revision": "685cfd95e23edf734450125eb58bb3bb21b4133b",
+    "notices": [
+      {
+        "path": "source/LICENSE",
+        "digest": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ]
+  },
+  {
+    "identity": "webrtc-xcframework",
+    "version": "150.7871.4",
+    "revision": "f843fb1c12017bd17fde38e7293649c204548467",
+    "notices": [
+      {
+        "path": "source/LICENSE",
+        "digest": "97c31210567f082cbd2f1067a491c1d5498a019414948153e98c321810986bfd"
+      },
+      {
+        "path": "artifacts/LiveKitWebRTC/LiveKitWebRTC.xcframework/LICENSE",
+        "digest": "ab00a482b6a3902e40211b43c5d0441962ea99b6cc7c25c0f243fa270b78d482"
+      }
+    ]
+  }
+]

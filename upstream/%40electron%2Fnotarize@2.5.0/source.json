@@ -1,0 +1,12 @@
+{
+  "name": "@electron/notarize",
+  "version": "2.5.0",
+  "revision": "268fa302d3e8f330fff069729dad8347a15490dd",
+  "repository": "https://github.com/electron/notarize.git",
+  "purl": "pkg:npm/@electron/notarize@2.5.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-jNT8nwH1f9X5GEITXaQ8IF/KdskvIkOFfB2CvwumsveVidzpSc+mvhhTMdAGSYF3O+Nq49lJ7y+ssODRXu06+A=="
+}

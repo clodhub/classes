@@ -1,0 +1,12 @@
+{
+  "name": "global-agent",
+  "version": "3.0.0",
+  "revision": "ee7d160ad5547738a6e0d6ce3a352d53f28add14",
+  "repository": "https://github.com/gajus/global-agent.git",
+  "purl": "pkg:npm/global-agent@3.0.0",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-PT6XReJ+D07JvGoxQMkT6qji/jVNfX/h364XHZOWeRzy64sSFr+xJ5OX7LI3b4MPQzdL4H8Y8M0xzPpsVMwA8Q=="
+}

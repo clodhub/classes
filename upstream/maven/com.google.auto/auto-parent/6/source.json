@@ -1,0 +1,11 @@
+{
+  "name": "auto-parent",
+  "version": "6",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/auto/auto-parent",
+  "purl": "pkg:maven/com.google.auto/auto-parent@6",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

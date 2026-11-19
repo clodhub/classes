@@ -1,0 +1,12 @@
+{
+  "name": "get-proto",
+  "version": "1.0.1",
+  "revision": "1b92a72e80c026d391589a807272c50469d37c43",
+  "repository": "https://github.com/ljharb/get-proto.git",
+  "purl": "pkg:npm/get-proto@1.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g=="
+}

@@ -1,0 +1,11 @@
+{
+  "name": "jain-sip",
+  "version": "1.2.0",
+  "revision": null,
+  "repository": "https://code.google.com/p/jain-sip/",
+  "purl": "pkg:maven/javax.sip/jain-sip@1.2.0",
+  "licence": "Unlicense",
+  "notices": [
+    "pom.xml"
+  ]
+}

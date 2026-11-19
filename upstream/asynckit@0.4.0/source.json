@@ -1,0 +1,12 @@
+{
+  "name": "asynckit",
+  "version": "0.4.0",
+  "revision": "583a75ed4fe41761b66416bb6e703ebb1f8963bf",
+  "repository": "https://github.com/alexindigo/asynckit.git",
+  "purl": "pkg:npm/asynckit@0.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q=="
+}

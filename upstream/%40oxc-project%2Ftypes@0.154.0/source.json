@@ -1,0 +1,12 @@
+{
+  "name": "@oxc-project/types",
+  "version": "0.154.0",
+  "revision": "sha512:2983941901652d647eb3840c57643d928dfc4d99bb11d3bced09bbaef64baa4ff079bb1efdc0e3b72c4a860ff8ee5d1bc826ecfe4e3a2d3f2a7383ca8c08a4cc",
+  "repository": "https://github.com/oxc-project/oxc.git",
+  "purl": "pkg:npm/@oxc-project/types@0.154.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KYOUGQFlLWR+s4QMV2Q9ko38TZm7EdO87Qm7rvZLqk/webse/cDjtyxKhg/47l0byCbs/k46LT8qc4PKjAikzA=="
+}

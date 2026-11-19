@@ -1,0 +1,12 @@
+{
+  "name": "httpcore",
+  "version": "4.4.16",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/apache/httpcomponents/httpcore",
+  "purl": "pkg:maven/org.apache.httpcomponents/httpcore@4.4.16",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

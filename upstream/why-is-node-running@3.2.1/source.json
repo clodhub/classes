@@ -1,0 +1,12 @@
+{
+  "name": "why-is-node-running",
+  "version": "3.2.1",
+  "revision": "35e08215151fc8254d8e1397e25beece4907dfb7",
+  "repository": "https://github.com/mafintosh/why-is-node-running.git",
+  "purl": "pkg:npm/why-is-node-running@3.2.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Tb2FUhB4vUsGQlfSquQLYkApkuPAFQXGFzxWKHHumVz2dK+X1RUm/HnID4+TfIGYJ1kTcwOaCk/buYCEJr6YjQ=="
+}

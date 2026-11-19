@@ -1,0 +1,12 @@
+{
+  "name": "shebang-command",
+  "version": "2.0.0",
+  "revision": "003c4c7d6882d029aa8b3e5777716d726894d734",
+  "repository": "https://github.com/kevva/shebang-command.git",
+  "purl": "pkg:npm/shebang-command@2.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="
+}

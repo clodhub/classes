@@ -1,0 +1,12 @@
+{
+  "name": "isexe",
+  "version": "2.0.0",
+  "revision": "10f8be491aab2e158c7e20df64a7f90ab5b5475c",
+  "repository": "https://github.com/isaacs/isexe.git",
+  "purl": "pkg:npm/isexe@2.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "define-data-property",
+  "version": "1.1.4",
+  "revision": "e313da59d1f65e1549ac59539a7a8ac17632df60",
+  "repository": "https://github.com/ljharb/define-data-property.git",
+  "purl": "pkg:npm/define-data-property@1.1.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-rBMvIzlpA8v6E+SJZoo++HAYqsLrkg7MSfIinMPFhmkorw7X+dOXVJQs+QT69zGkzMyfDnIMN2Wid1+NbL3T+A=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "globalthis",
+  "version": "1.0.4",
+  "revision": "ac7b854ca44994583a71a5de17dd73a70e8beeb4",
+  "repository": "https://github.com/ljharb/System.global.git",
+  "purl": "pkg:npm/globalthis@1.0.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ=="
+}

@@ -1,0 +1,11 @@
+{
+  "name": "org.jetbrains.kotlin.android.gradle.plugin",
+  "version": "2.3.20",
+  "revision": null,
+  "repository": "https://github.com/JetBrains/kotlin",
+  "purl": "pkg:maven/org.jetbrains.kotlin.android/org.jetbrains.kotlin.android.gradle.plugin@2.3.20",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

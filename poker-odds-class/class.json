@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/poker-odds-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/poker-odds",
+      "version": "1.0.0",
+      "path": "classes/poker-odds-class/poker-odds.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "ae/hand-ranking",
+      "version": "1.0.0"
+    },
+    {
+      "type": "ae/card-deck",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "cacheSize": {
+        "type": "integer"
+      },
+      "sampleBoards": {
+        "type": "integer"
+      }
+    },
+    "required": [
+      "cacheSize",
+      "sampleBoards"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/poker-odds-class/check.mjs",
+      "digest": "2f79e4aee4813a220204464a14dd88c40628314843de6a0e74d728db7d414f7a"
+    },
+    {
+      "path": "classes/poker-odds-class/poker-odds.json",
+      "digest": "5000cef4a0cacc4a05c44e2cbd97a3205c22c93818bb3d1d401f539fd1613a67"
+    },
+    {
+      "path": "classes/poker-odds-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/poker-odds-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/poker-odds-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "picomatch",
+  "version": "4.0.7",
+  "revision": "6bb40679c218cefba5d4e9662408c5fdf699a8bb",
+  "repository": "https://github.com/micromatch/picomatch.git",
+  "purl": "pkg:npm/picomatch@4.0.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA=="
+}

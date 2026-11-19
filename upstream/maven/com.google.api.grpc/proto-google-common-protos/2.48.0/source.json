@@ -1,0 +1,11 @@
+{
+  "name": "proto-google-common-protos",
+  "version": "2.48.0",
+  "revision": null,
+  "repository": "https://github.com/googleapis/sdk-platform-java",
+  "purl": "pkg:maven/com.google.api.grpc/proto-google-common-protos@2.48.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

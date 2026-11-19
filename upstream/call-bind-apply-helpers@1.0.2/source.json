@@ -1,0 +1,12 @@
+{
+  "name": "call-bind-apply-helpers",
+  "version": "1.0.2",
+  "revision": "7068296a67b98424d5299606599d2f8117ded880",
+  "repository": "https://github.com/ljharb/call-bind-apply-helpers.git",
+  "purl": "pkg:npm/call-bind-apply-helpers@1.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ=="
+}

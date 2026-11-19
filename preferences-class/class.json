@@ -1,0 +1,91 @@
+{
+  "format": 1,
+  "name": "ourapps-ae/preferences-class",
+  "version": "1.0.0",
+  "provides": [
+    {
+      "type": "ae/preferences",
+      "version": "1.0.0",
+      "path": "classes/preferences-class/preferences.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "android": [
+          "android/src/main/java"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "tvos": [
+          "apple/Sources"
+        ],
+        "windows": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "defaultCameraOn": {
+        "type": "boolean"
+      },
+      "defaultMicrophoneOn": {
+        "type": "boolean"
+      },
+      "defaultSound": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "defaultCameraOn",
+      "defaultMicrophoneOn",
+      "defaultSound"
+    ],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/preferences-class/check.mjs",
+      "digest": "78b04d6a756b1aef55b800e3c52f36dbf0207c57f7999dcce1b92cbf6c53f18f"
+    },
+    {
+      "path": "classes/preferences-class/preferences.json",
+      "digest": "8e452eb67e1848577fd5179ed3d033612d0874f6515b0869b185eaec37f92923"
+    },
+    {
+      "path": "classes/preferences-class/runtime.mjs",
+      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/preferences-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/preferences-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "http-cache-semantics",
+  "version": "4.3.0",
+  "revision": "b1d4bd682fbab0252985de45219f4e7497c0067c",
+  "repository": "https://github.com/kornelski/http-cache-semantics.git",
+  "purl": "pkg:npm/http-cache-semantics@4.3.0",
+  "licence": "BSD-2-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-M5t5LlJpS1UHMjvwRQVdFHvPISGeLAxNcrWuJkeGh0KxsqCHZ1O3NXZU/8x7cD0BDcGW8kapxMKTvwlqrNkHkA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "hosted-git-info",
+  "version": "4.1.0",
+  "revision": "702b7df467f2fd4bf46395134c62534bb966ca7b",
+  "repository": "https://github.com/npm/hosted-git-info.git",
+  "purl": "pkg:npm/hosted-git-info@4.1.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-kyCuEOWjJqZuDbRHzL8V93NzQhwIB71oFWSyzVo+KPZI+pnQPPxucdkrOZvkLRnrf5URsQM+IJ09Dw29cRALIA=="
+}

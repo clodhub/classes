@@ -1,0 +1,11 @@
+{
+  "name": "dvlib",
+  "version": "31.13.2",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/android/tools/dvlib",
+  "purl": "pkg:maven/com.android.tools/dvlib@31.13.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

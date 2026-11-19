@@ -1,0 +1,12 @@
+{
+  "name": "ansi-regex",
+  "version": "5.0.1",
+  "revision": "a9babce885cf19c363cf1d1c645f834592c3f7a4",
+  "repository": "https://github.com/chalk/ansi-regex.git",
+  "purl": "pkg:npm/ansi-regex@5.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ=="
+}

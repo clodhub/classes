@@ -1,0 +1,12 @@
+{
+  "name": "@poppinss/dumper",
+  "version": "0.6.5",
+  "revision": "d5c6991f90c7f475ac1615dee504722e4fb5ae57",
+  "repository": "https://github.com/poppinss/dumper.git",
+  "purl": "pkg:npm/@poppinss/dumper@0.6.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-NBdYIb90J7LfOI32dOewKI1r7wnkiH6m920puQ3qHUeZkxNkQiFnXVWoE6YtFSv6QOiPPf7ys6i+HWWecDz7sw=="
+}

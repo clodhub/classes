@@ -1,0 +1,12 @@
+{
+  "name": "@esbuild/android-arm",
+  "version": "0.28.2",
+  "revision": "609683d892977362a0f99026cb74b96263d728a9",
+  "repository": "https://github.com/evanw/esbuild.git",
+  "purl": "pkg:npm/@esbuild/android-arm@0.28.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-kXXoiPVVGQcnIYGOeaovwOURpniDBpSq4A03qkQ+BMQqtGG6HYap3xne9C1O1yo4TR3qxlCX5IqqmX6fFo2Lqg=="
+}

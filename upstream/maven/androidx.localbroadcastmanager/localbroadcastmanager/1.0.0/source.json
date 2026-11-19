@@ -1,0 +1,11 @@
+{
+  "name": "localbroadcastmanager",
+  "version": "1.0.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/androidx/localbroadcastmanager/localbroadcastmanager",
+  "purl": "pkg:maven/androidx.localbroadcastmanager/localbroadcastmanager@1.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "atomicfu",
+  "version": "0.22.0",
+  "revision": null,
+  "repository": "https://github.com/Kotlin/kotlinx.atomicfu",
+  "purl": "pkg:maven/org.jetbrains.kotlinx/atomicfu@0.22.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

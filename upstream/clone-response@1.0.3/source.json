@@ -1,0 +1,12 @@
+{
+  "name": "clone-response",
+  "version": "1.0.3",
+  "revision": "b113fa538f5b9c5520e1adfdfa8d73afe437c700",
+  "repository": "https://github.com/sindresorhus/clone-response.git",
+  "purl": "pkg:npm/clone-response@1.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ROoL94jJH2dUVML2Y/5PEDNaSHgeOdSDicUyS7izcF63G6sTc/FTjLub4b8Il9S8S0beOfYt0TaA5qvFK+w0wA=="
+}

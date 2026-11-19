@@ -1,0 +1,12 @@
+{
+  "name": "delayed-stream",
+  "version": "1.0.0",
+  "revision": "07a9dc99fb8f1a488160026b9ad77493f766fb84",
+  "repository": "https://github.com/felixge/node-delayed-stream.git",
+  "purl": "pkg:npm/delayed-stream@1.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-License"
+  ],
+  "integrity": "sha512-ZySD7Nf91aLB0RxL4KGrKHBXl7Eds1DAmEdcoVawXnLD7SDhpNgtuII2aAkg7a7QS41jxPSZ17p4VdGnMHk3MQ=="
+}

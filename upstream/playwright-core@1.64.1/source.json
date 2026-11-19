@@ -1,0 +1,13 @@
+{
+  "name": "playwright-core",
+  "version": "1.64.1",
+  "revision": "cfe490d941f992655948eee8fd4fd94e1c4234bf",
+  "repository": "https://github.com/microsoft/playwright.git",
+  "purl": "pkg:npm/playwright-core@1.64.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE",
+    "1-NOTICE"
+  ],
+  "integrity": "sha512-BC4s8y6SEVA6Q1rSxZTto8hI1KUI3xXlHGZgvGqP4IqPdI/a6FX9H29IDNz7vKo9l21b6LfYosScPL6M3xxyDQ=="
+}

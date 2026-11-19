@@ -1,0 +1,11 @@
+{
+  "name": "navigationevent-android",
+  "version": "1.0.2",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.navigationevent/navigationevent-android@1.0.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

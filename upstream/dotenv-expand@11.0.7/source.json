@@ -1,0 +1,12 @@
+{
+  "name": "dotenv-expand",
+  "version": "11.0.7",
+  "revision": "c5d68fef160d126d3c42ba321dbe584543d5f194",
+  "repository": "https://github.com/motdotla/dotenv-expand.git",
+  "purl": "pkg:npm/dotenv-expand@11.0.7",
+  "licence": "BSD-2-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-zIHwmZPRshsCdpMDyVsqGmgyP0yT8GAgXUnkdAoJisxvf33k7yO6OuoKmcTGuXPWSsm8Oh88nZicRLA9Y0rUeA=="
+}

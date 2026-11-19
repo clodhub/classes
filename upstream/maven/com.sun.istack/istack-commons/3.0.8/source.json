@@ -1,0 +1,11 @@
+{
+  "name": "istack-commons",
+  "version": "3.0.8",
+  "revision": null,
+  "repository": "https://github.com/eclipse-ee4j/jaxb-istack-commons",
+  "purl": "pkg:maven/com.sun.istack/istack-commons@3.0.8",
+  "licence": "LicenseRef-Eclipse-Distribution-License---v-1.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

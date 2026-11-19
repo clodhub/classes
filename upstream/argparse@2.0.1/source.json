@@ -1,0 +1,12 @@
+{
+  "name": "argparse",
+  "version": "2.0.1",
+  "revision": "e373563876f1c049826c21bd1c9388f6a5737a3e",
+  "repository": "https://github.com/nodeca/argparse.git",
+  "purl": "pkg:npm/argparse@2.0.1",
+  "licence": "Python-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q=="
+}

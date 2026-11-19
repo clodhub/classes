@@ -1,0 +1,12 @@
+{
+  "name": "tar",
+  "version": "7.5.22",
+  "revision": "2a22bfc5d3a432a606d9da0e2d87ba634aa3b1cb",
+  "repository": "https://github.com/isaacs/node-tar.git",
+  "purl": "pkg:npm/tar@7.5.22",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-MFO/QzvtAOmJbkhOaCTvbGcFN9L9b+JunIsDwaKljSOdcLMea3NJ1k9Usz/rjdfSXTq4dfzfeS7W4p4YOAAHeA=="
+}

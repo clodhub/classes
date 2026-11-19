@@ -1,0 +1,584 @@
+{
+  "status": "partial",
+  "verificationScope": "package archives, signatures, package-review class results, local runtime proofs, managed-file bytes and modes, and generated-file exclusion checks; retained whole-tree verification and signed application execution are not established",
+  "retainedApplicationTreeVerification": {
+    "status": "blocked",
+    "reason": "dependency-created symbolic links, including web/node_modules/.bin/nanoid"
+  },
+  "applicationContext": {
+    "signedApplicationExecutionAttestations": false,
+    "completedHands": "uncontested Fold settlements"
+  },
+  "classes": 39,
+  "providers": 40,
+  "packages": {
+    "ourapps-ae/android-host": {
+      "name": "ourapps-ae/android-host",
+      "version": "0.7.0",
+      "digest": "c7f33b6568d905d12e2acf007199e76e973c729c4c3488646c1f2ff6c555066a"
+    },
+    "ourapps-ae/apple-host": {
+      "name": "ourapps-ae/apple-host",
+      "version": "0.8.0",
+      "digest": "29d0ba9e73bbabef43c9d8b229694d749d3e4e35b82696c254323739c2c2fff9"
+    },
+    "ourapps-ae/card-deck": {
+      "name": "ourapps-ae/card-deck",
+      "version": "0.7.0",
+      "digest": "35e39f50753f7097370696187fec26faa9f79687bf019fc4d3f954953f497c1f"
+    },
+    "ourapps-ae/card-graphics": {
+      "name": "ourapps-ae/card-graphics",
+      "version": "0.7.0",
+      "digest": "7aea24a100bbb391eb6a6d18f9876264a2569f8b091ecf2351bdbd5c910e8865"
+    },
+    "ourapps-ae/chip-graphics": {
+      "name": "ourapps-ae/chip-graphics",
+      "version": "0.7.0",
+      "digest": "75b4188646aa3eb08a0756d6ff22be580b0fb8ffeb27c1a02a95313a7cdc5eb2"
+    },
+    "ourapps-ae/chip-ledger": {
+      "name": "ourapps-ae/chip-ledger",
+      "version": "0.8.0",
+      "digest": "d39e97f1256675674f0510cb94d8e7919289cecf05c8484e8f57421e93c6564f"
+    },
+    "ourapps-ae/computer-players": {
+      "name": "ourapps-ae/computer-players",
+      "version": "0.8.0",
+      "digest": "1d3887b648d112e3c90780b2a541d53eb3e88558028fc3af00027136f042d82f"
+    },
+    "ourapps-ae/controls": {
+      "name": "ourapps-ae/controls",
+      "version": "0.7.0",
+      "digest": "6f7ce807a2de1a881cb21bf9bfa1b75edb49d6da5cf1acec1c82e18d0e2c064c"
+    },
+    "ourapps-ae/display-mode": {
+      "name": "ourapps-ae/display-mode",
+      "version": "0.8.0",
+      "digest": "fcbdaa3ddd148ff7be08bf3b9d8580afe0093fe9f93e6d97c1ac7da4be0425a7"
+    },
+    "ourapps-ae/fair-shuffle": {
+      "name": "ourapps-ae/fair-shuffle",
+      "version": "0.7.0",
+      "digest": "603c3d85ac77ae3340938d1234036d75c97dc15e18561a3e2265958ad9f5de03"
+    },
+    "ourapps-ae/game-clock": {
+      "name": "ourapps-ae/game-clock",
+      "version": "0.7.0",
+      "digest": "6681e3cc099a5940541224c87bef55c9660e5baec093b259d8beb34f82010e9f"
+    },
+    "ourapps-ae/guest-identity": {
+      "name": "ourapps-ae/guest-identity",
+      "version": "0.8.0",
+      "digest": "45199e9f4bcf5f4ac6651800c5085b749c74f7cadc8ebf8fb13268cb4c2154c3"
+    },
+    "ourapps-ae/guided-tour": {
+      "name": "ourapps-ae/guided-tour",
+      "version": "0.7.0",
+      "digest": "e62427c07d827e185dd487249f3deeb4bf6fc1cc5a58ebcc752c84e28d668390"
+    },
+    "ourapps-ae/holdem-rules": {
+      "name": "ourapps-ae/holdem-rules",
+      "version": "0.7.0",
+      "digest": "3b64ac939689280f2361d85f116d041c74234f174361f02407583087f50c8867"
+    },
+    "ourapps-ae/invitations": {
+      "name": "ourapps-ae/invitations",
+      "version": "0.5.0",
+      "digest": "6a2c95c47b0b1d0e0190d66c5206049a93a1be85bc86a1095fc97981816eb021"
+    },
+    "ourapps-ae/level-schedule": {
+      "name": "ourapps-ae/level-schedule",
+      "version": "0.7.0",
+      "digest": "61614b48da2835068c08580c970bb3c8f4b1c18ec5a1c47a5d1c85b5f838d0f2"
+    },
+    "ourapps-ae/ourapps-release": {
+      "name": "ourapps-ae/ourapps-release",
+      "version": "0.7.0",
+      "digest": "2befdc9c8dde421ca53cd7bb081c85083fa80d01e8c4a55e78f9a64d2a08f46b"
+    },
+    "ourapps-ae/poker-hand-ranking": {
+      "name": "ourapps-ae/poker-hand-ranking",
+      "version": "0.7.0",
+      "digest": "78d22a35a60a3b316e6e55fc4c1ee2ad1ad1715660c5bb80abd3d8be4dff8ad3"
+    },
+    "ourapps-ae/poker-odds": {
+      "name": "ourapps-ae/poker-odds",
+      "version": "0.7.0",
+      "digest": "e2bec520b071c2396ab3adaeecfc5b059e5fc0fac36edea4b169daf95de67385"
+    },
+    "ourapps-ae/poker-strategy": {
+      "name": "ourapps-ae/poker-strategy",
+      "version": "0.7.0",
+      "digest": "290c8f5ec4d213cdc67adc3c9cc01d8a3e213e8b1ee9a7e7fdd9f5cc0cc54f92"
+    },
+    "ourapps-ae/preferences": {
+      "name": "ourapps-ae/preferences",
+      "version": "0.5.0",
+      "digest": "14d88909a2aa3d5918d371465bfde075e98bd59cdcba1cceaabe4226eb727b14"
+    },
+    "ourapps-ae/presence": {
+      "name": "ourapps-ae/presence",
+      "version": "0.7.0",
+      "digest": "aed49140771899ecf0d69f0f6a24c3b14d91ed6eaf45787a2e4dbd93419d4a4b"
+    },
+    "ourapps-ae/private-views": {
+      "name": "ourapps-ae/private-views",
+      "version": "0.7.0",
+      "digest": "c9e9cf42d260c8578cdf287b49b8180990b991825d39276d9ddbd0db23ad1fc9"
+    },
+    "ourapps-ae/realtime-rooms": {
+      "name": "ourapps-ae/realtime-rooms",
+      "version": "0.9.0",
+      "digest": "e0f3631e4953bacecc0d21a82b104819061ca5392eb969c5408ef86ae40620c5"
+    },
+    "ourapps-ae/room-directory": {
+      "name": "ourapps-ae/room-directory",
+      "version": "0.7.0",
+      "digest": "203a3892cfa05628f7ef01aa31a1fb1fde29a316b52d557fd86c140a3b27f233"
+    },
+    "ourapps-ae/round-history": {
+      "name": "ourapps-ae/round-history",
+      "version": "0.7.0",
+      "digest": "c76815288f4f09a4219ccf4f37996c9f3eff93a6cf09e4e9ade9258e0b3c26a1"
+    },
+    "ourapps-ae/rules-settings": {
+      "name": "ourapps-ae/rules-settings",
+      "version": "0.7.0",
+      "digest": "39d23c42164ba99c41b469b00801797545537abcde1e4c57a3982b131d025ef2"
+    },
+    "ourapps-ae/seating": {
+      "name": "ourapps-ae/seating",
+      "version": "0.7.0",
+      "digest": "57227667dea6968c164a10d960cc253fd9f7c6e0e03af6744b429e9c92889ab2"
+    },
+    "ourapps-ae/server-host": {
+      "name": "ourapps-ae/server-host",
+      "version": "0.8.0",
+      "digest": "e2da9b7c011ef8a7c2385a3a56d877d690cd47872bee696557971aef872a27c6"
+    },
+    "ourapps-ae/sound-cues": {
+      "name": "ourapps-ae/sound-cues",
+      "version": "0.7.0",
+      "digest": "b510eed201619b6bde364d4655c7b0d8ff9ecd29eaa1da66157449c7af516037"
+    },
+    "ourapps-ae/store-update": {
+      "name": "ourapps-ae/store-update",
+      "version": "0.8.0",
+      "digest": "92c2adbe0b6b5524c622df7767628f13e38304f57be8abc33064c4976c70fc9e"
+    },
+    "ourapps-ae/table-layout": {
+      "name": "ourapps-ae/table-layout",
+      "version": "0.7.0",
+      "digest": "99ba59454049e18cfa1abcb3d2d4aa0536a0b88ffa676dc1d23acf88dcc0c2e3"
+    },
+    "ourapps-ae/theme": {
+      "name": "ourapps-ae/theme",
+      "version": "0.7.0",
+      "digest": "44f793f03a74d0520f3d15bdc9d9b433ba59c63179074e8479b19bc1ecee2289"
+    },
+    "ourapps-ae/theme-high-contrast": {
+      "name": "ourapps-ae/theme-high-contrast",
+      "version": "0.3.0",
+      "digest": "24f525c59f14e07d9cfaa482b5c93489c9fdbd9624dd9523fb718c59f9b28474"
+    },
+    "ourapps-ae/tournament": {
+      "name": "ourapps-ae/tournament",
+      "version": "0.7.0",
+      "digest": "9a1920a6b37edf890714dad048ff1bc3a32b0e9a48a432a813f957dc54441efd"
+    },
+    "ourapps-ae/translations": {
+      "name": "ourapps-ae/translations",
+      "version": "0.8.0",
+      "digest": "31a99c7eaeb7e69802c74792cce20e5713cacbe1874a0dfce0570045335bf8f1"
+    },
+    "ourapps-ae/turn-engine": {
+      "name": "ourapps-ae/turn-engine",
+      "version": "0.8.0",
+      "digest": "75104e5bc32e012da172919e51208ce88a38cd3f5fc192c71b82bfb30f66bc05"
+    },
+    "ourapps-ae/video-calls": {
+      "name": "ourapps-ae/video-calls",
+      "version": "0.8.0",
+      "digest": "96f1c12fdd0038bb910a6952d68e7f3d6ca92ee8a9fc86ba6e36958f5a87f8cc"
+    },
+    "ourapps-ae/web-host": {
+      "name": "ourapps-ae/web-host",
+      "version": "0.7.0",
+      "digest": "22719c76e6bb1d24ef08255169b17d68c69fa06c819ebc29f22df386b8b8fe97"
+    },
+    "ourapps-ae/windows-desktop": {
+      "name": "ourapps-ae/windows-desktop",
+      "version": "0.8.0",
+      "digest": "b65f98553e13ee5e52b320ca7c5c7218e8c62fa077708023c248f6b364608416"
+    },
+    "ourapps-ae/ourpoker": {
+      "name": "ourapps-ae/ourpoker",
+      "version": "0.7.0",
+      "digest": "e1b0da8f23c137a168235e8710028ecd46db520e83a4cfed39fa00dea0cf973a"
+    }
+  },
+  "installations": {
+    "default": {
+      "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/final-default",
+      "packagesVerified": 41,
+      "classSuitesPassed": 42,
+      "managedFilesMatched": {
+        "default": 573,
+        "local-web": 461
+      },
+      "designs": {
+        "default": {
+          "install": "passed",
+          "components": 37,
+          "tree": {
+            "top": [
+              ".aepm/",
+              ".gitignore",
+              "android/",
+              "components/",
+              "desktop/",
+              "ios/",
+              "resources/",
+              "rules/",
+              "server/",
+              "verification/",
+              "web/"
+            ],
+            "components": [
+              "android-host",
+              "apple-host",
+              "card-deck",
+              "card-graphics",
+              "chip-graphics",
+              "chip-ledger",
+              "computer-players",
+              "controls",
+              "display-mode",
+              "fair-shuffle",
+              "game-clock",
+              "guest-identity",
+              "guided-tour",
+              "holdem-rules",
+              "invitations",
+              "level-schedule",
+              "poker-hand-ranking",
+              "poker-odds",
+              "poker-strategy",
+              "preferences",
+              "presence",
+              "private-views",
+              "realtime-rooms",
+              "room-directory",
+              "round-history",
+              "rules-settings",
+              "seating",
+              "server-host",
+              "sound-cues",
+              "table-layout",
+              "theme",
+              "tournament",
+              "translations",
+              "turn-engine",
+              "video-calls",
+              "web-host",
+              "windows-desktop"
+            ]
+          },
+          "serverTsc": "passed",
+          "serverTests": "Tests  37 passed (37)",
+          "serverRun": "http://127.0.0.1:58438 health {\"ok\": true, \"app\": \"ourpoker\"}",
+          "apple": "built iOS (de en es fr), macOS (de en es fr), tvOS (de en es fr)",
+          "android": "built (values values-de values-es values-fr)",
+          "androidUnitTests": "passed",
+          "androidRun": "passed on AVD ourpoker: launched, player seated (server lists \"Droid\"), a computer player added, hand 1 completed through Fold with 10000 chips conserved and matched payouts; installed again over its data, it opened at the room list; no crash",
+          "webTsc": "passed",
+          "webBuild": "passed",
+          "desktopWebBuild": "passed",
+          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:58438, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
+          "workingTree": "clean: 573 installed files, nothing else"
+        },
+        "local-web": {
+          "install": "passed",
+          "components": 33,
+          "tree": {
+            "top": [
+              ".aepm/",
+              ".gitignore",
+              "android/",
+              "components/",
+              "ios/",
+              "resources/",
+              "rules/",
+              "server/",
+              "verification/",
+              "web/"
+            ],
+            "components": [
+              "card-deck",
+              "card-graphics",
+              "chip-graphics",
+              "chip-ledger",
+              "computer-players",
+              "controls",
+              "display-mode",
+              "fair-shuffle",
+              "game-clock",
+              "guest-identity",
+              "guided-tour",
+              "holdem-rules",
+              "invitations",
+              "level-schedule",
+              "poker-hand-ranking",
+              "poker-odds",
+              "poker-strategy",
+              "preferences",
+              "presence",
+              "private-views",
+              "realtime-rooms",
+              "room-directory",
+              "round-history",
+              "rules-settings",
+              "seating",
+              "server-host",
+              "sound-cues",
+              "table-layout",
+              "theme",
+              "tournament",
+              "translations",
+              "turn-engine",
+              "web-host"
+            ]
+          },
+          "serverTsc": "passed",
+          "serverTests": "Tests  34 passed (34)",
+          "serverRun": "http://127.0.0.1:60074 health {\"ok\": true, \"app\": \"ourpoker\"}",
+          "webTsc": "passed",
+          "webBuild": "passed",
+          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:60074, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 2 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
+          "workingTree": "clean: 461 installed files, nothing else"
+        }
+      }
+    },
+    "substitute": {
+      "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/final-substitute",
+      "packagesVerified": 41,
+      "classSuitesPassed": 42,
+      "managedFilesMatched": {
+        "default": 573
+      },
+      "designs": {
+        "default": {
+          "install": "passed",
+          "substituted": {
+            "theme": "ourapps-ae/theme-high-contrast@0.3.0"
+          },
+          "components": 37,
+          "tree": {
+            "top": [
+              ".aepm/",
+              ".gitignore",
+              "android/",
+              "components/",
+              "desktop/",
+              "ios/",
+              "resources/",
+              "rules/",
+              "server/",
+              "verification/",
+              "web/"
+            ],
+            "components": [
+              "android-host",
+              "apple-host",
+              "card-deck",
+              "card-graphics",
+              "chip-graphics",
+              "chip-ledger",
+              "computer-players",
+              "controls",
+              "display-mode",
+              "fair-shuffle",
+              "game-clock",
+              "guest-identity",
+              "guided-tour",
+              "holdem-rules",
+              "invitations",
+              "level-schedule",
+              "poker-hand-ranking",
+              "poker-odds",
+              "poker-strategy",
+              "preferences",
+              "presence",
+              "private-views",
+              "realtime-rooms",
+              "room-directory",
+              "round-history",
+              "rules-settings",
+              "seating",
+              "server-host",
+              "sound-cues",
+              "table-layout",
+              "theme",
+              "tournament",
+              "translations",
+              "turn-engine",
+              "video-calls",
+              "web-host",
+              "windows-desktop"
+            ]
+          },
+          "serverTsc": "passed",
+          "serverTests": "Tests  37 passed (37)",
+          "serverRun": "http://127.0.0.1:51971 health {\"ok\": true, \"app\": \"ourpoker\"}",
+          "apple": "built iOS (de en es fr), macOS (de en es fr), tvOS (de en es fr)",
+          "android": "built (values values-de values-es values-fr)",
+          "androidUnitTests": "passed",
+          "androidRun": "passed on AVD ourpoker: launched, player seated (server lists \"Droid\"), a computer player added, hand 1 completed through Fold with 10000 chips conserved and matched payouts; installed again over its data, it opened at the room list; no crash",
+          "webTsc": "passed",
+          "webBuild": "passed",
+          "desktopWebBuild": "passed",
+          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:51971, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
+          "workingTree": "clean: 573 installed files, nothing else"
+        }
+      }
+    }
+  },
+  "regression": [
+    {
+      "name": "components",
+      "command": [
+        "/Users/george/.pyenv/versions/3.12.8/bin/python3",
+        "-B",
+        "tools/check_component.py",
+        "--all",
+        "--allow-network"
+      ],
+      "cwd": "/Users/george/Projects/com/my",
+      "exitCode": 0
+    },
+    {
+      "name": "node",
+      "command": [
+        "node",
+        "--test",
+        "tests/recipe.test.ts",
+        "tests/portable.test.ts"
+      ],
+      "cwd": "/Users/george/Projects/com/my/recipes/ourpoker",
+      "exitCode": 0
+    },
+    {
+      "name": "evaluator",
+      "command": [
+        "/Users/george/.pyenv/versions/3.12.8/bin/python3",
+        "-B",
+        "tests/evaluate_recipe_test.py"
+      ],
+      "cwd": "/Users/george/Projects/com/my/recipes/ourpoker",
+      "exitCode": 0
+    },
+    {
+      "name": "conditional",
+      "command": [
+        "/Users/george/.pyenv/versions/3.12.8/bin/python3",
+        "-B",
+        "tests/conditional_artefacts_test.py"
+      ],
+      "cwd": "/Users/george/Projects/com/my/recipes/ourpoker",
+      "exitCode": 0
+    },
+    {
+      "name": "artefacts",
+      "command": [
+        "/Users/george/.pyenv/versions/3.12.8/bin/python3",
+        "-B",
+        "authoring/check_conditional_artefacts.py",
+        "-v"
+      ],
+      "cwd": "/Users/george/Projects/com/my/recipes/ourpoker",
+      "exitCode": 0
+    },
+    {
+      "name": "catalogue",
+      "command": [
+        "node",
+        "authoring/validate_recipe.mjs"
+      ],
+      "cwd": "/Users/george/Projects/com/my/recipes/ourpoker",
+      "exitCode": 0
+    }
+  ],
+  "nativeProfiles": {
+    "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-native-profiles-zr80shr0",
+    "profiles": [
+      {
+        "profile": "video",
+        "command": [
+          "./gradlew",
+          ":app:assembleDebug",
+          ":app:testDebugUnitTest",
+          ":app:dependencies",
+          "--dependency-verification=strict"
+        ],
+        "exitCode": 0,
+        "inventory": [
+          {
+            "path": "buildscript-gradle.lockfile",
+            "digest": "fc0f1f56fe2879961ead8f4201896bc522cb1409dd779fac6b84fbcce51ee093"
+          },
+          {
+            "path": "app/buildscript-gradle.lockfile",
+            "digest": "e4a6c3491a87c07fba697ac1da0e01cc29dde400f5d3a08031a0c7b46961f9f9"
+          },
+          {
+            "path": "app/gradle.lockfile",
+            "digest": "5e62429e0c7c43175d0e2a1aa389360ee845a07203c9798462cf770013871dad"
+          },
+          {
+            "path": "gradle/verification-metadata.xml",
+            "digest": "2d291098eaa33e800104354f2526dc01ff4ce0e7d07ac158fd8d3fb5201d8c61"
+          }
+        ]
+      },
+      {
+        "profile": "no-video",
+        "command": [
+          "./gradlew",
+          ":app:assembleDebug",
+          ":app:testDebugUnitTest",
+          ":app:dependencies",
+          "--dependency-verification=strict"
+        ],
+        "exitCode": 0,
+        "inventory": [
+          {
+            "path": "buildscript-gradle.lockfile",
+            "digest": "fc0f1f56fe2879961ead8f4201896bc522cb1409dd779fac6b84fbcce51ee093"
+          },
+          {
+            "path": "app/buildscript-gradle.lockfile",
+            "digest": "e4a6c3491a87c07fba697ac1da0e01cc29dde400f5d3a08031a0c7b46961f9f9"
+          },
+          {
+            "path": "app/gradle.lockfile",
+            "digest": "bcf941ce31fe47e52dee2974c1acba944ff2e968fdf60f47c8d99ec3e1956b03"
+          },
+          {
+            "path": "gradle/verification-metadata.xml",
+            "digest": "c997f3e72d9eddc81940b1c3fe5d77b5d725edb2b86e5d3e315c48e8b781e9aa"
+          }
+        ]
+      }
+    ],
+    "swiftResolved": "/Users/george/Projects/com/my/recipes/ourpoker/implementation/apple/dependency-locks/Package.resolved",
+    "generatorDigest": "4832d8492b2603312196c3a0afc1ef1f731f041d728604a40ef416d3d6f58052",
+    "hostRendererDigest": "30f0ea4d0eb7c4303cc0b7124f9ed9db1b97873c39649374fe7ce9a2adfe8aac"
+  },
+  "limitations": [
+    "Apple application runtime was not exercised.",
+    "Live video/provider behaviour was not exercised.",
+    "Windows application runtime was not exercised.",
+    "Standalone kotlinc component suites require the declared compiler, which is not installed; Android integration uses the locked Gradle compiler."
+  ]
+}

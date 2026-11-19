@@ -1,0 +1,12 @@
+{
+  "name": "resedit",
+  "version": "1.7.2",
+  "revision": "ea23879d87340b523bbcd1de93bcb963fbd9a2ce",
+  "repository": "https://github.com/jet2jet/resedit-js.git",
+  "purl": "pkg:npm/resedit@1.7.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-vHjcY2MlAITJhC0eRD/Vv8Vlgmu9Sd3LX9zZvtGzU5ZImdTN3+d6e/4mnTyV8vEbyf1sgNIrWxhWlrys52OkEA=="
+}

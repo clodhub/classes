@@ -1,0 +1,12 @@
+{
+  "name": "end-of-stream",
+  "version": "1.4.5",
+  "revision": "cea89de8165f24e183603e63839522ec22af58df",
+  "repository": "https://github.com/mafintosh/end-of-stream.git",
+  "purl": "pkg:npm/end-of-stream@1.4.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ooEGc6HP26xXq/N+GCGOT0JKCLDGrq2bQUZrQ7gyrJiZANJ/8YDTxTpQBXGMn+WbIQXNVpyWymm7KYVICQnyOg=="
+}

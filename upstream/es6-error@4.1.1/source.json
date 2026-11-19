@@ -1,0 +1,12 @@
+{
+  "name": "es6-error",
+  "version": "4.1.1",
+  "revision": "5b553293429bac6b15d8caeab8a4174faeb38fa0",
+  "repository": "https://github.com/bjyoungblood/es6-error.git",
+  "purl": "pkg:npm/es6-error@4.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-Um/+FxMr9CISWh0bi5Zv0iOD+4cFh5qLeks1qhAopKVAJw3drgKbKySikp7wGhDL0HPeaja0P5ULZrxLkniUVg=="
+}

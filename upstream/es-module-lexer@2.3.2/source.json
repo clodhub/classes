@@ -1,0 +1,12 @@
+{
+  "name": "es-module-lexer",
+  "version": "2.3.2",
+  "revision": "00cc517d9fb96a77aab01f380e7c01791663ef74",
+  "repository": "https://github.com/guybedford/es-module-lexer.git",
+  "purl": "pkg:npm/es-module-lexer@2.3.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-poHGpORABojJJucnV9KbOavETW8lBVnphkW77ER5/BQ5Fz7oXSoCNek7IH3vR5nRjdsEz926ibFYX8KtLQmdyw=="
+}

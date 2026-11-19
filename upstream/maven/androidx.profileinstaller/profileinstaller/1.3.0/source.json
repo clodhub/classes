@@ -1,0 +1,11 @@
+{
+  "name": "profileinstaller",
+  "version": "1.3.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.profileinstaller/profileinstaller@1.3.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

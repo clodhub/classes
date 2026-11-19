@@ -1,0 +1,12 @@
+{
+  "name": "@isaacs/fs-minipass",
+  "version": "4.0.1",
+  "revision": "30706a599289d01e79f313b706c913a1600ddf32",
+  "repository": "https://github.com/npm/fs-minipass.git",
+  "purl": "pkg:npm/@isaacs/fs-minipass@4.0.1",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w=="
+}

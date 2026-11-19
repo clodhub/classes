@@ -1,0 +1,12 @@
+{
+  "name": "http2-wrapper",
+  "version": "1.0.3",
+  "revision": "6400d9cf6f253e83f6d3348593f83488cd434b79",
+  "repository": "https://github.com/szmarczak/http2-wrapper.git",
+  "purl": "pkg:npm/http2-wrapper@1.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-V+23sDMr12Wnz7iTcDeJr3O6AIxlnvT/bmaAAAP/Xda35C90p9599p0F1eHR/N1KILWSoWVAiOMFjBBXaXSMxg=="
+}

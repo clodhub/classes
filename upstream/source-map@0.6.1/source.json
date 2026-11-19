@@ -1,0 +1,12 @@
+{
+  "name": "source-map",
+  "version": "0.6.1",
+  "revision": "ac518d2f21818146f3310557bd51c13d8cff2ba8",
+  "repository": "https://github.com/mozilla/source-map.git",
+  "purl": "pkg:npm/source-map@0.6.1",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="
+}

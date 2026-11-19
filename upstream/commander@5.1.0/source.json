@@ -1,0 +1,12 @@
+{
+  "name": "commander",
+  "version": "5.1.0",
+  "revision": "64053252cbd5b5434afb7ec3f12c46ad2a352d8a",
+  "repository": "https://github.com/tj/commander.js.git",
+  "purl": "pkg:npm/commander@5.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-P0CysNDQ7rtVw4QIQtm+MRxV66vKFSvlsQvGYXZWR3qFU0jlMKHZZZgw8e+8DSah4UDKMqnknRDQz+xuQXQ/Zg=="
+}

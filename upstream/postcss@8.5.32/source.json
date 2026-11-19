@@ -1,0 +1,12 @@
+{
+  "name": "postcss",
+  "version": "8.5.32",
+  "revision": "2455ac8212fe66bc3248aa01186a52c27c87da5a",
+  "repository": "https://github.com/postcss/postcss.git",
+  "purl": "pkg:npm/postcss@8.5.32",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g=="
+}

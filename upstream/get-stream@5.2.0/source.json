@@ -1,0 +1,12 @@
+{
+  "name": "get-stream",
+  "version": "5.2.0",
+  "revision": "010d8deaa2c966f2d230cac5cacee20e29d028c6",
+  "repository": "https://github.com/sindresorhus/get-stream.git",
+  "purl": "pkg:npm/get-stream@5.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-nBF+F1rAZVCu/p7rjzgA+Yb4lfYXrpl7a6VmJrU8wF9I1CKvP/QwPNZHnOlwbTkY6dvtFIzFMSyQXbLoTQPRpA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "fdir",
+  "version": "6.5.0",
+  "revision": "14c678e70e714f32e511cdf24c8d2392ac25ba0f",
+  "repository": "https://github.com/thecodrr/fdir.git",
+  "purl": "pkg:npm/fdir@6.5.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-tIbYtZbucOs0BRGqPJkshJUYdL+SDH7dVM8gjy+ERp3WAUjLEFJE+02kanyHtwjWOnwrKYBiwAmM0p4kLJAnXg=="
+}

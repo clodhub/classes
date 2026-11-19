@@ -1,0 +1,11 @@
+{
+  "name": "print",
+  "version": "1.0.0",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/androidx/print/print",
+  "purl": "pkg:maven/androidx.print/print@1.0.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

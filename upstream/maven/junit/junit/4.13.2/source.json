@@ -1,0 +1,11 @@
+{
+  "name": "junit",
+  "version": "4.13.2",
+  "revision": null,
+  "repository": "https://github.com/junit-team/junit4",
+  "purl": "pkg:maven/junit/junit@4.13.2",
+  "licence": "EPL-1.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

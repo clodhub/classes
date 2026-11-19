@@ -1,0 +1,11 @@
+{
+  "name": "javax.annotation-api",
+  "version": "1.3.2",
+  "revision": null,
+  "repository": "https://github.com/javaee/javax.annotation",
+  "purl": "pkg:maven/javax.annotation/javax.annotation-api@1.3.2",
+  "licence": "LicenseRef-CDDL-GPLv2-with-classpath-exception",
+  "notices": [
+    "pom.xml"
+  ]
+}

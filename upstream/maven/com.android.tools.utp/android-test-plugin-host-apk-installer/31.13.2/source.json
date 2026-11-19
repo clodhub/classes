@@ -1,0 +1,11 @@
+{
+  "name": "android-test-plugin-host-apk-installer",
+  "version": "31.13.2",
+  "revision": null,
+  "repository": "https://android.googlesource.com/platform/tools/base",
+  "purl": "pkg:maven/com.android.tools.utp/android-test-plugin-host-apk-installer@31.13.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "node-abi",
+  "version": "4.40.0",
+  "revision": "1dcab69a46a5fcd80fcb552d4a0cb142481c17cb",
+  "repository": "https://github.com/electron/node-abi.git",
+  "purl": "pkg:npm/node-abi@4.40.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-GuvqvtrOk+AC27RidBxBsMzVNkwNl7PjHgc4NXbmdvSVLgIUjpaqcG1FjNRYnt2Yn9Ytq+Ln37XsBaglUcte/w=="
+}

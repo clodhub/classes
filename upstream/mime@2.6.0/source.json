@@ -1,0 +1,12 @@
+{
+  "name": "mime",
+  "version": "2.6.0",
+  "revision": "7c7c2652587eee1387cbf8a05ef2ab7f9f583c7e",
+  "repository": "https://github.com/broofa/mime.git",
+  "purl": "pkg:npm/mime@2.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg=="
+}

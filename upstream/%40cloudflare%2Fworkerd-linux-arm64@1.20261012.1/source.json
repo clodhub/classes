@@ -1,0 +1,12 @@
+{
+  "name": "@cloudflare/workerd-linux-arm64",
+  "version": "1.20261012.1",
+  "revision": "5358e3d337336eaf696a48bc1563d808b10feba5",
+  "repository": "https://github.com/cloudflare/workerd.git",
+  "purl": "pkg:npm/@cloudflare/workerd-linux-arm64@1.20261012.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-I0VMdcXk7ygG5vYDce0ePTBFdnBXC0i9WiBY5mWiv0iTinbfea6/rHqSQ7B1UMpjgrYVs9E0m4bZ9ufsk5GCFA=="
+}

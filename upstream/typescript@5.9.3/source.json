@@ -1,0 +1,12 @@
+{
+  "name": "typescript",
+  "version": "5.9.3",
+  "revision": "c63de15a992d37f0d6cec03ac7631872838602cb",
+  "repository": "https://github.com/microsoft/TypeScript.git",
+  "purl": "pkg:npm/typescript@5.9.3",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="
+}

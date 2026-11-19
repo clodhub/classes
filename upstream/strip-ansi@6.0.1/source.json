@@ -1,0 +1,12 @@
+{
+  "name": "strip-ansi",
+  "version": "6.0.1",
+  "revision": "59533da99981f9d550de1ae0eb9d1a93c2383be3",
+  "repository": "https://github.com/chalk/strip-ansi.git",
+  "purl": "pkg:npm/strip-ansi@6.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="
+}

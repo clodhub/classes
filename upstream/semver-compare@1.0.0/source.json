@@ -1,0 +1,12 @@
+{
+  "name": "semver-compare",
+  "version": "1.0.0",
+  "revision": "152c863e7c2615f9e9e81a9a370b672afaa3819a",
+  "repository": "https://github.com/substack/semver-compare.git",
+  "purl": "pkg:npm/semver-compare@1.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow=="
+}

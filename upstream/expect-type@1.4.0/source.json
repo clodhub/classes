@@ -1,0 +1,12 @@
+{
+  "name": "expect-type",
+  "version": "1.4.0",
+  "revision": "sha512:29f61b9a9466d156cb8c4bd56bdc86c028bd188df8c6f8bb03f1d761640eeb90920f6bb731ccd4252bb05ca148c651ac801422cd5f6ae49f4d1e3e151b49fea4",
+  "repository": "https://github.com/mmkal/expect-type.git",
+  "purl": "pkg:npm/expect-type@1.4.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-KfYbmpRm0VbLjEvVa9yGwCi9GI34xvi7A/HXYWQO65CSD2u3MczUJSuwXKFIxlGsgBQizV9q5J9NHj4VG0n+pA=="
+}

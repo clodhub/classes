@@ -1,0 +1,12 @@
+{
+  "name": "@szmarczak/http-timer",
+  "version": "4.0.6",
+  "revision": "a44ca1a3ebe5440211b0142f796760bb17aeee30",
+  "repository": "https://github.com/szmarczak/http-timer.git",
+  "purl": "pkg:npm/@szmarczak/http-timer@4.0.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-4BAffykYOgO+5nzBWYwE3W90sBgLJoUPRWWcL8wlyiM8IB8ipJz3UMJ9KXQd1RKQXpKp8Tutn80HZtWsu2u76w=="
+}

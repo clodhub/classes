@@ -1,0 +1,12 @@
+{
+  "name": "brace-expansion",
+  "version": "2.1.7",
+  "revision": "714b6228a5878cfc6b07dc319db0eb6376ab2c4d",
+  "repository": "https://github.com/juliangruber/brace-expansion.git",
+  "purl": "pkg:npm/brace-expansion@2.1.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-uZbew1NqdmPDTMJ8ah1y+b+9QEJrfkXFk3RcTQw3X0jW/xRUvFKsg1CfQdSYGdTbXZWExtU3J3ccxtnfw1Fi0g=="
+}

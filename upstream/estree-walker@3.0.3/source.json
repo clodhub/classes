@@ -1,0 +1,12 @@
+{
+  "name": "estree-walker",
+  "version": "3.0.3",
+  "revision": "baab849875bee41211bd60493eaad88cfaee1620",
+  "repository": "https://github.com/Rich-Harris/estree-walker.git",
+  "purl": "pkg:npm/estree-walker@3.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g=="
+}

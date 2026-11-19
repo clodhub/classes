@@ -1,0 +1,11 @@
+{
+  "name": "mockito-core",
+  "version": "5.20.0",
+  "revision": null,
+  "repository": "https://github.com/mockito/mockito.git",
+  "purl": "pkg:maven/org.mockito/mockito-core@5.20.0",
+  "licence": "MIT",
+  "notices": [
+    "pom.xml"
+  ]
+}

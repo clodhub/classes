@@ -1,0 +1,12 @@
+{
+  "name": "@electron-internal/extract-zip",
+  "version": "1.0.8",
+  "revision": "275c2936837e0231267a7203c1a136de65c6ed2e",
+  "repository": "https://github.com/electron/extract-zip.git",
+  "purl": "pkg:npm/@electron-internal/extract-zip@1.0.8",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-8iajeLFbzNwM0m3AsQZSZgYREWglAImyGvvFSWU34FgMW8sHlzdwj9QKvv9dgN7jMP591EFUF/sLOC3Jl9YIjQ=="
+}

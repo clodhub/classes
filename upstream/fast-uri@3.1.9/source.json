@@ -1,0 +1,12 @@
+{
+  "name": "fast-uri",
+  "version": "3.1.9",
+  "revision": "0def70338a0fa2f12a10c83ae8eafc2139ae9a07",
+  "repository": "https://github.com/fastify/fast-uri.git",
+  "purl": "pkg:npm/fast-uri@3.1.9",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ=="
+}

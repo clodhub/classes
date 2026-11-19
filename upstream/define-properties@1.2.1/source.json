@@ -1,0 +1,12 @@
+{
+  "name": "define-properties",
+  "version": "1.2.1",
+  "revision": "d7a4db30214eb06d3997dc3e662c11dfe95b25bd",
+  "repository": "https://github.com/ljharb/define-properties.git",
+  "purl": "pkg:npm/define-properties@1.2.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-8QmQKqEASLd5nx0U1B1okLElbUuuttJ/AnYmRXbbbGDWh6uS208EjD4Xqq/I9wK7u0v6O08XhTWnt5XtEbR6Dg=="
+}
