@@ -1,9 +1,9 @@
 {
-  "hand": 2,
+  "hand": 1,
   "action": "fold",
   "chips": 10000,
   "result": {
-    "no": 2,
+    "no": 1,
     "board": [],
     "pots": [
       {
@@ -24,13 +24,13 @@
   },
   "players": [
     {
-      "id": "computer-robin",
-      "stack": 5000,
+      "id": "86052975",
+      "stack": 4975,
       "totalIn": 0
     },
     {
-      "id": "c6289a2e",
-      "stack": 5000,
+      "id": "computer-robin",
+      "stack": 5025,
       "totalIn": 0
     }
   ]

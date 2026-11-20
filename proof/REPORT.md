@@ -4,31 +4,31 @@ Overall acceptance is partial. This session's audit verifies all 41 release arch
 
 ## Release versions
 
-Each package repository holds one local commit, `<name> <version>: <scope>`; the committed trees are the archives in [final evidence](final-evidence.json). Class versions are 1.0.0.
+Each package repository holds its local commits, the newest `<name> <version>: <scope>`; every package is reviewed with aepm 0d81b77; the committed trees are the archives in [final evidence](final-evidence.json). Class versions are 1.0.0.
 
 | Package | Version | Commit | Package | Version | Commit |
 |---|---|---|---|---|---|
-| android-host | 0.7.0 | 29c7b45 | presence | 0.7.0 | 63e5191 |
-| apple-host | 0.9.0 | b1116ad | private-views | 0.7.0 | b7823b8 |
-| card-deck | 0.7.0 | 2768291 | realtime-rooms | 0.9.0 | 882bab9 |
-| card-graphics | 0.8.0 | cf809ab | room-directory | 0.7.0 | 0601a79 |
-| chip-graphics | 0.8.0 | 090932f | round-history | 0.7.0 | c5ae7bf |
-| chip-ledger | 0.8.0 | c66e622 | rules-settings | 0.7.0 | dccc1b1 |
-| computer-players | 0.8.0 | da2dbd9 | seating | 0.7.0 | 92eaa09 |
-| controls | 0.8.0 | 8a7bae7 | server-host | 0.8.0 | 90474e8 |
-| display-mode | 0.8.0 | c1592d0 | sound-cues | 0.8.0 | 1d93c10 |
-| fair-shuffle | 0.7.0 | 1cfc530 | store-update | 0.8.0 | 538d755 |
-| game-clock | 0.7.0 | 346e44a | table-layout | 0.8.0 | f476cec |
-| guest-identity | 0.8.0 | 6db29d6 | theme | 0.8.0 | 788293b |
+| android-host | 0.8.0 | 914108f | presence | 0.8.0 | 4a7481a |
+| apple-host | 0.9.0 | b1116ad | private-views | 0.8.0 | 12e8271 |
+| card-deck | 0.8.0 | 3716e82 | realtime-rooms | 0.10.0 | e264af9 |
+| card-graphics | 0.8.0 | cf809ab | room-directory | 0.8.0 | 77a1fc5 |
+| chip-graphics | 0.8.0 | 090932f | round-history | 0.8.0 | e126393 |
+| chip-ledger | 0.9.0 | cf6e645 | rules-settings | 0.8.0 | 5ab19e7 |
+| computer-players | 0.9.0 | 66b9117 | seating | 0.8.0 | 1df07f5 |
+| controls | 0.8.0 | 8a7bae7 | server-host | 0.9.0 | 3926365 |
+| display-mode | 0.9.0 | b38f67c | sound-cues | 0.8.0 | 1d93c10 |
+| fair-shuffle | 0.8.0 | 26c6a9f | store-update | 0.9.0 | 63b0521 |
+| game-clock | 0.8.0 | 87ff906 | table-layout | 0.8.0 | f476cec |
+| guest-identity | 0.9.0 | 4820556 | theme | 0.8.0 | 788293b |
 | guided-tour | 0.8.0 | efc1077 | theme-high-contrast | 0.4.0 | 609e9b1 |
-| holdem-rules | 0.7.0 | ed06745 | tournament | 0.7.0 | a9ac43a |
-| invitations | 0.5.0 | 8b95c7b | translations | 0.8.0 | 9f6afc0 |
-| level-schedule | 0.7.0 | 8cd601e | turn-engine | 0.8.0 | b8a0a7b |
+| holdem-rules | 0.8.0 | 1475499 | tournament | 0.8.0 | 4ace1f4 |
+| invitations | 0.6.0 | 77964ab | translations | 0.9.0 | 977db5a |
+| level-schedule | 0.8.0 | 597c6dd | turn-engine | 0.9.0 | c2796d3 |
 | ourapps-release | 0.8.0 | ae84719 | video-calls | 0.9.0 | 820edea |
-| poker-hand-ranking | 0.7.0 | 33abd46 | web-host | 0.7.0 | 95f8055 |
-| poker-odds | 0.7.0 | 79bb525 | windows-desktop | 0.8.0 | d81c6ce |
-| poker-strategy | 0.7.0 | a952bce | ourpoker (recipe) | 0.8.0 | 5598662 |
-| preferences | 0.5.0 | 4a2a334 | | | |
+| poker-hand-ranking | 0.8.0 | e1c2beb | web-host | 0.8.0 | 06b0db0 |
+| poker-odds | 0.8.0 | 3eb21fc | windows-desktop | 0.9.0 | 91b87bb |
+| poker-strategy | 0.8.0 | 72b33ed | ourpoker (recipe) | 0.8.0 | 6965687 |
+| preferences | 0.6.0 | fa8fa74 | | | |
 
 ## Toolchains and doctor
 

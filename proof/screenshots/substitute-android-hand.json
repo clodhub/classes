@@ -1,17 +1,17 @@
 {
-  "hand": 2,
+  "hand": 1,
   "action": "fold",
   "chips": 10000,
   "result": {
-    "no": 2,
+    "no": 1,
     "board": [],
     "pots": [
       {
-        "amount": 50,
+        "amount": 100,
         "winners": [
           {
             "playerId": "computer-robin",
-            "amount": 50,
+            "amount": 100,
             "handName": null
           }
         ]
