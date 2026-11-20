@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/invitations-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Invitations",
+  "summary": "Invitation links and codes, shared or copied",
+  "category": "people-and-accounts/invitations",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/invitations",

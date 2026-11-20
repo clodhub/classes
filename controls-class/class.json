@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/controls-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Controls",
+  "summary": "Buttons, toggles, dialogs, panels and help pages with accessible names",
+  "category": "presentation/controls",
+  "presentation": "visual",
   "provides": [
     {
       "type": "ae/controls",

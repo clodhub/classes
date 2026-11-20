@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Validate final package signatures, class results and complete local installation proofs."""
+import os
 import argparse
 import hashlib
 import json
@@ -10,7 +11,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
-sys.path.insert(0, str(WORKSPACE / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(WORKSPACE / 'aepm')))
 from aepm.bundle import pack, read_package
 from aepm.foundations import class_suites
 from aepm.trust import REVIEW, verify, verify_package

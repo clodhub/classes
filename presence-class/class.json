@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/presence-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Presence",
+  "summary": "Who is connected, away or back, and missed turns",
+  "category": "communication/presence",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/presence",

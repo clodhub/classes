@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/round-history-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Round history",
+  "summary": "A bounded record of completed rounds with totals, exportable and checked",
+  "category": "data-and-storage/history-and-audit",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/round-history",

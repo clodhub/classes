@@ -1,0 +1,12 @@
+{
+  "name": "agentkeepalive",
+  "version": "4.6.0",
+  "revision": "422e9fc35aaa076da6120f634f85ffc8c860d85a",
+  "repository": "https://github.com/node-modules/agentkeepalive.git",
+  "purl": "pkg:npm/agentkeepalive@4.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-kja8j7PjmncONqaTsB8fQ+wE2mSU2DJ9D4XKoJ5PFWIdRMa6SLSN1ff4mOr4jCbfRSsxR4keIiySJU0N9T5hIQ=="
+}

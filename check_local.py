@@ -7,7 +7,7 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parent / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT.parent / 'aepm')))
 from aepm.foundations import module_sources
 from aepm.model import canonical, digest
 

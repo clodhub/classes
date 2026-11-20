@@ -19,6 +19,8 @@ from aepm.model import digest
 
 ROOT = Path(__file__).resolve().parent
 CACHE = ROOT / 'upstream'
+# npm packages whose registry entry names no repository; each address holds the entry's gitHead commit.
+NPM_REPOSITORIES = {'@isaacs/nonrecursive-glob-match': 'https://github.com/isaacs/nonrecursive-glob-match'}
 
 
 def read(path):
@@ -55,7 +57,7 @@ def npm_source(pin):
     if re.fullmatch(r'[\w.-]+/[\w.-]+', repository):
         repository = 'https://github.com/' + repository
     if not repository.startswith('https://'):
-        repository = source.get('homepage', '')
+        repository = source.get('homepage') or NPM_REPOSITORIES.get(name, '')
     if not repository.startswith('https://'):
         raise ValueError(f'{name}@{version}: no source repository address')
     raw = fetch(source['dist']['tarball'])
@@ -312,7 +314,7 @@ def foundations(package, manifest):
             continue
         name = entry['purl'].rsplit('@', 1)[0]
         by_name.setdefault(name, {'name': name, 'version': entry['version'], 'isolation': 'isolated'})
-        if package.name == 'video-calls' and (name == 'pkg:maven/io.livekit/livekit-android' or name == 'pkg:swift/client-sdk-swift'):
+        if package.name == 'video-calls' and (name == 'pkg:maven/io.livekit/livekit-android' or name == 'pkg:swift/github.com/livekit/client-sdk-swift'):
             by_name[name]['isolation'] = 'shared'
     frameworks = {}
     compose = any(item['source'].endswith('.kt') and 'androidx.compose.' in (package / item['source']).read_text()
@@ -338,7 +340,7 @@ def foundations(package, manifest):
     if any(item['source'].startswith('implementation/apple/') for item in manifest['artefacts']):
         runtimes.update(swift='=6.4.2', ios='>=17.0.0', macos='>=14.0.0', tvos='>=17.0.0')
     if any(item['source'].startswith('implementation/android/') for item in manifest['artefacts']):
-        runtimes.update(kotlin='=2.3.20', java='>=17.0.0 <27.0.0', android='>=8.0.0')
+        runtimes.update(kotlin='=2.4.21', java='>=17.0.0 <27.0.0', android='>=8.0.0')
     value = {'platforms': sorted(platforms), 'toolchains': {platform: deepcopy(TOOLCHAINS[platform]) for platform in sorted(platforms)},
              'upstream': imported,
              'compatibility': {'runtimes': runtimes, 'frameworks': frameworks,

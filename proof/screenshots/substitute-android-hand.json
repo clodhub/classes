@@ -7,11 +7,11 @@
     "board": [],
     "pots": [
       {
-        "amount": 100,
+        "amount": 50,
         "winners": [
           {
             "playerId": "computer-robin",
-            "amount": 100,
+            "amount": 50,
             "handName": null
           }
         ]

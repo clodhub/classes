@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/server-host-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Server host",
+  "summary": "Runs the application's server on Cloudflare Workers or on Node on your own hardware",
+  "category": "devices-and-hosts/server",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/server-host",

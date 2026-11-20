@@ -1,0 +1,12 @@
+{
+  "name": "node-fetch",
+  "version": "2.7.0",
+  "revision": "9b9d45881e5ca68757077726b3c0ecf8fdca1f29",
+  "repository": "https://github.com/bitinn/node-fetch.git",
+  "purl": "pkg:npm/node-fetch@2.7.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A=="
+}

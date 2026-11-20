@@ -1,0 +1,13 @@
+{
+  "name": "cloudflare",
+  "version": "5.2.0",
+  "revision": "sha512:755cea0e93c5611f40a440bd7be249b21149657730e07cccf16fb70c7ccee68cbdfbcacb0b9dc6ef1e9f11ff40eff812b920b1baf9ddcee8b9a8929fb5f20cf4",
+  "repository": "https://github.com/cloudflare/cloudflare-typescript.git",
+  "purl": "pkg:npm/cloudflare@5.2.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE",
+    "1-LICENSE.md"
+  ],
+  "integrity": "sha512-dVzqDpPFYR9ApEC9e+JJshFJZXcw4HzM8W+3DHzO5oy9+8rLC53G7x6fEf9A7/gSuSCxuvndzui5qJKftfIM9A=="
+}

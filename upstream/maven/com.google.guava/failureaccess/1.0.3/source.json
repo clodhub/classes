@@ -1,0 +1,12 @@
+{
+  "name": "failureaccess",
+  "version": "1.0.3",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/guava/failureaccess",
+  "purl": "pkg:maven/com.google.guava/failureaccess@1.0.3",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

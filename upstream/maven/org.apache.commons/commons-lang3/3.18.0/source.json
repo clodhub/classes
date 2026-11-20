@@ -1,0 +1,13 @@
+{
+  "name": "commons-lang3",
+  "version": "3.18.0",
+  "revision": null,
+  "repository": "https://gitbox.apache.org/repos/asf/commons-lang.git",
+  "purl": "pkg:maven/org.apache.commons/commons-lang3@3.18.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml",
+    "parent-1-parent-0-pom.xml"
+  ]
+}

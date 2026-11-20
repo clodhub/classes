@@ -1,0 +1,12 @@
+{
+  "name": "protobuf-java-util",
+  "version": "3.25.9",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/com/google/protobuf/protobuf-java-util",
+  "purl": "pkg:maven/com.google.protobuf/protobuf-java-util@3.25.9",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Bundle the exact XML parser source used by Android dependency verification."""
+import os
 import base64
 import hashlib
 import io
@@ -9,7 +10,7 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parent / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT.parent / 'aepm')))
 from provenance import fetch, npm_source
 
 source = npm_source(('@xmldom/xmldom', '0.8.15'))

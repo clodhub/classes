@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Prove the shared theme suite rejects an implementation that discards colour overrides."""
+import os
 import json
 from pathlib import Path
 import re
@@ -7,7 +8,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, str(ROOT.parent / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT.parent / 'aepm')))
 from aepm.bundle import pack, read_package
 from aepm.io import load, write
 from aepm.model import AepmError

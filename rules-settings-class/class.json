@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/rules-settings-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Rules settings",
+  "summary": "A typed settings file read, checked and frozen for the rest of the application",
+  "category": "data-and-storage/validation",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/rules-settings",

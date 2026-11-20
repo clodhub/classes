@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/table-layout-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Table layout",
+  "summary": "Seat, card and stake positions around a table for any screen",
+  "category": "games/tables-and-seating",
+  "presentation": "visual",
   "provides": [
     {
       "type": "ae/table-layout",

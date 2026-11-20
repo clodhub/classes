@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Check the authoring tool against every component spec without modifying source checkouts."""
 import importlib.util
+import os
 import json
 from pathlib import Path
 import shutil
@@ -10,7 +11,7 @@ import tempfile
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
 sys.dont_write_bytecode = True
-sys.path.insert(0, str(WORKSPACE / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(WORKSPACE / 'aepm')))
 from aepm.model import canonical
 
 loader = importlib.util.spec_from_file_location('component_scaffolder', WORKSPACE / 'tools/scaffold_component.py')

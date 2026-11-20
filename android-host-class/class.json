@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/android-host-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Android host",
+  "summary": "An Android application project rendered from the application's files, with locked dependencies",
+  "category": "devices-and-hosts/mobile",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/android-shell",

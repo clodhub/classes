@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/ourapps-release-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Release pipeline",
+  "summary": "GitHub workflows that check, build, release and update the application",
+  "category": "delivery/releases",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/release-pipeline",

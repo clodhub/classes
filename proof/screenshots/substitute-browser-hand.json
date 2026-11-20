@@ -24,13 +24,13 @@
   },
   "players": [
     {
-      "id": "86052975",
-      "stack": 4975,
+      "id": "computer-robin",
+      "stack": 5025,
       "totalIn": 0
     },
     {
-      "id": "computer-robin",
-      "stack": 5025,
+      "id": "e4392100",
+      "stack": 4975,
       "totalIn": 0
     }
   ]

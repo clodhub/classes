@@ -25,7 +25,7 @@ if args.background:
         process = subprocess.Popen(command, stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
     print(f'process {process.pid}; work {work}')
     sys.exit(0)
-sys.path.insert(0, str(ROOT / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
 from aepm import ledger, locks, space
 ledger.register(work, 'proof', purpose='OurPoker native dependency profiles', keep=True)
 recipe = ROOT / 'recipes/ourpoker'
@@ -58,7 +58,7 @@ for profile in ('video', 'no-video'):
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(recipe / item['source'], target)
     if args.verify:
-        sys.path.insert(0, str(ROOT / 'aepm'))
+        sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
         from aepm.application import configuration, substitute
         manifest = json.loads((recipe / 'component.json').read_text())
         definition = json.loads((args.app / '.aepm/definition.json').read_text())

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/card-graphics-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Card graphics",
+  "summary": "Card faces, backs, slots, dealing and flipping",
+  "category": "games/cards",
+  "presentation": "visual",
   "provides": [
     {
       "type": "ae/card-graphics",

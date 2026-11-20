@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/seating-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Seating",
+  "summary": "Seats at a table: taking, leaving and starting when enough are taken",
+  "category": "games/tables-and-seating",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/seating",

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/private-views-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Private views",
+  "summary": "Each person sees only what they may see of shared state",
+  "category": "people-and-accounts/permissions",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/private-views",

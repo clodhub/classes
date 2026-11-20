@@ -1,0 +1,12 @@
+{
+  "name": "formdata-node",
+  "version": "4.4.1",
+  "revision": "63244f14891a21e47b4e945100415fb47549ded4",
+  "repository": "https://github.com/octet-stream/form-data.git",
+  "purl": "pkg:npm/formdata-node@4.4.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-0iirZp3uVDjVGt9p49aTaqjk84TrglENEDuqfdlZQ1roC9CWlPk6Avf8EEnZNcAqPonwkG35x4n3ww/1THYAeQ=="
+}

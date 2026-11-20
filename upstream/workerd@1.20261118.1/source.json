@@ -1,0 +1,12 @@
+{
+  "name": "workerd",
+  "version": "1.20261118.1",
+  "revision": "5a7d0ad7303965e9598b9e65c441e814eef6f37d",
+  "repository": "https://github.com/cloudflare/workerd.git",
+  "purl": "pkg:npm/workerd@1.20261118.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-aRucH/K7s3XjqvMmRcm6Jaz1WvBUgWjwaYjhNUuXtG8Gbmt91zRti2VGrQLgnM055n/qkuEVmYu9xByNZ2/Qzw=="
+}

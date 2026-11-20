@@ -1,0 +1,12 @@
+{
+  "name": "form-data-encoder",
+  "version": "1.7.2",
+  "revision": "8431c2d4f6bfd403736f531e8dc57164751fe8a2",
+  "repository": "https://github.com/octet-stream/form-data-encoder.git",
+  "purl": "pkg:npm/form-data-encoder@1.7.2",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-qfqtYan3rxrnCk1VYaA4H+Ms9xdpPqvLZa6xmMgFvhO32x7/3J/ExcTd6qpxM0vH2GdMI+poehyBZvqfMTto8A=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "event-target-shim",
+  "version": "5.0.1",
+  "revision": "410bad2ce333e7eeaafbc6acae0679aa685281c9",
+  "repository": "https://github.com/mysticatea/event-target-shim.git",
+  "purl": "pkg:npm/event-target-shim@5.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ=="
+}

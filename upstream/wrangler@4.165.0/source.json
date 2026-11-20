@@ -1,0 +1,12 @@
+{
+  "name": "wrangler",
+  "version": "4.165.0",
+  "revision": "sha512:738097f360a27817d64d03ce9ebb1b408fe1d296188fe85e177d8b282ffe108c94875ac0495a0318a5ba8b76a8822fda28f96848b64b39354043e507dfa9aac8",
+  "repository": "https://github.com/cloudflare/workers-sdk.git",
+  "purl": "pkg:npm/wrangler@4.165.0",
+  "licence": "MIT OR Apache-2.0",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-c4CX82CieBfWTQPOnrsbQI/h0pYYj+heF32LKC/+EIyUh1rASVoDGKW6i3aogi/aKPloSLZLOTVAQ+UH36mqyA=="
+}

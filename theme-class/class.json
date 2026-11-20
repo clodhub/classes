@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/theme-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Theme",
+  "summary": "Colours, spacing, type and an animated background for every client",
+  "category": "presentation/design-tokens",
+  "presentation": "visual",
   "provides": [
     {
       "type": "ae/theme",

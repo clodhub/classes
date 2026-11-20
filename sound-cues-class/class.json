@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/sound-cues-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Sound cues",
+  "summary": "Short sounds played for events, with mute and delay",
+  "category": "presentation/sound",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/sound-cues",

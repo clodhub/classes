@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/room-directory-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Room directory",
+  "summary": "The list of rooms with their status and who is in them, kept current",
+  "category": "data-and-storage/directories",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/room-directory",

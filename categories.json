@@ -1,0 +1,465 @@
+{
+  "format": 1,
+  "categories": [
+    {
+      "id": "games",
+      "title": "Games",
+      "parent": null
+    },
+    {
+      "id": "games/cards",
+      "title": "Cards",
+      "parent": "games"
+    },
+    {
+      "id": "games/cards/poker",
+      "title": "Poker",
+      "parent": "games/cards"
+    },
+    {
+      "id": "games/chips-and-scoring",
+      "title": "Chips and scoring",
+      "parent": "games"
+    },
+    {
+      "id": "games/tables-and-seating",
+      "title": "Tables and seating",
+      "parent": "games"
+    },
+    {
+      "id": "games/turns-and-timing",
+      "title": "Turns and timing",
+      "parent": "games"
+    },
+    {
+      "id": "games/rules",
+      "title": "Rules",
+      "parent": "games"
+    },
+    {
+      "id": "games/randomness",
+      "title": "Randomness",
+      "parent": "games"
+    },
+    {
+      "id": "games/opponents",
+      "title": "Computer opponents",
+      "parent": "games"
+    },
+    {
+      "id": "games/tournaments",
+      "title": "Tournaments",
+      "parent": "games"
+    },
+    {
+      "id": "presentation",
+      "title": "Presentation",
+      "parent": null
+    },
+    {
+      "id": "presentation/design-tokens",
+      "title": "Design tokens and themes",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/icons",
+      "title": "Icons",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/controls",
+      "title": "Controls",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/layout",
+      "title": "Layout and navigation",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/page-sections",
+      "title": "Page sections",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/charts-and-tables",
+      "title": "Charts and tables",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/editors-and-viewers",
+      "title": "Editors and viewers",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/sound",
+      "title": "Sound",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/onboarding",
+      "title": "Onboarding and guidance",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/localisation",
+      "title": "Languages and localisation",
+      "parent": "presentation"
+    },
+    {
+      "id": "presentation/shared-screens",
+      "title": "Shared screens",
+      "parent": "presentation"
+    },
+    {
+      "id": "people-and-accounts",
+      "title": "People and accounts",
+      "parent": null
+    },
+    {
+      "id": "people-and-accounts/sign-in",
+      "title": "Sign-in and identity",
+      "parent": "people-and-accounts"
+    },
+    {
+      "id": "people-and-accounts/identity-verification",
+      "title": "Identity verification",
+      "parent": "people-and-accounts"
+    },
+    {
+      "id": "people-and-accounts/permissions",
+      "title": "Permissions and private views",
+      "parent": "people-and-accounts"
+    },
+    {
+      "id": "people-and-accounts/invitations",
+      "title": "Invitations and sharing",
+      "parent": "people-and-accounts"
+    },
+    {
+      "id": "people-and-accounts/preferences",
+      "title": "Preferences",
+      "parent": "people-and-accounts"
+    },
+    {
+      "id": "people-and-accounts/profiles-and-membership",
+      "title": "Profiles and membership",
+      "parent": "people-and-accounts"
+    },
+    {
+      "id": "communication",
+      "title": "Communication",
+      "parent": null
+    },
+    {
+      "id": "communication/real-time",
+      "title": "Real-time rooms and messaging",
+      "parent": "communication"
+    },
+    {
+      "id": "communication/presence",
+      "title": "Presence",
+      "parent": "communication"
+    },
+    {
+      "id": "communication/video",
+      "title": "Video and voice",
+      "parent": "communication"
+    },
+    {
+      "id": "communication/email",
+      "title": "Email",
+      "parent": "communication"
+    },
+    {
+      "id": "communication/text-messaging",
+      "title": "Text messaging",
+      "parent": "communication"
+    },
+    {
+      "id": "communication/notifications",
+      "title": "Notifications",
+      "parent": "communication"
+    },
+    {
+      "id": "communication/chat",
+      "title": "Chat",
+      "parent": "communication"
+    },
+    {
+      "id": "data-and-storage",
+      "title": "Data and storage",
+      "parent": null
+    },
+    {
+      "id": "data-and-storage/relational",
+      "title": "Relational storage",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/objects-and-files",
+      "title": "Object and file storage",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/search",
+      "title": "Search",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/caching",
+      "title": "Caching",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/directories",
+      "title": "Directories and listings",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/history-and-audit",
+      "title": "History and audit",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/local-first-and-sync",
+      "title": "Local-first storage and synchronisation",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "data-and-storage/validation",
+      "title": "Validation and settings",
+      "parent": "data-and-storage"
+    },
+    {
+      "id": "payments",
+      "title": "Payments",
+      "parent": null
+    },
+    {
+      "id": "payments/checkout",
+      "title": "Checkout",
+      "parent": "payments"
+    },
+    {
+      "id": "payments/subscriptions",
+      "title": "Subscriptions",
+      "parent": "payments"
+    },
+    {
+      "id": "payments/refunds-and-disputes",
+      "title": "Refunds and disputes",
+      "parent": "payments"
+    },
+    {
+      "id": "payments/marketplaces",
+      "title": "Marketplace payouts",
+      "parent": "payments"
+    },
+    {
+      "id": "payments/invoicing",
+      "title": "Invoicing",
+      "parent": "payments"
+    },
+    {
+      "id": "commerce",
+      "title": "Commerce",
+      "parent": null
+    },
+    {
+      "id": "commerce/catalogue-and-pricing",
+      "title": "Catalogue and pricing",
+      "parent": "commerce"
+    },
+    {
+      "id": "commerce/inventory",
+      "title": "Stock and inventory",
+      "parent": "commerce"
+    },
+    {
+      "id": "commerce/orders",
+      "title": "Orders",
+      "parent": "commerce"
+    },
+    {
+      "id": "scheduling",
+      "title": "Scheduling",
+      "parent": null
+    },
+    {
+      "id": "scheduling/timers-and-clocks",
+      "title": "Timers and clocks",
+      "parent": "scheduling"
+    },
+    {
+      "id": "scheduling/calendars",
+      "title": "Calendars",
+      "parent": "scheduling"
+    },
+    {
+      "id": "scheduling/booking",
+      "title": "Booking and availability",
+      "parent": "scheduling"
+    },
+    {
+      "id": "scheduling/recurring",
+      "title": "Recurring schedules",
+      "parent": "scheduling"
+    },
+    {
+      "id": "scheduling/background-jobs",
+      "title": "Background jobs and queues",
+      "parent": "scheduling"
+    },
+    {
+      "id": "documents-and-files",
+      "title": "Documents and files",
+      "parent": null
+    },
+    {
+      "id": "documents-and-files/import-and-export",
+      "title": "Import and export",
+      "parent": "documents-and-files"
+    },
+    {
+      "id": "documents-and-files/generation",
+      "title": "Document generation",
+      "parent": "documents-and-files"
+    },
+    {
+      "id": "documents-and-files/images",
+      "title": "Image processing",
+      "parent": "documents-and-files"
+    },
+    {
+      "id": "maps-and-places",
+      "title": "Maps and places",
+      "parent": null
+    },
+    {
+      "id": "maps-and-places/maps",
+      "title": "Maps",
+      "parent": "maps-and-places"
+    },
+    {
+      "id": "maps-and-places/geocoding",
+      "title": "Geocoding and address entry",
+      "parent": "maps-and-places"
+    },
+    {
+      "id": "maps-and-places/directions",
+      "title": "Directions",
+      "parent": "maps-and-places"
+    },
+    {
+      "id": "intelligence-and-agents",
+      "title": "Intelligence and agents",
+      "parent": null
+    },
+    {
+      "id": "intelligence-and-agents/generation",
+      "title": "Text and image generation",
+      "parent": "intelligence-and-agents"
+    },
+    {
+      "id": "intelligence-and-agents/speech",
+      "title": "Speech and transcription",
+      "parent": "intelligence-and-agents"
+    },
+    {
+      "id": "intelligence-and-agents/embeddings-and-retrieval",
+      "title": "Embeddings and retrieval",
+      "parent": "intelligence-and-agents"
+    },
+    {
+      "id": "intelligence-and-agents/agent-execution",
+      "title": "Agent execution and tools",
+      "parent": "intelligence-and-agents"
+    },
+    {
+      "id": "integrations-and-automation",
+      "title": "Integrations and automation",
+      "parent": null
+    },
+    {
+      "id": "integrations-and-automation/connectors",
+      "title": "Connectors",
+      "parent": "integrations-and-automation"
+    },
+    {
+      "id": "integrations-and-automation/events-and-webhooks",
+      "title": "Events and webhooks",
+      "parent": "integrations-and-automation"
+    },
+    {
+      "id": "integrations-and-automation/public-data",
+      "title": "Public data sources",
+      "parent": "integrations-and-automation"
+    },
+    {
+      "id": "devices-and-hosts",
+      "title": "Devices and hosts",
+      "parent": null
+    },
+    {
+      "id": "devices-and-hosts/web",
+      "title": "Web hosts",
+      "parent": "devices-and-hosts"
+    },
+    {
+      "id": "devices-and-hosts/mobile",
+      "title": "Phone and tablet hosts",
+      "parent": "devices-and-hosts"
+    },
+    {
+      "id": "devices-and-hosts/desktop",
+      "title": "Desktop hosts",
+      "parent": "devices-and-hosts"
+    },
+    {
+      "id": "devices-and-hosts/server",
+      "title": "Server hosts",
+      "parent": "devices-and-hosts"
+    },
+    {
+      "id": "devices-and-hosts/device-access",
+      "title": "Device access",
+      "parent": "devices-and-hosts"
+    },
+    {
+      "id": "devices-and-hosts/home-devices",
+      "title": "Home devices",
+      "parent": "devices-and-hosts"
+    },
+    {
+      "id": "delivery",
+      "title": "Delivery",
+      "parent": null
+    },
+    {
+      "id": "delivery/releases",
+      "title": "Builds and releases",
+      "parent": "delivery"
+    },
+    {
+      "id": "delivery/updates",
+      "title": "Updates",
+      "parent": "delivery"
+    },
+    {
+      "id": "delivery/deployment",
+      "title": "Deployment",
+      "parent": "delivery"
+    },
+    {
+      "id": "delivery/backups-and-restore",
+      "title": "Backups and restore",
+      "parent": "delivery"
+    },
+    {
+      "id": "delivery/monitoring",
+      "title": "Monitoring",
+      "parent": "delivery"
+    }
+  ]
+}

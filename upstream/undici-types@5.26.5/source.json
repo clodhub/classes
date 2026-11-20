@@ -1,0 +1,12 @@
+{
+  "name": "undici-types",
+  "version": "5.26.5",
+  "revision": "9197790ae0d015b40b75fd0c5cdb7420704b5272",
+  "repository": "https://github.com/nodejs/undici.git",
+  "purl": "pkg:npm/undici-types@5.26.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA=="
+}

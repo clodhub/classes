@@ -1,0 +1,11 @@
+{
+  "name": "bcpkix-jdk18on",
+  "version": "1.87",
+  "revision": null,
+  "repository": "https://github.com/bcgit/bc-java",
+  "purl": "pkg:maven/org.bouncycastle/bcpkix-jdk18on@1.87",
+  "licence": "LicenseRef-Bouncy-Castle-Licence",
+  "notices": [
+    "pom.xml"
+  ]
+}

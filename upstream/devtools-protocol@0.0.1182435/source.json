@@ -1,0 +1,12 @@
+{
+  "name": "devtools-protocol",
+  "version": "0.0.1182435",
+  "revision": "b899c223c52c36fd68eeb80354aa836074da8f6c",
+  "repository": "https://github.com/ChromeDevTools/devtools-protocol.git",
+  "purl": "pkg:npm/devtools-protocol@0.0.1182435",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-EmlkWb62wSbQNE1gRZZsi4KZYRaF5Skpp183LhRU7+sadKR06O1dHCjZmFSEG6Kv7P6S/UYLxcY3NlYwqKM99w=="
+}

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/web-host-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Web host",
+  "summary": "The web client's page, installable manifest, install banner and build",
+  "category": "devices-and-hosts/web",
+  "presentation": "visual",
   "provides": [
     {
       "type": "ae/web-shell",

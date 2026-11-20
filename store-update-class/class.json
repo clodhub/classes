@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/store-update-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Store update",
+  "summary": "Tells the application a newer version is available from its store",
+  "category": "delivery/updates",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/updates",

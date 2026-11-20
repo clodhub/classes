@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/poker-strategy-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Poker strategy",
+  "summary": "Decisions for a computer poker player from its cards and the table",
+  "category": "games/cards/poker",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/player-strategy",

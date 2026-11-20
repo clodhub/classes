@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/guided-tour-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Guided tour",
+  "summary": "Step-by-step lessons that point at parts of the screen",
+  "category": "presentation/onboarding",
+  "presentation": "visual",
   "provides": [
     {
       "type": "ae/guided-tour",

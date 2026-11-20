@@ -1,9 +1,10 @@
 {
-  "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-android-host-dk5y1h0g",
+  "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/ah-capture",
   "command": [
     "./gradlew",
+    "--no-daemon",
     "--init-script",
-    "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-android-host-dk5y1h0g/lock-buildscript.gradle",
+    "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/ah-capture/lock-buildscript.gradle",
     ":app:assembleDebug",
     ":app:dependencies",
     "--write-locks",
@@ -17,5 +18,6 @@
     "buildscript-gradle.lockfile",
     "gradle/verification-metadata.xml"
   ],
-  "apk": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-android-host-dk5y1h0g/app/build/outputs/apk/debug/app-debug.apk"
+  "apk": null,
+  "apkBytes": 10961487
 }

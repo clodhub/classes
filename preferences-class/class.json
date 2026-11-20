@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/preferences-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Preferences",
+  "summary": "Per-device choices such as sound and language, kept and observed",
+  "category": "people-and-accounts/preferences",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/preferences",

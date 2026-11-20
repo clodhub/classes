@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/video-calls-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Video calls",
+  "summary": "Video and voice for the people in a room",
+  "category": "communication/video",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/media-session",

@@ -3,6 +3,8 @@
 The 39 `<slot>-class/` directories own independent `class.json` contracts, interface documents and shared checks. Both theme providers implement `ourapps-ae/theme-class` with identical class bytes.
 
 - `python3.12 -B classes/generate.py` refreshes inventory hashes, embeds descriptors in all 40 component manifests, bundles the authoritative classes in the recipe, writes exact slot references and updates authoring metadata.
+- `categories.json` is the category tree (`{format, categories: [{id, title, parent}]}`); each `class.json` names one of its categories, and `generate.py` refuses a category that is not in it.
+- `python3.12 -B classes/render_images.py [COMPONENT ...]` renders each visual component's example images from its `examples/images.ts` in headless Chrome into `images/`, and lists them in the manifest's `images`.
 - `python3.12 -B classes/check_local.py` exercises source checkouts for authoring feedback. Package review runs the same scripts through aepm's trusted runner in fresh staged candidates.
 - `python3.12 -B classes/prove_defect.py` checks declared fit with an independent provider document, then proves that a colour-override defect fails the shared theme suite and prevents guardian signing.
 

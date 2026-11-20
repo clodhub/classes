@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Bundle independent class contracts into components and the OurPoker recipe."""
+import os
 import argparse
 from copy import deepcopy
 import json
@@ -10,9 +11,9 @@ import sys
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
-sys.path.insert(0, str(WORKSPACE / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(WORKSPACE / 'aepm')))
 from aepm.model import canonical, digest
-from aepm.foundations import validate_class_descriptor
+from aepm.foundations import validate_categories, validate_class_descriptor
 from provenance import foundations, provenance_document
 
 
@@ -57,11 +58,21 @@ def bundle_into(package, bundles):
             shutil.copyfile(ROOT / slug / Path(entry['path']).name, package / entry['path'])
 
 
+RELEASE = {'channel': 'features', 'fixes': []}
+
+
 def metadata(package, manifest, bundles, implements):
+    """Classes, implemented interfaces, files, foundations and the release fields of a format-3 manifest. Images come
+    from classes/render_images.py and vulnerability waivers from the package's authoring; both are kept as they are."""
     bundle_into(package, bundles)
+    manifest['format'] = 3
+    manifest['release'] = deepcopy(RELEASE)
+    manifest.setdefault('images', [])
+    manifest.setdefault('vulnerabilityWaivers', [])
+    manifest['upgrade'] = {'migration': manifest['upgrade']['migration']}
     manifest['classes'] = deepcopy(bundles)
     manifest['implements'] = deepcopy(implements)
-    indexed = {item['path']: item for item in manifest['files']}
+    indexed = {item['path']: item for item in manifest['files'] if (package / item['path']).is_file()}
     if manifest['kind'] == 'component':
         sources = {item['source'] for item in manifest['artefacts']}
         for path in sorted((package / 'implementation').rglob('*')):
@@ -82,6 +93,10 @@ def metadata(package, manifest, bundles, implements):
     for bundle in bundles:
         for entry in bundle['descriptor']['inventory']:
             indexed[entry['path']] = {'path': entry['path'], 'executable': False}
+    for image in manifest['images']:
+        indexed[image['path']] = {'path': image['path'], 'executable': False}
+    if (package / 'examples/images.ts').is_file():
+        indexed['examples/images.ts'] = {'path': 'examples/images.ts', 'executable': False}
     for entry in sorted((package / 'notices').rglob('*')) if (package / 'notices').exists() else []:
         if entry.is_file():
             indexed[entry.relative_to(package).as_posix()] = {'path': entry.relative_to(package).as_posix(), 'executable': False}
@@ -94,6 +109,7 @@ def main():
     parser.add_argument('--classes-only', action='store_true')
     args = parser.parse_args()
     bundles = {p.name.removesuffix('-class'): class_bundle(p) for p in sorted(ROOT.glob('*-class'))}
+    validate_categories(read(ROOT / 'categories.json'), [bundle['descriptor']['category'] for bundle in bundles.values()])
     if args.classes_only:
         return
     for package in sorted((WORKSPACE / 'components').iterdir()):
@@ -106,7 +122,8 @@ def main():
         spec_path = package / 'authoring/spec.json'
         if spec_path.is_file():
             spec = read(spec_path)
-            spec.update({key: manifest[key] for key in ('toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance')})
+            spec.update({key: manifest[key] for key in ('toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
+                                                        'release', 'images', 'vulnerabilityWaivers')})
             spec.update(supportedPlatforms=manifest['platforms'], licence=manifest['identity']['licence'], licenceFile='LICENCE', noticeFile='NOTICE')
             spec['templates'] = sorted(item['source'] for item in manifest['artefacts'] if item['template'])
             spec['platforms'] = sorted({item['source'].split('/')[1] for item in manifest['artefacts'] if item['source'].startswith('implementation/')})
@@ -114,11 +131,13 @@ def main():
                 spec['modules'] = read(package / manifest['provides'][0]['path'])['x-ourapps-modules']
             write(spec_path, spec)
         elif (package / 'scripts/package-metadata.py').is_file():
-            write(package / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance')})
+            write(package / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
+                                                                       'release', 'images', 'vulnerabilityWaivers')})
     recipe = WORKSPACE / 'recipes/ourpoker'
     manifest = metadata(recipe, read(recipe / 'component.json'), list(bundles.values()), [])
     write(recipe / 'component.json', manifest)
-    write(recipe / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance')})
+    write(recipe / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
+                                                                       'release', 'images', 'vulnerabilityWaivers')})
     document = read(recipe / 'recipe.json')
     for slot in document['components']:
         slot['class'] = bundles[slot['id']]['reference']

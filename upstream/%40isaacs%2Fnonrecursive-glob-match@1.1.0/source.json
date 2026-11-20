@@ -1,0 +1,12 @@
+{
+  "name": "@isaacs/nonrecursive-glob-match",
+  "version": "1.1.0",
+  "revision": "0ac7bea32e2be9613ca4eab38bbf108ef8f6f9fe",
+  "repository": "https://github.com/isaacs/nonrecursive-glob-match",
+  "purl": "pkg:npm/@isaacs/nonrecursive-glob-match@1.1.0",
+  "licence": "BlueOak-1.0.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-GPm/Dbvk5RLmhRnxXIa7nTpK0xtl4E0wj0MslsuNiJ1FIROU+2+9lgUC/dgF7Ey4QCWhfEsgxilMRMCdHPfDfw=="
+}

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/poker-hand-ranking-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Poker hand ranking",
+  "summary": "Ranks five to seven cards into poker hands and finds the winners",
+  "category": "games/cards/poker",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/hand-ranking",

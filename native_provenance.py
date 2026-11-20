@@ -2,8 +2,10 @@
 from concurrent.futures import ThreadPoolExecutor
 import json
 import io
+import os
 from pathlib import Path
 import re
+import threading
 import zipfile
 from urllib.parse import quote
 from xml.etree import ElementTree as ET
@@ -120,12 +122,23 @@ def maven_source(coordinate):
         repository = 'https://repo.maven.apache.org/maven2/' + group.replace('.', '/') + '/' + name
     directory.mkdir(parents=True, exist_ok=True)
     for filename, content in notice:
-        (directory / filename).write_bytes(content)
+        # Atomic, because parallel captures of packages with a shared parent read this file while it is written.
+        partial = directory / (filename + '.partial-' + str(threading.get_ident()))
+        partial.write_bytes(content)
+        os.replace(partial, directory / filename)
     source = {'name': name, 'version': version, 'revision': None, 'repository': repository,
               'purl': 'pkg:maven/' + group + '/' + name + '@' + version, 'licence': expression,
               'notices': [item[0] for item in notice]}
     write(directory / 'source.json', source)
     return source
+
+
+def swift_namespace(repository):
+    """`github.com/<owner>/<repo>` for a Swift package repository address, as the Swift purl type requires."""
+    match = re.fullmatch(r'https://(github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+?)(?:\.git)?/?', repository)
+    if match is None:
+        raise ValueError(f'{repository}: a Swift package must come from a github.com repository')
+    return match.group(1)
 
 
 def swift_sources(package, files):
@@ -166,7 +179,7 @@ def swift_sources(package, files):
                 if b'Apache License' in raw:
                     expressions.add('Apache-2.0')
             result.append({'name': identity, 'version': version, 'revision': revision, 'repository': repository,
-                           'purl': 'pkg:swift/' + identity + '@' + version, 'licence': ' AND '.join(sorted(expressions)),
+                           'purl': 'pkg:swift/' + swift_namespace(repository) + '@' + version, 'licence': ' AND '.join(sorted(expressions)),
                            'notices': notice_paths, 'delivery': {
                                'kind': 'build-time', 'manager': 'swift', 'lock': path, 'digest': digest(lock.read_bytes())}})
     return result

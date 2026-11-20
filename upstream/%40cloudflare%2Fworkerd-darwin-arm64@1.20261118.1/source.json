@@ -1,0 +1,12 @@
+{
+  "name": "@cloudflare/workerd-darwin-arm64",
+  "version": "1.20261118.1",
+  "revision": "5a7d0ad7303965e9598b9e65c441e814eef6f37d",
+  "repository": "https://github.com/cloudflare/workerd.git",
+  "purl": "pkg:npm/@cloudflare/workerd-darwin-arm64@1.20261118.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-b9WiBt52ISrDPM5C8TdRDOp3XTC8Usv9ldc7TU7s2iyG1kR5eJdv6bfgAEejbSMUD13ArWaJ9Zzvpbb7FzxX+w=="
+}

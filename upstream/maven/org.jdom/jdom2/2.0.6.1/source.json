@@ -1,0 +1,11 @@
+{
+  "name": "jdom2",
+  "version": "2.0.6.1",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/org/jdom/jdom2",
+  "purl": "pkg:maven/org.jdom/jdom2@2.0.6.1",
+  "licence": "LicenseRef-Similar-to-Apache-License-but-with-the-acknowledgment-clause-removed",
+  "notices": [
+    "pom.xml"
+  ]
+}

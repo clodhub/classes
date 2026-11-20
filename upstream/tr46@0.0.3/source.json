@@ -1,0 +1,12 @@
+{
+  "name": "tr46",
+  "version": "0.0.3",
+  "revision": "a8009f9ce80ff5dbe71dd71e203afe4e4c878d28",
+  "repository": "https://github.com/Sebmaster/tr46.js.git",
+  "purl": "pkg:npm/tr46@0.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw=="
+}

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/card-deck-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Card deck",
+  "summary": "A deck of playing cards: building, dealing and naming cards",
+  "category": "games/cards",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/card-deck",

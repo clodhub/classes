@@ -1,0 +1,11 @@
+{
+  "name": "jspecify",
+  "version": "1.0.1",
+  "revision": null,
+  "repository": "https://github.com/jspecify/jspecify/",
+  "purl": "pkg:maven/org.jspecify/jspecify@1.0.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

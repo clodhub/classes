@@ -27,7 +27,7 @@ if args.android:
 if args.keep_builds:
     command += ['--keep-builds']
 java = '/Library/Java/JavaVirtualMachines/temurin-26.jdk/Contents/Home'
-env = {**os.environ, 'PYTHONPATH': str(ROOT / 'aepm'), 'PYTHONDONTWRITEBYTECODE': '1',
+env = {**os.environ, 'PYTHONPATH': os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')), 'PYTHONDONTWRITEBYTECODE': '1',
        'JAVA_HOME': java, 'ANDROID_HOME': '/opt/homebrew/share/android-commandlinetools',
        'PATH': java + '/bin:' + os.environ['PATH']}
 with (work / 'execution.log').open('a') as output:

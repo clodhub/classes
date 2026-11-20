@@ -1,0 +1,11 @@
+{
+  "name": "kotlin-util-io",
+  "version": "2.4.21",
+  "revision": null,
+  "repository": "https://github.com/JetBrains/kotlin",
+  "purl": "pkg:maven/org.jetbrains.kotlin/kotlin-util-io@2.4.21",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

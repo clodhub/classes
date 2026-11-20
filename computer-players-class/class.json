@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/computer-players-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Computer players",
+  "summary": "Computer opponents that take empty seats and act in their turn",
+  "category": "games/opponents",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/computer-players",

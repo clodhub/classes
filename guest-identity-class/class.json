@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/guest-identity-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Guest identity",
+  "summary": "Sign-in by name with a device token, no account",
+  "category": "people-and-accounts/sign-in",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/guest-identity",

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/apple-host-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Apple host",
+  "summary": "An Xcode project for iPhone, iPad, Mac and Apple TV rendered from the application's files",
+  "category": "devices-and-hosts/mobile",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/apple-shell",

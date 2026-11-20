@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/tournament-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Tournament",
+  "summary": "Entries, rebuys, eliminations, places and the result screen",
+  "category": "games/tournaments",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/tournament",

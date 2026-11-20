@@ -1,0 +1,12 @@
+{
+  "name": "webidl-conversions",
+  "version": "3.0.1",
+  "revision": "e21056f891736db755cfe0d72e4ce083a9034ace",
+  "repository": "https://github.com/jsdom/webidl-conversions.git",
+  "purl": "pkg:npm/webidl-conversions@3.0.1",
+  "licence": "BSD-2-Clause",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ=="
+}

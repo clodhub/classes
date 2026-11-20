@@ -21,11 +21,11 @@ if args.background:
                                    stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
     print(f'process {process.pid}; work {work}')
     sys.exit(0)
-sys.path.insert(0, str(ROOT / 'aepm'))
+sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
 from aepm import ledger
 ledger.register(work, 'proof', purpose='component and recipe regressions', keep=True)
 recipe = ROOT / 'recipes/ourpoker'
-env = {**os.environ, 'PYTHONPATH': str(ROOT / 'aepm'), 'OURAPPS': str(args.ourapps), 'PYTHONDONTWRITEBYTECODE': '1'}
+env = {**os.environ, 'PYTHONPATH': os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')), 'OURAPPS': str(args.ourapps), 'PYTHONDONTWRITEBYTECODE': '1'}
 commands = [
     ('components', ROOT, [sys.executable, '-B', 'tools/check_component.py', '--all', '--allow-network']),
     ('node', recipe, ['node', '--test', 'tests/recipe.test.ts', 'tests/portable.test.ts']),

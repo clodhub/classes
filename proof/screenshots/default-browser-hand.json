@@ -7,11 +7,11 @@
     "board": [],
     "pots": [
       {
-        "amount": 50,
+        "amount": 100,
         "winners": [
           {
             "playerId": "computer-robin",
-            "amount": 50,
+            "amount": 100,
             "handName": null
           }
         ]
@@ -24,13 +24,13 @@
   },
   "players": [
     {
-      "id": "4cd6f7c0",
-      "stack": 4975,
+      "id": "computer-robin",
+      "stack": 5050,
       "totalIn": 0
     },
     {
-      "id": "computer-robin",
-      "stack": 5025,
+      "id": "3baf28cc",
+      "stack": 4950,
       "totalIn": 0
     }
   ]

@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/turn-engine-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Turn engine",
+  "summary": "Lobby, turns, timing and computer players around a game's own rules",
+  "category": "games/turns-and-timing",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/game-adapter",

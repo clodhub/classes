@@ -1,7 +1,11 @@
 {
-  "format": 1,
+  "format": 2,
   "name": "ourapps-ae/poker-odds-class",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "title": "Poker odds",
+  "summary": "Winning chances of each hand from the cards that are known",
+  "category": "games/cards/poker",
+  "presentation": "none",
   "provides": [
     {
       "type": "ae/poker-odds",

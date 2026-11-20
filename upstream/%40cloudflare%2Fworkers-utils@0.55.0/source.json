@@ -1,0 +1,12 @@
+{
+  "name": "@cloudflare/workers-utils",
+  "version": "0.55.0",
+  "revision": "sha512:0f9d61923bb7e63f2929a98b4240f8f8bd07f37d12997da9c2d7672155fa297e2cf98cf73657c08758965d898c17bef41612c37d8882ea3ea59fbccb13c55571",
+  "repository": "https://github.com/cloudflare/workers-sdk.git",
+  "purl": "pkg:npm/@cloudflare/workers-utils@0.55.0",
+  "licence": "MIT OR Apache-2.0",
+  "notices": [
+    "0-LICENSE-MIT"
+  ],
+  "integrity": "sha512-D51hkju35j8pKamLQkD4+L0H830SmX2pwtdnIVX6KX4s+Yz3NlfAh1iWXYmMF770FhLDfYiC6j6ln7zLE8VVcQ=="
+}

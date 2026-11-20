@@ -1,0 +1,12 @@
+{
+  "name": "netty-handler-proxy",
+  "version": "4.1.141.Final",
+  "revision": null,
+  "repository": "https://repo.maven.apache.org/maven2/io/netty/netty-handler-proxy",
+  "purl": "pkg:maven/io.netty/netty-handler-proxy@4.1.141.Final",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml",
+    "parent-0-pom.xml"
+  ]
+}
