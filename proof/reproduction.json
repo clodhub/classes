@@ -365,7 +365,7 @@
     "recipes/ourpoker/classes/windows-desktop-class/check.mjs": "d039bb1289ab0cadc560aad96b7fe64bd924988fa8932ca9a49a288bba9b1dea",
     "recipes/ourpoker/classes/windows-desktop-class/desktop-host.json": "f4e64b07c541506367b6d543ee1df92b001a2f7b32f1f900ab6382b9f08738c8",
     "recipes/ourpoker/classes/windows-desktop-class/runtime.mjs": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43",
-    "recipes/ourpoker/component.json": "5424a55a3fe4e818b8aee0d9b9646a33d0495a2708924f66114e80d1284826aa",
-    "recipes/ourpoker/recipe.json": "85d5dbb0562e7b7bcd1fa8222138bb867c82c415fa99195462db32f1024a199a"
+    "recipes/ourpoker/component.json": "bca50a41b9573a375971ab8eb2a0be399228c1f8c151e2f09df477ac71df233a",
+    "recipes/ourpoker/recipe.json": "5606c24e4b1dfcc1720fedd96f5db70e25830e235768bf40a2dd04174bd6a65d"
   }
 }
