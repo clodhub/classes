@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/web-host-class",
+  "name": "clodhub/web-host-class",
   "version": "1.1.0",
   "title": "Web host",
   "summary": "The web client's page, installable manifest, install banner and build",
@@ -79,7 +79,7 @@
     },
     {
       "path": "classes/web-host-class/web-shell.json",
-      "digest": "96438dd6623fe70381116073063aefe7a95aafa0c22cfd2e4d28ed1388eb18ab"
+      "digest": "2640f964d23d37aca730d39efd7d22fce95034b64c937349f500b0452ea787f8"
     }
   ],
   "verification": [

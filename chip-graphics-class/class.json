@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/chip-graphics-class",
+  "name": "clodhub/chip-graphics-class",
   "version": "1.1.0",
   "title": "Chip graphics",
   "summary": "Chip stacks in denominations and chips flying between bets and the pot",
@@ -64,7 +64,7 @@
     },
     {
       "path": "classes/chip-graphics-class/chip-graphics.json",
-      "digest": "50b4703b3f7c7e8021e6a4bf1106a77646fda5dd2e00404e8ff5946835335c66"
+      "digest": "2ee1ef538aaeb704c08d0edef5b77702dd75b6bb377c623e04c25e8ba886a443"
     },
     {
       "path": "classes/chip-graphics-class/runtime.mjs",

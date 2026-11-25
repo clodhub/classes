@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/computer-players-class",
+  "name": "clodhub/computer-players-class",
   "version": "1.1.0",
   "title": "Computer players",
   "summary": "Computer opponents that take empty seats and act in their turn",
@@ -73,7 +73,7 @@
     },
     {
       "path": "classes/computer-players-class/computer-players.json",
-      "digest": "ce146a6ec81ab8b0738e88d1be016ea5c66fe9127b345488c292bb87979b8675"
+      "digest": "7ae42500d0a299cfc06a14d8167c5ec9f19c650330091f15ac5d702f96c6f228"
     },
     {
       "path": "classes/computer-players-class/runtime.mjs",

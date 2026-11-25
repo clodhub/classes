@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/card-graphics-class",
+  "name": "clodhub/card-graphics-class",
   "version": "1.1.0",
   "title": "Card graphics",
   "summary": "Card faces, backs, slots, dealing and flipping",
@@ -64,7 +64,7 @@
   "inventory": [
     {
       "path": "classes/card-graphics-class/card-graphics.json",
-      "digest": "fe3ce396e10ca26ed43d7b8142eaecc464be240fc9aca64e4d36df3271e88484"
+      "digest": "71be60fc3edbc0197a12d3a3f7153ef10e39c92b52fbf1977101307a6bf2ac08"
     },
     {
       "path": "classes/card-graphics-class/check.mjs",

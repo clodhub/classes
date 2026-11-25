@@ -10,14 +10,14 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parent.parent
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--ourapps', type=Path, required=True)
+parser.add_argument('--catalogue', type=Path, required=True)
 parser.add_argument('--background', action='store_true')
 parser.add_argument('--work', type=Path)
 args = parser.parse_args()
 work = args.work or Path(tempfile.mkdtemp(prefix='foundation-regression-', dir='/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode')).resolve()
 if args.background:
     with (work / 'execution.log').open('w') as output:
-        process = subprocess.Popen([sys.executable, '-B', __file__, '--ourapps', str(args.ourapps), '--work', str(work)],
+        process = subprocess.Popen([sys.executable, '-B', __file__, '--catalogue', str(args.catalogue), '--work', str(work)],
                                    stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
     print(f'process {process.pid}; work {work}')
     sys.exit(0)
@@ -25,7 +25,7 @@ sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
 from aepm import ledger
 ledger.register(work, 'proof', purpose='component and recipe regressions', keep=True)
 recipe = ROOT / 'recipes/ourpoker'
-env = {**os.environ, 'PYTHONPATH': os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')), 'OURAPPS': str(args.ourapps), 'PYTHONDONTWRITEBYTECODE': '1'}
+env = {**os.environ, 'PYTHONPATH': os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')), 'CLODHUB': str(args.catalogue), 'PYTHONDONTWRITEBYTECODE': '1'}
 commands = [
     ('components', ROOT, [sys.executable, '-B', 'tools/check_component.py', '--all', '--allow-network']),
     ('node', recipe, ['node', '--test', 'tests/recipe.test.ts', 'tests/portable.test.ts']),

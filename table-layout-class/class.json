@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/table-layout-class",
+  "name": "clodhub/table-layout-class",
   "version": "1.1.0",
   "title": "Table layout",
   "summary": "Seat, card and stake positions around a table for any screen",
@@ -60,7 +60,7 @@
     },
     {
       "path": "classes/table-layout-class/table-layout.json",
-      "digest": "d80dbd6b570d4e696e391838151daa72c45e4a4911980c567d30a25818fbc284"
+      "digest": "e3178f355d747c8d18f2f7d5fd9359cc3c6d15287fad6db1abe81bf8a8a6e050"
     }
   ],
   "verification": [

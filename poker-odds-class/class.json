@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/poker-odds-class",
+  "name": "clodhub/poker-odds-class",
   "version": "1.1.0",
   "title": "Poker odds",
   "summary": "Winning chances of each hand from the cards that are known",
@@ -51,7 +51,7 @@
     },
     {
       "path": "classes/poker-odds-class/poker-odds.json",
-      "digest": "5000cef4a0cacc4a05c44e2cbd97a3205c22c93818bb3d1d401f539fd1613a67"
+      "digest": "660568833de47e06371d675b5d3a82f08efe89e0636ad6f19b5b9cec67e16bd9"
     },
     {
       "path": "classes/poker-odds-class/runtime.mjs",

@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/theme-class",
+  "name": "clodhub/theme-class",
   "version": "1.1.0",
   "title": "Theme",
   "summary": "Colours, spacing, type and an animated background for every client",
@@ -77,7 +77,7 @@
     },
     {
       "path": "classes/theme-class/theme.json",
-      "digest": "fc9cb9d907ad9c5e2fc7cfa888c744b16dbdbfde5714b744807bdc2cd78ce078"
+      "digest": "5f60ffdf33c50fd1c4ba911b56fe59fbeb1ef7f9e06ed2001401d2614939c70f"
     }
   ],
   "verification": [

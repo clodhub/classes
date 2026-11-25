@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/translations-class",
+  "name": "clodhub/translations-class",
   "version": "1.1.0",
   "title": "Translations",
   "summary": "The application's text in several languages with fallback",
@@ -54,7 +54,7 @@
     },
     {
       "path": "classes/translations-class/language.json",
-      "digest": "11b9209c3d1bee055de8f65b4009ea5a7b9080e38fb67bd7b56c5e3e8dfde677"
+      "digest": "1cfb1325dfa058f8f7f37fd628f359b25fb87d1635dff0d3ba754e67329a0041"
     },
     {
       "path": "classes/translations-class/runtime.mjs",

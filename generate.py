@@ -128,7 +128,7 @@ def main():
             spec['templates'] = sorted(item['source'] for item in manifest['artefacts'] if item['template'])
             spec['platforms'] = sorted({item['source'].split('/')[1] for item in manifest['artefacts'] if item['source'].startswith('implementation/')})
             if manifest['provides']:
-                spec['modules'] = read(package / manifest['provides'][0]['path'])['x-ourapps-modules']
+                spec['modules'] = read(package / manifest['provides'][0]['path'])['x-clodhub-modules']
             write(spec_path, spec)
         elif (package / 'scripts/package-metadata.py').is_file():
             write(package / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',

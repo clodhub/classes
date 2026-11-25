@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/poker-hand-ranking-class",
+  "name": "clodhub/poker-hand-ranking-class",
   "version": "1.1.0",
   "title": "Poker hand ranking",
   "summary": "Ranks five to seven cards into poker hands and finds the winners",
@@ -37,7 +37,7 @@
     },
     {
       "path": "classes/poker-hand-ranking-class/hand-ranking.json",
-      "digest": "0661a2a4b3986548921ed54988b2028a268dbc4bb34a81f00a1368713c5810ba"
+      "digest": "0dfc90c5e65b3762aabec61f2798ae5a9c34153af7ce4ecd573eaf149b88a455"
     },
     {
       "path": "classes/poker-hand-ranking-class/runtime.mjs",

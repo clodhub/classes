@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/rules-settings-class",
+  "name": "clodhub/rules-settings-class",
   "version": "1.1.0",
   "title": "Rules settings",
   "summary": "A typed settings file read, checked and frozen for the rest of the application",
@@ -49,7 +49,7 @@
     },
     {
       "path": "classes/rules-settings-class/rules-settings.json",
-      "digest": "b5f146d4e11aca0904075e8b589460a0037af6a70e22fb12ed7ddf418a24c684"
+      "digest": "30fb1bd341295be7e30ffa8268c079fc08d59b318f67399d658364d816c76734"
     },
     {
       "path": "classes/rules-settings-class/runtime.mjs",

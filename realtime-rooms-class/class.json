@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/realtime-rooms-class",
+  "name": "clodhub/realtime-rooms-class",
   "version": "1.1.0",
   "title": "Real-time rooms",
   "summary": "Rooms that hold state on a server and push changes to every connected client",
@@ -59,7 +59,7 @@
     },
     {
       "path": "classes/realtime-rooms-class/room-session.json",
-      "digest": "e31d13f2d632525fa3e738485ca8eeff4f29411408618b2d1972c56ca324a0b7"
+      "digest": "1014555c475b76e7619b040c563d1e73e76635eb9f850de9913c2efc71f2d097"
     },
     {
       "path": "classes/realtime-rooms-class/runtime.mjs",

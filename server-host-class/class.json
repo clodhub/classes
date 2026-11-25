@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/server-host-class",
+  "name": "clodhub/server-host-class",
   "version": "1.1.0",
   "title": "Server host",
   "summary": "Runs the application's server on Cloudflare Workers or on Node on your own hardware",
@@ -66,7 +66,7 @@
     },
     {
       "path": "classes/server-host-class/server-host.json",
-      "digest": "9f72a5bde1a55d5deb7f2c62c72a733e56b2f5b40c062b1e884de2b4a8d35ecf"
+      "digest": "a419c730f068b8d32d54c26f41d26c454bf800e0da9880a5859848709ff0dc07"
     }
   ],
   "verification": [

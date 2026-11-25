@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/card-deck-class",
+  "name": "clodhub/card-deck-class",
   "version": "1.1.0",
   "title": "Card deck",
   "summary": "A deck of playing cards: building, dealing and naming cards",
@@ -61,7 +61,7 @@
   "inventory": [
     {
       "path": "classes/card-deck-class/card-deck.json",
-      "digest": "4c163190762cd8be45e536754adf4c63eee83f70f5dcc2e051d735ab6005fa0a"
+      "digest": "68cfd5d4a86134e123246c8e53737301c1769fd3bb872063c6ba0cf8594141b8"
     },
     {
       "path": "classes/card-deck-class/check.mjs",

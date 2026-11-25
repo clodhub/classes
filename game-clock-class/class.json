@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/game-clock-class",
+  "name": "clodhub/game-clock-class",
   "version": "1.1.0",
   "title": "Game clock",
   "summary": "Decision deadlines and countdowns that pause and expire",
@@ -56,7 +56,7 @@
     },
     {
       "path": "classes/game-clock-class/game-clock.json",
-      "digest": "d1a3ea6cded9e6845ffa5ef4a9bfbf47fc77279b9b72fd1974437db1942c1956"
+      "digest": "6c78156e8d843e997cc3c146590fc1216556d38c582f24e7a0857ab7a9aa98c9"
     },
     {
       "path": "classes/game-clock-class/runtime.mjs",

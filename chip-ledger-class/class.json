@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/chip-ledger-class",
+  "name": "clodhub/chip-ledger-class",
   "version": "1.1.0",
   "title": "Chip ledger",
   "summary": "Wagers, pots, side pots and settlement with every chip accounted for",
@@ -38,7 +38,7 @@
     },
     {
       "path": "classes/chip-ledger-class/chip-ledger.json",
-      "digest": "2a9fb27145d5372117bc6a95d7e64fd426abf83fb2d025ff459c51378dad1ded"
+      "digest": "039194c71bfbc922f7fceb6b61a78ac343d1ca6f918a02bdd5dcd1c0c18a1184"
     },
     {
       "path": "classes/chip-ledger-class/runtime.mjs",

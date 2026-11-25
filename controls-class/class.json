@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/controls-class",
+  "name": "clodhub/controls-class",
   "version": "1.1.0",
   "title": "Controls",
   "summary": "Buttons, toggles, dialogs, panels and help pages with accessible names",
@@ -52,7 +52,7 @@
     },
     {
       "path": "classes/controls-class/controls.json",
-      "digest": "34547afc0e198a0d45cc963c7377998fe1f7064aea8949fba49a1f2c74cafa2e"
+      "digest": "5051a207b8701759b0b699174798fa117793e4c48b2150403ab50274ffb489a1"
     },
     {
       "path": "classes/controls-class/dom.mjs",

@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/tournament-class",
+  "name": "clodhub/tournament-class",
   "version": "1.1.0",
   "title": "Tournament",
   "summary": "Entries, rebuys, eliminations, places and the result screen",
@@ -86,7 +86,7 @@
     },
     {
       "path": "classes/tournament-class/tournament.json",
-      "digest": "45bd348f3007ffa729a951d9981e20fbcd3dfe2959c41874dc7fb54b6ab857ec"
+      "digest": "3d36d41e5f9d83a92e1785e00dc963ed2239dd0979bbd6577e02def9081ce206"
     }
   ],
   "verification": [

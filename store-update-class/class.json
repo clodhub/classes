@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/store-update-class",
+  "name": "clodhub/store-update-class",
   "version": "1.1.0",
   "title": "Store update",
   "summary": "Tells the application a newer version is available from its store",
@@ -59,7 +59,7 @@
     },
     {
       "path": "classes/store-update-class/updates.json",
-      "digest": "561b97b9e53fa04b1320b28307167d005d83d08e9145d9cd161ad4974d810776"
+      "digest": "5824bd7587d5cc8b74973f458f9d110d4386a6f1d6c6ec22548252c1bf07015e"
     }
   ],
   "verification": [

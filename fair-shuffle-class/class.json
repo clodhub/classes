@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/fair-shuffle-class",
+  "name": "clodhub/fair-shuffle-class",
   "version": "1.1.0",
   "title": "Fair shuffle",
   "summary": "Uniform shuffles and random choices from a cryptographic or seeded source",
@@ -39,7 +39,7 @@
     },
     {
       "path": "classes/fair-shuffle-class/random-source.json",
-      "digest": "84de99d834e0d221cfbf11d4307f6fe85bdbcfa802dcc936c702f4ac19d35552"
+      "digest": "5eac0904db9fdffaddff8cc83aba3753886bc49d8f5819ca10689b905ba66931"
     },
     {
       "path": "classes/fair-shuffle-class/runtime.mjs",

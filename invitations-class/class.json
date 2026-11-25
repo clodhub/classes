@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/invitations-class",
+  "name": "clodhub/invitations-class",
   "version": "1.1.0",
   "title": "Invitations",
   "summary": "Invitation links and codes, shared or copied",
@@ -61,7 +61,7 @@
     },
     {
       "path": "classes/invitations-class/invitations.json",
-      "digest": "faab3821928607a874482e23fac9466d5bb48e50425e2e5080fe875d3073b950"
+      "digest": "48ca93ffa9504f95958e8186dd497294c3ef2b7b51e3c7297e5e12669ff6b3a6"
     },
     {
       "path": "classes/invitations-class/runtime.mjs",

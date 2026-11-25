@@ -41,7 +41,7 @@ with tempfile.TemporaryDirectory() as directory:
         assert 'completed through the browser Fold control' in design['browser']
         if label == 'substitute':
             version = read(WORKSPACE / 'components/theme-high-contrast/component.json')['identity']['version']
-            assert design['substituted'] == {'theme': f'ourapps-ae/theme-high-contrast@{version}'}
+            assert design['substituted'] == {'theme': f'clodhub/theme-high-contrast@{version}'}
         entries = {item['name']: item for item in read(work / 'store/catalogue.json')['entries']}
         count = 0
         for name, reference in references.items():

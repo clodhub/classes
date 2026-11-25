@@ -39,7 +39,7 @@ def main():
     document['info']['description'] = 'Provider-specific explanation for the colour-override defect fixture.'
     write(provider_document, document)
     (source / 'candidate-check.mjs').write_text("import assert from 'node:assert/strict';\nimport { resolveTheme } from './implementation/server/index.ts';\nassert.equal(typeof resolveTheme, 'function');\n")
-    manifest['identity']['name'] = 'ourapps-ae/defective-theme'
+    manifest['identity']['name'] = 'clodhub/defective-theme'
     manifest['identity']['sourceRevision'] = 'colour-override-defect-fixture'
     for item in manifest['artefacts']:
         item['destination'] = item['destination'].replace('components/theme-high-contrast/', 'components/defective-theme/')

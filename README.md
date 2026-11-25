@@ -1,6 +1,6 @@
 # Component classes
 
-The 39 `<slot>-class/` directories own independent `class.json` contracts, interface documents and shared checks. Both theme providers implement `ourapps-ae/theme-class` with identical class bytes.
+The 39 `<slot>-class/` directories own independent `class.json` contracts, interface documents and shared checks. Both theme providers implement `clodhub/theme-class` with identical class bytes.
 
 - `python3.12 -B classes/generate.py` refreshes inventory hashes, embeds descriptors in all 40 component manifests, bundles the authoritative classes in the recipe, writes exact slot references and updates authoring metadata.
 - `categories.json` is the category tree (`{format, categories: [{id, title, parent}]}`); each `class.json` names one of its categories, and `generate.py` refuses a category that is not in it.

@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/sound-cues-class",
+  "name": "clodhub/sound-cues-class",
   "version": "1.1.0",
   "title": "Sound cues",
   "summary": "Short sounds played for events, with mute and delay",
@@ -67,7 +67,7 @@
     },
     {
       "path": "classes/sound-cues-class/sound-cues.json",
-      "digest": "6ed86b6152de0e4931c3990d36b9a7beaeca3af6fa41fe4df1250e6eecf0b98a"
+      "digest": "53f9b6c96e51276eef1511979d3759837cdca7f05efa7e143dcc770b8911f23c"
     }
   ],
   "verification": [

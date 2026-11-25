@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/guest-identity-class",
+  "name": "clodhub/guest-identity-class",
   "version": "1.1.0",
   "title": "Guest identity",
   "summary": "Sign-in by name with a device token, no account",
@@ -50,7 +50,7 @@
     },
     {
       "path": "classes/guest-identity-class/guest-identity.json",
-      "digest": "1bbc2885818ff536216e69837b325043d0a9ca757774aaf76cdf7e9fa654ce71"
+      "digest": "69d270f606c147f5eacba37e1cc480e3841c2e70a9182396bd5f4efde0cc67f6"
     },
     {
       "path": "classes/guest-identity-class/runtime.mjs",

@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/private-views-class",
+  "name": "clodhub/private-views-class",
   "version": "1.1.0",
   "title": "Private views",
   "summary": "Each person sees only what they may see of shared state",
@@ -50,7 +50,7 @@
     },
     {
       "path": "classes/private-views-class/private-views.json",
-      "digest": "62d9d1929e88796c8b8e71180f5a437ee3bbe1e9f6f2abf3c31b9c1e723ca582"
+      "digest": "d49872de242e91adb798386b018fa340de4809b3877940c7176efa2072b7a44c"
     },
     {
       "path": "classes/private-views-class/runtime.mjs",

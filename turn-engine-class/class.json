@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/turn-engine-class",
+  "name": "clodhub/turn-engine-class",
   "version": "1.1.0",
   "title": "Turn engine",
   "summary": "Lobby, turns, timing and computer players around a game's own rules",
@@ -91,7 +91,7 @@
     },
     {
       "path": "classes/turn-engine-class/game-adapter.json",
-      "digest": "1943f4d6f3e2352af7280fe444059c2095c7d074f890bdd20aede74e079705f7"
+      "digest": "5f3cb93953794502d3d1f27deef7530d9aff8a1c70e89d5238ef64dce4f99110"
     },
     {
       "path": "classes/turn-engine-class/runtime.mjs",

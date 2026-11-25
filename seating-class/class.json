@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/seating-class",
+  "name": "clodhub/seating-class",
   "version": "1.1.0",
   "title": "Seating",
   "summary": "Seats at a table: taking, leaving and starting when enough are taken",
@@ -69,7 +69,7 @@
     },
     {
       "path": "classes/seating-class/seating.json",
-      "digest": "69bcab6877714760a79905b5884ced37b1bc48b6abf71b16b18e5f14d80eba31"
+      "digest": "ceb446c6a20f64192cc06bc0690e0742e89dbca0470c5ec58262a54ee0f32b6f"
     }
   ],
   "verification": [

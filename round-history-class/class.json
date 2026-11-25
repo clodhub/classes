@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/round-history-class",
+  "name": "clodhub/round-history-class",
   "version": "1.1.0",
   "title": "Round history",
   "summary": "A bounded record of completed rounds with totals, exportable and checked",
@@ -50,7 +50,7 @@
     },
     {
       "path": "classes/round-history-class/round-history.json",
-      "digest": "dc6e258eda990761554a5374e0255a7e7a2fd60a780d18214ea74e693d8f6654"
+      "digest": "889a9ac3b81db829c96bd47b9ad323f98f85d99c61cacf4fb6bb57b1b7afd36c"
     },
     {
       "path": "classes/round-history-class/runtime.mjs",

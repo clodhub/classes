@@ -21,7 +21,7 @@ work = (args.work or Path(tempfile.mkdtemp(prefix='foundation-substitute-' if ar
 command = [sys.executable, '-B', str(ROOT / 'recipes/ourpoker/authoring/try_install.py'), *args.answers, '--work', str(work)]
 if args.substitute:
     version = json.loads((ROOT / 'components/theme-high-contrast/component.json').read_text())['identity']['version']
-    command += ['--substitute', f'theme=ourapps-ae/theme-high-contrast@{version}']
+    command += ['--substitute', f'theme=clodhub/theme-high-contrast@{version}']
 if args.android:
     command += ['--android']
 if args.keep_builds:

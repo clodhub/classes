@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/guided-tour-class",
+  "name": "clodhub/guided-tour-class",
   "version": "1.1.0",
   "title": "Guided tour",
   "summary": "Step-by-step lessons that point at parts of the screen",
@@ -60,7 +60,7 @@
     },
     {
       "path": "classes/guided-tour-class/guided-tour.json",
-      "digest": "0e6c4e75c33567bb00e60b9aa71dacd1c3a0c7422bd50107023db4a8ac9a271e"
+      "digest": "afb04bbdcb707c24dce0a2d91e519f733efaf1d3f60fe76d1b24d8da8d7723ea"
     },
     {
       "path": "classes/guided-tour-class/runtime.mjs",

@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/display-mode-class",
+  "name": "clodhub/display-mode-class",
   "version": "1.1.0",
   "title": "Display mode",
   "summary": "A shared screen, such as a television, that shows the table and never acts",
@@ -52,7 +52,7 @@
     },
     {
       "path": "classes/display-mode-class/display-policy.json",
-      "digest": "a816562c1ec86f34ac9d1e2b38b2553fa82dbb7407c31ea28f87a44f40f8dd48"
+      "digest": "c9d0739fe1c7ab4b629352b3dd8d0d9b785e2f62426a19a4ff24b4b19566fe1e"
     },
     {
       "path": "classes/display-mode-class/runtime.mjs",

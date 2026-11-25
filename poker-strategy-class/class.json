@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/poker-strategy-class",
+  "name": "clodhub/poker-strategy-class",
   "version": "1.1.0",
   "title": "Poker strategy",
   "summary": "Decisions for a computer poker player from its cards and the table",
@@ -51,7 +51,7 @@
     },
     {
       "path": "classes/poker-strategy-class/player-strategy.json",
-      "digest": "2fc41faee431394460b3889c0dd4ab0c1032d962d85bcb82c412d2a46828704f"
+      "digest": "a121f002ad1b3a5e49df79a6b69ef90894212e2a7348fe588437f8621cd1e46b"
     },
     {
       "path": "classes/poker-strategy-class/runtime.mjs",

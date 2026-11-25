@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/apple-host-class",
+  "name": "clodhub/apple-host-class",
   "version": "1.1.0",
   "title": "Apple host",
   "summary": "An Xcode project for iPhone, iPad, Mac and Apple TV rendered from the application's files",
@@ -64,7 +64,7 @@
   "inventory": [
     {
       "path": "classes/apple-host-class/apple-shell.json",
-      "digest": "4dc8aea13aa9724e898fc6befa790578b84f3ff8cd4e90a0dc5459895ace3987"
+      "digest": "5096cd921d47558c170c0cf0febcafaf1ec913bb4bf576e394600a04d6ab6d41"
     },
     {
       "path": "classes/apple-host-class/check.mjs",

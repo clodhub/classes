@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/level-schedule-class",
+  "name": "clodhub/level-schedule-class",
   "version": "1.1.0",
   "title": "Level schedule",
   "summary": "Timed levels with rising values, such as tournament blinds",
@@ -38,7 +38,7 @@
     },
     {
       "path": "classes/level-schedule-class/level-schedule.json",
-      "digest": "ac03dde9dc1d0adb1def3f557c209a5841c06a46eadd0e1e28214cbb41f135e7"
+      "digest": "585eb376b1a72cded8f8afccc0637e24eb38e753f7c27941dd5f9c21a9a645b0"
     },
     {
       "path": "classes/level-schedule-class/runtime.mjs",

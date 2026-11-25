@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/preferences-class",
+  "name": "clodhub/preferences-class",
   "version": "1.1.0",
   "title": "Preferences",
   "summary": "Per-device choices such as sound and language, kept and observed",
@@ -61,7 +61,7 @@
     },
     {
       "path": "classes/preferences-class/preferences.json",
-      "digest": "8e452eb67e1848577fd5179ed3d033612d0874f6515b0869b185eaec37f92923"
+      "digest": "eec4faf94dac5adae6f609a57359ed15a701223ade0616f61947261f65cb930f"
     },
     {
       "path": "classes/preferences-class/runtime.mjs",

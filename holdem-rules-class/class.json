@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/holdem-rules-class",
+  "name": "clodhub/holdem-rules-class",
   "version": "1.1.0",
   "title": "Texas hold'em rules",
   "summary": "Blinds, betting rounds, legal actions and showdown for Texas hold'em",
@@ -81,7 +81,7 @@
     },
     {
       "path": "classes/holdem-rules-class/game-rules.json",
-      "digest": "a52a0fc94e63c45e902cd98a36adb424d21a571ed2c805c4741156baa721336a"
+      "digest": "07a150814abc9f8cfdc8331fd3c0e3cc2710f7e935bc99fac47d2e8c6c285d29"
     },
     {
       "path": "classes/holdem-rules-class/ledger.mjs",

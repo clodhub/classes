@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/video-calls-class",
+  "name": "clodhub/video-calls-class",
   "version": "1.1.0",
   "title": "Video calls",
   "summary": "Video and voice for the people in a room",
@@ -68,7 +68,7 @@
     },
     {
       "path": "classes/video-calls-class/media-session.json",
-      "digest": "6ee162341bf63b9ef939f758d72514d36fe8714a65a1dbf351454267b64d1acc"
+      "digest": "af0478a55e1a291b80920d4a309fa8aa7b080e48c849e6111502559d467947f6"
     },
     {
       "path": "classes/video-calls-class/runtime.mjs",

@@ -1,6 +1,6 @@
 {
   "format": 2,
-  "name": "ourapps-ae/ourapps-release-class",
+  "name": "clodhub/ourapps-release-class",
   "version": "1.1.0",
   "title": "Release pipeline",
   "summary": "GitHub workflows that check, build, release and update the application",
@@ -78,7 +78,7 @@
     },
     {
       "path": "classes/ourapps-release-class/release-pipeline.json",
-      "digest": "c1aefaecf1b213261d9c8a7726c6133dd35d515d2481d6615aab907cfc361763"
+      "digest": "cea4c10b6aa6867a0ca550b7e0e3edba8edd7a06c544065925046760818fc4f1"
     },
     {
       "path": "classes/ourapps-release-class/runtime.mjs",
