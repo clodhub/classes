@@ -24,13 +24,13 @@
   },
   "players": [
     {
-      "id": "computer-robin",
-      "stack": 5050,
+      "id": "c7f0faa7",
+      "stack": 4950,
       "totalIn": 0
     },
     {
-      "id": "3baf28cc",
-      "stack": 4950,
+      "id": "computer-robin",
+      "stack": 5050,
       "totalIn": 0
     }
   ]

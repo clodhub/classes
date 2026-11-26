@@ -12,217 +12,217 @@
   "classes": 39,
   "providers": 40,
   "packages": {
-    "ourapps-ae/android-host": {
-      "name": "ourapps-ae/android-host",
-      "version": "0.9.0",
-      "digest": "c700a473f5ba0bcd6ef385c501f9fceb609e51caefd7994ae08d933382df62c2"
+    "pkg:clod/com.clodhub/android-host": {
+      "name": "pkg:clod/com.clodhub/android-host",
+      "version": "0.12.0",
+      "digest": "6b7004e22f4683f59602901fdb99f433f1c957782f1c333abfbfea7211ae3913"
     },
-    "ourapps-ae/apple-host": {
-      "name": "ourapps-ae/apple-host",
-      "version": "0.10.0",
-      "digest": "1e472aa2b6f7d9fcfdb7c7bb375955e93a27ba5aab6299b7b0e3849b13c15bdc"
+    "pkg:clod/com.clodhub/apple-host": {
+      "name": "pkg:clod/com.clodhub/apple-host",
+      "version": "0.13.0",
+      "digest": "2cb3c6717a7d3d2e8c235a9c337036798ce28fef783766019059a373e95cdd13"
     },
-    "ourapps-ae/card-deck": {
-      "name": "ourapps-ae/card-deck",
-      "version": "0.9.0",
-      "digest": "103939a622f8b7e339305e1634de6ec1365d135e5d2f5d25f0c997983cae7852"
-    },
-    "ourapps-ae/card-graphics": {
-      "name": "ourapps-ae/card-graphics",
-      "version": "0.9.0",
-      "digest": "66070b4c494477ee9c1e10d55529a3edb75240569e932c7b72d4af4bf47e2d36"
-    },
-    "ourapps-ae/chip-graphics": {
-      "name": "ourapps-ae/chip-graphics",
-      "version": "0.9.0",
-      "digest": "5e616a9990b865b053475d9a27dc8cefc7a0bf15c904f5cae59a1d675a1b24f9"
-    },
-    "ourapps-ae/chip-ledger": {
-      "name": "ourapps-ae/chip-ledger",
-      "version": "0.10.0",
-      "digest": "4bc448156ddbf17f5a03b694f42379d2982fc12af6f6b4624e422280bdc02068"
-    },
-    "ourapps-ae/computer-players": {
-      "name": "ourapps-ae/computer-players",
-      "version": "0.10.0",
-      "digest": "4be4be3ccfa6d7b05962422f5864bf1819811abbcdcfe5c0deca771b4d728bb8"
-    },
-    "ourapps-ae/controls": {
-      "name": "ourapps-ae/controls",
-      "version": "0.9.0",
-      "digest": "4d3a89978e0ffb038ba8a4d3a892f0d9e9c6d48f7851c8ef47866415acea49ef"
-    },
-    "ourapps-ae/display-mode": {
-      "name": "ourapps-ae/display-mode",
-      "version": "0.10.0",
-      "digest": "397debdb87fa307054e1013d726cc59eb154bfd27293d0ccafd4f6f8583ac2b5"
-    },
-    "ourapps-ae/fair-shuffle": {
-      "name": "ourapps-ae/fair-shuffle",
-      "version": "0.9.0",
-      "digest": "df39a58c50cc07560a205186084326dca67d5e8400e22f7a666b715aacd40cc5"
-    },
-    "ourapps-ae/game-clock": {
-      "name": "ourapps-ae/game-clock",
-      "version": "0.9.0",
-      "digest": "ef3e328a510f23e2036345b5adea3a30f3842a79e305174ed189e9325a7dcfde"
-    },
-    "ourapps-ae/guest-identity": {
-      "name": "ourapps-ae/guest-identity",
-      "version": "0.10.0",
-      "digest": "86f3a705eee2d6d11a30a3da5d015803a08fa1280a279b5cc1e06e76d7b087c6"
-    },
-    "ourapps-ae/guided-tour": {
-      "name": "ourapps-ae/guided-tour",
-      "version": "0.9.0",
-      "digest": "060a9b58cb1e333d055e3c3fe646e3ad66b95cf21ec035bfdd88b603b853e456"
-    },
-    "ourapps-ae/holdem-rules": {
-      "name": "ourapps-ae/holdem-rules",
-      "version": "0.9.0",
-      "digest": "9eb43f8d3c12e4c50aaf3b6e151760b7a9b515e85dda34bd7917fc1a7344ac53"
-    },
-    "ourapps-ae/invitations": {
-      "name": "ourapps-ae/invitations",
-      "version": "0.7.0",
-      "digest": "3107ab9e3fb0b46b025cb4a2ba15c1d1b9d7ff2664e9697469d427105cbc092c"
-    },
-    "ourapps-ae/level-schedule": {
-      "name": "ourapps-ae/level-schedule",
-      "version": "0.9.0",
-      "digest": "337caab5c140f265ade6260287fa8c2e6ded280593f0722a7b8cf2ab39f6c01f"
-    },
-    "ourapps-ae/ourapps-release": {
-      "name": "ourapps-ae/ourapps-release",
-      "version": "0.9.0",
-      "digest": "bd3eb51cc505ce2ad664ebd2ecef08ec1dc81259a5eabbce5dd1f0d0155c3558"
-    },
-    "ourapps-ae/poker-hand-ranking": {
-      "name": "ourapps-ae/poker-hand-ranking",
-      "version": "0.9.0",
-      "digest": "8d888e2646cf9f36859c20f20ae9a6df012fb5aa04cb1df19d0258e09ad9704d"
-    },
-    "ourapps-ae/poker-odds": {
-      "name": "ourapps-ae/poker-odds",
-      "version": "0.9.0",
-      "digest": "0e9fb4637d37578bb845992416300ee9cbda11256a8cb98881b01982bd572967"
-    },
-    "ourapps-ae/poker-strategy": {
-      "name": "ourapps-ae/poker-strategy",
-      "version": "0.9.0",
-      "digest": "6515df3e2ceaf5517c3da3ac15a40a2357e85f5a2bb084fd16d01a4105f9b670"
-    },
-    "ourapps-ae/preferences": {
-      "name": "ourapps-ae/preferences",
-      "version": "0.7.0",
-      "digest": "a3736d75dbfffd3572476640a21545f839b8ec957fad9dad7b12ebe52967982b"
-    },
-    "ourapps-ae/presence": {
-      "name": "ourapps-ae/presence",
-      "version": "0.9.0",
-      "digest": "edfa8a6f91457d58ee02f205027ed27531afe8ea13d49f3b65af111d66e8a378"
-    },
-    "ourapps-ae/private-views": {
-      "name": "ourapps-ae/private-views",
-      "version": "0.9.0",
-      "digest": "be4435977e56d404d32416defccd7fb8e998793698de4ae54c7ee4c1102de16e"
-    },
-    "ourapps-ae/realtime-rooms": {
-      "name": "ourapps-ae/realtime-rooms",
+    "pkg:clod/com.clodhub/card-deck": {
+      "name": "pkg:clod/com.clodhub/card-deck",
       "version": "0.11.0",
-      "digest": "3dcee4202279fbc34ee0982565044b76adde45f7eb0287491d54dca51bdf7fc1"
+      "digest": "d79e4d39b938cf92e54ad31089e1f113a03d33819e5bf9e9228651d424e61881"
     },
-    "ourapps-ae/room-directory": {
-      "name": "ourapps-ae/room-directory",
+    "pkg:clod/com.clodhub/card-graphics": {
+      "name": "pkg:clod/com.clodhub/card-graphics",
+      "version": "0.11.0",
+      "digest": "77147d162dc6363a81aa36bf3482ee3402e07ff778e611984440ff9a653b6f5c"
+    },
+    "pkg:clod/com.clodhub/chip-graphics": {
+      "name": "pkg:clod/com.clodhub/chip-graphics",
+      "version": "0.11.0",
+      "digest": "0f493ec114a4a4fa410a094b0b5fd84e2a1ff719b0b5b510204578a50618d302"
+    },
+    "pkg:clod/com.clodhub/chip-ledger": {
+      "name": "pkg:clod/com.clodhub/chip-ledger",
+      "version": "0.12.0",
+      "digest": "6d1ec4c8151af3c20a06694050779fd5a86bb2844ca8b9ab743c747e83199895"
+    },
+    "pkg:clod/com.clodhub/computer-players": {
+      "name": "pkg:clod/com.clodhub/computer-players",
+      "version": "0.12.0",
+      "digest": "30122d7e62b6171a87e11f311f857fd797dfa7e4e9287b7a05f00064d7aed0cc"
+    },
+    "pkg:clod/com.clodhub/controls": {
+      "name": "pkg:clod/com.clodhub/controls",
+      "version": "0.11.0",
+      "digest": "2d56bdab6527ca6aafca8a71457ce52ebf44b81bf1f78e8728fbec61bd1c00aa"
+    },
+    "pkg:clod/com.clodhub/display-mode": {
+      "name": "pkg:clod/com.clodhub/display-mode",
+      "version": "0.13.0",
+      "digest": "31c4ae0162ec870fbba54a9e8f120da7a29def1e08afca4be58f7470d43c65ad"
+    },
+    "pkg:clod/com.clodhub/fair-shuffle": {
+      "name": "pkg:clod/com.clodhub/fair-shuffle",
+      "version": "0.11.0",
+      "digest": "62ed6b9d57f7570fe6d6860b67c0cee714161d24473db059cbacfade9c8bf01a"
+    },
+    "pkg:clod/com.clodhub/game-clock": {
+      "name": "pkg:clod/com.clodhub/game-clock",
+      "version": "0.11.0",
+      "digest": "c90e5feba7d6d1087228d94cef85512d46e6d61c65e41661458fb54f5cb1e8c5"
+    },
+    "pkg:clod/com.clodhub/guest-identity": {
+      "name": "pkg:clod/com.clodhub/guest-identity",
+      "version": "0.12.0",
+      "digest": "c7ad49e5fe1d54737df308c78025c93cd83fc1860b775d2603f430de274839cd"
+    },
+    "pkg:clod/com.clodhub/guided-tour": {
+      "name": "pkg:clod/com.clodhub/guided-tour",
+      "version": "0.11.0",
+      "digest": "d7eb1458198843f2e934018a20fc39398c8fd4583874f6ad6039069d4c013397"
+    },
+    "pkg:clod/com.clodhub/holdem-rules": {
+      "name": "pkg:clod/com.clodhub/holdem-rules",
+      "version": "0.12.0",
+      "digest": "9145f12927f28b2174796e6c35dcb647c29d691170512c827eb9553e97d45514"
+    },
+    "pkg:clod/com.clodhub/invitations": {
+      "name": "pkg:clod/com.clodhub/invitations",
       "version": "0.9.0",
-      "digest": "e1d3de0345e22b1edf11525f49485536f5dac881597c5ee20886192990beff69"
+      "digest": "e5f2c3c3e139e4c94d9cd5077d70273097fa9bb0454d2ae0e79495dfa5a57a99"
     },
-    "ourapps-ae/round-history": {
-      "name": "ourapps-ae/round-history",
+    "pkg:clod/com.clodhub/level-schedule": {
+      "name": "pkg:clod/com.clodhub/level-schedule",
+      "version": "0.11.0",
+      "digest": "866ef966b2fab151e41b856cf4bb16289c01d4aa48fb62aae040f6e8fcd013f6"
+    },
+    "pkg:clod/com.clodhub/ourapps-release": {
+      "name": "pkg:clod/com.clodhub/ourapps-release",
+      "version": "0.12.0",
+      "digest": "26de2b1278da54d89d72096bb355979ac510d7800c0f720a335b6b0071a7ab08"
+    },
+    "pkg:clod/com.clodhub/poker-hand-ranking": {
+      "name": "pkg:clod/com.clodhub/poker-hand-ranking",
+      "version": "0.11.0",
+      "digest": "748a0324c17d86da922c3ad0449b6b5f53c231953956c2c777142042cd619f6b"
+    },
+    "pkg:clod/com.clodhub/poker-odds": {
+      "name": "pkg:clod/com.clodhub/poker-odds",
+      "version": "0.12.0",
+      "digest": "4f22d6261119f84211c6d58b2a6a1882ead335f6e3291a3a74a5fbc6275cb6b5"
+    },
+    "pkg:clod/com.clodhub/poker-strategy": {
+      "name": "pkg:clod/com.clodhub/poker-strategy",
+      "version": "0.12.0",
+      "digest": "7df25defee25eeba9981d176e7854f427e001d79680bdc4b3a75e454ba52aee8"
+    },
+    "pkg:clod/com.clodhub/preferences": {
+      "name": "pkg:clod/com.clodhub/preferences",
       "version": "0.9.0",
-      "digest": "912915dd3932d4feda6d6aa21afd8948dc38a8cc2d536218b21ec3e786629a07"
+      "digest": "69c26838999e368b1e141cffbb30b921dea74be970e5b41f1422b8acbca7214b"
     },
-    "ourapps-ae/rules-settings": {
-      "name": "ourapps-ae/rules-settings",
-      "version": "0.9.0",
-      "digest": "2fa8f63a8bac5dd34957bfe760cd5abe5e15e17a11acfc8042061bb11b6d2b1d"
+    "pkg:clod/com.clodhub/presence": {
+      "name": "pkg:clod/com.clodhub/presence",
+      "version": "0.11.0",
+      "digest": "aad92d1699a9c085ca036701c403f6be3478b8c92a8bb15b187ca35689f7eb2a"
     },
-    "ourapps-ae/seating": {
-      "name": "ourapps-ae/seating",
-      "version": "0.9.0",
-      "digest": "601e13f75811e24bab91df7e078da06f996e5253a04df031d1e9caae1976d9f7"
+    "pkg:clod/com.clodhub/private-views": {
+      "name": "pkg:clod/com.clodhub/private-views",
+      "version": "0.11.0",
+      "digest": "219fdb729d5844c00aad7d3a2b350584471d65847101508a5eec08b6611c7965"
     },
-    "ourapps-ae/server-host": {
-      "name": "ourapps-ae/server-host",
-      "version": "0.10.0",
-      "digest": "10dd75a2370f2a960612f16d219d16751fb1885b04a890a4ce293a60b08ca568"
+    "pkg:clod/com.clodhub/realtime-rooms": {
+      "name": "pkg:clod/com.clodhub/realtime-rooms",
+      "version": "0.14.0",
+      "digest": "5a8815c4ffcf87deeb1525c51f893308a88d888d8f57a1d1fdd1c4db048da2b6"
     },
-    "ourapps-ae/sound-cues": {
-      "name": "ourapps-ae/sound-cues",
-      "version": "0.9.0",
-      "digest": "13d0e754413c63cf33aea8ac5de4d411fa6b5203247635716480e9bea08a541d"
+    "pkg:clod/com.clodhub/room-directory": {
+      "name": "pkg:clod/com.clodhub/room-directory",
+      "version": "0.11.0",
+      "digest": "1b3408208daf73fc0c72aaf00671783ad3fe88a5cfc3fa26d74d30ac61677695"
     },
-    "ourapps-ae/store-update": {
-      "name": "ourapps-ae/store-update",
-      "version": "0.10.0",
-      "digest": "a990da8e8439571c22312173fb3301dd57b693ce815badae1198e526c41b5ff7"
+    "pkg:clod/com.clodhub/round-history": {
+      "name": "pkg:clod/com.clodhub/round-history",
+      "version": "0.11.0",
+      "digest": "d3e4692e4ad31a9d7e56cfc83c52a5382f0cbe345c444864d42fdc8ced1a4167"
     },
-    "ourapps-ae/table-layout": {
-      "name": "ourapps-ae/table-layout",
-      "version": "0.9.0",
-      "digest": "9dd86ab074f279adb2e9084952df2b4b14941440e36f94b3d1cc6f64122e1b75"
+    "pkg:clod/com.clodhub/rules-settings": {
+      "name": "pkg:clod/com.clodhub/rules-settings",
+      "version": "0.11.0",
+      "digest": "bccdcda55bd9450cdab095754e4fdef56857067ae5d2734a4516dc209d6e2f59"
     },
-    "ourapps-ae/theme": {
-      "name": "ourapps-ae/theme",
-      "version": "0.9.0",
-      "digest": "b0114bb875698aaa18f55627cb3b6ead6a94f24efaf3d0ee8bb39028b7fe859f"
+    "pkg:clod/com.clodhub/seating": {
+      "name": "pkg:clod/com.clodhub/seating",
+      "version": "0.11.0",
+      "digest": "dca922e7df22308a7ac15a0e1faf7bcb23c22535b9c79814463665e401eb2e1c"
     },
-    "ourapps-ae/theme-high-contrast": {
-      "name": "ourapps-ae/theme-high-contrast",
-      "version": "0.5.0",
-      "digest": "d178558b7cf84bfc113e5d862996da4ad5467d212c42b1ecd0d24c3dd4a1cd1a"
+    "pkg:clod/com.clodhub/server-host": {
+      "name": "pkg:clod/com.clodhub/server-host",
+      "version": "0.13.0",
+      "digest": "8bd11bb36f7a61740a96b383637f3bba9a828e0570fc0063712c974389cfe528"
     },
-    "ourapps-ae/tournament": {
-      "name": "ourapps-ae/tournament",
-      "version": "0.9.0",
-      "digest": "2fc2fc511aa71d36a7a3589044138c72be4ed20fc34d3cdc04e3f3bc4e856a39"
+    "pkg:clod/com.clodhub/sound-cues": {
+      "name": "pkg:clod/com.clodhub/sound-cues",
+      "version": "0.11.0",
+      "digest": "08cb5aa4a880a4fdb5f9d1ec7865f0bb465397abdaa83cd4fc254d0c66ec56a8"
     },
-    "ourapps-ae/translations": {
-      "name": "ourapps-ae/translations",
-      "version": "0.10.0",
-      "digest": "be412dfaf60781559ec222e10f1a0a774120f53cc14ac11a0d0f71b27f199716"
+    "pkg:clod/com.clodhub/store-update": {
+      "name": "pkg:clod/com.clodhub/store-update",
+      "version": "0.13.0",
+      "digest": "366598562e6e60207a4309318ceaaa3d8300d71a1343643b7264c0451d4bc168"
     },
-    "ourapps-ae/turn-engine": {
-      "name": "ourapps-ae/turn-engine",
-      "version": "0.10.0",
-      "digest": "7d2ad315e3edc10ccc55e43e6630f806e9a7221c850ee7e4f93978a4c03bfa8e"
+    "pkg:clod/com.clodhub/table-layout": {
+      "name": "pkg:clod/com.clodhub/table-layout",
+      "version": "0.11.0",
+      "digest": "d2772c5177e4311a83f667e002f748c28af532859af4f93fb5049c49b62d763d"
     },
-    "ourapps-ae/video-calls": {
-      "name": "ourapps-ae/video-calls",
-      "version": "0.10.0",
-      "digest": "da876fe29a7e2a390f157f702a26940b15b229fcf5ead6d8be136aa9645993cb"
+    "pkg:clod/com.clodhub/theme": {
+      "name": "pkg:clod/com.clodhub/theme",
+      "version": "0.11.0",
+      "digest": "48d79256f537ff831a74b59ff0508bf9daae44bcc0fefa791f5f0d9d36374a5c"
     },
-    "ourapps-ae/web-host": {
-      "name": "ourapps-ae/web-host",
-      "version": "0.9.0",
-      "digest": "930cc6f71c3ffb4864463746a8091216bfd857899e8f2e5ba671c2a0233d9668"
+    "pkg:clod/com.clodhub/theme-high-contrast": {
+      "name": "pkg:clod/com.clodhub/theme-high-contrast",
+      "version": "0.7.0",
+      "digest": "a5dd4e2b2bf7fa60ef8dc190306f34468485b138edf0d5e50eb826a244751a0a"
     },
-    "ourapps-ae/windows-desktop": {
-      "name": "ourapps-ae/windows-desktop",
-      "version": "0.10.0",
-      "digest": "c809f67ddb5081a9de1d169b73b974012b87c1bc217c48c0ed29abe1831bfc7e"
+    "pkg:clod/com.clodhub/tournament": {
+      "name": "pkg:clod/com.clodhub/tournament",
+      "version": "0.11.0",
+      "digest": "b3c5aedb64c424e7d68f816fe5f7f08a5592194ba565ee604db304d0b4a7a06c"
     },
-    "ourapps-ae/ourpoker": {
-      "name": "ourapps-ae/ourpoker",
-      "version": "0.9.0",
-      "digest": "f783a13adc1a35456b7a1c7eee20b253a433edb5e32f28243af3b95c40df5849"
+    "pkg:clod/com.clodhub/translations": {
+      "name": "pkg:clod/com.clodhub/translations",
+      "version": "0.13.0",
+      "digest": "40b0607e774993f20d2fbcedce57db57a231f3f27b60e14518dc8f71276e4c3e"
+    },
+    "pkg:clod/com.clodhub/turn-engine": {
+      "name": "pkg:clod/com.clodhub/turn-engine",
+      "version": "0.13.0",
+      "digest": "0662a49b07d5db997d6d4ba367dae98f62f0965d4f0649bedd6cc9516be8b4b3"
+    },
+    "pkg:clod/com.clodhub/video-calls": {
+      "name": "pkg:clod/com.clodhub/video-calls",
+      "version": "0.13.0",
+      "digest": "9597a4ac65b9bac4b06f0517505fa79567bb5cbe714e457c0bd3409fe475c3b0"
+    },
+    "pkg:clod/com.clodhub/web-host": {
+      "name": "pkg:clod/com.clodhub/web-host",
+      "version": "0.12.0",
+      "digest": "b376c40688d0f51d578af058a4cd181369fc4e5b259b56ee200c06bd1f03b167"
+    },
+    "pkg:clod/com.clodhub/windows-desktop": {
+      "name": "pkg:clod/com.clodhub/windows-desktop",
+      "version": "0.13.0",
+      "digest": "ee3944dbea929250c091f4f0b59634e1c27e7640da5ee263e61930aebc85f16d"
+    },
+    "pkg:clod/com.clodhub/ourpoker-recipe": {
+      "name": "pkg:clod/com.clodhub/ourpoker-recipe",
+      "version": "0.13.0",
+      "digest": "d792942b3cc4f334bea3a964ad38bcd989cde6b0d71caaf250b40b617b78d302"
     }
   },
   "installations": {
     "default": {
-      "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-final-default",
-      "packagesVerified": 41,
-      "classSuitesPassed": 42,
+      "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-default-bgkz_2w8",
+      "packagesVerified": 40,
+      "classSuitesPassed": 40,
       "managedFilesMatched": {
         "default": 575,
         "local-web": 463
@@ -230,18 +230,18 @@
       "designs": {
         "default": {
           "admission": {
-            "path": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-final-default",
+            "path": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-default-bgkz_2w8",
             "purpose": "try_install design default",
             "required": 9663676416,
-            "free": 266245685248,
+            "free": 250813706240,
             "margin": 10737418240,
-            "reserved": 0
+            "reserved": 78811272
           },
           "install": "passed",
           "components": 37,
           "tree": {
             "top": [
-              ".aepm/",
+              ".clod/",
               ".gitattributes",
               ".gitignore",
               "android/",
@@ -296,7 +296,7 @@
           },
           "serverTsc": "passed",
           "serverTests": "Tests  37 passed (37)",
-          "serverRun": "http://127.0.0.1:53275 health {\"ok\": true, \"app\": \"ourpoker\"}",
+          "serverRun": "http://127.0.0.1:62106 health {\"ok\": true, \"app\": \"ourpoker\"}",
           "apple": "built iOS (de en es fr), macOS (de en es fr), tvOS (de en es fr)",
           "android": "built (values values-de values-es values-fr)",
           "androidUnitTests": "passed",
@@ -304,12 +304,12 @@
           "webTsc": "passed",
           "webBuild": "passed",
           "desktopWebBuild": "passed",
-          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:53275, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
+          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:62106, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
           "workingTree": "clean: 575 installed files, nothing else",
           "storage": {
             "default": {
-              "bytesBefore": 5614850048,
-              "bytesAfter": 106704896,
+              "bytesBefore": 5623570432,
+              "bytesAfter": 107552768,
               "removed": [
                 "app/ios/build",
                 "app/android/build",
@@ -328,18 +328,18 @@
         },
         "local-web": {
           "admission": {
-            "path": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-final-default",
+            "path": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-default-bgkz_2w8",
             "purpose": "try_install design local-web",
             "required": 1073741824,
-            "free": 263509774336,
+            "free": 240872378368,
             "margin": 10737418240,
-            "reserved": 0
+            "reserved": 9663676416
           },
           "install": "passed",
           "components": 33,
           "tree": {
             "top": [
-              ".aepm/",
+              ".clod/",
               ".gitattributes",
               ".gitignore",
               "android/",
@@ -389,15 +389,15 @@
           },
           "serverTsc": "passed",
           "serverTests": "Tests  34 passed (34)",
-          "serverRun": "http://127.0.0.1:55185 health {\"ok\": true, \"app\": \"ourpoker\"}",
+          "serverRun": "http://127.0.0.1:65509 health {\"ok\": true, \"app\": \"ourpoker\"}",
           "webTsc": "passed",
           "webBuild": "passed",
-          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:55185, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 2 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
+          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:65509, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
           "workingTree": "clean: 463 installed files, nothing else",
           "storage": {
             "local-web": {
-              "bytesBefore": 723681280,
-              "bytesAfter": 77058048,
+              "bytesBefore": 675876864,
+              "bytesAfter": 77873152,
               "removed": [
                 "app/web/node_modules",
                 "app/server/node_modules",
@@ -412,7 +412,7 @@
       }
     },
     "substitute": {
-      "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-final-substitute",
+      "work": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-substitute-22nr75df",
       "packagesVerified": 41,
       "classSuitesPassed": 42,
       "managedFilesMatched": {
@@ -421,21 +421,21 @@
       "designs": {
         "default": {
           "admission": {
-            "path": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-final-substitute",
+            "path": "/private/var/folders/yk/8tzc9b_1713dlhdp5vzkgg100000gn/T/opencode/foundation-substitute-22nr75df",
             "purpose": "try_install design default",
             "required": 9663676416,
-            "free": 266072768512,
+            "free": 250812579840,
             "margin": 10737418240,
-            "reserved": 0
+            "reserved": 9663676416
           },
           "install": "passed",
           "substituted": {
-            "theme": "ourapps-ae/theme-high-contrast@0.5.0"
+            "theme": "pkg:clod/com.clodhub/theme-high-contrast@0.7.0"
           },
           "components": 37,
           "tree": {
             "top": [
-              ".aepm/",
+              ".clod/",
               ".gitattributes",
               ".gitignore",
               "android/",
@@ -490,7 +490,7 @@
           },
           "serverTsc": "passed",
           "serverTests": "Tests  37 passed (37)",
-          "serverRun": "http://127.0.0.1:57204 health {\"ok\": true, \"app\": \"ourpoker\"}",
+          "serverRun": "http://127.0.0.1:62125 health {\"ok\": true, \"app\": \"ourpoker\"}",
           "apple": "built iOS (de en es fr), macOS (de en es fr), tvOS (de en es fr)",
           "android": "built (values values-de values-es values-fr)",
           "androidUnitTests": "passed",
@@ -498,12 +498,12 @@
           "webTsc": "passed",
           "webBuild": "passed",
           "desktopWebBuild": "passed",
-          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:57204, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
+          "browser": "passed: title OurPoker, web-host head, room list from http://127.0.0.1:62125, player seated (server lists \"Smoke\"), lobby says \"Waiting for 1 more player.\", a hand dealt with a computer player (2 at the table), hand 1 completed through the browser Fold control with 10000 chips conserved and matched payouts, the table fits 1280x800, 6 requests to the server, no script error",
           "workingTree": "clean: 575 installed files, nothing else",
           "storage": {
             "default": {
-              "bytesBefore": 5624946688,
-              "bytesAfter": 104513536,
+              "bytesBefore": 5648265216,
+              "bytesAfter": 105373696,
               "removed": [
                 "app/ios/build",
                 "app/android/build",
