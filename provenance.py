@@ -18,7 +18,8 @@ from urllib.request import urlopen
 from clod.model import digest
 
 ROOT = Path(__file__).resolve().parent
-CACHE = ROOT / 'upstream'
+# The fetched upstream sources: classes/upstream, or the folder CLOD_UPSTREAM_CACHE names.
+CACHE = Path(os.environ.get('CLOD_UPSTREAM_CACHE') or ROOT / 'upstream').resolve()
 # npm packages whose registry entry names no repository; each address holds the entry's gitHead commit.
 NPM_REPOSITORIES = {'@isaacs/nonrecursive-glob-match': 'https://github.com/isaacs/nonrecursive-glob-match'}
 

@@ -197,6 +197,11 @@
       "parent": "data-and-storage"
     },
     {
+      "id": "data-and-storage/documents",
+      "title": "Document storage",
+      "parent": "data-and-storage"
+    },
+    {
       "id": "data-and-storage/objects-and-files",
       "title": "Object and file storage",
       "parent": "data-and-storage"

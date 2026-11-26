@@ -27,7 +27,7 @@ subprocess.run([sys.executable, '-B', str(ROOT / 'generate.py')], cwd=WORKSPACE,
 after = {str(path.relative_to(WORKSPACE)): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
 changed = [path for path in before if before[path] != after[path]]
 assert changed == [], changed
-proof = ROOT / 'proof/reproduction.json'
+proof = library.PROOF / 'reproduction.json'
 proof.parent.mkdir(parents=True, exist_ok=True)
 proof.write_text(json.dumps({'filesChecked': len(paths), 'changed': changed, 'digests': after}, indent=2) + '\n')
 print(f'{len(paths)} files reproduced byte-identically')

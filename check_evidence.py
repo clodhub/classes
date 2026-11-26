@@ -25,7 +25,7 @@ parser.add_argument('--regression', type=Path, required=True)
 args = parser.parse_args()
 read = lambda path: json.loads(path.read_text())
 sources = [package / 'component.json' for package in library.components() + library.recipes()]
-proof = ROOT / 'proof'
+proof = library.PROOF
 with tempfile.TemporaryDirectory() as directory:
     store = Path(directory).resolve() / 'store'
     references = {reference['name']: reference for path in sources for reference in [pack(path.parent, store)]}

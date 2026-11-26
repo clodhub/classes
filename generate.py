@@ -6,7 +6,6 @@ import argparse
 from copy import deepcopy
 import json
 from pathlib import Path
-import shutil
 import sys
 
 sys.dont_write_bytecode = True
@@ -24,19 +23,26 @@ def read(path):
     return json.loads(path.read_text())
 
 
-def write(path, value):
+def write_bytes(path, data):
+    """Writes the file only when its bytes change, so a run leaves unchanged folders untouched."""
+    if path.is_file() and not path.is_symlink() and path.read_bytes() == data:
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(data)
+
+
+def write(path, value):
     if path.name == 'component.json':
         raw = canonical(value)
         if len(raw) > 1024 * 1024:
             raise ValueError(f'{path}: canonical manifest is {len(raw)} bytes')
-        path.write_bytes(raw)
+        write_bytes(path, raw)
         return
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+    write_bytes(path, (json.dumps(value, indent=2, ensure_ascii=False) + '\n').encode())
 
 
 def class_bundle(directory):
-    shutil.copyfile(ROOT / 'runtime.mjs', directory / 'runtime.mjs')
+    write_bytes(directory / 'runtime.mjs', (ROOT / 'runtime.mjs').read_bytes())
     descriptor = read(directory / 'class.json')
     if short_name(descriptor['name']) != directory.name:
         raise ValueError(f'{directory.name}/class.json: the class is named {descriptor["name"]}; its folder must be its short name')
@@ -57,10 +63,8 @@ def class_bundle(directory):
 def bundle_into(package, bundles):
     for bundle in bundles:
         slug = short_name(bundle['descriptor']['name'])
-        directory = package / 'classes' / slug
-        directory.mkdir(parents=True, exist_ok=True)
         for entry in bundle['descriptor']['inventory']:
-            shutil.copyfile(ROOT / slug / Path(entry['path']).name, package / entry['path'])
+            write_bytes(package / entry['path'], (ROOT / slug / Path(entry['path']).name).read_bytes())
 
 
 RELEASE = {'channel': 'features', 'fixes': []}

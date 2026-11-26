@@ -3,12 +3,17 @@
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import shutil
 import subprocess
+import sys
 
 ROOT = Path(__file__).resolve().parent
+CACHE = Path(os.environ.get('CLOD_UPSTREAM_CACHE') or ROOT / 'upstream').resolve()
+sys.path.insert(0, str(ROOT.parent / 'tools'))
+import library  # noqa: E402
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--app', type=Path, required=True)
 parser.add_argument('--packages', type=Path, help='the cloned Swift packages: default APP/ios/build/DerivedData/SourcePackages '
@@ -25,7 +30,7 @@ for pin in json.loads(resolved.read_text())['pins']:
     revision = subprocess.check_output(['git', '-C', str(checkout), 'rev-parse', 'HEAD'], text=True).strip()
     if revision != pin['state']['revision']:
         raise SystemExit(f'{identity}: checkout does not match the resolved revision')
-    target = ROOT / 'upstream/swift' / identity / version / 'provided'
+    target = CACHE / 'swift' / identity / version / 'provided'
     notices = []
     for kind, directory in [('source', checkout), ('artifacts', packages / 'artifacts' / identity)]:
         for file in sorted(directory.rglob('*')) if directory.exists() else []:
@@ -36,7 +41,7 @@ for pin in json.loads(resolved.read_text())['pins']:
                 shutil.copyfile(file, output)
                 notices.append({'path': relative.as_posix(), 'digest': hashlib.sha256(file.read_bytes()).hexdigest()})
     records.append({'identity': identity, 'version': version, 'revision': revision, 'notices': notices})
-proof = ROOT / 'proof/swift-notices.json'
+proof = library.PROOF / 'swift-notices.json'
 proof.parent.mkdir(parents=True, exist_ok=True)
 proof.write_text(json.dumps(records, indent=2) + '\n')
 print(f'{len(records)} resolved Swift sources; {sum(len(item["notices"]) for item in records)} supplied notice files retained')

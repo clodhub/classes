@@ -46,7 +46,7 @@ with tempfile.TemporaryDirectory() as directory:
             assert (target / name).read_bytes() == raw, (source.name, name)
         assert len((target / 'component.json').read_bytes()) <= 1024 * 1024
         results.append({'component': source.name, 'foundationFields': 'matched', 'templates': 'matched', 'licences': 'unchanged'})
-proof = ROOT / 'proof/scaffolder.json'
+proof = library.PROOF / 'scaffolder.json'
 proof.parent.mkdir(parents=True, exist_ok=True)
 proof.write_text(json.dumps(results, indent=2) + '\n')
 print(f'{len(results)} authoring specs reproduced foundation metadata, class bundles, templates and supplied licences')
