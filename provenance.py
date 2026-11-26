@@ -307,12 +307,6 @@ def foundations(package, manifest):
             platforms.add('android')
         elif source.startswith('implementation/desktop/'):
             platforms.add('windows')
-    if manifest['kind'] == 'recipe':
-        # A recipe offers every target its recipe.json names, wherever the files sit (a full-stack web project is server and web in one tree).
-        targets = read(package / 'recipe.json')['targets']
-        platforms.update(targets['client'])
-        if targets['server']:
-            platforms.add('server')
     imported, dependencies = upstream(package, manifest)
     imported.extend(wrappers(package, manifest))
     imported.extend(bundled_sources(package, manifest))
@@ -348,6 +342,10 @@ def foundations(package, manifest):
     for dependency in dependencies:
         if dependency['name'] in shared_names:
             dependency['isolation'] = 'shared'
+    if manifest['kind'] == 'recipe':
+        # A recipe runs on exactly the targets its recipe.json offers, wherever the files sit (a full-stack web project is server and web in one tree).
+        targets = read(package / 'recipe.json')['targets']
+        platforms = set(targets['client']) | ({'server'} if targets['server'] else set())
     runtimes = {'node': '>=26.5.0 <27.0.0'}
     if any(item['source'].startswith('implementation/apple/') for item in manifest['artefacts']):
         runtimes.update(swift='=6.4.2', ios='>=17.0.0', macos='>=14.0.0', tvos='>=17.0.0')
