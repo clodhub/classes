@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/preferences-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/preferences-class",
   "version": "1.1.0",
   "title": "Preferences",
   "summary": "Per-device choices such as sound and language, kept and observed",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/preferences",
+      "type": "com.clodhub/preferences",
       "version": "1.0.0",
       "path": "classes/preferences-class/preferences.json",
       "modules": {
@@ -61,11 +61,11 @@
     },
     {
       "path": "classes/preferences-class/preferences.json",
-      "digest": "eec4faf94dac5adae6f609a57359ed15a701223ade0616f61947261f65cb930f"
+      "digest": "dc75d5d442654fca97c12a9ae3ac4c2f5beae8cfb2f877d87ed51ecc65245acf"
     },
     {
       "path": "classes/preferences-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

@@ -3,7 +3,7 @@
   "version": "5.2.3",
   "revision": "sha512:330e79f28780f5f15bbfae7fcb8987b570ecf5b3e714c6402ff8f174f154a4e1c72175fdd667201076d2e4b6a1afea7064547c03b19095e456788e9c1850b650",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/chai@5.2.3",
+  "purl": "pkg:npm/%40types/chai@5.2.3",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

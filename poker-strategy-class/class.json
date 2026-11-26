@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/poker-strategy-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/poker-strategy-class",
   "version": "1.1.0",
   "title": "Poker strategy",
   "summary": "Decisions for a computer poker player from its cards and the table",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/player-strategy",
+      "type": "com.clodhub/player-strategy",
       "version": "1.0.0",
       "path": "classes/poker-strategy-class/player-strategy.json",
       "modules": {
@@ -20,11 +20,11 @@
   ],
   "requires": [
     {
-      "type": "ae/hand-ranking",
+      "type": "com.clodhub/hand-ranking",
       "version": "1.0.0"
     },
     {
-      "type": "ae/poker-odds",
+      "type": "com.clodhub/poker-odds",
       "version": "1.0.0"
     }
   ],
@@ -51,11 +51,11 @@
     },
     {
       "path": "classes/poker-strategy-class/player-strategy.json",
-      "digest": "a121f002ad1b3a5e49df79a6b69ef90894212e2a7348fe588437f8621cd1e46b"
+      "digest": "514338f7b983908d3ff2f06610ba3258e218ecd9f6c723ad00914f6b5d814a35"
     },
     {
       "path": "classes/poker-strategy-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

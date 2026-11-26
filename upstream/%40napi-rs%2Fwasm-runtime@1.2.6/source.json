@@ -3,7 +3,7 @@
   "version": "1.2.6",
   "revision": "4fff029f67693d08be0ff16818eb9ead2637a99e",
   "repository": "https://github.com/napi-rs/napi-rs.git",
-  "purl": "pkg:npm/@napi-rs/wasm-runtime@1.2.6",
+  "purl": "pkg:npm/%40napi-rs/wasm-runtime@1.2.6",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

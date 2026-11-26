@@ -21,8 +21,8 @@ if args.background:
         process = subprocess.Popen([sys.executable, '-B', __file__, '--work', str(work)] + (['--keep-builds'] if args.keep_builds else []), stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
     print(f'process {process.pid}; work {work}')
     sys.exit(0)
-sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
-from aepm import ledger, locks, space
+sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(ROOT / 'clod')))
+from clod import ledger, locks, space
 ledger.register(work, 'proof', purpose='android-host dependency capture', keep=True)
 # the Android build of the standalone consumer; under 0.4 GiB in the 19 November cloud-2-proof design, rounded up
 admission = space.reserve(work, 2 * space.GIB, purpose='android-host dependency capture')

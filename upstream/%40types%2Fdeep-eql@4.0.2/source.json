@@ -3,7 +3,7 @@
   "version": "4.0.2",
   "revision": "sha512:73d87d75554c8a030f7386f04ef0b9771aada8967040f78fb168cf96948e9e88dba2bea91aa764e78d657c0ec0a8542be6907505176ad23b98f5d6fcd41c3217",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/deep-eql@4.0.2",
+  "purl": "pkg:npm/%40types/deep-eql@4.0.2",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

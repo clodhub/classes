@@ -25,6 +25,8 @@ sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
 COMPONENTS = WORKSPACE / "components"
+sys.path.insert(0, str(WORKSPACE / "tools"))
+import library  # noqa: E402
 CHROME = os.environ.get("CHROME", "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
 ESBUILD = os.environ.get("ESBUILD", str(WORKSPACE / "ourapps/node_modules/.bin/esbuild"))
 LIMIT = 2 * 1024 * 1024
@@ -138,8 +140,8 @@ def render(component):
     manifest_path = package / "component.json"
     manifest = json.loads(manifest_path.read_text())
     manifest["images"] = images
-    sys.path.insert(0, os.environ.get("AEPM_CHECKOUT", str(WORKSPACE / "aepm")))
-    from aepm.model import canonical
+    sys.path.insert(0, os.environ.get("CLOD_CHECKOUT", str(WORKSPACE / "clod")))
+    from clod.model import canonical
     manifest_path.write_bytes(canonical(manifest))
     print(f"{component}: {len(images)} images")
 
@@ -147,7 +149,7 @@ def render(component):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("components", nargs="*")
-    names = parser.parse_args().components or sorted(p.parent.parent.name for p in COMPONENTS.glob("*/examples/images.ts"))
+    names = parser.parse_args().components or [p.name for p in library.components() if (p / "examples/images.ts").is_file()]
     for name in names:
         render(name)
 

@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/presence-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/presence-class",
   "version": "1.1.0",
   "title": "Presence",
   "summary": "Who is connected, away or back, and missed turns",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/presence",
+      "type": "com.clodhub/presence",
       "version": "1.0.0",
       "path": "classes/presence-class/presence.json",
       "modules": {
@@ -20,7 +20,7 @@
   ],
   "requires": [
     {
-      "type": "ae/guest-identity",
+      "type": "com.clodhub/guest-identity",
       "version": "1.0.0"
     }
   ],
@@ -52,11 +52,11 @@
     },
     {
       "path": "classes/presence-class/presence.json",
-      "digest": "3f6e0f1c019481d5dd0924b67762a85cd0eb70b018085c73034199c5f51477f5"
+      "digest": "38e3ea85271e393eff1ae0e61aa4d08eb6bd4f83708b924a4f9c7e084b880385"
     },
     {
       "path": "classes/presence-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

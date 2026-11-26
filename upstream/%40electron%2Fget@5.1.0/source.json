@@ -3,7 +3,7 @@
   "version": "5.1.0",
   "revision": "da84467eacf58f36a8d43de64a09dd2cfe491d3f",
   "repository": "https://github.com/electron/get.git",
-  "purl": "pkg:npm/@electron/get@5.1.0",
+  "purl": "pkg:npm/%40electron/get@5.1.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

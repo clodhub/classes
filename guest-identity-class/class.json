@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/guest-identity-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/guest-identity-class",
   "version": "1.1.0",
   "title": "Guest identity",
   "summary": "Sign-in by name with a device token, no account",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/guest-identity",
+      "type": "com.clodhub/guest-identity",
       "version": "1.0.0",
       "path": "classes/guest-identity-class/guest-identity.json",
       "modules": {
@@ -50,11 +50,11 @@
     },
     {
       "path": "classes/guest-identity-class/guest-identity.json",
-      "digest": "69d270f606c147f5eacba37e1cc480e3841c2e70a9182396bd5f4efde0cc67f6"
+      "digest": "d858c2b170319baf0da058c54aec9716c31c4090fedf7c37855b7fcc9604acdd"
     },
     {
       "path": "classes/guest-identity-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

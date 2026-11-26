@@ -8,14 +8,14 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT.parent / 'aepm')))
-from aepm.bundle import pack, read_package
-from aepm.io import load, write
-from aepm.model import AepmError
-from aepm.recipe import Package, fit
-from aepm.test_identities import generate
-from aepm.trust import publish_release, publish_review
-from aepm.verification import review_package
+sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(ROOT.parent / 'clod')))
+from clod.bundle import pack, read_package
+from clod.io import load, write
+from clod.model import ClodError
+from clod.recipe import Package, fit
+from clod.test_identities import generate
+from clod.trust import publish_release, publish_review
+from clod.verification import review_package
 
 
 def main():
@@ -39,7 +39,7 @@ def main():
     document['info']['description'] = 'Provider-specific explanation for the colour-override defect fixture.'
     write(provider_document, document)
     (source / 'candidate-check.mjs').write_text("import assert from 'node:assert/strict';\nimport { resolveTheme } from './implementation/server/index.ts';\nassert.equal(typeof resolveTheme, 'function');\n")
-    manifest['identity']['name'] = 'clodhub/defective-theme'
+    manifest['identity']['name'] = 'pkg:clod/com.clodhub/defective-theme'
     manifest['identity']['sourceRevision'] = 'colour-override-defect-fixture'
     for item in manifest['artefacts']:
         item['destination'] = item['destination'].replace('components/theme-high-contrast/', 'components/defective-theme/')
@@ -68,7 +68,7 @@ def main():
     assert report['summary']['required-local'] == 'failed'
     try:
         publish_review(store, reference, report, work / 'identities/guardian.pem', policy=policy)
-    except AepmError as error:
+    except ClodError as error:
         assert error.code == 'report-verdict', error
     else:
         raise AssertionError('a failed class report was signed')

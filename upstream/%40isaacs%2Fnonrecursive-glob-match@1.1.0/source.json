@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "revision": "0ac7bea32e2be9613ca4eab38bbf108ef8f6f9fe",
   "repository": "https://github.com/isaacs/nonrecursive-glob-match",
-  "purl": "pkg:npm/@isaacs/nonrecursive-glob-match@1.1.0",
+  "purl": "pkg:npm/%40isaacs/nonrecursive-glob-match@1.1.0",
   "licence": "BlueOak-1.0.0",
   "notices": [
     "0-LICENSE.md"

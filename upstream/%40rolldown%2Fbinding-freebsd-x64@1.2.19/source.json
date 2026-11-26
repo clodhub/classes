@@ -3,7 +3,7 @@
   "version": "1.2.19",
   "revision": "sha512:3bc21200e7c8d678fb02e04f777d05485e3bcfb7fb973964e69a105468228a4bd0b86101158bd6f248be5049d3f9824f9cd1a34339f7d38925b783bd15413b98",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-freebsd-x64@1.2.19",
+  "purl": "pkg:npm/%40rolldown/binding-freebsd-x64@1.2.19",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

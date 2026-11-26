@@ -3,7 +3,7 @@
   "version": "21.0.3",
   "revision": "sha512:238abd414f4c42fe2810ecf8b401c9b4dcf5730b8bc67d85df171cda257959da8b3e95278f7d1a52ec6dd660316131bea1ef0264c57ffbaad4e12e20443ceab5",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/yargs-parser@21.0.3",
+  "purl": "pkg:npm/%40types/yargs-parser@21.0.3",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

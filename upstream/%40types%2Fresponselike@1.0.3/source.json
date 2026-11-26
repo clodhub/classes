@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "revision": "sha512:1fff8bf94913577dee7f8f4f1f9a420140553cd8f69c30574cdfaa4b574ec32ca0db897709c89c89c080edc6be1ccbc9059705825e6bf1ef9147a7a5b1be0bcb",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/responselike@1.0.3",
+  "purl": "pkg:npm/%40types/responselike@1.0.3",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

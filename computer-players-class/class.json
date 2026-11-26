@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/computer-players-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/computer-players-class",
   "version": "1.1.0",
   "title": "Computer players",
   "summary": "Computer opponents that take empty seats and act in their turn",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/computer-players",
+      "type": "com.clodhub/computer-players",
       "version": "1.0.0",
       "path": "classes/computer-players-class/computer-players.json",
       "modules": {
@@ -20,15 +20,15 @@
   ],
   "requires": [
     {
-      "type": "ae/player-strategy",
+      "type": "com.clodhub/player-strategy",
       "version": "1.0.0"
     },
     {
-      "type": "ae/game-clock",
+      "type": "com.clodhub/game-clock",
       "version": "1.0.0"
     },
     {
-      "type": "ae/seating",
+      "type": "com.clodhub/seating",
       "version": "1.0.0"
     }
   ],
@@ -73,11 +73,11 @@
     },
     {
       "path": "classes/computer-players-class/computer-players.json",
-      "digest": "7ae42500d0a299cfc06a14d8167c5ec9f19c650330091f15ac5d702f96c6f228"
+      "digest": "9504f5e6aec2cfc35a3de98caa76d348e54b8e3979a15cc2a3964f7e33a22b8a"
     },
     {
       "path": "classes/computer-players-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

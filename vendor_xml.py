@@ -10,7 +10,7 @@ import sys
 import tarfile
 
 ROOT = Path(__file__).resolve().parent
-sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT.parent / 'aepm')))
+sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(ROOT.parent / 'clod')))
 from provenance import fetch, npm_source
 
 source = npm_source(('@xmldom/xmldom', '0.8.15'))

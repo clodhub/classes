@@ -3,7 +3,7 @@
   "version": "1.2.14",
   "revision": "sha512:57f87c78fab57ca0eb9ad14ccfac5c08ddc32afbaf311af0c03d6ad0f90179ea380e92bae1b89a2afa96195c6a09e60aa9e464ee013bfe228fc4b0a7d3c3bdec",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-linux-s390x-gnu@1.2.14",
+  "purl": "pkg:npm/%40rolldown/binding-linux-s390x-gnu@1.2.14",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

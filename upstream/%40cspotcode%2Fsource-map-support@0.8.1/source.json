@@ -3,7 +3,7 @@
   "version": "0.8.1",
   "revision": "0.8.1",
   "repository": "https://github.com/cspotcode/node-source-map-support.git",
-  "purl": "pkg:npm/@cspotcode/source-map-support@0.8.1",
+  "purl": "pkg:npm/%40cspotcode/source-map-support@0.8.1",
   "licence": "MIT",
   "notices": [
     "0-LICENSE.md"

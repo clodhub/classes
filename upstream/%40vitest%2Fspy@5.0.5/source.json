@@ -3,7 +3,7 @@
   "version": "5.0.5",
   "revision": "sha512:970251131b87e35ef6e7b439c2ff5062e80df48309928c5cacaad8c463d0901ce5ef094da535310ffe72357e0448a55421284a3e090672160f14c58e3a4d30cf",
   "repository": "https://github.com/vitest-dev/vitest.git",
-  "purl": "pkg:npm/@vitest/spy@5.0.5",
+  "purl": "pkg:npm/%40vitest/spy@5.0.5",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

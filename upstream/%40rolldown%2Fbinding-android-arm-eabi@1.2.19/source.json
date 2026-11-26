@@ -3,7 +3,7 @@
   "version": "1.2.19",
   "revision": "sha512:7be11b7b4593fbdb5b5e634a3c8882f18ad6007630ba0de6ea2e29deb6461ae95f66b8b58ed2381ec953f8e66715ffce207a30585ef50d3947c1704fd92880ec",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-android-arm-eabi@1.2.19",
+  "purl": "pkg:npm/%40rolldown/binding-android-arm-eabi@1.2.19",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/android-host-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/android-host-class",
   "version": "1.1.0",
   "title": "Android host",
   "summary": "An Android application project rendered from the application's files, with locked dependencies",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/android-shell",
+      "type": "com.clodhub/android-shell",
       "version": "1.0.0",
       "path": "classes/android-host-class/android-shell.json",
       "modules": {
@@ -23,7 +23,7 @@
   ],
   "requires": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0"
     }
   ],
@@ -48,7 +48,7 @@
   "inventory": [
     {
       "path": "classes/android-host-class/android-shell.json",
-      "digest": "0a76d5cc882cbe2b5b4a3b07d7f04fec698dadfc60b49692705fb3a3f1373625"
+      "digest": "880c40ee4abd29ff7fa193bc4b5ddb3971c077d67b4ab08d5398769985aba75d"
     },
     {
       "path": "classes/android-host-class/check.mjs",
@@ -56,7 +56,7 @@
     },
     {
       "path": "classes/android-host-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

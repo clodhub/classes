@@ -3,7 +3,7 @@
   "version": "0.3.31",
   "revision": "74fc8e11d30641b82e3ca3532cd89477671afeab",
   "repository": "https://github.com/jridgewell/sourcemaps.git",
-  "purl": "pkg:npm/@jridgewell/trace-mapping@0.3.31",
+  "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.31",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

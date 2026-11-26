@@ -3,7 +3,7 @@
   "version": "1.1.0",
   "revision": "sha512:2be354d870c211e9b8b029601c7e19657c1d25e345909a3e851938efd0c8c1d22f8803cdda11491f52871f083c0b11d05ef8b43395d8e1d7935c835f222486eb",
   "repository": "https://github.com/rolldown/plugins.git",
-  "purl": "pkg:npm/@rolldown/pluginutils@1.1.0",
+  "purl": "pkg:npm/%40rolldown/pluginutils@1.1.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

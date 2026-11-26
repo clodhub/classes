@@ -3,7 +3,7 @@
   "version": "2.0.0-beta.2",
   "revision": "5afb65887f6463bbef7a13607bf86406c33218e5",
   "repository": "https://github.com/toyobayashi/emnapi.git",
-  "purl": "pkg:npm/@emnapi/core@2.0.0-beta.2",
+  "purl": "pkg:npm/%40emnapi/core@2.0.0-beta.2",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

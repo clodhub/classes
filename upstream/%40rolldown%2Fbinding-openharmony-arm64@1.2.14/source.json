@@ -3,7 +3,7 @@
   "version": "1.2.14",
   "revision": "sha512:ab2af95e2346c66db2b71d7bbefb5c27d9d79fabf58043444e2e74ddb271dce1b0675b52a278fb068b316cc6bfc5e01f4a5e624bd5fa2a31166172eeeafd4bed",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-openharmony-arm64@1.2.14",
+  "purl": "pkg:npm/%40rolldown/binding-openharmony-arm64@1.2.14",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

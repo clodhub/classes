@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/guided-tour-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/guided-tour-class",
   "version": "1.1.0",
   "title": "Guided tour",
   "summary": "Step-by-step lessons that point at parts of the screen",
@@ -8,7 +8,7 @@
   "presentation": "visual",
   "provides": [
     {
-      "type": "ae/guided-tour",
+      "type": "com.clodhub/guided-tour",
       "version": "1.0.0",
       "path": "classes/guided-tour-class/guided-tour.json",
       "modules": {
@@ -35,15 +35,15 @@
   ],
   "requires": [
     {
-      "type": "ae/controls",
+      "type": "com.clodhub/controls",
       "version": "1.0.0"
     },
     {
-      "type": "ae/preferences",
+      "type": "com.clodhub/preferences",
       "version": "1.0.0"
     },
     {
-      "type": "ae/language",
+      "type": "com.clodhub/language",
       "version": "1.0.0"
     }
   ],
@@ -60,11 +60,11 @@
     },
     {
       "path": "classes/guided-tour-class/guided-tour.json",
-      "digest": "afb04bbdcb707c24dce0a2d91e519f733efaf1d3f60fe76d1b24d8da8d7723ea"
+      "digest": "210a6e8854b077254909f12f0a3c85c8aedc96c5c06714e4062d2a21741a0412"
     },
     {
       "path": "classes/guided-tour-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

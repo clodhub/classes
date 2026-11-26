@@ -3,7 +3,7 @@
   "version": "2.6.13",
   "revision": "sha512:406a51569cd2694b37d0905218f8ce83852f7aedfce1eadb1c1a13d7378e36fc827f043122452c84b00ea8dfe4f448c6be23d19964d37ba687daac9258a4d54b",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/node-fetch@2.6.13",
+  "purl": "pkg:npm/%40types/node-fetch@2.6.13",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

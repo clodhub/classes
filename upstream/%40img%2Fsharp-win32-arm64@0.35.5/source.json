@@ -3,7 +3,7 @@
   "version": "0.35.5",
   "revision": "51a990faa26ade5586a4934ac9673c98d8893326",
   "repository": "https://github.com/lovell/sharp.git",
-  "purl": "pkg:npm/@img/sharp-win32-arm64@0.35.5",
+  "purl": "pkg:npm/%40img/sharp-win32-arm64@0.35.5",
   "licence": "Apache-2.0 AND LGPL-3.0-or-later",
   "notices": [
     "0-LICENSE"

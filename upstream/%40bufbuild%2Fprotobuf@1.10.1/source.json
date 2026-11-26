@@ -3,7 +3,7 @@
   "version": "1.10.1",
   "revision": "e31c1b139cf1e7fea2fb914f650af3c28c42ec68",
   "repository": "https://github.com/bufbuild/protobuf-es.git",
-  "purl": "pkg:npm/@bufbuild/protobuf@1.10.1",
+  "purl": "pkg:npm/%40bufbuild/protobuf@1.10.1",
   "licence": "(Apache-2.0 AND BSD-3-Clause)",
   "notices": [
     "0-LICENSE"

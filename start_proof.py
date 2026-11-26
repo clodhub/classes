@@ -21,13 +21,13 @@ work = (args.work or Path(tempfile.mkdtemp(prefix='foundation-substitute-' if ar
 command = [sys.executable, '-B', str(ROOT / 'recipes/ourpoker/authoring/try_install.py'), *args.answers, '--work', str(work)]
 if args.substitute:
     version = json.loads((ROOT / 'components/theme-high-contrast/component.json').read_text())['identity']['version']
-    command += ['--substitute', f'theme=clodhub/theme-high-contrast@{version}']
+    command += ['--substitute', f'theme=theme-high-contrast@{version}']
 if args.android:
     command += ['--android']
 if args.keep_builds:
     command += ['--keep-builds']
 java = '/Library/Java/JavaVirtualMachines/temurin-26.jdk/Contents/Home'
-env = {**os.environ, 'PYTHONPATH': os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')), 'PYTHONDONTWRITEBYTECODE': '1',
+env = {**os.environ, 'PYTHONPATH': os.environ.get('CLOD_CHECKOUT', str(ROOT / 'clod')), 'PYTHONDONTWRITEBYTECODE': '1',
        'JAVA_HOME': java, 'ANDROID_HOME': '/opt/homebrew/share/android-commandlinetools',
        'PATH': java + '/bin:' + os.environ['PATH']}
 with (work / 'execution.log').open('a') as output:

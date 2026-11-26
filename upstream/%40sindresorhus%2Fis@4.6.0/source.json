@@ -3,7 +3,7 @@
   "version": "4.6.0",
   "revision": "65ea91297ede74046b19a65c434411a39c16dacd",
   "repository": "https://github.com/sindresorhus/is.git",
-  "purl": "pkg:npm/@sindresorhus/is@4.6.0",
+  "purl": "pkg:npm/%40sindresorhus/is@4.6.0",
   "licence": "MIT",
   "notices": [
     "0-license"

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Bundle independent class contracts into components and the OurPoker recipe."""
+"""Bundle the library's independent class contracts (tools/library.json) into its components and recipes: each component
+gets the classes its authoring names in `implements`, each recipe the classes its slots name."""
 import os
 import argparse
 from copy import deepcopy
@@ -11,9 +12,11 @@ import sys
 sys.dont_write_bytecode = True
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
-sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(WORKSPACE / 'aepm')))
-from aepm.model import canonical, digest
-from aepm.foundations import validate_categories, validate_class_descriptor
+sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(WORKSPACE / 'clod')))
+sys.path.insert(0, str(WORKSPACE / 'tools'))
+from clod.model import MANIFEST_FORMAT, canonical, digest, short_name
+from clod.foundations import validate_categories, validate_class_descriptor
+import library
 from provenance import foundations, provenance_document
 
 
@@ -35,6 +38,8 @@ def write(path, value):
 def class_bundle(directory):
     shutil.copyfile(ROOT / 'runtime.mjs', directory / 'runtime.mjs')
     descriptor = read(directory / 'class.json')
+    if short_name(descriptor['name']) != directory.name:
+        raise ValueError(f'{directory.name}/class.json: the class is named {descriptor["name"]}; its folder must be its short name')
     prefix = 'classes/' + directory.name + '/'
     inventory = []
     for path in sorted(directory.iterdir()):
@@ -51,7 +56,7 @@ def class_bundle(directory):
 
 def bundle_into(package, bundles):
     for bundle in bundles:
-        slug = bundle['descriptor']['name'].split('/')[1]
+        slug = short_name(bundle['descriptor']['name'])
         directory = package / 'classes' / slug
         directory.mkdir(parents=True, exist_ok=True)
         for entry in bundle['descriptor']['inventory']:
@@ -62,10 +67,10 @@ RELEASE = {'channel': 'features', 'fixes': []}
 
 
 def metadata(package, manifest, bundles, implements):
-    """Classes, implemented interfaces, files, foundations and the release fields of a format-3 manifest. Images come
-    from classes/render_images.py and vulnerability waivers from the package's authoring; both are kept as they are."""
+    """Classes, implemented interfaces, files, foundations and the release fields of a manifest. Images come from
+    classes/render_images.py and vulnerability waivers from the package's authoring; both are kept as they are."""
     bundle_into(package, bundles)
-    manifest['format'] = 3
+    manifest['format'] = MANIFEST_FORMAT
     manifest['release'] = deepcopy(RELEASE)
     manifest.setdefault('images', [])
     manifest.setdefault('vulnerabilityWaivers', [])
@@ -104,22 +109,34 @@ def metadata(package, manifest, bundles, implements):
     return manifest
 
 
+def chosen(bundles, references, where):
+    """The bundles of the named classes, in the order named."""
+    missing = [reference['name'] for reference in references if reference['name'] not in bundles]
+    if missing:
+        raise SystemExit(f'{where}: no class in tools/library.json is named {", ".join(missing)}')
+    return [bundles[reference['name']] for reference in references]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--classes-only', action='store_true')
     args = parser.parse_args()
-    bundles = {p.name.removesuffix('-class'): class_bundle(p) for p in sorted(ROOT.glob('*-class'))}
+    bundles = {}
+    for directory in library.classes():
+        bundle = class_bundle(directory)
+        bundles[bundle['descriptor']['name']] = bundle
     validate_categories(read(ROOT / 'categories.json'), [bundle['descriptor']['category'] for bundle in bundles.values()])
     if args.classes_only:
         return
-    for package in sorted((WORKSPACE / 'components').iterdir()):
-        if not (package / 'component.json').is_file():
-            continue
-        slug = 'theme' if package.name == 'theme-high-contrast' else package.name
-        bundle = bundles[slug]
-        manifest = metadata(package, read(package / 'component.json'), [bundle], [bundle['reference']])
-        write(package / 'component.json', manifest)
+    components = library.components()
+    for package in components:
+        manifest = read(package / 'component.json')
         spec_path = package / 'authoring/spec.json'
+        # The classes a component implements are named by its authoring (spec.json), else by its manifest.
+        declared = read(spec_path)['implements'] if spec_path.is_file() else manifest['implements']
+        implemented = chosen(bundles, declared, package.name)
+        manifest = metadata(package, manifest, implemented, [bundle['reference'] for bundle in implemented])
+        write(package / 'component.json', manifest)
         if spec_path.is_file():
             spec = read(spec_path)
             spec.update({key: manifest[key] for key in ('toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
@@ -133,16 +150,20 @@ def main():
         elif (package / 'scripts/package-metadata.py').is_file():
             write(package / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
                                                                        'release', 'images', 'vulnerabilityWaivers')})
-    recipe = WORKSPACE / 'recipes/ourpoker'
-    manifest = metadata(recipe, read(recipe / 'component.json'), list(bundles.values()), [])
-    write(recipe / 'component.json', manifest)
-    write(recipe / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
-                                                                       'release', 'images', 'vulnerabilityWaivers')})
-    document = read(recipe / 'recipe.json')
-    for slot in document['components']:
-        slot['class'] = bundles[slot['id']]['reference']
-    write(recipe / 'recipe.json', document)
-    print(f'{len(bundles)} independent classes bundled into 40 components and the recipe')
+    recipes = library.recipes()
+    for recipe in recipes:
+        document = read(recipe / 'recipe.json')
+        # A recipe carries exactly the classes its slots name.
+        names = sorted({slot['class']['name'] for slot in document['components']})
+        used = chosen(bundles, [{'name': name} for name in names], recipe.name)
+        manifest = metadata(recipe, read(recipe / 'component.json'), used, [])
+        write(recipe / 'component.json', manifest)
+        write(recipe / 'authoring/foundations.json', {key: manifest[key] for key in ('platforms', 'toolchains', 'classes', 'implements', 'upstream', 'compatibility', 'maintenance',
+                                                                           'release', 'images', 'vulnerabilityWaivers')})
+        for slot in document['components']:
+            slot['class'] = bundles[slot['class']['name']]['reference']
+        write(recipe / 'recipe.json', document)
+    print(f'{len(bundles)} independent classes bundled into {len(components)} components and {len(recipes)} recipes')
 
 
 if __name__ == '__main__':

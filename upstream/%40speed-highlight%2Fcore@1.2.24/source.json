@@ -3,7 +3,7 @@
   "version": "1.2.24",
   "revision": "589b2e3bb012725ff65323335efdca74ae0b86eb",
   "repository": "https://github.com/speed-highlight/core.git",
-  "purl": "pkg:npm/@speed-highlight/core@1.2.24",
+  "purl": "pkg:npm/%40speed-highlight/core@1.2.24",
   "licence": "CC0-1.0",
   "notices": [
     "0-LICENSE"

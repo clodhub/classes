@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/theme-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/theme-class",
   "version": "1.1.0",
   "title": "Theme",
   "summary": "Colours, spacing, type and an animated background for every client",
@@ -8,7 +8,7 @@
   "presentation": "visual",
   "provides": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0",
       "path": "classes/theme-class/theme.json",
       "modules": {
@@ -61,7 +61,7 @@
   "inventory": [
     {
       "path": "classes/theme-class/apple.mjs",
-      "digest": "a788e32728ba9abff66b7b38b0e936b975ae5efd02fcf33f839937991d8c0d82"
+      "digest": "88e7de8846c7c63b23e5fcbd94f6e11932913c46882ea32fc152ba45a4942435"
     },
     {
       "path": "classes/theme-class/check.mjs",
@@ -73,11 +73,11 @@
     },
     {
       "path": "classes/theme-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/theme-class/theme.json",
-      "digest": "5f60ffdf33c50fd1c4ba911b56fe59fbeb1ef7f9e06ed2001401d2614939c70f"
+      "digest": "1218aa890809f05d0255c7ec46c98cf2eb76599d2f091bb73eadb68886f26f47"
     }
   ],
   "verification": [

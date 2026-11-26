@@ -3,7 +3,7 @@
   "version": "6.0.3",
   "revision": "sha512:210dc46d3cc6c488a06f5237a8f65cd6b5899c7d019922afe506136a5130c1e16fc810cb4807b6e333f495efe1ca2ede7067d9565215020e0166a6fc581c0aab",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/cacheable-request@6.0.3",
+  "purl": "pkg:npm/%40types/cacheable-request@6.0.3",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

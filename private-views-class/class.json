@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/private-views-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/private-views-class",
   "version": "1.1.0",
   "title": "Private views",
   "summary": "Each person sees only what they may see of shared state",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/private-views",
+      "type": "com.clodhub/private-views",
       "version": "1.0.0",
       "path": "classes/private-views-class/private-views.json",
       "modules": {
@@ -50,11 +50,11 @@
     },
     {
       "path": "classes/private-views-class/private-views.json",
-      "digest": "d49872de242e91adb798386b018fa340de4809b3877940c7176efa2072b7a44c"
+      "digest": "86e1fb4459b4dc57a997da17a31cb40db3ce17f9e50a2bc5e4a4846a76913573"
     },
     {
       "path": "classes/private-views-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

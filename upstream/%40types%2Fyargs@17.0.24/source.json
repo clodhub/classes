@@ -3,7 +3,7 @@
   "version": "17.0.24",
   "revision": "sha512:ea2d1a0bb8d5e90cd007c9ded63a15674792148b2d1ec0aba1b98eb6084cd75c86947d23e3714a2f652159d10b932a6cd33b9feea55351508247eb604a5c8b2f",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/yargs@17.0.24",
+  "purl": "pkg:npm/%40types/yargs@17.0.24",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

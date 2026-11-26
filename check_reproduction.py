@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check byte-identical regeneration of manifests, class bundles and recipe references."""
+"""Check byte-identical regeneration of the library's manifests, class bundles and recipe references (tools/library.json)."""
 import hashlib
 import json
 from pathlib import Path
@@ -8,12 +8,15 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
-paths = sorted((WORKSPACE / 'components').glob('*/component.json')) + [WORKSPACE / 'recipes/ourpoker/component.json', WORKSPACE / 'recipes/ourpoker/recipe.json']
-paths += sorted(ROOT.glob('*-class/class.json'))
-paths += sorted((WORKSPACE / 'components').glob('*/authoring/spec.json'))
-paths += sorted((WORKSPACE / 'components').glob('*/authoring/foundations.json'))
-paths += sorted((WORKSPACE / 'components').glob('*/authoring/package.json'))
-paths.append(WORKSPACE / 'recipes/ourpoker/authoring/foundations.json')
+sys.path.insert(0, str(WORKSPACE / 'tools'))
+import library
+
+components, recipes = library.components(), library.recipes()
+paths = [package / 'component.json' for package in components]
+paths += [path for recipe in recipes for path in (recipe / 'component.json', recipe / 'recipe.json', recipe / 'authoring/foundations.json')]
+paths += [directory / 'class.json' for directory in library.classes()]
+paths += [path for package in components for name in ('spec.json', 'foundations.json', 'package.json')
+          if (path := package / 'authoring' / name).is_file()]
 for path in list(paths):
     if path.name == 'component.json':
         manifest = json.loads(path.read_text())

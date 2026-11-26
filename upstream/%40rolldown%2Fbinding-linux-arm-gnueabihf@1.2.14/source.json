@@ -3,7 +3,7 @@
   "version": "1.2.14",
   "revision": "sha512:06ac0ab1d6507fa12a556afc7efd8cac363302f399efe3581522444911acf3b7e4b1e121b344d4f535e04494e46684519314e2cf2120d4b2945df537ffbf2eaa",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-linux-arm-gnueabihf@1.2.14",
+  "purl": "pkg:npm/%40rolldown/binding-linux-arm-gnueabihf@1.2.14",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

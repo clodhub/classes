@@ -25,8 +25,8 @@ if args.background:
         process = subprocess.Popen(command, stdout=output, stderr=subprocess.STDOUT, start_new_session=True)
     print(f'process {process.pid}; work {work}')
     sys.exit(0)
-sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
-from aepm import ledger, locks, space
+sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(ROOT / 'clod')))
+from clod import ledger, locks, space
 ledger.register(work, 'proof', purpose='OurPoker native dependency profiles', keep=True)
 recipe = ROOT / 'recipes/ourpoker'
 ignore = shutil.ignore_patterns('build', '.gradle', 'node_modules', 'local.properties', '.DS_Store')
@@ -58,10 +58,10 @@ for profile in ('video', 'no-video'):
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copyfile(recipe / item['source'], target)
     if args.verify:
-        sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(ROOT / 'aepm')))
-        from aepm.application import configuration, substitute
+        sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(ROOT / 'clod')))
+        from clod.application import configuration, substitute
         manifest = json.loads((recipe / 'component.json').read_text())
-        definition = json.loads((args.app / '.aepm/definition.json').read_text())
+        definition = json.loads((args.app / '.clod/definition.json').read_text())
         values = configuration(manifest['collect'], definition['configuration'])
         script = recipe / 'implementation/android/generate-project.ts'
         (android / 'generate-project.ts').write_text(substitute(script.read_text(), manifest['collect'], values))

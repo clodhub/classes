@@ -3,7 +3,7 @@
   "version": "1.2.3",
   "revision": "6e8933ba4397460467dce3a0ad3b0ffa745fd8e2",
   "repository": "https://github.com/poppinss/exception.git",
-  "purl": "pkg:npm/@poppinss/exception@1.2.3",
+  "purl": "pkg:npm/%40poppinss/exception@1.2.3",
   "licence": "MIT",
   "notices": [
     "0-LICENSE.md"

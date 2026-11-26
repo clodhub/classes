@@ -3,7 +3,7 @@
   "version": "1.52.1",
   "revision": "sha512:5fc0f12a535bce4e8b87ebfadf4fa68dd1474a8b5d005c08cb3c5245252a9760db4f10a79696bb26cbc519ce8d6b799789ec763858748a242d5b03813f4ac860",
   "repository": "https://github.com/livekit/protocol.git",
-  "purl": "pkg:npm/@livekit/protocol@1.52.1",
+  "purl": "pkg:npm/%40livekit/protocol@1.52.1",
   "licence": "Apache-2.0",
   "notices": [
     "0-LICENSE"

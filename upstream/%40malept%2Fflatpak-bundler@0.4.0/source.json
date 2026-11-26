@@ -3,7 +3,7 @@
   "version": "0.4.0",
   "revision": "8f0dc27a217f5ae7f49fa0d5a5570d332cbc9ec7",
   "repository": "https://github.com/malept/flatpak-bundler.git",
-  "purl": "pkg:npm/@malept/flatpak-bundler@0.4.0",
+  "purl": "pkg:npm/%40malept/flatpak-bundler@0.4.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

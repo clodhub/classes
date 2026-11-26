@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Check the authoring tool against every component spec without modifying source checkouts."""
+"""Check the authoring tool against every component spec in the library (tools/library.json) without modifying source
+checkouts."""
 import importlib.util
 import os
 import json
@@ -11,8 +12,10 @@ import tempfile
 ROOT = Path(__file__).resolve().parent
 WORKSPACE = ROOT.parent
 sys.dont_write_bytecode = True
-sys.path.insert(0, os.environ.get('AEPM_CHECKOUT', str(WORKSPACE / 'aepm')))
-from aepm.model import canonical
+sys.path.insert(0, os.environ.get('CLOD_CHECKOUT', str(WORKSPACE / 'clod')))
+sys.path.insert(0, str(WORKSPACE / 'tools'))
+from clod.model import canonical
+import library
 
 loader = importlib.util.spec_from_file_location('component_scaffolder', WORKSPACE / 'tools/scaffold_component.py')
 scaffolder = importlib.util.module_from_spec(loader)
@@ -21,7 +24,7 @@ required = {'supportedPlatforms', 'toolchains', 'templates', 'classes', 'impleme
 assert required <= scaffolder.SPEC_KEYS, sorted(required - scaffolder.SPEC_KEYS)
 results = []
 with tempfile.TemporaryDirectory() as directory:
-    for spec_path in sorted((WORKSPACE / 'components').glob('*/authoring/spec.json')):
+    for spec_path in [path for package in library.components() if (path := package / 'authoring/spec.json').is_file()]:
         source = spec_path.parent.parent
         expected = json.loads((source / 'component.json').read_text())
         target = Path(directory).resolve() / source.name

@@ -3,7 +3,7 @@
   "version": "4.0.6",
   "revision": "a44ca1a3ebe5440211b0142f796760bb17aeee30",
   "repository": "https://github.com/szmarczak/http-timer.git",
-  "purl": "pkg:npm/@szmarczak/http-timer@4.0.6",
+  "purl": "pkg:npm/%40szmarczak/http-timer@4.0.6",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

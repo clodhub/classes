@@ -3,7 +3,7 @@
   "version": "18.19.130",
   "revision": "sha512:191697431ea319f2fcb0a7da2030fa3aea5b20706bf63bfb2676a697db41ee5e2fd3af0f00e5ea7dcba330ca393e16c8b3a8204755ce0c42ea6a14f647cbf47e",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/node@18.19.130",
+  "purl": "pkg:npm/%40types/node@18.19.130",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

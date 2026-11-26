@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/display-mode-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/display-mode-class",
   "version": "1.1.0",
   "title": "Display mode",
   "summary": "A shared screen, such as a television, that shows the table and never acts",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/display-policy",
+      "type": "com.clodhub/display-policy",
       "version": "1.0.0",
       "path": "classes/display-mode-class/display-policy.json",
       "modules": {
@@ -35,7 +35,7 @@
   ],
   "requires": [
     {
-      "type": "ae/display-mode-configuration",
+      "type": "com.clodhub/display-mode-configuration",
       "version": "1.0.0"
     }
   ],
@@ -52,11 +52,11 @@
     },
     {
       "path": "classes/display-mode-class/display-policy.json",
-      "digest": "c9d0739fe1c7ab4b629352b3dd8d0d9b785e2f62426a19a4ff24b4b19566fe1e"
+      "digest": "908d52565da76916e2b855747d038e3568b81025275623188a6c9f42efc7246b"
     },
     {
       "path": "classes/display-mode-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

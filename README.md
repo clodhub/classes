@@ -1,14 +1,14 @@
 # Component classes
 
-The 39 `<slot>-class/` directories own independent `class.json` contracts, interface documents and shared checks. Both theme providers implement `clodhub/theme-class` with identical class bytes.
+The `<name>-class/` directories that `tools/library.json` lists own independent `class.json` contracts (format 3, named `pkg:clod/com.clodhub/<name>-class`), interface documents and shared checks. Both theme providers implement `pkg:clod/com.clodhub/theme-class` with identical class bytes. A folder not in the list is not part of the library; nothing here reads it.
 
-- `python3.12 -B classes/generate.py` refreshes inventory hashes, embeds descriptors in all 40 component manifests, bundles the authoritative classes in the recipe, writes exact slot references and updates authoring metadata.
+- `python3.12 -B classes/generate.py` refreshes the listed classes' inventory hashes, embeds in each listed component the classes its `authoring/spec.json` (else its manifest) names in `implements`, bundles in each listed recipe the classes its slots name, writes exact slot references and updates authoring metadata.
 - `categories.json` is the category tree (`{format, categories: [{id, title, parent}]}`); each `class.json` names one of its categories, and `generate.py` refuses a category that is not in it.
 - `python3.12 -B classes/render_images.py [COMPONENT ...]` renders each visual component's example images from its `examples/images.ts` in headless Chrome into `images/`, and lists them in the manifest's `images`.
-- `python3.12 -B classes/check_local.py` exercises source checkouts for authoring feedback. Package review runs the same scripts through aepm's trusted runner in fresh staged candidates.
+- `python3.12 -B classes/check_local.py` exercises the listed source checkouts for authoring feedback, each against the classes it implements. Package review runs the same scripts through clod's trusted runner in fresh staged candidates.
 - `python3.12 -B classes/prove_defect.py` checks declared fit with an independent provider document, then proves that a colour-override defect fails the shared theme suite and prevents guardian signing.
 
-Checks import public modules through `AEPM_MODULE_MAP`. Browser stylesheets are omitted from Node imports; stylesheet declarations and full application rendering have separate checks. Class inventories bind every shared script and interface file.
+Checks import public modules through `CLOD_MODULE_MAP`. Browser stylesheets are omitted from Node imports; stylesheet declarations and full application rendering have separate checks. Class inventories bind every shared script and interface file.
 
 ## Behaviour checked
 

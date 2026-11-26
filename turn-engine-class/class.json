@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/turn-engine-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/turn-engine-class",
   "version": "1.1.0",
   "title": "Turn engine",
   "summary": "Lobby, turns, timing and computer players around a game's own rules",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/game-adapter",
+      "type": "com.clodhub/game-adapter",
       "version": "1.0.0",
       "path": "classes/turn-engine-class/game-adapter.json",
       "modules": {
@@ -20,39 +20,39 @@
   ],
   "requires": [
     {
-      "type": "ae/game-rules",
+      "type": "com.clodhub/game-rules",
       "version": "1.0.0"
     },
     {
-      "type": "ae/seating",
+      "type": "com.clodhub/seating",
       "version": "1.0.0"
     },
     {
-      "type": "ae/game-clock",
+      "type": "com.clodhub/game-clock",
       "version": "1.0.0"
     },
     {
-      "type": "ae/private-views",
+      "type": "com.clodhub/private-views",
       "version": "1.0.0"
     },
     {
-      "type": "ae/presence",
+      "type": "com.clodhub/presence",
       "version": "1.0.0"
     },
     {
-      "type": "ae/tournament",
+      "type": "com.clodhub/tournament",
       "version": "1.0.0"
     },
     {
-      "type": "ae/computer-players",
+      "type": "com.clodhub/computer-players",
       "version": "1.0.0"
     },
     {
-      "type": "ae/round-history",
+      "type": "com.clodhub/round-history",
       "version": "1.0.0"
     },
     {
-      "type": "ae/rules-settings",
+      "type": "com.clodhub/rules-settings",
       "version": "1.0.0"
     }
   ],
@@ -91,11 +91,11 @@
     },
     {
       "path": "classes/turn-engine-class/game-adapter.json",
-      "digest": "5f3cb93953794502d3d1f27deef7530d9aff8a1c70e89d5238ef64dce4f99110"
+      "digest": "c68f4026e0f2d744cb72c56258bdf0142e6c3c83332f2c89f1bc8a4ace9e657a"
     },
     {
       "path": "classes/turn-engine-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

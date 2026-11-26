@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/windows-desktop-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/windows-desktop-class",
   "version": "1.1.0",
   "title": "Windows desktop",
   "summary": "The web client packaged as a Windows desktop application",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/desktop-host",
+      "type": "com.clodhub/desktop-host",
       "version": "1.0.0",
       "path": "classes/windows-desktop-class/desktop-host.json",
       "modules": {
@@ -20,7 +20,7 @@
   ],
   "requires": [
     {
-      "type": "ae/windows-desktop-configuration",
+      "type": "com.clodhub/windows-desktop-configuration",
       "version": "1.0.0"
     }
   ],
@@ -37,11 +37,11 @@
     },
     {
       "path": "classes/windows-desktop-class/desktop-host.json",
-      "digest": "37a01348685b8d4bb865a60f99e7233c7ee5b1a0511d737d5e6292b00ceca54b"
+      "digest": "8b7bc2a4d3d547308e0e79d11d4cc738db21fa57e1879075c0494d4dcbed3540"
     },
     {
       "path": "classes/windows-desktop-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

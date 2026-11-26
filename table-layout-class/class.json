@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/table-layout-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/table-layout-class",
   "version": "1.1.0",
   "title": "Table layout",
   "summary": "Seat, card and stake positions around a table for any screen",
@@ -8,7 +8,7 @@
   "presentation": "visual",
   "provides": [
     {
-      "type": "ae/table-layout",
+      "type": "com.clodhub/table-layout",
       "version": "1.0.0",
       "path": "classes/table-layout-class/table-layout.json",
       "modules": {
@@ -35,11 +35,11 @@
   ],
   "requires": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0"
     },
     {
-      "type": "ae/controls",
+      "type": "com.clodhub/controls",
       "version": "1.0.0"
     }
   ],
@@ -56,11 +56,11 @@
     },
     {
       "path": "classes/table-layout-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/table-layout-class/table-layout.json",
-      "digest": "e3178f355d747c8d18f2f7d5fd9359cc3c6d15287fad6db1abe81bf8a8a6e050"
+      "digest": "c0e90bacbb0de8a66e772aa37881d428961982f0bbd09e2abde6d7e454cc4039"
     }
   ],
   "verification": [

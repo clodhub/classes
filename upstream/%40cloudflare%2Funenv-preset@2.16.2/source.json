@@ -3,7 +3,7 @@
   "version": "2.16.2",
   "revision": "sha512:2413f5f99ed948d1bf7789913fecbc542e5d91aded65530b11946f4beaf34380c6575128c511507247094d39176c74908938f40ed348d356706ff5767d7d26bd",
   "repository": "https://github.com/cloudflare/workers-sdk.git",
-  "purl": "pkg:npm/@cloudflare/unenv-preset@2.16.2",
+  "purl": "pkg:npm/%40cloudflare/unenv-preset@2.16.2",
   "licence": "MIT OR Apache-2.0",
   "notices": [
     "0-LICENSE-MIT"

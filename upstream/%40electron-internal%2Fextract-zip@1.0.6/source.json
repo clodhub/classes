@@ -3,7 +3,7 @@
   "version": "1.0.6",
   "revision": "ade400e37d4b8b867b7e01d8beef24c30a869414",
   "repository": "https://github.com/electron/extract-zip.git",
-  "purl": "pkg:npm/@electron-internal/extract-zip@1.0.6",
+  "purl": "pkg:npm/%40electron-internal/extract-zip@1.0.6",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

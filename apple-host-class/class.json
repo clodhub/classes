@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/apple-host-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/apple-host-class",
   "version": "1.1.0",
   "title": "Apple host",
   "summary": "An Xcode project for iPhone, iPad, Mac and Apple TV rendered from the application's files",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/apple-shell",
+      "type": "com.clodhub/apple-shell",
       "version": "1.0.0",
       "path": "classes/apple-host-class/apple-shell.json",
       "modules": {
@@ -29,7 +29,7 @@
   ],
   "requires": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0"
     }
   ],
@@ -64,7 +64,7 @@
   "inventory": [
     {
       "path": "classes/apple-host-class/apple-shell.json",
-      "digest": "5096cd921d47558c170c0cf0febcafaf1ec913bb4bf576e394600a04d6ab6d41"
+      "digest": "ae9bd91806efb3d9bab8cd2383c3dda0f198aa0a697343c2e8d4a291636cfa07"
     },
     {
       "path": "classes/apple-host-class/check.mjs",
@@ -72,7 +72,7 @@
     },
     {
       "path": "classes/apple-host-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

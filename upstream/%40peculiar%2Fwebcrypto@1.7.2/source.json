@@ -3,7 +3,7 @@
   "version": "1.7.2",
   "revision": "3d3f5d8b7de8e071186b364e3a05f25712f082a3",
   "repository": "https://github.com/PeculiarVentures/webcrypto.git",
-  "purl": "pkg:npm/@peculiar/webcrypto@1.7.2",
+  "purl": "pkg:npm/%40peculiar/webcrypto@1.7.2",
   "licence": "MIT",
   "notices": [
     "0-LICENSE.md"

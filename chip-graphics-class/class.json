@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/chip-graphics-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/chip-graphics-class",
   "version": "1.1.0",
   "title": "Chip graphics",
   "summary": "Chip stacks in denominations and chips flying between bets and the pot",
@@ -8,7 +8,7 @@
   "presentation": "visual",
   "provides": [
     {
-      "type": "ae/chip-graphics",
+      "type": "com.clodhub/chip-graphics",
       "version": "1.0.0",
       "path": "classes/chip-graphics-class/chip-graphics.json",
       "modules": {
@@ -35,7 +35,7 @@
   ],
   "requires": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0"
     }
   ],
@@ -64,11 +64,11 @@
     },
     {
       "path": "classes/chip-graphics-class/chip-graphics.json",
-      "digest": "2ee1ef538aaeb704c08d0edef5b77702dd75b6bb377c623e04c25e8ba886a443"
+      "digest": "422ee90aade821714637bd75b42cea74986357f7042d51ae2d6809ec97f7b673"
     },
     {
       "path": "classes/chip-graphics-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

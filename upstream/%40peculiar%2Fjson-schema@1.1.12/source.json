@@ -3,7 +3,7 @@
   "version": "1.1.12",
   "revision": "0ac71a4abcf23a4b54753f3a5433e41232db551e",
   "repository": "https://github.com/PeculiarVentures/json-schema.git",
-  "purl": "pkg:npm/@peculiar/json-schema@1.1.12",
+  "purl": "pkg:npm/%40peculiar/json-schema@1.1.12",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

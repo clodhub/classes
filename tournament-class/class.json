@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/tournament-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/tournament-class",
   "version": "1.1.0",
   "title": "Tournament",
   "summary": "Entries, rebuys, eliminations, places and the result screen",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/tournament",
+      "type": "com.clodhub/tournament",
       "version": "1.0.0",
       "path": "classes/tournament-class/tournament.json",
       "modules": {
@@ -38,15 +38,15 @@
   ],
   "requires": [
     {
-      "type": "ae/chip-ledger",
+      "type": "com.clodhub/chip-ledger",
       "version": "1.0.0"
     },
     {
-      "type": "ae/level-schedule",
+      "type": "com.clodhub/level-schedule",
       "version": "1.0.0"
     },
     {
-      "type": "ae/seating",
+      "type": "com.clodhub/seating",
       "version": "1.0.0"
     }
   ],
@@ -82,11 +82,11 @@
     },
     {
       "path": "classes/tournament-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/tournament-class/tournament.json",
-      "digest": "3d36d41e5f9d83a92e1785e00dc963ed2239dd0979bbd6577e02def9081ce206"
+      "digest": "2c3c7c408b9125329420c748c838f31bc2c65791b16477d2f88f50b62e7d3b2f"
     }
   ],
   "verification": [

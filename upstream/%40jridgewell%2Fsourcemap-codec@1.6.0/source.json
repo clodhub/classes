@@ -3,7 +3,7 @@
   "version": "1.6.0",
   "revision": "94c82a925ca79d5eb193ce45d7f0824a4d91e77d",
   "repository": "https://github.com/jridgewell/sourcemaps.git",
-  "purl": "pkg:npm/@jridgewell/sourcemap-codec@1.6.0",
+  "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.6.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

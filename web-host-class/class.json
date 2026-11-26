@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/web-host-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/web-host-class",
   "version": "1.1.0",
   "title": "Web host",
   "summary": "The web client's page, installable manifest, install banner and build",
@@ -8,7 +8,7 @@
   "presentation": "visual",
   "provides": [
     {
-      "type": "ae/web-shell",
+      "type": "com.clodhub/web-shell",
       "version": "1.0.0",
       "path": "classes/web-host-class/web-shell.json",
       "modules": {
@@ -26,7 +26,7 @@
   ],
   "requires": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0"
     }
   ],
@@ -75,11 +75,11 @@
     },
     {
       "path": "classes/web-host-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/web-host-class/web-shell.json",
-      "digest": "2640f964d23d37aca730d39efd7d22fce95034b64c937349f500b0452ea787f8"
+      "digest": "dd2c491a916899da46155a57c2b66d2f60a83744112edbbc496ba98c12e876c4"
     }
   ],
   "verification": [

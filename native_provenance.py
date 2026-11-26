@@ -10,7 +10,7 @@ import zipfile
 from urllib.parse import quote
 from xml.etree import ElementTree as ET
 
-from aepm.model import digest
+from clod.model import digest
 from provenance import CACHE, fetch, read, write
 
 GRADLE_NS = {'g': 'https://schema.gradle.org/dependency-verification'}

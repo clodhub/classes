@@ -3,7 +3,7 @@
   "version": "0.10.4",
   "revision": "51836d7bf26fb7f43b05dd6477b3ca4260c945cf",
   "repository": "https://github.com/toyobayashi/wasm-util.git",
-  "purl": "pkg:npm/@tybys/wasm-util@0.10.4",
+  "purl": "pkg:npm/%40tybys/wasm-util@0.10.4",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

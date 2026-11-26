@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/translations-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/translations-class",
   "version": "1.1.0",
   "title": "Translations",
   "summary": "The application's text in several languages with fallback",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/language",
+      "type": "com.clodhub/language",
       "version": "1.0.0",
       "path": "classes/translations-class/language.json",
       "modules": {
@@ -54,11 +54,11 @@
     },
     {
       "path": "classes/translations-class/language.json",
-      "digest": "1cfb1325dfa058f8f7f37fd628f359b25fb87d1635dff0d3ba754e67329a0041"
+      "digest": "f10696826a8d0c05e87fb4e4c50dab32bfb2c45acf031542039b862ccf78c1d9"
     },
     {
       "path": "classes/translations-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

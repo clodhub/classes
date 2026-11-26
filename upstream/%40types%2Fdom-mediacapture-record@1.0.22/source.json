@@ -3,7 +3,7 @@
   "version": "1.0.22",
   "revision": "sha512:9943192cadcdbf044b700013f6a99c2bef69eeda54d851dd0ec9ed477608e3e198f3c5eb806e17884eeed50d8b00ddbf1593b3fed74c0c2dc64024784fc9c5bb",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/dom-mediacapture-record@1.0.22",
+  "purl": "pkg:npm/%40types/dom-mediacapture-record@1.0.22",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

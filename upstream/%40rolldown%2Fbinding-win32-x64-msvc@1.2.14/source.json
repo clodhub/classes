@@ -3,7 +3,7 @@
   "version": "1.2.14",
   "revision": "sha512:f6613de1b7f619951a47f7d449708ca41a1691cb6ee36d4c8b4391a66e33a9f6e48ca7a9ed1c733c56b97ad706b3987ed8a029a1604e03f84025affbb1a1a011",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-win32-x64-msvc@1.2.14",
+  "purl": "pkg:npm/%40rolldown/binding-win32-x64-msvc@1.2.14",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

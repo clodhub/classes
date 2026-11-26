@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/realtime-rooms-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/realtime-rooms-class",
   "version": "1.1.0",
   "title": "Real-time rooms",
   "summary": "Rooms that hold state on a server and push changes to every connected client",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/room-session",
+      "type": "com.clodhub/room-session",
       "version": "1.0.0",
       "path": "classes/realtime-rooms-class/room-session.json",
       "modules": {
@@ -38,11 +38,11 @@
   ],
   "requires": [
     {
-      "type": "ae/game-adapter",
+      "type": "com.clodhub/game-adapter",
       "version": "1.0.0"
     },
     {
-      "type": "ae/guest-identity",
+      "type": "com.clodhub/guest-identity",
       "version": "1.0.0"
     }
   ],
@@ -59,11 +59,11 @@
     },
     {
       "path": "classes/realtime-rooms-class/room-session.json",
-      "digest": "1014555c475b76e7619b040c563d1e73e76635eb9f850de9913c2efc71f2d097"
+      "digest": "3c2dd0b77a9b956fedf05d317ba6083489eae49ccb9a3394e783685948819b4e"
     },
     {
       "path": "classes/realtime-rooms-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

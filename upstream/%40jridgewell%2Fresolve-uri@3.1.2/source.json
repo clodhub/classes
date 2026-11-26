@@ -3,7 +3,7 @@
   "version": "3.1.2",
   "revision": "caa7a299d6c688570773c81732f77d3c7035ded6",
   "repository": "https://github.com/jridgewell/resolve-uri.git",
-  "purl": "pkg:npm/@jridgewell/resolve-uri@3.1.2",
+  "purl": "pkg:npm/%40jridgewell/resolve-uri@3.1.2",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

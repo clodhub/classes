@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/video-calls-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/video-calls-class",
   "version": "1.1.0",
   "title": "Video calls",
   "summary": "Video and voice for the people in a room",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/media-session",
+      "type": "com.clodhub/media-session",
       "version": "1.0.0",
       "path": "classes/video-calls-class/media-session.json",
       "modules": {
@@ -38,7 +38,7 @@
   ],
   "requires": [
     {
-      "type": "ae/video-calls-configuration",
+      "type": "com.clodhub/video-calls-configuration",
       "version": "1.0.0"
     }
   ],
@@ -68,11 +68,11 @@
     },
     {
       "path": "classes/video-calls-class/media-session.json",
-      "digest": "af0478a55e1a291b80920d4a309fa8aa7b080e48c849e6111502559d467947f6"
+      "digest": "ec773a1744f1da09d17d3c6e9e1b8fb7d37d33d7376e95102b018cbc920ec1f7"
     },
     {
       "path": "classes/video-calls-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

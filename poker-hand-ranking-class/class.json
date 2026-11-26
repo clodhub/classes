@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/poker-hand-ranking-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/poker-hand-ranking-class",
   "version": "1.1.0",
   "title": "Poker hand ranking",
   "summary": "Ranks five to seven cards into poker hands and finds the winners",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/hand-ranking",
+      "type": "com.clodhub/hand-ranking",
       "version": "1.0.0",
       "path": "classes/poker-hand-ranking-class/hand-ranking.json",
       "modules": {
@@ -20,7 +20,7 @@
   ],
   "requires": [
     {
-      "type": "ae/card-deck",
+      "type": "com.clodhub/card-deck",
       "version": "1.0.0"
     }
   ],
@@ -37,11 +37,11 @@
     },
     {
       "path": "classes/poker-hand-ranking-class/hand-ranking.json",
-      "digest": "0dfc90c5e65b3762aabec61f2798ae5a9c34153af7ce4ecd573eaf149b88a455"
+      "digest": "1b89996f55dd10b97df528dea6602e150700e7ce725b5deb6070c608764c77c6"
     },
     {
       "path": "classes/poker-hand-ranking-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

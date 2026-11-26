@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/server-host-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/server-host-class",
   "version": "1.1.0",
   "title": "Server host",
   "summary": "Runs the application's server on Cloudflare Workers or on Node on your own hardware",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/server-host",
+      "type": "com.clodhub/server-host",
       "version": "1.0.0",
       "path": "classes/server-host-class/server-host.json",
       "modules": {
@@ -20,11 +20,11 @@
   ],
   "requires": [
     {
-      "type": "ae/room-session",
+      "type": "com.clodhub/room-session",
       "version": "1.0.0"
     },
     {
-      "type": "ae/room-directory",
+      "type": "com.clodhub/room-directory",
       "version": "1.0.0"
     }
   ],
@@ -62,11 +62,11 @@
     },
     {
       "path": "classes/server-host-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/server-host-class/server-host.json",
-      "digest": "a419c730f068b8d32d54c26f41d26c454bf800e0da9880a5859848709ff0dc07"
+      "digest": "9baad37cd05b078155a36230845e4906ee0ceb0711cbb086f2f1a6355cb72609"
     }
   ],
   "verification": [

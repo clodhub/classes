@@ -3,7 +3,7 @@
   "version": "2.5.0",
   "revision": "268fa302d3e8f330fff069729dad8347a15490dd",
   "repository": "https://github.com/electron/notarize.git",
-  "purl": "pkg:npm/@electron/notarize@2.5.0",
+  "purl": "pkg:npm/%40electron/notarize@2.5.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

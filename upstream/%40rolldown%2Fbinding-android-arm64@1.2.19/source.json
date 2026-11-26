@@ -3,7 +3,7 @@
   "version": "1.2.19",
   "revision": "sha512:84ea266eb4c9faccedd9c884cd2ee8080efc94c3c1805e54310582248c8d7e7ac8ec62e5f0762816a0a7a4bda070f39a5ccaabc86094e44c5d40ac830dc0bec8",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-android-arm64@1.2.19",
+  "purl": "pkg:npm/%40rolldown/binding-android-arm64@1.2.19",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

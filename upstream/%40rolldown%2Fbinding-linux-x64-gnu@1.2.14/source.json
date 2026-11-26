@@ -3,7 +3,7 @@
   "version": "1.2.14",
   "revision": "sha512:5b16a55f382b2d5a4a0bddf17e9689de0097516cde0abf854426c3543da6500cb82fa568de5355cf47a9504529c4f58990b35853033839222292fdfa389f662e",
   "repository": "https://github.com/rolldown/rolldown.git",
-  "purl": "pkg:npm/@rolldown/binding-linux-x64-gnu@1.2.14",
+  "purl": "pkg:npm/%40rolldown/binding-linux-x64-gnu@1.2.14",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

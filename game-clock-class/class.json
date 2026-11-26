@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/game-clock-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/game-clock-class",
   "version": "1.1.0",
   "title": "Game clock",
   "summary": "Decision deadlines and countdowns that pause and expire",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/game-clock",
+      "type": "com.clodhub/game-clock",
       "version": "1.0.0",
       "path": "classes/game-clock-class/game-clock.json",
       "modules": {
@@ -56,11 +56,11 @@
     },
     {
       "path": "classes/game-clock-class/game-clock.json",
-      "digest": "6c78156e8d843e997cc3c146590fc1216556d38c582f24e7a0857ab7a9aa98c9"
+      "digest": "920bb632c6647188161f82940325bb314e0b3b0dda5b00bc5e77232466b29617"
     },
     {
       "path": "classes/game-clock-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

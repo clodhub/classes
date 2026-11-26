@@ -3,7 +3,7 @@
   "version": "5.0.5",
   "revision": "sha512:c4b2f79640de809670f8c1a819a082b056b20d9b611a0a40b6bdd5ce2c9f738a7bc47f3d2bb2913dc441061fe41189b402a92de43b539a462906d455fc5ac766",
   "repository": "https://github.com/vitest-dev/vitest.git",
-  "purl": "pkg:npm/@vitest/mocker@5.0.5",
+  "purl": "pkg:npm/%40vitest/mocker@5.0.5",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

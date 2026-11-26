@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/store-update-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/store-update-class",
   "version": "1.1.0",
   "title": "Store update",
   "summary": "Tells the application a newer version is available from its store",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/updates",
+      "type": "com.clodhub/updates",
       "version": "1.0.0",
       "path": "classes/store-update-class/updates.json",
       "modules": {
@@ -55,11 +55,11 @@
     },
     {
       "path": "classes/store-update-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/store-update-class/updates.json",
-      "digest": "5824bd7587d5cc8b74973f458f9d110d4386a6f1d6c6ec22548252c1bf07015e"
+      "digest": "12fee4bcec62afa3754223803ce9475f14fc826ae1a9ea38cc2c6af2096f6835"
     }
   ],
   "verification": [

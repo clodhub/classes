@@ -3,7 +3,7 @@
   "version": "0.6.5",
   "revision": "d5c6991f90c7f475ac1615dee504722e4fb5ae57",
   "repository": "https://github.com/poppinss/dumper.git",
-  "purl": "pkg:npm/@poppinss/dumper@0.6.5",
+  "purl": "pkg:npm/%40poppinss/dumper@0.6.5",
   "licence": "MIT",
   "notices": [
     "0-LICENSE.md"

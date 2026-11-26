@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/seating-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/seating-class",
   "version": "1.1.0",
   "title": "Seating",
   "summary": "Seats at a table: taking, leaving and starting when enough are taken",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/seating",
+      "type": "com.clodhub/seating",
       "version": "1.0.0",
       "path": "classes/seating-class/seating.json",
       "modules": {
@@ -38,7 +38,7 @@
   ],
   "requires": [
     {
-      "type": "ae/guest-identity",
+      "type": "com.clodhub/guest-identity",
       "version": "1.0.0"
     }
   ],
@@ -65,11 +65,11 @@
     },
     {
       "path": "classes/seating-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     },
     {
       "path": "classes/seating-class/seating.json",
-      "digest": "ceb446c6a20f64192cc06bc0690e0742e89dbca0470c5ec58262a54ee0f32b6f"
+      "digest": "a558a73b0f6e27d1086db0279cb5f85437550274ac010a5a76d843b5e6bab79b"
     }
   ],
   "verification": [

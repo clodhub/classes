@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/room-directory-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/room-directory-class",
   "version": "1.1.0",
   "title": "Room directory",
   "summary": "The list of rooms with their status and who is in them, kept current",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/room-directory",
+      "type": "com.clodhub/room-directory",
       "version": "1.0.0",
       "path": "classes/room-directory-class/room-directory.json",
       "modules": {
@@ -38,7 +38,7 @@
   ],
   "requires": [
     {
-      "type": "ae/room-session",
+      "type": "com.clodhub/room-session",
       "version": "1.0.0"
     }
   ],
@@ -61,11 +61,11 @@
     },
     {
       "path": "classes/room-directory-class/room-directory.json",
-      "digest": "845238916543a87dbf5568c1c62008795c179b6364f249d5dd299d2f962db86d"
+      "digest": "6004fcfb3439bc012128c9e32b2981b5cb8ac9c35e72ca5ffceb7e9a5db8191f"
     },
     {
       "path": "classes/room-directory-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

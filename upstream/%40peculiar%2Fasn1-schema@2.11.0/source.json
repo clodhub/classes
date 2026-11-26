@@ -3,7 +3,7 @@
   "version": "2.11.0",
   "revision": "sha512:f318786afa39dffbd73ba504bfdc9aa09f37858e7cd6079a2d3ca07fad4d3c85cfe407886423e3261a53698536dc86641be3692cdfc2f456335a9ee1a61213f4",
   "repository": "https://github.com/PeculiarVentures/asn1-schema.git",
-  "purl": "pkg:npm/@peculiar/asn1-schema@2.11.0",
+  "purl": "pkg:npm/%40peculiar/asn1-schema@2.11.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

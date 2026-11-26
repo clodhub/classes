@@ -15,7 +15,7 @@ import zipfile
 from urllib.parse import quote
 from urllib.request import urlopen
 
-from aepm.model import digest
+from clod.model import digest
 
 ROOT = Path(__file__).resolve().parent
 CACHE = ROOT / 'upstream'
@@ -37,6 +37,11 @@ def write(path, value):
 def fetch(url):
     with urlopen(url, timeout=90) as response:
         return response.read()
+
+
+def npm_purl(name, version=None):
+    """The package URL of an npm package in canonical form: a scope percent-encoded, `pkg:npm/%40scope/name@version`."""
+    return 'pkg:npm/' + ('%40' + name[1:] if name.startswith('@') else name) + ('' if version is None else '@' + version)
 
 
 def npm_source(pin):
@@ -107,7 +112,7 @@ def npm_source(pin):
         (directory / destination).write_bytes(content)
         paths.append(destination)
     result = {'name': name, 'version': version, 'revision': source.get('gitHead') or 'sha512:' + hashlib.sha512(raw).hexdigest(),
-              'repository': repository, 'purl': 'pkg:npm/' + name + '@' + version,
+              'repository': repository, 'purl': npm_purl(name, version),
               'licence': licence, 'notices': paths, 'integrity': source['dist']['integrity']}
     write(metadata, result)
     return result
@@ -169,7 +174,7 @@ def upstream(package, manifest):
             result[identity] = {field: source[field] for field in ('name', 'version', 'revision', 'repository', 'purl', 'licence')}
             result[identity].update(notices=notice_paths, delivery=delivery)
             # Each build project and verification fixture has its own dependency installation.
-            dependencies.setdefault('pkg:npm/' + name, {'name': 'pkg:npm/' + name, 'version': version, 'isolation': 'isolated'})
+            dependencies.setdefault(npm_purl(name), {'name': npm_purl(name), 'version': version, 'isolation': 'isolated'})
     return list(result.values()), list(dependencies.values())
 
 

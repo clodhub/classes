@@ -3,7 +3,7 @@
   "version": "2.4.0",
   "revision": "663c2aeeffc308ac0cded59bd32f7c212adacfc2",
   "repository": "https://github.com/paulmillr/noble-hashes.git",
-  "purl": "pkg:npm/@noble/hashes@2.4.0",
+  "purl": "pkg:npm/%40noble/hashes@2.4.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"

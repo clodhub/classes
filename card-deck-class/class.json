@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/card-deck-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/card-deck-class",
   "version": "1.1.0",
   "title": "Card deck",
   "summary": "A deck of playing cards: building, dealing and naming cards",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/card-deck",
+      "type": "com.clodhub/card-deck",
       "version": "1.0.0",
       "path": "classes/card-deck-class/card-deck.json",
       "modules": {
@@ -38,7 +38,7 @@
   ],
   "requires": [
     {
-      "type": "ae/random-source",
+      "type": "com.clodhub/random-source",
       "version": "1.0.0"
     }
   ],
@@ -61,7 +61,7 @@
   "inventory": [
     {
       "path": "classes/card-deck-class/card-deck.json",
-      "digest": "68cfd5d4a86134e123246c8e53737301c1769fd3bb872063c6ba0cf8594141b8"
+      "digest": "e3f51f5f77ccb57a23fda4af88e53ec895b42e680059675944fd1ad37c78aa96"
     },
     {
       "path": "classes/card-deck-class/check.mjs",
@@ -69,7 +69,7 @@
     },
     {
       "path": "classes/card-deck-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/holdem-rules-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/holdem-rules-class",
   "version": "1.1.0",
   "title": "Texas hold'em rules",
   "summary": "Blinds, betting rounds, legal actions and showdown for Texas hold'em",
@@ -8,7 +8,7 @@
   "presentation": "none",
   "provides": [
     {
-      "type": "ae/game-rules",
+      "type": "com.clodhub/game-rules",
       "version": "1.0.0",
       "path": "classes/holdem-rules-class/game-rules.json",
       "modules": {
@@ -38,23 +38,23 @@
   ],
   "requires": [
     {
-      "type": "ae/card-deck",
+      "type": "com.clodhub/card-deck",
       "version": "1.0.0"
     },
     {
-      "type": "ae/chip-ledger",
+      "type": "com.clodhub/chip-ledger",
       "version": "1.0.0"
     },
     {
-      "type": "ae/level-schedule",
+      "type": "com.clodhub/level-schedule",
       "version": "1.0.0"
     },
     {
-      "type": "ae/hand-ranking",
+      "type": "com.clodhub/hand-ranking",
       "version": "1.0.0"
     },
     {
-      "type": "ae/rules-settings",
+      "type": "com.clodhub/rules-settings",
       "version": "1.0.0"
     }
   ],
@@ -81,7 +81,7 @@
     },
     {
       "path": "classes/holdem-rules-class/game-rules.json",
-      "digest": "07a150814abc9f8cfdc8331fd3c0e3cc2710f7e935bc99fac47d2e8c6c285d29"
+      "digest": "d111f0834b9d08ebef0aa6f80a58de8e4d70b3c7ab8c2ce1e19f50bdb7f945a5"
     },
     {
       "path": "classes/holdem-rules-class/ledger.mjs",
@@ -89,7 +89,7 @@
     },
     {
       "path": "classes/holdem-rules-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

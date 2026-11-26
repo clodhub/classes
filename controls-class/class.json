@@ -1,6 +1,6 @@
 {
-  "format": 2,
-  "name": "clodhub/controls-class",
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/controls-class",
   "version": "1.1.0",
   "title": "Controls",
   "summary": "Buttons, toggles, dialogs, panels and help pages with accessible names",
@@ -8,7 +8,7 @@
   "presentation": "visual",
   "provides": [
     {
-      "type": "ae/controls",
+      "type": "com.clodhub/controls",
       "version": "1.0.0",
       "path": "classes/controls-class/controls.json",
       "modules": {
@@ -35,7 +35,7 @@
   ],
   "requires": [
     {
-      "type": "ae/theme",
+      "type": "com.clodhub/theme",
       "version": "1.0.0"
     }
   ],
@@ -52,7 +52,7 @@
     },
     {
       "path": "classes/controls-class/controls.json",
-      "digest": "5051a207b8701759b0b699174798fa117793e4c48b2150403ab50274ffb489a1"
+      "digest": "c926bb37717fe2d157fdb81857010e61bbb8ebde13666c9b764b85005cf86cfe"
     },
     {
       "path": "classes/controls-class/dom.mjs",
@@ -60,7 +60,7 @@
     },
     {
       "path": "classes/controls-class/runtime.mjs",
-      "digest": "7440f3891614c423f74668cb5a2445fea58bbfa4d7c740c8e8a855d1d9300d43"
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
     }
   ],
   "verification": [

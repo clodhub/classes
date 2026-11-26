@@ -3,7 +3,7 @@
   "version": "4.2.0",
   "revision": "sha512:2f72e08a62c75ed1a45a290a9ec3e0d3f545c7d38665a0be78dd6ee2bf8e0755d1a87de6781200542db3af559d307f911e69d192a962400387349fc4d23fded1",
   "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
-  "purl": "pkg:npm/@types/http-cache-semantics@4.2.0",
+  "purl": "pkg:npm/%40types/http-cache-semantics@4.2.0",
   "licence": "MIT",
   "notices": [
     "0-LICENSE"
