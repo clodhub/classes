@@ -334,10 +334,14 @@ def foundations(package, manifest):
             if name == 'ui':
                 frameworks['android-ui'] = {'name': 'androidx.compose.ui', 'range': '=' + version}
     dependencies = list(by_name.values())
-    for bundle in manifest.get('classes', []):
-        for port in bundle['descriptor']['provides']:
-            if 'windows' in port['modules'] and 'web' in port['modules']:
-                platforms.add('windows')
+    implemented = {item['name'] for item in manifest.get('implements', [])}
+    ports = [port for bundle in manifest.get('classes', []) if bundle['reference']['name'] in implemented
+             for port in bundle['descriptor']['provides']]
+    if 'web' in platforms and any('windows' in port['modules'] and 'web' in port['modules'] for port in ports):
+        platforms.add('windows')
+    if ports:
+        # A component runs only where its class defines modules: an apple/ folder serves just the Apple systems the class names.
+        platforms &= {platform for port in ports for platform in port['modules']}
     shared_names = {'pkg:npm/livekit-client', 'pkg:npm/electron'}
     for dependency in dependencies:
         if dependency['name'] in shared_names:
