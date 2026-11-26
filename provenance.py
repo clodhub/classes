@@ -215,6 +215,16 @@ def wrappers(package, manifest):
 
 
 def bundled_sources(package, manifest):
+    declared = package / 'authoring/bundled-sources.json'
+    if declared.is_file():
+        # Third-party files the author carries in the package, recorded as upstream entries; each file must match its digest.
+        entries = read(declared)
+        for entry in entries:
+            for item in entry['delivery']['files']:
+                path = package / item['path']
+                if not path.is_file() or digest(path.read_bytes()) != item['digest']:
+                    raise ValueError(f'{package.name}/authoring/bundled-sources.json: {item["path"]} is missing or differs from its digest')
+        return entries
     if package.name == 'android-host':
         directory = package / 'implementation/android/vendor/xmldom'
         source = npm_source(('@xmldom/xmldom', '0.8.15'))
