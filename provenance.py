@@ -347,9 +347,10 @@ def foundations(package, manifest):
         targets = read(package / 'recipe.json')['targets']
         platforms = set(targets['client']) | ({'server'} if targets['server'] else set())
     runtimes = {'node': '>=26.5.0 <27.0.0'}
-    if any(item['source'].startswith('implementation/apple/') for item in manifest['artefacts']):
-        runtimes.update(swift='=6.4.2', ios='>=17.0.0', macos='>=14.0.0', tvos='>=17.0.0')
-    if any(item['source'].startswith('implementation/android/') for item in manifest['artefacts']):
+    apple = {'ios': '>=17.0.0', 'macos': '>=14.0.0', 'tvos': '>=17.0.0'}
+    if platforms.intersection(apple):
+        runtimes.update(swift='=6.4.2', **{name: apple[name] for name in apple if name in platforms})
+    if 'android' in platforms:
         runtimes.update(kotlin='=2.4.21', java='>=17.0.0 <27.0.0', android='>=8.0.0')
     value = {'platforms': sorted(platforms), 'toolchains': {platform: deepcopy(TOOLCHAINS[platform]) for platform in sorted(platforms)},
              'upstream': imported,
