@@ -307,6 +307,12 @@ def foundations(package, manifest):
             platforms.add('android')
         elif source.startswith('implementation/desktop/'):
             platforms.add('windows')
+    if manifest['kind'] == 'recipe':
+        # A recipe offers every target its recipe.json names, wherever the files sit (a full-stack web project is server and web in one tree).
+        targets = read(package / 'recipe.json')['targets']
+        platforms.update(targets['client'])
+        if targets['server']:
+            platforms.add('server')
     imported, dependencies = upstream(package, manifest)
     imported.extend(wrappers(package, manifest))
     imported.extend(bundled_sources(package, manifest))
