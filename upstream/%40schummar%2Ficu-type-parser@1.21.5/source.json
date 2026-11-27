@@ -1,0 +1,12 @@
+{
+  "name": "@schummar/icu-type-parser",
+  "version": "1.21.5",
+  "revision": "de1cde15a76f4f60874dbe9b7c5395ae2d38b610",
+  "repository": "https://github.com/schummar/schummar-translate.git",
+  "purl": "pkg:npm/%40schummar/icu-type-parser@1.21.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw=="
+}

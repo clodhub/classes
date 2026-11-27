@@ -1,0 +1,799 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/site-metadata",
+    "version": "1.0.0",
+    "description": "What search engines and link previews read about a shop's site: schema.org structured data for the business, page metadata in the shape Next.js generateMetadata returns with an address for each language, sitemap.xml and robots.txt. Server only."
+  },
+  "methods": [
+    {
+      "name": "localBusiness",
+      "description": "schema.org structured data (JSON-LD) for the shop: LocalBusiness, or the type given or installed, with its address, coordinates, contact, price range, opening hours and links. Absent facts are left out.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "shop",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ShopFacts"
+          }
+        },
+        {
+          "name": "type",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/BusinessType"
+          }
+        }
+      ],
+      "result": {
+        "name": "data",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "@context": {
+              "const": "https://schema.org"
+            },
+            "@type": {
+              "$ref": "#/components/schemas/BusinessType"
+            }
+          },
+          "required": [
+            "@context",
+            "@type",
+            "name",
+            "url"
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidInput"
+        },
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "pageMetadata",
+      "description": "The metadata of one page in one language: title, description, the canonical address, the address in every language with x-default, Open Graph and Twitter cards. Addresses follow localisedPath.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PageInput"
+          }
+        }
+      ],
+      "result": {
+        "name": "metadata",
+        "schema": {
+          "$ref": "#/components/schemas/PageMetadata"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidInput"
+        }
+      ]
+    },
+    {
+      "name": "localisedPath",
+      "description": "The as-needed language prefix that next-intl uses: the default language at the path itself, every other at /<language><path> (/ becomes /<language>). A trailing slash is dropped.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "path",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^/[^?#\\s]*$",
+            "description": "A page path without the language prefix, such as / or /services/massages."
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-BR."
+          }
+        },
+        {
+          "name": "defaultLanguage",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-BR."
+          }
+        }
+      ],
+      "result": {
+        "name": "path",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidInput"
+        }
+      ]
+    },
+    {
+      "name": "sitemapXml",
+      "description": "A sitemap (sitemaps.org 0.9): one url for each page in each of its languages, each with every language version as an alternate and x-default; at most 50,000 addresses.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "siteAddress",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "An http or https address such as https://studio.example.com (a site may live under a path)."
+          }
+        },
+        {
+          "name": "entries",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SitemapEntry"
+            }
+          }
+        },
+        {
+          "name": "defaultLanguage",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-BR."
+          }
+        }
+      ],
+      "result": {
+        "name": "xml",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidInput"
+        }
+      ]
+    },
+    {
+      "name": "robotsTxt",
+      "description": "robots.txt (RFC 9309) for every crawler: the disallowed path prefixes, or Allow: / when there are none, then the sitemap's address.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "siteAddress",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "An http or https address such as https://studio.example.com (a site may live under a path)."
+          }
+        },
+        {
+          "name": "disallow",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^/[^\\s#]*$"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidInput"
+        }
+      ]
+    },
+    {
+      "name": "jsonLdScript",
+      "description": "The JSON text for a <script type=\"application/ld+json\"> element, with <, >, & and the line and paragraph separators escaped so no value can end the element.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "value",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidInput"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks the settings; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/SiteMetadataSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/SiteMetadataSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "BusinessType": {
+        "enum": [
+          "LocalBusiness",
+          "AccountingService",
+          "AdultEntertainment",
+          "AmusementPark",
+          "AnimalShelter",
+          "ArchiveOrganization",
+          "ArtGallery",
+          "Attorney",
+          "AutoBodyShop",
+          "AutoDealer",
+          "AutoPartsStore",
+          "AutoRental",
+          "AutoRepair",
+          "AutoWash",
+          "AutomatedTeller",
+          "AutomotiveBusiness",
+          "Bakery",
+          "BankOrCreditUnion",
+          "BarOrPub",
+          "BeautySalon",
+          "BedAndBreakfast",
+          "BikeStore",
+          "BookStore",
+          "BowlingAlley",
+          "Brewery",
+          "CafeOrCoffeeShop",
+          "Campground",
+          "Casino",
+          "ChildCare",
+          "ClothingStore",
+          "ComedyClub",
+          "ComputerStore",
+          "ConvenienceStore",
+          "CovidTestingFacility",
+          "DaySpa",
+          "Dentist",
+          "DepartmentStore",
+          "Distillery",
+          "DryCleaningOrLaundry",
+          "Electrician",
+          "ElectronicsStore",
+          "EmergencyService",
+          "EmploymentAgency",
+          "EntertainmentBusiness",
+          "ExerciseGym",
+          "FastFoodRestaurant",
+          "FinancialService",
+          "FireStation",
+          "Florist",
+          "FoodEstablishment",
+          "FurnitureStore",
+          "GardenStore",
+          "GasStation",
+          "GeneralContractor",
+          "GolfCourse",
+          "GovernmentOffice",
+          "GroceryStore",
+          "HVACBusiness",
+          "HairSalon",
+          "HardwareStore",
+          "HealthAndBeautyBusiness",
+          "HealthClub",
+          "HobbyShop",
+          "HomeAndConstructionBusiness",
+          "HomeGoodsStore",
+          "Hospital",
+          "Hostel",
+          "Hotel",
+          "HousePainter",
+          "IceCreamShop",
+          "IndividualPhysician",
+          "InsuranceAgency",
+          "InternetCafe",
+          "JewelryStore",
+          "LegalService",
+          "Library",
+          "LiquorStore",
+          "Locksmith",
+          "LodgingBusiness",
+          "MedicalBusiness",
+          "MedicalClinic",
+          "MensClothingStore",
+          "MobilePhoneStore",
+          "Motel",
+          "MotorcycleDealer",
+          "MotorcycleRepair",
+          "MovieRentalStore",
+          "MovieTheater",
+          "MovingCompany",
+          "MusicStore",
+          "NailSalon",
+          "NightClub",
+          "Notary",
+          "OfficeEquipmentStore",
+          "Optician",
+          "OutletStore",
+          "PawnShop",
+          "PetStore",
+          "Pharmacy",
+          "Physician",
+          "PhysiciansOffice",
+          "Plumber",
+          "PoliceStation",
+          "PostOffice",
+          "ProfessionalService",
+          "PublicSwimmingPool",
+          "RadioStation",
+          "RealEstateAgent",
+          "RecyclingCenter",
+          "Resort",
+          "Restaurant",
+          "RoofingContractor",
+          "SelfStorage",
+          "ShoeStore",
+          "ShoppingCenter",
+          "SkiResort",
+          "SportingGoodsStore",
+          "SportsActivityLocation",
+          "SportsClub",
+          "StadiumOrArena",
+          "Store",
+          "TattooParlor",
+          "TelevisionStation",
+          "TennisComplex",
+          "TireShop",
+          "TouristInformationCenter",
+          "ToyStore",
+          "TravelAgency",
+          "VacationRental",
+          "WholesaleStore",
+          "Winery"
+        ],
+        "description": "LocalBusiness or a schema.org type below it, as of schema.org 30.1."
+      },
+      "Point": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+          },
+          "lng": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+          }
+        },
+        "required": [
+          "lat",
+          "lng"
+        ],
+        "additionalProperties": false
+      },
+      "ShopFacts": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "description": "An http or https address such as https://studio.example.com (a site may live under a path)."
+          },
+          "description": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "street": {
+                "type": "string"
+              },
+              "city": {
+                "type": "string"
+              },
+              "postalCode": {
+                "type": "string"
+              },
+              "region": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string",
+                "pattern": "^[A-Z]{2}$",
+                "description": "ISO 3166 alpha-2, such as ES."
+              }
+            },
+            "required": [
+              "country"
+            ],
+            "additionalProperties": false
+          },
+          "geo": {
+            "$ref": "#/components/schemas/Point"
+          },
+          "priceRange": {
+            "type": "string",
+            "description": "Such as €€."
+          },
+          "openingHours": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(Mo|Tu|We|Th|Fr|Sa|Su)([-,](Mo|Tu|We|Th|Fr|Sa|Su))*( ([01][0-9]|2[0-4]):[0-5][0-9]-([01][0-9]|2[0-4]):[0-5][0-9])?$"
+            },
+            "description": "schema.org opening hours such as Tu-Fr 09:30-13:30 (opening-hours openingHoursSpecification gives them)."
+          },
+          "image": {
+            "type": "string",
+            "description": "An http or https address such as https://studio.example.com (a site may live under a path)."
+          },
+          "sameAs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "An http or https address such as https://studio.example.com (a site may live under a path)."
+            },
+            "description": "The shop's pages elsewhere, such as its social media."
+          }
+        },
+        "required": [
+          "name",
+          "url",
+          "openingHours"
+        ],
+        "additionalProperties": false,
+        "description": "Text values are written on one line: runs of spaces and line ends become one space."
+      },
+      "PageInput": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "siteName": {
+            "type": "string"
+          },
+          "siteAddress": {
+            "type": "string",
+            "description": "An http or https address such as https://studio.example.com (a site may live under a path)."
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^/[^?#\\s]*$",
+            "description": "A page path without the language prefix, such as / or /services/massages."
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-BR."
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+              "description": "A language code such as en, es or pt-BR."
+            },
+            "minItems": 1,
+            "uniqueItems": true,
+            "description": "Every language the page exists in; includes language and defaultLanguage."
+          },
+          "defaultLanguage": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-BR."
+          },
+          "image": {
+            "type": "string",
+            "description": "An http or https address, or a path on the site such as /images/front.jpg; empty for none."
+          },
+          "locales": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "pattern": "^[a-z]{2,3}_[A-Z]{2}$"
+            },
+            "description": "Open Graph locales by language, such as {\"en\": \"en_GB\"}; otherwise the language's likely region (en_US, es_ES)."
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "siteName",
+          "siteAddress",
+          "path",
+          "language",
+          "languages",
+          "defaultLanguage"
+        ],
+        "additionalProperties": false
+      },
+      "PageMetadata": {
+        "type": "object",
+        "description": "What a Next.js generateMetadata returns.",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "alternates": {
+            "type": "object",
+            "properties": {
+              "canonical": {
+                "type": "string"
+              },
+              "languages": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "description": "The page's address in each language, and x-default for the default language's."
+              }
+            },
+            "required": [
+              "canonical",
+              "languages"
+            ]
+          },
+          "openGraph": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "type": {
+                "const": "website"
+              },
+              "url": {
+                "type": "string"
+              },
+              "siteName": {
+                "type": "string"
+              },
+              "locale": {
+                "type": "string"
+              },
+              "alternateLocale": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "title",
+              "description",
+              "type",
+              "url",
+              "siteName",
+              "locale"
+            ]
+          },
+          "twitter": {
+            "type": "object",
+            "properties": {
+              "card": {
+                "enum": [
+                  "summary",
+                  "summary_large_image"
+                ]
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "card",
+              "title",
+              "description"
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "alternates",
+          "openGraph",
+          "twitter"
+        ]
+      },
+      "SitemapEntry": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^/[^?#\\s]*$",
+            "description": "A page path without the language prefix, such as / or /services/massages."
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+              "description": "A language code such as en, es or pt-BR."
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "changed": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the page last changed (a Date); written as its day."
+          }
+        },
+        "required": [
+          "path",
+          "languages"
+        ],
+        "additionalProperties": false
+      },
+      "SiteMetadataSettings": {
+        "type": "object",
+        "properties": {
+          "businessType": {
+            "$ref": "#/components/schemas/BusinessType",
+            "default": "LocalBusiness"
+          }
+        },
+        "required": [
+          "businessType"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "Settings as values or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32050,
+        "message": "RangeError: businessType is not LocalBusiness or a schema.org type below it"
+      },
+      "InvalidInput": {
+        "code": -32051,
+        "message": "RangeError: a value is not of its form: an address that is not http or https, a path without its leading /, a language code, opening hours, a country, a page in no listed language"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "server": "server/index.ts"
+  }
+}

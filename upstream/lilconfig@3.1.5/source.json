@@ -1,0 +1,12 @@
+{
+  "name": "lilconfig",
+  "version": "3.1.5",
+  "revision": "7c0e824f2cdfef39fa8afe4bc2a69a880df4d5a8",
+  "repository": "https://github.com/antonk52/lilconfig.git",
+  "purl": "pkg:npm/lilconfig@3.1.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-aRAOI9Ia43ygL4o1EOmC/sc/0OFxrm7qcQngiIyWaqVnSnz932ybJ07zyCcgMNGSDP8Yxaf88Xj1zHEXmvQ4SA=="
+}

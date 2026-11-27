@@ -1,0 +1,393 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/device-calendar",
+    "version": "1.0.0",
+    "description": "A booking added to the customer's own calendar: the calendar entry and its .ics text written the same way in TypeScript, Swift and Kotlin (checked against one set of fixtures), EventKitUI's event editor on iPhone, iPad and Mac, the calendar app's new event screen on Android, and the .ics file on the website and Windows. Nothing needs calendar permission."
+  },
+  "methods": [
+    {
+      "name": "entryLocation",
+      "description": "The location a calendar shows: the place's name and its address, each trimmed, joined by a comma and a space when both are given. Swift entryLocation(_:).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        }
+      ],
+      "result": {
+        "name": "location",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "icsText",
+      "description": "The entry as an iCalendar file of one event (RFC 5545): VCALENDAR with VERSION 2.0, PRODID, CALSCALE GREGORIAN and METHOD PUBLISH; VEVENT with UID, DTSTAMP, DTSTART, DTEND, SUMMARY, LOCATION (when not empty), DESCRIPTION (when there are notes), URL (when given), STATUS and SEQUENCE. UTC times to the second; TEXT values escaped (backslash, semicolon, comma, line breaks as \\n, other control characters but the tab dropped); lines folded at 75 octets without splitting a character; CRLF line ends. Swift icsText(_:stamp:productId:); Kotlin icsText(entry, stamp, productId).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/IcsOptions"
+          },
+          "description": "Swift and Kotlin take stamp and productId as arguments with these defaults."
+        }
+      ],
+      "result": {
+        "name": "ics",
+        "schema": {
+          "type": "string",
+          "contentMediaType": "text/calendar"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidEntry"
+        }
+      ]
+    },
+    {
+      "name": "icsDataUrl",
+      "description": "The file as a data address for a download link (data:text/calendar;charset=utf-8,<percent-encoded text>); the website and the Windows screens offer it as booking.ics.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "ics",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "address",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "insertExtras",
+      "description": "Kotlin: the extras of the calendar app's new event screen (CalendarContract): title, beginTime and endTime in milliseconds, eventLocation, description (the notes, then the url on a line of its own) and availability busy.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        }
+      ],
+      "result": {
+        "name": "extras",
+        "schema": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "DeviceCalendar.insertIntent",
+      "description": "Kotlin: Intent.ACTION_INSERT on CalendarContract.Events.CONTENT_URI with insertExtras(entry); it needs no permission.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        }
+      ],
+      "result": {
+        "name": "intent",
+        "schema": {
+          "description": "android.content.Intent."
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "DeviceCalendar.add",
+      "description": "Kotlin: opens the calendar app's new event screen filled from the entry, where the person picks the calendar and saves; false when the device has no calendar app that takes it (offer the .ics file then).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "context",
+          "required": true,
+          "schema": {
+            "description": "android.content.Context; outside an Activity the screen opens as a new task."
+          }
+        },
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        }
+      ],
+      "result": {
+        "name": "opened",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "DeviceCalendar.event",
+      "description": "Swift (iPhone, iPad, Mac Catalyst; not Apple TV): an EKEvent filled from the entry in the given EKEventStore.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        },
+        {
+          "name": "store",
+          "required": true,
+          "schema": {
+            "description": "EKEventStore."
+          }
+        }
+      ],
+      "result": {
+        "name": "event",
+        "schema": {
+          "description": "EKEvent."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        }
+      ]
+    },
+    {
+      "name": "DeviceCalendar.requestWriteAccess",
+      "description": "Swift: write-only calendar access, for a Mac Catalyst build whose editor asks for access first; it needs NSCalendarsWriteOnlyAccessUsageDescription in Info.plist and, on the Mac, the calendars entitlement.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "store",
+          "required": true,
+          "schema": {
+            "description": "EKEventStore."
+          }
+        }
+      ],
+      "result": {
+        "name": "granted",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        }
+      ]
+    },
+    {
+      "name": "CalendarEntrySheet",
+      "description": "Swift: the SwiftUI view CalendarEntrySheet(entry:onFinish:) wrapping EventKitUI's EKEventEditViewController, for a .sheet; the person picks a calendar and saves or cancels, then onFinish(saved) is called and the caller closes the sheet. From iOS 17 the editor runs outside the application and needs no calendar access. Not on Apple TV.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "entry",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarEntry"
+          }
+        },
+        {
+          "name": "onFinish",
+          "required": true,
+          "schema": {
+            "description": "A function (Bool) -> Void: true when the event was saved."
+          }
+        }
+      ],
+      "result": {
+        "name": "view",
+        "schema": {
+          "description": "A SwiftUI view."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "CalendarEntry": {
+        "type": "object",
+        "description": "A booking as an entry for the customer's own calendar (Swift struct CalendarEntry with url: URL?; Kotlin data class CalendarEntry with java.time.Instant times and a String? url).",
+        "properties": {
+          "uid": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Unique and stable across devices, such as <booking id>@<host>."
+          },
+          "title": {
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Not before start."
+          },
+          "place": {
+            "type": "string",
+            "description": "The place's name; may be empty (a home visit)."
+          },
+          "address": {
+            "type": "string",
+            "description": "May be empty."
+          },
+          "notes": {
+            "type": "string"
+          },
+          "url": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^https?://\\S+$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A public address about the booking; never one holding its secret, since calendars are shared and synced."
+          },
+          "status": {
+            "$ref": "#/components/schemas/CalendarEntryStatus"
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "Raised each time the booking changes."
+          }
+        },
+        "required": [
+          "uid",
+          "title",
+          "start",
+          "end",
+          "place",
+          "address",
+          "notes"
+        ],
+        "additionalProperties": false
+      },
+      "CalendarEntryStatus": {
+        "enum": [
+          "confirmed",
+          "tentative",
+          "cancelled"
+        ],
+        "default": "confirmed",
+        "description": "Swift CalendarEntryStatus cases of the same names; Kotlin CONFIRMED, TENTATIVE, CANCELLED."
+      },
+      "IcsOptions": {
+        "type": "object",
+        "properties": {
+          "stamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "DTSTAMP, when the file was made; now by default."
+          },
+          "productId": {
+            "type": "string",
+            "minLength": 1,
+            "default": "-//clodhub//device-calendar//EN",
+            "description": "PRODID."
+          },
+          "now": {
+            "description": "TypeScript only: a function giving the current Date, for the default stamp."
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "errors": {
+      "InvalidEntry": {
+        "code": -32070,
+        "message": "RangeError (Swift: precondition failure; Kotlin: IllegalArgumentException): an empty uid, an end before the start, a negative sequence or, in TypeScript, a value of the wrong type (programmer error)"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "apple": "apple/Sources",
+    "android": "android/src/main/java"
+  }
+}

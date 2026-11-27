@@ -1,0 +1,12 @@
+{
+  "name": "supports-preserve-symlinks-flag",
+  "version": "1.0.0",
+  "revision": "1f7cac19c0c298cf40b3f2f3c735477ad579ac61",
+  "repository": "https://github.com/inspect-js/node-supports-preserve-symlinks-flag.git",
+  "purl": "pkg:npm/supports-preserve-symlinks-flag@1.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "reusify",
+  "version": "1.1.0",
+  "revision": "b2b16eef390ac330068c1ccea4fdec233f4d0f6a",
+  "repository": "https://github.com/mcollina/reusify.git",
+  "purl": "pkg:npm/reusify@1.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "pirates",
+  "version": "4.0.7",
+  "revision": "ecd5f6cd8491c4f0e496f98ed18fb073257a0444",
+  "repository": "https://github.com/danez/pirates.git",
+  "purl": "pkg:npm/pirates@4.0.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "path-parse",
+  "version": "1.0.7",
+  "revision": "9f1db2802ffbc572e6b447f66126697e33b0055e",
+  "repository": "https://github.com/jbgutierrez/path-parse.git",
+  "purl": "pkg:npm/path-parse@1.0.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-LDJzPVEEEPR+y48z93A0Ed0yXb8pAByGWo/k5YYdYgpY2/2EsOsksJrq7lOHxryrVOn1ejG6oAp8ahvOIQD8sw=="
+}

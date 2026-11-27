@@ -1,0 +1,12 @@
+{
+  "name": "is-glob",
+  "version": "4.0.3",
+  "revision": "627ca7e552c69e8d62d620b4715a2658267b3d17",
+  "repository": "https://github.com/micromatch/is-glob.git",
+  "purl": "pkg:npm/is-glob@4.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg=="
+}

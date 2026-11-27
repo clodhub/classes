@@ -1,0 +1,12 @@
+{
+  "name": "icu-minify",
+  "version": "4.15.3",
+  "revision": "sha512:b0341dbd7ec11b8dd73823be4f247b946418caf865b525a94015dc2b08a9bbb6d117f69faf6d92e69ce3b5cc0fb12c45425df8b50cf2d63129f0372a3dce1086",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/icu-minify@4.15.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-sDQdvX7BG43XOCO+TyR7lGQYyvhltSWpQBXcKwipu7bRF/afr22S5pzjtcwPsSxFQl34tQzy1jEp8DcqPc4Qhg=="
+}

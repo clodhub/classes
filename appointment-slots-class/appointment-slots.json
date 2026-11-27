@@ -1,0 +1,492 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/appointment-slots",
+    "version": "1.0.0",
+    "description": "The free start times of a day for a booking of a given length, from the day's opening windows and the busy blocks of the shop's calendars, with a buffer after each booking and a fixed step between starts; the instants a booking occupies, its re-check against busy blocks, and the range to ask calendars for. Takes the com.clodhub/opening-hours module as an argument for the wall-clock arithmetic."
+  },
+  "methods": [
+    {
+      "name": "availableSlots",
+      "description": "The slots in which a booking fits each window, in order. Candidates start at the window's opening and follow every stepMinutes. Busy blocks are taken by start time: before a block, a candidate is offered when the booking plus the buffer ends by the block's start (and the booking ends by the window's close); a block then moves the next candidate to its end plus the buffer, off the step grid when that is where it ends. After the last block a candidate needs only to end by the close. Each window's opening and close are read in its own offset, so daylight saving days are right.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/OpeningHoursModule"
+          }
+        },
+        {
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SlotRequest"
+          }
+        }
+      ],
+      "result": {
+        "name": "slots",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Slot"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "eventInterval",
+      "description": "The instants a booking occupies: from its wall-clock start for its duration, widened by travelMinutes on both sides (the source's home visits: 30).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/OpeningHoursModule"
+          }
+        },
+        {
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/IntervalRequest"
+          }
+        }
+      ],
+      "result": {
+        "name": "interval",
+        "schema": {
+          "$ref": "#/components/schemas/Interval"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "overlaps",
+      "description": "Whether the interval meets a busy block: a block counts when it starts before the end and ends after the start, so touching edges do not overlap. Blocks missing a start or an end are not busy.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "start",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "end",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "busy",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Busy"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "overlaps",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "busyWindow",
+      "description": "The range to ask a calendar for busy blocks on a date: from the first window's opening to the last window's close; null when there are no windows.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/OpeningHoursModule"
+          }
+        },
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          }
+        },
+        {
+          "name": "windows",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Window"
+            }
+          }
+        },
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid."
+          }
+        }
+      ],
+      "result": {
+        "name": "range",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/Range"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings given as numbers or as rendered template text; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/AppointmentSlotsSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/AppointmentSlotsSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Window": {
+        "type": "object",
+        "properties": {
+          "open": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM."
+          },
+          "close": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM."
+          }
+        },
+        "required": [
+          "open",
+          "close"
+        ],
+        "additionalProperties": false,
+        "description": "An opening window of the day, as com.clodhub/opening-hours gives it (windowsOn); close may be 24:00."
+      },
+      "Busy": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "An instant as text, such as 2026-03-02T10:00:00Z."
+          },
+          "end": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "An instant as text."
+          }
+        },
+        "description": "A busy period as a calendar returns it (com.clodhub/calendar busy). A block missing a start or an end, or with an instant that cannot be read, is not busy."
+      },
+      "Slot": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM."
+          },
+          "end": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM."
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "additionalProperties": false,
+        "description": "A bookable start and the end of the booking on the wall clock. On the night the clocks go back, a time in the repeated hour may start two slots; it names the first."
+      },
+      "OpeningHoursModule": {
+        "type": "object",
+        "description": "The com.clodhub/opening-hours module (its web or server entry), passed in: these functions use its zonedInstant and wallTime."
+      },
+      "SlotRequest": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          },
+          "windows": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Window"
+            },
+            "description": "The day's windows in order; none gives no slots."
+          },
+          "timeZone": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid."
+          },
+          "durationMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The whole booking, gaps between treatments included."
+          },
+          "bufferMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Free time a slot needs before the next busy block and that a busy block keeps after it; the bufferMinutes setting by default (10; the source used 30 for home visits)."
+          },
+          "stepMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Minutes between candidate starts; the stepMinutes setting by default (30)."
+          },
+          "busy": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Busy"
+            }
+          }
+        },
+        "required": [
+          "date",
+          "windows",
+          "timeZone",
+          "durationMinutes",
+          "busy"
+        ],
+        "additionalProperties": false
+      },
+      "IntervalRequest": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          },
+          "time": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM."
+          },
+          "timeZone": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid."
+          },
+          "durationMinutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "travelMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "default": 0,
+            "description": "Travel time added before and after, for a visit away from the shop."
+          }
+        },
+        "required": [
+          "date",
+          "time",
+          "timeZone",
+          "durationMinutes"
+        ],
+        "additionalProperties": false
+      },
+      "Interval": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "additionalProperties": false
+      },
+      "Range": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        "required": [
+          "from",
+          "to"
+        ],
+        "additionalProperties": false
+      },
+      "AppointmentSlotsSettings": {
+        "type": "object",
+        "properties": {
+          "stepMinutes": {
+            "type": "integer",
+            "minimum": 5,
+            "maximum": 240,
+            "default": 30
+          },
+          "bufferMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 240,
+            "default": 10
+          }
+        },
+        "required": [
+          "stepMinutes",
+          "bufferMinutes"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "stepMinutes": {},
+          "bufferMinutes": {}
+        },
+        "description": "Settings as numbers or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32040,
+        "message": "RangeError: a duration, buffer, step or travel time that is not a whole number in range, or a date, time or time zone outside its form (programmer error)"
+      },
+      "InvalidSettings": {
+        "code": -32041,
+        "message": "RangeError: stepMinutes is not a whole number from 5 to 240, or bufferMinutes from 0 to 240"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

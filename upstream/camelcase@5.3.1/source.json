@@ -1,0 +1,12 @@
+{
+  "name": "camelcase",
+  "version": "5.3.1",
+  "revision": "cbe5a519ec6745adbb5283d5ee8c5c9889050d74",
+  "repository": "https://github.com/sindresorhus/camelcase.git",
+  "purl": "pkg:npm/camelcase@5.3.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg=="
+}

@@ -1,0 +1,623 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/home-visits",
+    "version": "1.0.0",
+    "description": "Treatments at the customer's home: which baskets qualify, the distance from the shop and the callout fee and travel time within the service area, the home address of a booking request, and the address's map point from a Nominatim search service at one request a second."
+  },
+  "methods": [
+    {
+      "name": "eligibility",
+      "description": "Whether a basket can be done at the customer's home: ineligible when it is empty or any line's item is not offered at home; a duration shortfall when the lines plus a gap between each two last less than minimumMinutes; else eligible.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "lines",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Line"
+            }
+          }
+        },
+        {
+          "name": "eligibleSlugs",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/EligibilityOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/Eligibility"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "distanceKm",
+      "description": "The great-circle distance between two points in kilometres (haversine, mean Earth radius 6371 km).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "a",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Point"
+          }
+        },
+        {
+          "name": "b",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Point"
+          }
+        }
+      ],
+      "result": {
+        "name": "km",
+        "schema": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "quote",
+      "description": "What a visit to the point costs and takes: the callout fee and the travel time when the point is within radiusKm of the base (exactly at the radius is within), else OUTSIDE_AREA with the distance.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "base",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Point"
+          }
+        },
+        {
+          "name": "point",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Point"
+          }
+        },
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/QuoteOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/Quote"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "parseAddress",
+      "description": "The home address of a booking request: street, city and postal code present after trimming and within their lengths, notes optional, and a point on the map as numbers; null otherwise.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "address",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/HomeAddress"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "geocodeQuery",
+      "description": "The search text of an address: street, city and postal code, trimmed, the non-empty ones joined by \", \".",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SearchAddress"
+          }
+        }
+      ],
+      "result": {
+        "name": "query",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "geocode",
+      "description": "The map point of an address, asked of a Nominatim search service: one GET of endpoint with format=json, limit=1 and q=geocodeQuery(address), with the Accept and User-Agent headers; the first result's lat and lon as numbers. Null when the query is empty, the signal is aborted, nothing is found, or the service fails. Requests to one service start at least GEOCODE_SPACING_MS (1000) apart in the process, the public service's limit of one request a second (https://operations.osmfoundation.org/policies/nominatim/); the site-wide limit holds when every lookup goes through one server process. Answers are reused for the same address in the process. Only street, city and postal code are sent.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "address",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SearchAddress"
+          }
+        },
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GeocodeOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "point",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/Point"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings given as numbers or as rendered template text; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/HomeVisitSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/HomeVisitSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Point": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+          },
+          "lng": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+          }
+        },
+        "required": [
+          "lat",
+          "lng"
+        ],
+        "description": "A point on the map in degrees."
+      },
+      "HomeAddress": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          },
+          "city": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "postalCode": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20
+          },
+          "notes": {
+            "type": "string",
+            "maxLength": 1000,
+            "description": "Directions for the visit."
+          },
+          "lat": {
+            "type": "number",
+            "minimum": -90,
+            "maximum": 90
+          },
+          "lng": {
+            "type": "number",
+            "minimum": -180,
+            "maximum": 180
+          }
+        },
+        "required": [
+          "street",
+          "city",
+          "postalCode",
+          "notes",
+          "lat",
+          "lng"
+        ],
+        "additionalProperties": false
+      },
+      "SearchAddress": {
+        "type": "object",
+        "properties": {
+          "street": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "street",
+          "city",
+          "postalCode"
+        ]
+      },
+      "Line": {
+        "type": "object",
+        "properties": {
+          "itemSlug": {
+            "type": "string"
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "itemSlug",
+          "minutes"
+        ],
+        "description": "A basket line."
+      },
+      "EligibilityOptions": {
+        "type": "object",
+        "properties": {
+          "minimumMinutes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "gapMinutes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "minimumMinutes",
+          "gapMinutes"
+        ]
+      },
+      "Eligibility": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "status": {
+                "const": "eligible"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "status": {
+                "const": "duration_shortfall"
+              },
+              "totalMinutes": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "status",
+              "totalMinutes"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "status": {
+                "const": "ineligible"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          }
+        ]
+      },
+      "QuoteOptions": {
+        "type": "object",
+        "properties": {
+          "radiusKm": {
+            "type": "number",
+            "minimum": 0
+          },
+          "calloutFee": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR).",
+            "minimum": 0
+          },
+          "travelMinutes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "radiusKm",
+          "calloutFee",
+          "travelMinutes"
+        ]
+      },
+      "Quote": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "distanceKm": {
+                "type": "number"
+              },
+              "calloutFee": {
+                "type": "integer",
+                "description": "An amount in the currency's minor unit (cents for EUR)."
+              },
+              "travelMinutes": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "ok",
+              "distanceKm",
+              "calloutFee",
+              "travelMinutes"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "const": "OUTSIDE_AREA"
+              },
+              "distanceKm": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "ok",
+              "code",
+              "distanceKm"
+            ]
+          }
+        ]
+      },
+      "GeocodeOptions": {
+        "type": "object",
+        "properties": {
+          "endpoint": {
+            "type": "string",
+            "description": "The search address of a service with Nominatim's search API (format=json, limit, q; answers [{lat, lon}] as text), chosen by the application's developer and kept in configuration so it can be switched without a new release. Using the public OpenStreetMap service is the developer's own decision under its usage policy (https://operations.osmfoundation.org/policies/nominatim/); there is no default."
+          },
+          "userAgent": {
+            "type": "string",
+            "pattern": "^[\\x20-\\x7E]{1,256}$",
+            "description": "Names the application, such as \"Example Studio bookings (https://example.com)\"."
+          },
+          "fetch": {
+            "description": "The fetch function; the global fetch by default."
+          },
+          "signal": {
+            "description": "An AbortSignal."
+          },
+          "now": {
+            "description": "Returns the current Date; for the spacing of requests."
+          },
+          "wait": {
+            "description": "(milliseconds) => Promise that resolves after that time; a timer by default."
+          }
+        },
+        "required": [
+          "endpoint",
+          "userAgent"
+        ]
+      },
+      "HomeVisitSettings": {
+        "type": "object",
+        "properties": {
+          "radiusKm": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 25
+          },
+          "calloutFee": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR).",
+            "minimum": 0,
+            "maximum": 10000000,
+            "default": 5000
+          },
+          "travelMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 240,
+            "default": 30,
+            "description": "Travel time before and after a visit."
+          },
+          "minimumMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 1440,
+            "default": 60,
+            "description": "The shortest basket done at home."
+          },
+          "gapMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 120,
+            "default": 5,
+            "description": "Minutes between the items of one visit."
+          }
+        },
+        "required": [
+          "radiusKm",
+          "calloutFee",
+          "travelMinutes",
+          "minimumMinutes",
+          "gapMinutes"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": {},
+        "description": "Settings as numbers or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32060,
+        "message": "RangeError: a point outside the map, a number of minutes or an amount that is not a whole number at least 0, a radius below 0, an endpoint that is not an http or https address, or a User-Agent that is not 1 to 256 printable ASCII characters (programmer error)"
+      },
+      "InvalidSettings": {
+        "code": -32061,
+        "message": "RangeError: a setting outside its range"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

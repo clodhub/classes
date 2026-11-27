@@ -1,0 +1,16 @@
+{
+  "name": "tailwindcss",
+  "version": "3.4.19",
+  "revision": "f38be227df384504a170409c2131ca5ca8bfe025",
+  "repository": "https://github.com/tailwindlabs/tailwindcss.git#v3",
+  "purl": "pkg:npm/tailwindcss@3.4.19",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE",
+    "1-LICENSE",
+    "2-LICENSE",
+    "3-LICENSE",
+    "4-LICENSE"
+  ],
+  "integrity": "sha512-3ofp+LL8E+pK/JuPLPggVAIaEuhvIz4qNcf3nA1Xn2o/7fb7s/TYpHhwGDv1ZU3PkBluUVaF8PyCHcm48cKLWQ=="
+}

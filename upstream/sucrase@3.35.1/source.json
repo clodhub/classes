@@ -1,0 +1,12 @@
+{
+  "name": "sucrase",
+  "version": "3.35.1",
+  "revision": "fa5b7abfb5588afc20c6c28f23a95b9e347215d7",
+  "repository": "https://github.com/alangpierce/sucrase.git",
+  "purl": "pkg:npm/sucrase@3.35.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-DhuTmvZWux4H1UOnWMB3sk0sbaCVOoQZjv8u1rDoTV0HTdGem9hkAZtl4JZy8P2z4Bg0nT+YMeOFyVr4zcG5Tw=="
+}

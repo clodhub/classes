@@ -1,0 +1,901 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/payments",
+    "version": "1.0.0",
+    "description": "Hosted checkout, payments for an app's native payment sheet, signed completion events and refunds, in the shop's currency. Amounts are integers in minor units. Every implementation has a simulated mode, so the shop and the class checks run without a provider account. Server only: keys are read from the environment variables the settings name. createPayments, completedCheckout and simulated.complete return their results; createCheckout, createSheetPayment, verifyEvent, checkout, refund, simulated.signedEvent and simulated.details return promises of them."
+  },
+  "methods": [
+    {
+      "name": "createPayments",
+      "description": "A payments client with the installed settings, or `options.settings` over them: live with the provider, or simulated when `simulate` is true. Returns the client itself, not a promise.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/CreateOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "payments",
+        "schema": {
+          "$ref": "#/components/schemas/Payments"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "Payments.createCheckout",
+      "description": "Starts a hosted card payment for the line items in the client's currency and resolves to the checkout id and the address to send the customer to. A request outside CheckoutRequest is INVALID_REQUEST, a live client without its secret key NOT_CONFIGURED, a provider refusal or outage PROVIDER_ERROR.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CheckoutRequest"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "id": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "id",
+                "url"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "INVALID_REQUEST",
+                    "NOT_CONFIGURED",
+                    "PROVIDER_ERROR"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "code",
+                "message"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Payments.createSheetPayment",
+      "description": "Starts a payment for an app's native payment sheet: for a live client a provider customer with the email, an ephemeral key for it in the SDK's API version and a card payment for the line items' total in the client's currency, each requested once under its own idempotency key; for a simulated client a payment kept in the process, which simulated.complete pays. The payment does not expire. A request outside SheetRequest is INVALID_REQUEST, a live client without its secret key NOT_CONFIGURED, a provider refusal or outage PROVIDER_ERROR.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "request",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SheetRequest"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "id": {
+                  "type": "string"
+                },
+                "clientSecret": {
+                  "type": "string"
+                },
+                "customer": {
+                  "type": "string"
+                },
+                "ephemeralKey": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "id",
+                "clientSecret",
+                "customer",
+                "ephemeralKey"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "INVALID_REQUEST",
+                    "NOT_CONFIGURED",
+                    "PROVIDER_ERROR"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "code",
+                "message"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Payments.verifyEvent",
+      "description": "Resolves to the event when the signature (the value of the request header named by signatureHeader) signs this exact body with the webhook secret within 300 seconds of now, either way. A null or empty signature is MISSING_SIGNATURE; otherwise a live client without its webhook secret is NOT_CONFIGURED, whatever the event; anything else (another body, a changed or old signature, a body that is not an event) is INVALID_SIGNATURE.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "rawBody",
+          "required": true,
+          "schema": {
+            "type": "string"
+          },
+          "description": "The request body exactly as received."
+        },
+        {
+          "name": "signature",
+          "required": true,
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "event": {
+                  "$ref": "#/components/schemas/PaymentEvent"
+                }
+              },
+              "required": [
+                "ok",
+                "event"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "MISSING_SIGNATURE",
+                    "NOT_CONFIGURED",
+                    "INVALID_SIGNATURE"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Payments.completedCheckout",
+      "description": "The summary of a completed checkout event, or of a succeeded sheet payment's event (payment_intent.succeeded), carrying the metadata its request gave, returned itself; null for any other event. Both reach what was bought by the same path.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "event",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PaymentEvent"
+          }
+        }
+      ],
+      "result": {
+        "name": "summary",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CheckoutSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Payments.checkout",
+      "description": "Resolves to the current summary of a checkout or a sheet payment by id; null when there is none, when the id cannot name one, when a live client has no secret key, or when the provider cannot be reached.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "summary",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CheckoutSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Payments.refund",
+      "description": "Refunds a payment of a checkout or a sheet, all that is left of it or `amount`, and resolves to the refund id. The same idempotency key with the same values repeats the first refund's id with `already` true; a payment already refunded in full gives `id` null and `already` true. A request the provider refuses or would refuse (an unknown or empty payment reference, a key that is empty, over 255 characters or not printable ASCII, an amount that is not a positive integer or is more than is left, a key reused with other values) is PROVIDER_ERROR; a live client without its secret key is NOT_CONFIGURED.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "request",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "paymentReference": {
+                "type": "string",
+                "description": "A CheckoutSummary's paymentReference."
+              },
+              "idempotencyKey": {
+                "type": "string",
+                "description": "Names this refund, such as refund:<reservation id>."
+              },
+              "amount": {
+                "type": "integer",
+                "description": "In minor units; all that is left when omitted."
+              }
+            },
+            "required": [
+              "paymentReference",
+              "idempotencyKey"
+            ],
+            "additionalProperties": false
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "id": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "already": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "ok",
+                "id",
+                "already"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "NOT_CONFIGURED",
+                    "PROVIDER_ERROR"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "code",
+                "message"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Payments.simulated.complete",
+      "description": "Simulated mode only (a live client throws): marks a checkout or a sheet payment paid with a payment reference and returns its summary itself, not a promise. A paid one returns the same summary again; a checkout past its expiry is not completed and returns its unpaid summary; null for an unknown id.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "summary",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CheckoutSummary"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/NotSimulated"
+        }
+      ]
+    },
+    {
+      "name": "Payments.simulated.signedEvent",
+      "description": "Simulated mode only (a live client throws): resolves to the webhook body and signature the provider would send for a completed checkout or a succeeded sheet payment, signed now with the simulated webhook secret, which every simulated client's verifyEvent accepts.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "summary",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CheckoutSummary"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "body": {
+              "type": "string"
+            },
+            "signature": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "body",
+            "signature"
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/NotSimulated"
+        }
+      ]
+    },
+    {
+      "name": "Payments.simulated.details",
+      "description": "Simulated mode only (a live client throws): resolves to what the application's simulated payment page or route shows of a checkout or a sheet payment, and where a checkout sends the customer after paying or cancelling; null for an unknown id.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "details",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/SimulatedCheckout"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/NotSimulated"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "LineItem": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 250,
+            "description": "Shown on the payment page."
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 500,
+            "description": "Shown under the name; left out when empty."
+          },
+          "amount": {
+            "type": "integer",
+            "description": "Unit price in minor units.",
+            "minimum": 1
+          },
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "default": 1
+          }
+        },
+        "required": [
+          "name",
+          "amount"
+        ],
+        "additionalProperties": false
+      },
+      "CheckoutRequest": {
+        "type": "object",
+        "properties": {
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineItem"
+            },
+            "minItems": 1,
+            "maxItems": 20
+          },
+          "customerEmail": {
+            "type": "string",
+            "description": "The customer's email address, filled in on the payment page; none when empty."
+          },
+          "language": {
+            "type": "string",
+            "description": "A language code for the payment page, such as en, es or pt-BR; the customer's browser language when the provider has no page in it, or when empty."
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "maxProperties": 50,
+            "propertyNames": {
+              "maxLength": 40
+            },
+            "description": "Text values the payment carries back on completion; `kind` names what was bought (reservation, gift). A key is 1 to 40 characters without square brackets; a key whose value is empty is left out, as the provider leaves it out."
+          },
+          "successUrl": {
+            "type": "string",
+            "description": "Where the customer goes after paying, an absolute http or https address; {CHECKOUT_ID} in it is replaced by the checkout id."
+          },
+          "cancelUrl": {
+            "type": "string",
+            "description": "Where the customer goes on leaving the payment page, an absolute http or https address."
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the checkout stops accepting payment: from 30 minutes to 24 hours ahead (give at least 31 minutes, so the provider still counts 30 when the request arrives); 24 hours after creation when omitted."
+          }
+        },
+        "required": [
+          "lineItems",
+          "metadata",
+          "successUrl",
+          "cancelUrl"
+        ],
+        "additionalProperties": false
+      },
+      "SheetRequest": {
+        "type": "object",
+        "properties": {
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineItem"
+            },
+            "minItems": 1,
+            "maxItems": 20,
+            "description": "What is paid for: the sheet charges their total, and their names describe the payment to the provider."
+          },
+          "customerEmail": {
+            "type": "string",
+            "description": "The customer's email address, kept on the provider's customer; none when empty."
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "maxProperties": 50,
+            "propertyNames": {
+              "maxLength": 40
+            },
+            "description": "Text values the payment carries back on completion; `kind` names what was bought (reservation, gift). A key is 1 to 40 characters without square brackets; a key whose value is empty is left out, as the provider leaves it out."
+          },
+          "ephemeralKeyVersion": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}(\\.[a-z]+)?$",
+            "description": "The provider API version of the app's payment sheet SDK (Stripe's apiVersion, such as 2020-08-27); the ephemeral key is made for it, because the SDK refuses a key of another version."
+          }
+        },
+        "required": [
+          "lineItems",
+          "metadata",
+          "ephemeralKeyVersion"
+        ],
+        "additionalProperties": false,
+        "description": "A payment for an app's native payment sheet (cards, and Apple Pay or Google Pay where the app offers them)."
+      },
+      "SheetPayment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The payment's id (a Stripe payment intent, pi_...): what completion events, checkout and the simulated route name it by."
+          },
+          "clientSecret": {
+            "type": "string",
+            "description": "The payment's client secret, for the sheet."
+          },
+          "customer": {
+            "type": "string",
+            "description": "The provider's customer the payment is for."
+          },
+          "ephemeralKey": {
+            "type": "string",
+            "description": "The secret of a short-lived key for that customer, in the SDK's API version."
+          }
+        },
+        "required": [
+          "id",
+          "clientSecret",
+          "customer",
+          "ephemeralKey"
+        ],
+        "additionalProperties": false,
+        "description": "What the app's payment sheet needs; a simulated client gives the same fields, which only its simulated sheet uses."
+      },
+      "CheckoutSummary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The checkout id, or a sheet payment's id."
+          },
+          "paid": {
+            "type": "boolean",
+            "description": "Whether the payment succeeded."
+          },
+          "amountTotal": {
+            "type": "integer",
+            "description": "What the checkout charges in all, in minor units."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An upper-case ISO 4217 code."
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 500
+            },
+            "maxProperties": 50,
+            "propertyNames": {
+              "maxLength": 40
+            },
+            "description": "Text values the payment carries back on completion; `kind` names what was bought (reservation, gift). A key is 1 to 40 characters without square brackets; a key whose value is empty is left out, as the provider leaves it out."
+          },
+          "paymentReference": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "What a refund names (a Stripe payment intent; a sheet payment's own id); null until paid."
+          },
+          "customerEmail": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The email address on the payment page; null when none is known, and for a sheet payment, whose address stays with the provider's customer."
+          }
+        },
+        "required": [
+          "id",
+          "paid",
+          "amountTotal",
+          "currency",
+          "metadata",
+          "paymentReference",
+          "customerEmail"
+        ],
+        "additionalProperties": false
+      },
+      "PaymentEvent": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "data": {}
+        },
+        "required": [
+          "type",
+          "data"
+        ],
+        "description": "A verified provider event; read it with completedCheckout."
+      },
+      "SimulatedCheckout": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "checkout",
+              "sheet"
+            ],
+            "description": "A checkout (createCheckout) or a sheet payment (createSheetPayment)."
+          },
+          "summary": {
+            "$ref": "#/components/schemas/CheckoutSummary",
+            "description": "The payment's current summary."
+          },
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LineItem"
+            },
+            "description": "The request's line items, each with its quantity (1 when the request gave none)."
+          },
+          "successUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The request's successUrl with {CHECKOUT_ID} replaced by the checkout id; null for a sheet payment."
+          },
+          "cancelUrl": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The request's cancelUrl; null for a sheet payment."
+          },
+          "expiresAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The request's expiresAt; null when it gave none (the checkout then expires 24 hours after creation) and for a sheet payment, which does not expire."
+          },
+          "language": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The request's language; null when it gave none or an empty one, and for a sheet payment."
+          }
+        },
+        "required": [
+          "kind",
+          "summary",
+          "lineItems",
+          "successUrl",
+          "cancelUrl",
+          "expiresAt",
+          "language"
+        ],
+        "additionalProperties": false,
+        "description": "What the application's simulated payment page or route shows, and where a checkout sends the customer after paying or cancelling."
+      },
+      "CreateOptions": {
+        "type": "object",
+        "properties": {
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Where the secret key, the webhook secret and the publishable key are read, in the variables the settings name; the server's environment by default."
+          },
+          "settings": {
+            "type": "object",
+            "description": "Settings that replace the installed ones, such as currency (a lower-case ISO 4217 code)."
+          },
+          "fetch": {
+            "description": "The fetch function for provider requests; the global fetch by default. A simulated client never calls it."
+          },
+          "now": {
+            "description": "Returns the current Date; the system clock by default."
+          },
+          "simulate": {
+            "type": "boolean",
+            "default": false,
+            "description": "Take payments without a provider account. Every simulated client in the process shares the checkouts, which keep every request field, expire as the provider's do and are completed by simulated.complete; events are signed with a fixed published secret; refunds are recorded by idempotency key. For local use and checks only: anyone can sign events with the published secret."
+          },
+          "simulatedCheckoutUrl": {
+            "description": "(id) => the address of the application's simulated payment page; /simulated-checkout?id= followed by the URL-encoded id by default."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Payments": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "enum": [
+              "live",
+              "simulated"
+            ]
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "The client's currency, an upper-case ISO 4217 code."
+          },
+          "signatureHeader": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$",
+            "description": "The request header the provider puts the webhook signature in, lower case (stripe-signature for Stripe), the same in simulated mode. The webhook route passes request.headers.get(signatureHeader) to verifyEvent."
+          },
+          "publishableKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The provider's publishable key, which an app's payment sheet needs (not a secret); null when it is not set, and always in simulated mode."
+          }
+        },
+        "required": [
+          "mode",
+          "currency",
+          "signatureHeader",
+          "publishableKey"
+        ]
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32020,
+        "message": "RangeError: a setting outside its grammar, a currency that is not a three-letter code, or a simulatedCheckoutUrl that is not a function"
+      },
+      "NotSimulated": {
+        "code": -32021,
+        "message": "Error: a simulated method called on a live client"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "server": "server/index.ts"
+  }
+}

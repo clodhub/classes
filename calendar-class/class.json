@@ -1,0 +1,84 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/calendar-class",
+  "version": "1.0.0",
+  "title": "Calendar",
+  "summary": "Events on calendars the owner names, their busy times and deletion, kept in the shop's records store or an outside calendar service, with a simulated mode",
+  "category": "scheduling/calendars",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/calendar",
+      "version": "1.0.0",
+      "path": "classes/calendar-class/calendar.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "privateKey": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "collection": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/calendar-class/calendar-event.schema.json",
+      "digest": "11ef3262058e202ae3d5df1524d97355c780e31fba1a1ddbe5999e2969b982cb"
+    },
+    {
+      "path": "classes/calendar-class/calendar.json",
+      "digest": "5a92a8bcbd7b5f7110384377c4ba649239d300455412239f424ca0929f2e45f6"
+    },
+    {
+      "path": "classes/calendar-class/check.mjs",
+      "digest": "425194c464dccc3b524027e66d6606b349fe4f50ed4ddc4d991160920cd7bba0"
+    },
+    {
+      "path": "classes/calendar-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/calendar-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/calendar-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "bson",
+  "version": "7.3.4",
+  "revision": "332ff9b69bba905bdde64dd0caed8d11ab8c4093",
+  "repository": "https://github.com/mongodb/js-bson.git",
+  "purl": "pkg:npm/bson@7.3.4",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-eb33j2Ha6xgygjJ8bhI3sYaI9cLAbSaopZLRJQ5/rxk32XyBSoVVcbeHIzVGJx1SyQpyyoElkoEZgQrg+RVVoA=="
+}

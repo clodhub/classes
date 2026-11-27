@@ -1,0 +1,12 @@
+{
+  "name": "is-extglob",
+  "version": "2.1.1",
+  "revision": "10a74787acbe79abf02141c5d487950d1b197b15",
+  "repository": "https://github.com/jonschlinkert/is-extglob.git",
+  "purl": "pkg:npm/is-extglob@2.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ=="
+}

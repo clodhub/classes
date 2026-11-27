@@ -1,0 +1,12 @@
+{
+  "name": "@next/env",
+  "version": "15.5.29",
+  "revision": "sha512:f52ad3893b203916be29f8655d70060b5792b3ce3b13e7763104cf517fa7ed1e5703c83f07a662b5f2fa1a860734c2f01b71f3b35c230c7d3f304e56ac632a05",
+  "repository": "https://github.com/vercel/next.js.git",
+  "purl": "pkg:npm/%40next/env@15.5.29",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-9SrTiTsgORa+KfhlXXAGC1eSs847E+d2MQTPUX+n7R5XA8g/B6ZitfL6GoYHNMLwG3Hzs1wjDH0/ME5WrGMqBQ=="
+}

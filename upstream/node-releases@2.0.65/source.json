@@ -1,0 +1,12 @@
+{
+  "name": "node-releases",
+  "version": "2.0.65",
+  "revision": "5cab88bfa2e86787eee1886c65c40db8509dae07",
+  "repository": "https://github.com/chicoxyzzy/node-releases.git",
+  "purl": "pkg:npm/node-releases@2.0.65",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-PfvofsGQ+MiOQIPkX9fU8ELUWmy5zL74CdQaph/ismKszfFkfwXaw0cGiwbwym2hT9k5+mdyl8O5WQ1MD8EHmA=="
+}

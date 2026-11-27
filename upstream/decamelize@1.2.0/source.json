@@ -1,0 +1,12 @@
+{
+  "name": "decamelize",
+  "version": "1.2.0",
+  "revision": "95980ab6fb44c40eaca7792bdf93aff7c210c805",
+  "repository": "https://github.com/sindresorhus/decamelize.git",
+  "purl": "pkg:npm/decamelize@1.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA=="
+}

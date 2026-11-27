@@ -1,0 +1,2363 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/gift-cards",
+    "version": "1.0.0",
+    "description": "Gift cards bought online or given by the shop: amount cards that keep a balance, item cards worth one service, and packs of sessions bought under a promotion. A purchase is kept from its payment (the provider's checkout or an app's payment sheet, through com.clodhub/payments) until fulfilment issues its card; codes come from com.clodhub/voucher-codes and cards and purchases are kept in com.clodhub/records. The rules (value against a basket, usability, views, purchase checks, booking links) run in the browser and on the server; the service is server only. Amounts are integers in minor units."
+  },
+  "methods": [
+    {
+      "name": "matchesItem",
+      "description": "Whether an item card or pack is for this basket line: by slug when the card has one, else by name ignoring case and surrounding space. Amount cards match nothing.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        },
+        {
+          "name": "line",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/BasketLine"
+          }
+        }
+      ],
+      "result": {
+        "name": "matches",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "cardValue",
+      "description": "What the card takes off a basket: an amount card what is left on it (balance); an item card or pack the full price of the first matching line, whatever was paid for the card; 0 when no line matches.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        },
+        {
+          "name": "lines",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketLine"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "value",
+        "schema": {
+          "type": "integer",
+          "description": "An amount in the currency's minor unit (cents for EUR)."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "usability",
+      "description": "Whether the card can pay for a booking at `now`: not_found without a card, expired after expiresAt, redeemed when every session is used; otherwise the sessions left.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/GiftCard"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        }
+      ],
+      "result": {
+        "name": "usability",
+        "schema": {
+          "$ref": "#/components/schemas/Usability"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "publicView",
+      "description": "The card as anyone holding its code may see it.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        }
+      ],
+      "result": {
+        "name": "view",
+        "schema": {
+          "$ref": "#/components/schemas/PublicGiftCard"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "adminView",
+      "description": "The card as staff see it, with the status at `now` (an issued card past expiresAt is expired).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        },
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        }
+      ],
+      "result": {
+        "name": "view",
+        "schema": {
+          "$ref": "#/components/schemas/AdminGiftCard"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "validatePurchase",
+      "description": "Checks and tidies a purchase: the four names and addresses present (MISSING_FIELDS) and addresses well formed (INVALID_EMAIL), kept in lower case; an item card names its item (MISSING_ITEM); the amount a whole number from minimumAmount to maximumAmount (INVALID_AMOUNT); text within its limit (TOO_LONG). With a pack offer the card is an item card for pack.packSize sessions at pack.price, which the amount bounds do not limit, and needs the item's slug. A missing or unknown language becomes en.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "settings",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCardSettings"
+          },
+          "description": "The installed settings by default."
+        },
+        {
+          "name": "pack",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/PackOffer"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "purchase": {
+                  "$ref": "#/components/schemas/Purchase"
+                }
+              },
+              "required": [
+                "ok",
+                "purchase"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "MISSING_FIELDS",
+                    "INVALID_EMAIL",
+                    "INVALID_AMOUNT",
+                    "MISSING_ITEM",
+                    "TOO_LONG"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidPack"
+        }
+      ]
+    },
+    {
+      "name": "bookingPath",
+      "description": "Where the card's emails send the recipient to book: <prefix>/reserve?item=<slug>&minutes=<m>&locked=true&gift=<code> for a card with an item slug (minutes only when known), else <prefix>/reserve?gift=<code>.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        },
+        {
+          "name": "prefix",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "description": "A language prefix such as /en, or an origin with it; empty by default."
+          }
+        }
+      ],
+      "result": {
+        "name": "path",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/GiftCardSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/GiftCardSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "createGiftCards",
+      "description": "The gift card service over the store's giftCards collection (GIFT_CARDS_COLLECTION).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "deps",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Dependencies"
+          }
+        }
+      ],
+      "result": {
+        "name": "giftCards",
+        "schema": {
+          "$ref": "#/components/schemas/GiftCards"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidDependencies"
+        },
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.ensureIndexes",
+      "description": "Creates the indexes: of the cards code and checkoutId unique, status, expiresAt, senderEmail and recipientEmail; of the purchases senderEmail and createdAt (newest first).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.checkout",
+      "description": "Checks the purchase (as validatePurchase, with options.pack), keeps it pending under a new id and token, and starts its payment: one line item at the purchase amount, the sender as the customer and metadata kind gift with purchaseId. A checkout payment (createCheckout, in the purchase's language) ends 24 hours later; a sheet payment (createSheetPayment in the SDK's API version) does not end. When the payment cannot start, the purchase is deleted and CHECKOUT_FAILED carries the payments failure code as reason.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "payment",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PaymentChoice"
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/CheckoutOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/CheckoutResult"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidPack"
+        },
+        {
+          "$ref": "#/components/errors/InvalidPayment"
+        },
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.fulfil",
+      "description": "Issues the card a completed gift payment (a checkout or a sheet payment) paid for, from the purchase its metadata purchaseId names, and marks the purchase paid, once: a second call for the same payment id (a repeated webhook, or two at once) returns the first card with created false. NOT_GIFT when metadata.kind is not gift, NOT_PAID when unpaid, INVALID_METADATA when purchaseId names no purchase, PAYMENT_MISMATCH when the payment's amount or currency is not the purchase's. A payment arriving after a checkout's expiresAt still issues the card. The amount bounds are not applied again. The card expires validityDays after issue.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "summary",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CheckoutSummary"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "card": {
+                  "$ref": "#/components/schemas/GiftCard"
+                },
+                "created": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "ok",
+                "card",
+                "created"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "NOT_GIFT",
+                    "NOT_PAID",
+                    "INVALID_METADATA",
+                    "PAYMENT_MISMATCH"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.purchase",
+      "description": "The purchase with this id whose token this is, as it stands now, with the cards its payment issued; null for any other id or token (text of 1 to 200 characters).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "id",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "token",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "record",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/PurchaseRecord"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.purchasesByEmail",
+      "description": "The purchases an address made (its senderEmail), newest first (by createdAt, then _id), each with its cards; text that is not an address gives []. For a customer's wallet: the application confirms the address (com.clodhub/email-verification) first.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "email",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "records",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/PurchaseRecord"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.cardsByEmail",
+      "description": "The cards an address bought or received (its senderEmail or recipientEmail), newest first (by issuedAt, then _id), in every state; text that is not an address gives []. For a customer's wallet, as purchasesByEmail.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "email",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "cards",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.issueFree",
+      "description": "Issues a card the shop gives away (issuedBy admin, checkoutId admin-<code>) after the checks of validatePurchase.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "card": {
+                  "$ref": "#/components/schemas/GiftCard"
+                }
+              },
+              "required": [
+                "ok",
+                "card"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "MISSING_FIELDS",
+                    "INVALID_EMAIL",
+                    "INVALID_AMOUNT",
+                    "MISSING_ITEM",
+                    "TOO_LONG"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.lookup",
+      "description": "The card with the code a person typed (normalised by com.clodhub/voucher-codes), or null.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "code",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "card",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/GiftCard"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.validate",
+      "description": "The public check of a code before booking: valid with the public view, or the reason it cannot be used.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "code",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/PublicGiftCard"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "valid": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "valid"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "valid": {
+                  "const": false
+                },
+                "reason": {
+                  "enum": [
+                    "not_found",
+                    "expired",
+                    "redeemed"
+                  ]
+                }
+              },
+              "required": [
+                "valid",
+                "reason"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.usable",
+      "description": "The card and its sessions left when it can pay for a booking now, else the reason (as usability).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "code",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "card": {
+                  "$ref": "#/components/schemas/GiftCard"
+                },
+                "sessionsLeft": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ok",
+                "card",
+                "sessionsLeft"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "reason": {
+                  "enum": [
+                    "not_found",
+                    "expired",
+                    "redeemed"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "reason"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.redeem",
+      "description": "Staff use the card when the customer comes in: one session of an item card or pack; of an amount card the options' amount, or without one all that is left. The use that leaves no session or no balance marks the card redeemed. Refusals: 400 INVALID_AMOUNT (an amount that is not a whole number from 1 to 2147483647, or an amount for an item card or pack), 404 NOT_FOUND, 410 EXPIRED (with expiresAt), 409 REDEEMED (with redeemedAt) and 409 INSUFFICIENT_BALANCE (an amount above the balance, given). Staff redeeming at once each take from what the other left, never more than the card has.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "code",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "amount": {
+                "type": "integer",
+                "description": "Part of an amount card's balance to take.",
+                "minimum": 1
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "sessionsUsed": {
+                  "type": "integer"
+                },
+                "sessionsTotal": {
+                  "type": "integer"
+                },
+                "fullyRedeemed": {
+                  "type": "boolean"
+                },
+                "taken": {
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "description": "An amount in the currency's minor unit (cents for EUR)."
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "What was taken from an amount card; null for an item card or pack."
+                },
+                "balance": {
+                  "oneOf": [
+                    {
+                      "type": "integer",
+                      "description": "An amount in the currency's minor unit (cents for EUR)."
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ],
+                  "description": "What is left on an amount card; null for an item card or pack."
+                }
+              },
+              "required": [
+                "ok",
+                "sessionsUsed",
+                "sessionsTotal",
+                "fullyRedeemed",
+                "taken",
+                "balance"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "status": {
+                  "enum": [
+                    400,
+                    404,
+                    409,
+                    410
+                  ]
+                },
+                "code": {
+                  "enum": [
+                    "INVALID_AMOUNT",
+                    "NOT_FOUND",
+                    "REDEEMED",
+                    "INSUFFICIENT_BALANCE",
+                    "EXPIRED"
+                  ]
+                },
+                "expiresAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "A JavaScript Date; shown here as its ISO 8601 text."
+                },
+                "redeemedAt": {
+                  "oneOf": [
+                    {
+                      "type": "string",
+                      "format": "date-time",
+                      "description": "A JavaScript Date; shown here as its ISO 8601 text."
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "balance": {
+                  "type": "integer",
+                  "description": "An amount in the currency's minor unit (cents for EUR)."
+                }
+              },
+              "required": [
+                "ok",
+                "status",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.consume",
+      "description": "Uses the card without the expiry check, as a late cancellation forfeits it: one session of an item card or pack, all that is left of an amount card; false when the card is unknown or nothing is left.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "code",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "consumed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StoreError"
+        }
+      ]
+    },
+    {
+      "name": "GiftCards.cardValue",
+      "description": "cardValue, for a caller that holds only the service (reservations).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "card",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/GiftCard"
+          }
+        },
+        {
+          "name": "lines",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketLine"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "value",
+        "schema": {
+          "type": "integer",
+          "description": "An amount in the currency's minor unit (cents for EUR)."
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "GiftCard": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string",
+            "description": "The card's code as com.clodhub/voucher-codes generates it, such as ABCD-EFGH-JKMN."
+          },
+          "kind": {
+            "enum": [
+              "amount",
+              "item"
+            ],
+            "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+          },
+          "amount": {
+            "type": "integer",
+            "description": "What the card cost: the face value of an amount card, the price paid for an item card or pack.",
+            "minimum": 1
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An ISO 4217 code in upper case, such as EUR."
+          },
+          "itemName": {
+            "type": "string",
+            "description": "The service's name; empty for an amount card."
+          },
+          "itemSlug": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's catalogue slug when known."
+          },
+          "minutes": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's length when chosen."
+          },
+          "recipientName": {
+            "type": "string"
+          },
+          "recipientEmail": {
+            "type": "string",
+            "description": "An email address, trimmed and in lower case."
+          },
+          "senderName": {
+            "type": "string"
+          },
+          "senderEmail": {
+            "type": "string",
+            "description": "An email address, trimmed and in lower case."
+          },
+          "message": {
+            "type": "string",
+            "description": "The sender's message; may be empty."
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en or es."
+          },
+          "status": {
+            "enum": [
+              "issued",
+              "redeemed"
+            ],
+            "description": "Stored state; views report an issued card past expiresAt as expired."
+          },
+          "checkoutId": {
+            "type": "string",
+            "description": "The payment checkout that bought the card (unique); admin-<code> for a card the shop issued free."
+          },
+          "paymentReference": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "What a refund of the purchase names (com.clodhub/payments CheckoutSummary.paymentReference); null for a free card."
+          },
+          "issuedBy": {
+            "enum": [
+              "payment",
+              "admin"
+            ]
+          },
+          "issuedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "redeemedAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the last session was used."
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "promotionId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The promotion a pack was bought under; null for a single card."
+          },
+          "discountPercent": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A pack's discount; null otherwise."
+          },
+          "sessionsTotal": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1, or a pack's number of sessions."
+          },
+          "sessionsUsed": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "balance": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "description": "An amount in the currency's minor unit (cents for EUR).",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "What is left on an amount card (its amount when issued, 0 once used up); null for an item card or pack, which keep sessions."
+          }
+        },
+        "required": [
+          "_id",
+          "code",
+          "kind",
+          "amount",
+          "currency",
+          "itemName",
+          "itemSlug",
+          "minutes",
+          "recipientName",
+          "recipientEmail",
+          "senderName",
+          "senderEmail",
+          "message",
+          "language",
+          "status",
+          "checkoutId",
+          "paymentReference",
+          "issuedBy",
+          "issuedAt",
+          "redeemedAt",
+          "expiresAt",
+          "promotionId",
+          "discountPercent",
+          "sessionsTotal",
+          "sessionsUsed",
+          "balance"
+        ],
+        "additionalProperties": false,
+        "description": "A card as the giftCards collection keeps it (document schema com.clodhub/gift-card)."
+      },
+      "GiftCardSettings": {
+        "type": "object",
+        "properties": {
+          "minimumAmount": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR).",
+            "minimum": 1,
+            "default": 3000
+          },
+          "maximumAmount": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR).",
+            "minimum": 1,
+            "default": 50000
+          },
+          "validityDays": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 3650,
+            "default": 365
+          }
+        },
+        "required": [
+          "minimumAmount",
+          "maximumAmount",
+          "validityDays"
+        ],
+        "additionalProperties": false,
+        "description": "The bounds of a card's amount (not applied to packs) and how long a card is valid."
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "minimumAmount": {},
+          "maximumAmount": {},
+          "validityDays": {}
+        },
+        "description": "Settings as numbers or as rendered template text; missing and unrendered values take the defaults."
+      },
+      "GiftCardPurchase": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "amount",
+              "item"
+            ],
+            "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+          },
+          "amount": {
+            "type": "integer",
+            "description": "What the card cost: the face value of an amount card, the price paid for an item card or pack.",
+            "minimum": 1
+          },
+          "itemName": {
+            "type": "string",
+            "description": "The service's name; empty for an amount card."
+          },
+          "itemSlug": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's catalogue slug when known."
+          },
+          "minutes": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's length when chosen."
+          },
+          "recipientName": {
+            "type": "string"
+          },
+          "recipientEmail": {
+            "type": "string",
+            "description": "An email address, trimmed and in lower case."
+          },
+          "senderName": {
+            "type": "string"
+          },
+          "senderEmail": {
+            "type": "string",
+            "description": "An email address, trimmed and in lower case."
+          },
+          "message": {
+            "type": "string",
+            "description": "The sender's message; may be empty."
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en or es."
+          },
+          "promotionId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The promotion a pack was bought under; null for a single card."
+          },
+          "discountPercent": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A pack's discount; null otherwise."
+          },
+          "sessionsTotal": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1, or a pack's number of sessions."
+          },
+          "token": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The buyer's secret: with the id it reads the purchase (newToken, crypto.randomUUID by default)."
+          },
+          "status": {
+            "enum": [
+              "pending",
+              "paid"
+            ],
+            "description": "Stored state; views report a pending checkout past expiresAt as expired."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An ISO 4217 code in upper case, such as EUR."
+          },
+          "payment": {
+            "enum": [
+              "checkout",
+              "sheet"
+            ],
+            "description": "checkout: the provider's page; sheet: an app's payment sheet."
+          },
+          "checkoutId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The payment's id (a checkout, or a sheet payment), which the issued card keeps as its checkoutId; null only while the payment is being started."
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "expiresAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When a checkout stops accepting payment: 24 hours after createdAt, as com.clodhub/payments gives a checkout without an end; null for a sheet payment, which does not expire."
+          },
+          "paidAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the payment issued the card."
+          }
+        },
+        "required": [
+          "_id",
+          "kind",
+          "amount",
+          "itemName",
+          "itemSlug",
+          "minutes",
+          "recipientName",
+          "recipientEmail",
+          "senderName",
+          "senderEmail",
+          "message",
+          "language",
+          "promotionId",
+          "discountPercent",
+          "sessionsTotal",
+          "token",
+          "status",
+          "currency",
+          "payment",
+          "checkoutId",
+          "createdAt",
+          "expiresAt",
+          "paidAt"
+        ],
+        "additionalProperties": false,
+        "description": "A purchase as the giftCardPurchases collection keeps it, from its checkout until its card is issued (document schema com.clodhub/gift-card-purchase)."
+      },
+      "PurchaseView": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GiftCardPurchase"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "status": {
+                "enum": [
+                  "pending",
+                  "paid",
+                  "expired"
+                ]
+              }
+            }
+          }
+        ],
+        "description": "A purchase as it stands now: expired once a pending checkout is past its expiresAt (a payment that still arrives issues the card and makes it paid)."
+      },
+      "PurchaseRecord": {
+        "type": "object",
+        "properties": {
+          "purchase": {
+            "$ref": "#/components/schemas/PurchaseView"
+          },
+          "cards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GiftCard"
+            },
+            "description": "The cards its payment issued; none before."
+          }
+        },
+        "required": [
+          "purchase",
+          "cards"
+        ],
+        "additionalProperties": false
+      },
+      "PaymentChoice": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "checkout"
+              },
+              "successUrl": {
+                "type": "string",
+                "description": "May contain {CHECKOUT_ID} (com.clodhub/payments)."
+              },
+              "cancelUrl": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "kind",
+              "successUrl",
+              "cancelUrl"
+            ],
+            "description": "The provider's checkout page."
+          },
+          {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "const": "sheet"
+              },
+              "ephemeralKeyVersion": {
+                "type": "string",
+                "minLength": 1,
+                "description": "The app SDK's Stripe API version."
+              }
+            },
+            "required": [
+              "kind",
+              "ephemeralKeyVersion"
+            ],
+            "description": "An app's payment sheet (com.clodhub/payments createSheetPayment)."
+          }
+        ],
+        "description": "How the buyer pays."
+      },
+      "SheetPayment": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "clientSecret": {
+            "type": "string"
+          },
+          "customer": {
+            "type": "string"
+          },
+          "ephemeralKey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "clientSecret",
+          "customer",
+          "ephemeralKey"
+        ],
+        "additionalProperties": false,
+        "description": "A com.clodhub/payments SheetPayment: what the app's payment sheet needs."
+      },
+      "CheckoutResult": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "kind": {
+                "const": "checkout"
+              },
+              "id": {
+                "type": "string"
+              },
+              "token": {
+                "type": "string"
+              },
+              "checkout": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "url"
+                ]
+              }
+            },
+            "required": [
+              "ok",
+              "kind",
+              "id",
+              "token",
+              "checkout"
+            ],
+            "description": "Send the buyer to checkout.url; id and token read the purchase."
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "kind": {
+                "const": "sheet"
+              },
+              "id": {
+                "type": "string"
+              },
+              "token": {
+                "type": "string"
+              },
+              "sheet": {
+                "$ref": "#/components/schemas/SheetPayment"
+              }
+            },
+            "required": [
+              "ok",
+              "kind",
+              "id",
+              "token",
+              "sheet"
+            ],
+            "description": "Present the app's payment sheet; id and token read the purchase."
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "enum": [
+                  "MISSING_FIELDS",
+                  "INVALID_EMAIL",
+                  "INVALID_AMOUNT",
+                  "MISSING_ITEM",
+                  "TOO_LONG"
+                ]
+              }
+            },
+            "required": [
+              "ok",
+              "code"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "enum": [
+                  "CHECKOUT_FAILED"
+                ]
+              },
+              "reason": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ok",
+              "code"
+            ]
+          }
+        ]
+      },
+      "PurchaseInput": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "amount",
+              "item"
+            ]
+          },
+          "amount": {
+            "type": "integer",
+            "description": "The face value, or the service's price from the catalogue (never from the browser)."
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemSlug": {
+            "type": "string"
+          },
+          "minutes": {
+            "type": "integer"
+          },
+          "recipientName": {
+            "type": "string"
+          },
+          "recipientEmail": {
+            "type": "string"
+          },
+          "senderName": {
+            "type": "string"
+          },
+          "senderEmail": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "description": "What a buyer submits. Text is trimmed; limits: names 100 characters, email addresses 254, message 500, item name 200."
+      },
+      "Purchase": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "amount",
+              "item"
+            ],
+            "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+          },
+          "amount": {
+            "type": "integer",
+            "description": "What the card cost: the face value of an amount card, the price paid for an item card or pack.",
+            "minimum": 1
+          },
+          "itemName": {
+            "type": "string",
+            "description": "The service's name; empty for an amount card."
+          },
+          "itemSlug": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's catalogue slug when known."
+          },
+          "minutes": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's length when chosen."
+          },
+          "recipientName": {
+            "type": "string"
+          },
+          "recipientEmail": {
+            "type": "string",
+            "description": "An email address, trimmed and in lower case."
+          },
+          "senderName": {
+            "type": "string"
+          },
+          "senderEmail": {
+            "type": "string",
+            "description": "An email address, trimmed and in lower case."
+          },
+          "message": {
+            "type": "string",
+            "description": "The sender's message; may be empty."
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en or es."
+          },
+          "promotionId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The promotion a pack was bought under; null for a single card."
+          },
+          "discountPercent": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 100
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A pack's discount; null otherwise."
+          },
+          "sessionsTotal": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1, or a pack's number of sessions."
+          }
+        },
+        "required": [
+          "kind",
+          "amount",
+          "itemName",
+          "itemSlug",
+          "minutes",
+          "recipientName",
+          "recipientEmail",
+          "senderName",
+          "senderEmail",
+          "message",
+          "language",
+          "promotionId",
+          "discountPercent",
+          "sessionsTotal"
+        ],
+        "additionalProperties": false,
+        "description": "A checked purchase: the card it pays for, before it has a code."
+      },
+      "PackOffer": {
+        "type": "object",
+        "properties": {
+          "promotionId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "packSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000
+          },
+          "discountPercent": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "price": {
+            "type": "integer",
+            "description": "The whole pack's price.",
+            "minimum": 1
+          }
+        },
+        "required": [
+          "promotionId",
+          "packSize",
+          "discountPercent",
+          "price"
+        ],
+        "additionalProperties": false,
+        "description": "A promotion's pack of sessions of one service, priced by the application (com.clodhub/promotions packPrice)."
+      },
+      "BasketLine": {
+        "type": "object",
+        "properties": {
+          "itemSlug": {
+            "type": "string"
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR)."
+          }
+        },
+        "required": [
+          "itemSlug",
+          "itemName"
+        ]
+      },
+      "Usability": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "sessionsLeft": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "ok",
+              "sessionsLeft"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "reason": {
+                "enum": [
+                  "not_found",
+                  "expired",
+                  "redeemed"
+                ]
+              }
+            },
+            "required": [
+              "ok",
+              "reason"
+            ]
+          }
+        ]
+      },
+      "PublicGiftCard": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The card's code as com.clodhub/voucher-codes generates it, such as ABCD-EFGH-JKMN."
+          },
+          "kind": {
+            "enum": [
+              "amount",
+              "item"
+            ],
+            "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+          },
+          "amount": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR)."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An ISO 4217 code in upper case, such as EUR."
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemSlug": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minutes": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's length when chosen."
+          },
+          "pack": {
+            "type": "boolean"
+          },
+          "sessionsTotal": {
+            "type": "integer"
+          },
+          "sessionsLeft": {
+            "type": "integer"
+          },
+          "balance": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "description": "An amount in the currency's minor unit (cents for EUR).",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "What is left on an amount card (its amount when issued, 0 once used up); null for an item card or pack, which keep sessions."
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        "required": [
+          "code",
+          "kind",
+          "amount",
+          "currency",
+          "itemName",
+          "itemSlug",
+          "minutes",
+          "pack",
+          "sessionsTotal",
+          "sessionsLeft",
+          "balance",
+          "expiresAt"
+        ],
+        "additionalProperties": false,
+        "description": "What anyone holding the code may see: no names, addresses or message."
+      },
+      "AdminGiftCard": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "The card's code as com.clodhub/voucher-codes generates it, such as ABCD-EFGH-JKMN."
+          },
+          "kind": {
+            "enum": [
+              "amount",
+              "item"
+            ],
+            "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+          },
+          "amount": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR)."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An ISO 4217 code in upper case, such as EUR."
+          },
+          "itemName": {
+            "type": "string"
+          },
+          "itemSlug": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "minutes": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "minimum": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The service's length when chosen."
+          },
+          "recipientName": {
+            "type": "string"
+          },
+          "senderName": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "issued",
+              "redeemed",
+              "expired"
+            ]
+          },
+          "issuedBy": {
+            "enum": [
+              "payment",
+              "admin"
+            ]
+          },
+          "issuedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "redeemedAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the last session was used."
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "promotionId": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "sessionsTotal": {
+            "type": "integer"
+          },
+          "sessionsUsed": {
+            "type": "integer"
+          },
+          "sessionsLeft": {
+            "type": "integer"
+          },
+          "balance": {
+            "oneOf": [
+              {
+                "type": "integer",
+                "description": "An amount in the currency's minor unit (cents for EUR).",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "What is left on an amount card (its amount when issued, 0 once used up); null for an item card or pack, which keep sessions."
+          }
+        },
+        "required": [
+          "code",
+          "kind",
+          "amount",
+          "currency",
+          "itemName",
+          "itemSlug",
+          "minutes",
+          "recipientName",
+          "senderName",
+          "status",
+          "issuedBy",
+          "issuedAt",
+          "redeemedAt",
+          "expiresAt",
+          "promotionId",
+          "sessionsTotal",
+          "sessionsUsed",
+          "sessionsLeft",
+          "balance"
+        ],
+        "additionalProperties": false,
+        "description": "What staff see when they look a card up."
+      },
+      "CheckoutSummary": {
+        "type": "object",
+        "description": "A com.clodhub/payments CheckoutSummary.",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "paid": {
+            "type": "boolean"
+          },
+          "amountTotal": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR)."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An ISO 4217 code in upper case, such as EUR."
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "paymentReference": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "customerEmail": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "paid",
+          "metadata"
+        ]
+      },
+      "CheckoutOptions": {
+        "type": "object",
+        "properties": {
+          "productName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 250,
+            "description": "The line item's name on the payment page; Gift card, Gift card: <item> or <n> x <item> by default."
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 500,
+            "description": "The line item's description; Gift for <recipient> from <sender>, or <n> x <item> (<d>% off) for a pack, by default."
+          },
+          "pack": {
+            "$ref": "#/components/schemas/PackOffer"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Dependencies": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "description": "A com.clodhub/records store; the cards live in its giftCards collection and the purchases in giftCardPurchases."
+          },
+          "codes": {
+            "description": "A com.clodhub/voucher-codes VoucherCodes; cards get generate() codes and lookups normalise() what people type."
+          },
+          "payments": {
+            "description": "A com.clodhub/payments Payments client; checkout uses createCheckout or createSheetPayment."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "The currency of cards and purchases; payments.currency by default, and it must equal it."
+          },
+          "now": {
+            "description": "Returns the current Date."
+          },
+          "settings": {
+            "type": "object",
+            "description": "Settings that replace the installed ones."
+          },
+          "newToken": {
+            "description": "Returns a purchase's new secret; crypto.randomUUID by default."
+          }
+        },
+        "required": [
+          "records",
+          "codes",
+          "payments"
+        ],
+        "additionalProperties": false
+      },
+      "GiftCards": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "$ref": "#/components/schemas/GiftCardSettings"
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An ISO 4217 code in upper case, such as EUR."
+          }
+        },
+        "required": [
+          "settings",
+          "currency"
+        ],
+        "description": "The gift card service over one store, with the settings and currency in use."
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32040,
+        "message": "RangeError: a setting is not a whole number in its range, or maximumAmount is below minimumAmount"
+      },
+      "InvalidDependencies": {
+        "code": -32041,
+        "message": "TypeError or RangeError: records, codes or payments (with createCheckout and createSheetPayment) is missing, or the currency is not an ISO 4217 code or differs from the payments client's"
+      },
+      "InvalidPayment": {
+        "code": -32044,
+        "message": "TypeError: checkout was given no payment choice (kind checkout with successUrl and cancelUrl, or kind sheet with ephemeralKeyVersion)"
+      },
+      "InvalidPack": {
+        "code": -32042,
+        "message": "RangeError: a pack offer field is missing or out of range"
+      },
+      "StoreError": {
+        "code": -32043,
+        "message": "A com.clodhub/records error (unavailable, ...) is passed on unchanged"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

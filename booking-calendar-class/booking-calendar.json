@@ -1,0 +1,882 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/booking-calendar",
+    "version": "1.0.0",
+    "description": "The booking calendar: the month with its open days, then the free times of a day, and the customer's own bookings by month. The month grid and the day states are written the same way in TypeScript, Swift and Kotlin (checked against one set of fixtures); the views are React (web and Windows), SwiftUI (iPhone, iPad, Mac and Apple TV, with focus) and Compose (Android), styled by the colours and corner the application passes in and read by VoiceOver and TalkBack with full dates. The application fills them from its server's answers."
+  },
+  "methods": [
+    {
+      "name": "monthGrid",
+      "description": "The month's weeks starting on firstWeekday: leading and trailing cells outside the month are null; four to six weeks. Swift monthGrid(month:firstWeekday:); Kotlin monthGrid(month, firstWeekday).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "month",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+            "description": "YYYY-MM from 1900 on the business's clock."
+          }
+        },
+        {
+          "name": "firstWeekday",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6,
+            "description": "0 Sunday to 6 Saturday, as opening-hours numbers them."
+          }
+        }
+      ],
+      "result": {
+        "name": "grid",
+        "schema": {
+          "$ref": "#/components/schemas/MonthGrid"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidValue"
+        }
+      ]
+    },
+    {
+      "name": "shiftMonth",
+      "description": "The month delta months after (negative: before) month, within 1900 to 9999. Swift shiftMonth(_:by:).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "month",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+            "description": "YYYY-MM from 1900 on the business's clock."
+          }
+        },
+        {
+          "name": "delta",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "month",
+        "schema": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+          "description": "YYYY-MM from 1900 on the business's clock."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidValue"
+        }
+      ]
+    },
+    {
+      "name": "bookingMonths",
+      "description": "The months a booking may reach: the month of the earliest bookable date and those after it, count in all (1 to 36). Swift bookingMonths(earliestDate:count:).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "earliestDate",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD from 1900 on the business's clock."
+          }
+        },
+        {
+          "name": "count",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 36
+          }
+        }
+      ],
+      "result": {
+        "name": "months",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+            "description": "YYYY-MM from 1900 on the business's clock."
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidValue"
+        }
+      ]
+    },
+    {
+      "name": "monthDays",
+      "description": "What each cell of the grid shows: the status from the server, the customer's bookings, the selected day, and whether the day may be chosen (bookable or booked). Swift monthDays(_:statuses:booked:selected:) with a Set of booked dates.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "grid",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/MonthGrid"
+          }
+        },
+        {
+          "name": "statuses",
+          "required": false,
+          "schema": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/DayStatus"
+            }
+          }
+        },
+        {
+          "name": "booked",
+          "required": false,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date",
+              "description": "YYYY-MM-DD from 1900 on the business's clock."
+            }
+          }
+        },
+        {
+          "name": "selected",
+          "required": false,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date",
+                "description": "YYYY-MM-DD from 1900 on the business's clock."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      ],
+      "result": {
+        "name": "weeks",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/CalendarDay"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidValue"
+        }
+      ]
+    },
+    {
+      "name": "spokenDate",
+      "description": "The full date as a screen reader says it, from the platform's own locale data (Intl, DateFormatter, java.time). Swift spokenDate(_:locale:); Kotlin spokenDate(date, locale).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD from 1900 on the business's clock."
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "monthTitle",
+      "description": "The month's name and year in the language. Swift monthTitle(_:locale:); Kotlin monthTitle(month, locale).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "month",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+            "description": "YYYY-MM from 1900 on the business's clock."
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "dayLabel",
+      "description": "What a screen reader says for a day: the full date, the status's label and, for a booked day, the booked label, joined by commas. Swift dayLabel(_:locale:labels:); Kotlin dayLabel(day, locale, labels).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "day",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarDay"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "labels",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CalendarLabels"
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "weekdayNames",
+      "description": "Web: the seven weekday names, 0 Sunday to 6 Saturday, long, short or narrow.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "width",
+          "required": true,
+          "schema": {
+            "enum": [
+              "long",
+              "short",
+              "narrow"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "name": "names",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "weekdayName",
+      "description": "Kotlin: one weekday's name (java.time.format.TextStyle, short by default).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "weekday",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6,
+            "description": "0 Sunday to 6 Saturday, as opening-hours numbers them."
+          }
+        },
+        {
+          "name": "locale",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "style",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "name",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "createBookingCalendarViews",
+      "description": "Web: the React components {MonthView, TimesView} made with the application's createElement, so the component imports no package: const views = createBookingCalendarViews(React.createElement). Inline styles only.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "createElement",
+          "required": true,
+          "schema": {
+            "description": "React.createElement or a function of the same shape."
+          }
+        }
+      ],
+      "result": {
+        "name": "views",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "MonthView": {
+              "description": "Function component (MonthViewProps)."
+            },
+            "TimesView": {
+              "description": "Function component (TimesViewProps)."
+            }
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "BookingMonthView",
+      "description": "The month: its title with arrows between months, the weekday names (read as full names), and a button per day at least 44 points (web, Apple) or 48 dp (Android) high with the day's spoken label; bookable days are outlined, booked days filled with the booked colour, the chosen day with the accent, closed days struck through, and only selectable days answer. Web MonthView inside a role grid of rows and gridcells; Swift BookingMonthView(grid:locale:statuses:booked:selected:months:style:labels:onSelect:onMonth:), whose days take the focus on Apple TV and grow when focused; Kotlin @Composable BookingMonthView(grid, locale, style, labels, onSelect, modifier, statuses, booked, selected, months, onMonth) with TalkBack descriptions, roles and selected states.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "props",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/MonthViewProps"
+          }
+        }
+      ],
+      "result": {
+        "name": "view",
+        "schema": {
+          "description": "A view: a React element on the web, a SwiftUI view, a Compose function."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidValue"
+        }
+      ]
+    },
+    {
+      "name": "BookingTimesView",
+      "description": "The free times of a day in a grid of columns (3 by default), the chosen one filled. Web TimesView in a labelled group of pressed buttons; Swift BookingTimesView(times:selected:label:columns:style:onSelect:); Kotlin @Composable BookingTimesView(times, label, style, onSelect, modifier, selected, columns).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "props",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/TimesViewProps"
+          }
+        }
+      ],
+      "result": {
+        "name": "view",
+        "schema": {
+          "description": "A view: a React element on the web, a SwiftUI view, a Compose function."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidValue"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "DayStatus": {
+        "enum": [
+          "bookable",
+          "closed",
+          "by_appointment",
+          "too_soon",
+          "too_short"
+        ],
+        "description": "The day statuses the server gives. Swift BookingDayStatus (rawValue the code); Kotlin BookingDayStatus (code)."
+      },
+      "MonthGrid": {
+        "type": "object",
+        "description": "Swift BookingMonthGrid; Kotlin BookingMonthGrid.",
+        "properties": {
+          "month": {
+            "type": "string",
+            "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+            "description": "YYYY-MM from 1900 on the business's clock."
+          },
+          "firstWeekday": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6,
+            "description": "0 Sunday to 6 Saturday, as opening-hours numbers them."
+          },
+          "weekdays": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6,
+              "description": "0 Sunday to 6 Saturday, as opening-hours numbers them."
+            },
+            "minItems": 7,
+            "maxItems": 7,
+            "description": "Each column's weekday."
+          },
+          "weeks": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 6,
+            "items": {
+              "type": "array",
+              "minItems": 7,
+              "maxItems": 7,
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "date",
+                    "description": "YYYY-MM-DD from 1900 on the business's clock."
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              }
+            },
+            "description": "Seven cells a week: a date, or null outside the month."
+          }
+        },
+        "required": [
+          "month",
+          "firstWeekday",
+          "weekdays",
+          "weeks"
+        ],
+        "additionalProperties": false
+      },
+      "CalendarDay": {
+        "type": "object",
+        "description": "What one cell shows. Swift BookingCalendarDay; Kotlin BookingCalendarDay.",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date",
+            "description": "YYYY-MM-DD from 1900 on the business's clock."
+          },
+          "day": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 31
+          },
+          "status": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/DayStatus"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "From the server; null when it gave none."
+          },
+          "booked": {
+            "type": "boolean",
+            "description": "The customer has a booking that day."
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "selectable": {
+            "type": "boolean",
+            "description": "A bookable day or a booked one."
+          }
+        },
+        "required": [
+          "date",
+          "day",
+          "status",
+          "booked",
+          "selected",
+          "selectable"
+        ],
+        "additionalProperties": false
+      },
+      "CalendarLabels": {
+        "type": "object",
+        "description": "Texts in the customer's language, read after a day's date. Swift BookingCalendarLabels; Kotlin BookingCalendarLabels.",
+        "properties": {
+          "bookable": {
+            "type": "string"
+          },
+          "closed": {
+            "type": "string"
+          },
+          "byAppointment": {
+            "type": "string"
+          },
+          "tooSoon": {
+            "type": "string"
+          },
+          "tooShort": {
+            "type": "string"
+          },
+          "booked": {
+            "type": "string"
+          },
+          "previousMonth": {
+            "type": "string"
+          },
+          "nextMonth": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "bookable",
+          "closed",
+          "byAppointment",
+          "tooSoon",
+          "tooShort",
+          "booked",
+          "previousMonth",
+          "nextMonth"
+        ],
+        "additionalProperties": false
+      },
+      "CalendarStyle": {
+        "type": "object",
+        "description": "The application's look: colours (CSS colours on the web, SwiftUI Color, Compose Color) and the corner radius (pixels, points, dp). Web {colors: {...}, corner}; Swift BookingCalendarStyle and Kotlin BookingCalendarStyle with the colours as fields.",
+        "properties": {
+          "colors": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "muted": {
+                "type": "string"
+              },
+              "accent": {
+                "type": "string"
+              },
+              "onAccent": {
+                "type": "string"
+              },
+              "border": {
+                "type": "string"
+              },
+              "surface": {
+                "type": "string"
+              },
+              "booked": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text",
+              "muted",
+              "accent",
+              "onAccent",
+              "border",
+              "surface",
+              "booked"
+            ]
+          },
+          "corner": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "colors",
+          "corner"
+        ]
+      },
+      "MonthViewProps": {
+        "type": "object",
+        "properties": {
+          "grid": {
+            "$ref": "#/components/schemas/MonthGrid"
+          },
+          "language": {
+            "type": "string",
+            "description": "Web: a BCP 47 language; Swift and Kotlin take a Locale."
+          },
+          "statuses": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/DayStatus"
+            },
+            "description": "By date; days without one are shown plain."
+          },
+          "booked": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date",
+              "description": "YYYY-MM-DD from 1900 on the business's clock."
+            }
+          },
+          "selected": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date",
+                "description": "YYYY-MM-DD from 1900 on the business's clock."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "months": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$",
+              "description": "YYYY-MM from 1900 on the business's clock."
+            },
+            "description": "The months the arrows move between (bookingMonths); none hides the arrows."
+          },
+          "style": {
+            "$ref": "#/components/schemas/CalendarStyle"
+          },
+          "labels": {
+            "$ref": "#/components/schemas/CalendarLabels"
+          },
+          "onSelect": {
+            "description": "Function (date) called when a selectable day is chosen."
+          },
+          "onMonth": {
+            "description": "Function (month) called by the arrows."
+          }
+        },
+        "required": [
+          "grid",
+          "language",
+          "style",
+          "labels",
+          "onSelect"
+        ]
+      },
+      "TimesViewProps": {
+        "type": "object",
+        "properties": {
+          "times": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[0-2][0-9]:[0-5][0-9]$"
+            },
+            "description": "HH:MM, from the server."
+          },
+          "selected": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "label": {
+            "type": "string",
+            "description": "What the group is called, for screen readers."
+          },
+          "columns": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 8,
+            "default": 3
+          },
+          "style": {
+            "$ref": "#/components/schemas/CalendarStyle"
+          },
+          "onSelect": {
+            "description": "Function (time) called when a time is chosen."
+          }
+        },
+        "required": [
+          "times",
+          "label",
+          "style",
+          "onSelect"
+        ]
+      }
+    },
+    "errors": {
+      "InvalidValue": {
+        "code": -32090,
+        "message": "RangeError (Swift: precondition failure; Kotlin: IllegalArgumentException): a month or date that is not a real one from 1900, a weekday outside 0 to 6, a count outside 1 to 36, a shift past 9999, columns outside 1 to 8 or an unknown day status (programmer error)"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "apple": "apple/Sources",
+    "android": "android/src/main/java"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@swc/core-darwin-arm64",
+  "version": "1.16.22",
+  "revision": "sha512:3dd7643a338adcc2b4d4054ebea1b7d3d880274867e6f2b7eee83d83966de5ed9a585dc88552dd0cb8cc78f5edb35ce2f327388a577687d1580a45586f9f9073",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/core-darwin-arm64@1.16.22",
+  "licence": "Apache-2.0 AND MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-PddkOjOK3MK01AVOvqG309iAJ0hn5vK37ug9g5Zt5e2aWF3IhVLdDLjMePXts1zi8yc4ild2h9FYCkVYb5+Qcw=="
+}

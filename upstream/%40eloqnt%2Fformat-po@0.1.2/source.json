@@ -1,0 +1,12 @@
+{
+  "name": "@eloqnt/format-po",
+  "version": "0.1.2",
+  "revision": "sha512:6e88640354a627dac9406fad36c63c816add4a8fa925acdd8c8f9d4d6f96b767a0f94bb07a35ee60e9190d57164410ade8c1f57611e8d14b836aed23526bbff9",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/%40eloqnt/format-po@0.1.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-bohkA1SmJ9rJQG+tNsY8gWrdSo+pJazdjI+dTW+Wt2eg+UuwejXuYOkZDVcWRBCt6MH1dhHo0UuDau0jUmu/+Q=="
+}

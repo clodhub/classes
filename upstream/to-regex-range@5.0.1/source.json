@@ -1,0 +1,12 @@
+{
+  "name": "to-regex-range",
+  "version": "5.0.1",
+  "revision": "c05ef9ec07e7703d146467934098ecbde9d0bd95",
+  "repository": "https://github.com/micromatch/to-regex-range.git",
+  "purl": "pkg:npm/to-regex-range@5.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ=="
+}

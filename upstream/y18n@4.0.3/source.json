@@ -1,0 +1,12 @@
+{
+  "name": "y18n",
+  "version": "4.0.3",
+  "revision": "0aa97c508ea31efadd2a27f98fed6873eefc963e",
+  "repository": "https://github.com/yargs/y18n.git",
+  "purl": "pkg:npm/y18n@4.0.3",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-JKhqTOwSrqNA1NY5lSztJ1GrBiUodLMmIZuLiDaMRJ+itFd+ABVE8XBjOvIWL+rSqNDC74LCSFmlb/U4UZ4hJQ=="
+}

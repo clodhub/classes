@@ -1,0 +1,97 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/promotions-class",
+  "version": "1.0.0",
+  "title": "Promotions",
+  "summary": "Packs of sessions of covered catalogue items at a discount, sold as gift cards, with an image and scheduled switching on and off",
+  "category": "commerce/catalogue-and-pricing",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/promotions",
+      "version": "1.0.0",
+      "path": "classes/promotions-class/promotions.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "maximumPackSize": {
+        "type": "integer"
+      },
+      "maximumImageBytes": {
+        "type": "integer"
+      },
+      "featuredCount": {
+        "type": "integer"
+      },
+      "imageTypes": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/promotions-class/check.mjs",
+      "digest": "aeab0a7abc08b9bcc349b4f19a97599c395a71434353183d56af227f881b813b"
+    },
+    {
+      "path": "classes/promotions-class/promotion.schema.json",
+      "digest": "ddd37a7b27afe8b0bd34e544aa4be5b1123aaeb5fa41aa0e038679317f2429fa"
+    },
+    {
+      "path": "classes/promotions-class/promotions.json",
+      "digest": "5783f4513c7d591f36fd96ba89a40a11549126d5b589c4df41768a94778f3c27"
+    },
+    {
+      "path": "classes/promotions-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/promotions-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/promotions-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/promotions-class/check.mjs",
+        "classes/promotions-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

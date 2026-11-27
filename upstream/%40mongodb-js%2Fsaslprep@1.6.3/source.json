@@ -1,0 +1,12 @@
+{
+  "name": "@mongodb-js/saslprep",
+  "version": "1.6.3",
+  "revision": "d08f97e04e7ccaaa3f2873510ccaf46c392ff9f1",
+  "repository": "https://github.com/mongodb-js/devtools-shared.git",
+  "purl": "pkg:npm/%40mongodb-js/saslprep@1.6.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-aHGFvT95c82CoQ7hb6qXpz8Hcc5PJb3ZtQ+P01QDBbyQday0mjcrJPeNJOHCgWe0pGX0zKmKP+1mWi/I/BCX9Q=="
+}

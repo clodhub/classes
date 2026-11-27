@@ -1,0 +1,12 @@
+{
+  "name": "glob-parent",
+  "version": "5.1.2",
+  "revision": "eb2c439de448c779b450472e591a2bc9e37e9668",
+  "repository": "https://github.com/gulpjs/glob-parent.git",
+  "purl": "pkg:npm/glob-parent@5.1.2",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="
+}

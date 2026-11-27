@@ -1,0 +1,12 @@
+{
+  "name": "fraction.js",
+  "version": "5.3.4",
+  "revision": "32737c93d0aa669efc51b326e40b07eb1b934afc",
+  "repository": "https://github.com/rawify/Fraction.js.git",
+  "purl": "pkg:npm/fraction.js@5.3.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ=="
+}

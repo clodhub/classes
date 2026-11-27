@@ -1,0 +1,12 @@
+{
+  "name": "intl-messageformat",
+  "version": "12.2.1",
+  "revision": "sha512:1af9411e3e4196ed2ba37f504ff4046d7dc8db718062f0e1f7f07e977dcd9d78e661efd4a2a160663359a2a3dae90756c009623ff8b6ef2e4978a8c592a95b44",
+  "repository": "https://github.com/formatjs/formatjs",
+  "purl": "pkg:npm/intl-messageformat@12.2.1",
+  "licence": "BSD-3-Clause",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-GvlBHj5Blu0ro39QT/QEbX3I23GAYvDh9/B+l33NnXjmYe/UoqFgZjNZoqPa6QdWwAliP/i27y5JeKjFkqlbRA=="
+}

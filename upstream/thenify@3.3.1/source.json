@@ -1,0 +1,12 @@
+{
+  "name": "thenify",
+  "version": "3.3.1",
+  "revision": "1d054b4d60e72087f4e804565e540258ecee7f0b",
+  "repository": "https://github.com/thenables/thenify.git",
+  "purl": "pkg:npm/thenify@3.3.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw=="
+}

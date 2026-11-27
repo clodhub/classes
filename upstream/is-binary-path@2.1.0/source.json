@@ -1,0 +1,12 @@
+{
+  "name": "is-binary-path",
+  "version": "2.1.0",
+  "revision": "efe99d8b3d0ef825925e8b986d047e39bee173c3",
+  "repository": "https://github.com/sindresorhus/is-binary-path.git",
+  "purl": "pkg:npm/is-binary-path@2.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw=="
+}

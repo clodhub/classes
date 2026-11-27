@@ -1,0 +1,12 @@
+{
+  "name": "find-up",
+  "version": "4.1.0",
+  "revision": "6c32f0caed1684ef778053b6f79b13a772e22ba4",
+  "repository": "https://github.com/sindresorhus/find-up.git",
+  "purl": "pkg:npm/find-up@4.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-PpOwAdQ/YlXQ2vj8a3h8IipDuYRi3wceVQQGYWxNINccq40Anw7BlsEXCMbt1Zt+OLA6Fq9suIpIWD0OsnISlw=="
+}

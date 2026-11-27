@@ -1,0 +1,12 @@
+{
+  "name": "@next/swc-linux-x64-musl",
+  "version": "15.5.29",
+  "revision": "sha512:234409d417bdbed76ae4500184d7126e410b96503dd569e11be9b80632470a7d5b5c020bf00b8300120a209ec1cfce13fec22464fe93bce11625c29c92b5f7c9",
+  "repository": "https://github.com/vercel/next.js.git",
+  "purl": "pkg:npm/%40next/swc-linux-x64-musl@15.5.29",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-I0QJ1Be9vtdq5FABhNcSbkELllA91WnhG+m4BjJHCn1bXAIL8AuDABIKIJ7Bz84T/sIkZP6TvOEWJcKckrX3yQ=="
+}

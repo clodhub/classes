@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/calendar-event",
+  "x-version": "1.0.0",
+  "description": "One calendar event kept in a records store, in the collection the component's collection setting names (calendarEvents by default), as a records export writes it: the document of a com.clodhub/records-line, dates as {\"$date\": ISO text}. records-calendar keeps its events so; google-calendar keeps a copy of each event it made in Google Calendar, with Google's event id and calendar id, so records-calendar can take the events over unchanged.",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The event's id on its calendar, as createEvent returned it: a random UUID from records-calendar (also the iCalendar UID), Google Calendar's event id on a copy google-calendar keeps."
+    },
+    "calendar": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The calendar, as createEvent was given it: a name the owner chose (such as bookings), or a Google calendar id."
+    },
+    "start": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "end": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "summary": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "timeZone": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The IANA time zone the event was made in, such as Europe/Madrid."
+    },
+    "createdAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "provider": {
+      "enum": [
+        "google"
+      ],
+      "description": "On a copy: the calendar service that holds the event. Absent on records-calendar's own events."
+    }
+  },
+  "required": [
+    "_id",
+    "calendar",
+    "start",
+    "end",
+    "summary",
+    "description",
+    "timeZone",
+    "createdAt"
+  ],
+  "additionalProperties": false,
+  "x-clodhub-modules": {}
+}

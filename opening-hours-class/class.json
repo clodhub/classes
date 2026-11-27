@@ -1,0 +1,87 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/opening-hours-class",
+  "version": "1.0.0",
+  "title": "Opening hours",
+  "summary": "Weekly opening hours in the shop's time zone: schedules, the one in force, bookable dates and times, wall-clock arithmetic across daylight saving changes, schema.org texts",
+  "category": "scheduling/recurring",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/opening-hours",
+      "version": "1.0.0",
+      "path": "classes/opening-hours-class/opening-hours.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "leadDays": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/opening-hours-class/active-schedule.schema.json",
+      "digest": "f7ba6aab4cc9fc51bd4e631e2261509171f828bc35087e880cf75c17b9e5926d"
+    },
+    {
+      "path": "classes/opening-hours-class/check.mjs",
+      "digest": "c3ccc1e2384833c6ec4e14458171d1ad96d5f6c289ee0985743054e7adc8896c"
+    },
+    {
+      "path": "classes/opening-hours-class/opening-hours.json",
+      "digest": "eee2b67f52b536eb9ba4d4ffa7b5c8f8638d0c3be583f5fe3708fe0f774327fd"
+    },
+    {
+      "path": "classes/opening-hours-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/opening-hours-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/opening-hours-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/opening-hours-class/check.mjs",
+        "classes/opening-hours-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

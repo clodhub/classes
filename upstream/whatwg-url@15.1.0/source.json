@@ -1,0 +1,12 @@
+{
+  "name": "whatwg-url",
+  "version": "15.1.0",
+  "revision": "4ff0e2ec5c4d29cb56b935e9748d41c0e5942548",
+  "repository": "https://github.com/jsdom/whatwg-url.git",
+  "purl": "pkg:npm/whatwg-url@15.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-2ytDk0kiEj/yu90JOAp44PVPUkO9+jVhyf+SybKlRHSDlvOOZhdPIrr7xTH64l4WixO2cP+wQIcgujkGBPPz6g=="
+}

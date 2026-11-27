@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/wallet-item",
+  "x-version": "1.0.0",
+  "description": "One item of a customer's wallet, as exportAll writes it (one per line) and the website keeps it. Instants are ISO 8601 text in UTC.",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "enum": [
+        "booking",
+        "giftCard",
+        "giftCardPurchase",
+        "member"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "secret": {
+      "type": "string"
+    },
+    "snapshot": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The server's last answer about the item, as JSON text."
+    },
+    "refreshedAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "expiresAt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "kind",
+    "id",
+    "secret",
+    "snapshot",
+    "refreshedAt",
+    "expiresAt"
+  ],
+  "additionalProperties": false,
+  "x-clodhub-modules": {}
+}

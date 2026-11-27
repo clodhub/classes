@@ -1,0 +1,79 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/payments-class",
+  "version": "1.0.0",
+  "title": "Payments",
+  "summary": "Hosted checkout, signed completion events and refunds in the shop's currency, with a simulated mode",
+  "category": "payments/checkout",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/payments",
+      "version": "1.0.0",
+      "path": "classes/payments-class/payments.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "currency": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "secretKey": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "webhookSecret": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/payments-class/check.mjs",
+      "digest": "ce13dbdaf7b995eab2f0bab229ee7c9223708a489dfa3eff7502d1af46cfc859"
+    },
+    {
+      "path": "classes/payments-class/payments.json",
+      "digest": "83c43a9d9f5994aa9cb41335715d75ccf1900fff25dd8d4812e94743c862ff9f"
+    },
+    {
+      "path": "classes/payments-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/payments-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/payments-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

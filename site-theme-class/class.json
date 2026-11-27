@@ -1,0 +1,75 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/site-theme-class",
+  "version": "1.0.0",
+  "title": "Site theme",
+  "summary": "A shop's look as named themes (noir, ivory, sage) with an accent colour, rendered to CSS variables that one Tailwind CSS build reads",
+  "category": "presentation/design-tokens",
+  "presentation": "visual",
+  "provides": [
+    {
+      "type": "com.clodhub/site-theme",
+      "version": "1.0.0",
+      "path": "classes/site-theme-class/site-theme.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "themeName": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "accentColour": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/site-theme-class/check.mjs",
+      "digest": "4684242915a08d89d4b267fdd2836d092ea90d9ddce82861c428ee08d4e1a4dc"
+    },
+    {
+      "path": "classes/site-theme-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/site-theme-class/site-theme.json",
+      "digest": "1f7c6d009cd66723916001a1072ea5259c5aeca33375c7e2af274a9681a9d642"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/site-theme-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/site-theme-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

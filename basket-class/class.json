@@ -1,0 +1,76 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/basket-class",
+  "version": "1.0.0",
+  "title": "Basket",
+  "summary": "A booking basket kept in the page, with totals, change notification and saved text, and the server's reading of posted lines",
+  "category": "commerce/orders",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/basket",
+      "version": "1.0.0",
+      "path": "classes/basket-class/basket.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "gapMinutes": {
+        "type": "integer"
+      },
+      "maximumLines": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/basket-class/basket.json",
+      "digest": "799037544fa1cdf9cc88995573d2015122e7c664a422dac15e0659778d7512bf"
+    },
+    {
+      "path": "classes/basket-class/check.mjs",
+      "digest": "2efdf884d6ff6c4327488319b202414c57c58015d9d2e13761af231c278afb54"
+    },
+    {
+      "path": "classes/basket-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/basket-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/basket-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

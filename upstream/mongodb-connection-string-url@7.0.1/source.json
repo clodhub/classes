@@ -1,0 +1,12 @@
+{
+  "name": "mongodb-connection-string-url",
+  "version": "7.0.1",
+  "revision": "fef753e977586602cb1a4cbabe6af232ef9eac74",
+  "repository": "https://github.com/mongodb-js/mongodb-connection-string-url.git",
+  "purl": "pkg:npm/mongodb-connection-string-url@7.0.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-h0AZ9A7IDVwwHyMxmdMXKy+9oNlF0zFoahHiX3vQ8e3KFcSP3VmsmfvtRSuLPxmyv2vjIDxqty8smTgie/SNRQ=="
+}

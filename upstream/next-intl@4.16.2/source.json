@@ -1,0 +1,12 @@
+{
+  "name": "next-intl",
+  "version": "4.16.2",
+  "revision": "sha512:504bd076453d4d5fe121b272f433e767aea0ee787242146d3b7a26f7d2ae07ae9ed17d62de28c4c0ba36c35791e1b2e640b2f6f42a1adbc65225ba4df8d94764",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/next-intl@4.16.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-UEvQdkU9TV/hIbJy9DPnZ66g7nhyQhRtO3om99KuB66e0X1i3ijEwLo2w1eR4bLmQLL29Coa28ZSJbpN+NlHZA=="
+}

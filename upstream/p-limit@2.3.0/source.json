@@ -1,0 +1,12 @@
+{
+  "name": "p-limit",
+  "version": "2.3.0",
+  "revision": "a11f02bc5c04490b7c3de2663d866c211fb915ea",
+  "repository": "https://github.com/sindresorhus/p-limit.git",
+  "purl": "pkg:npm/p-limit@2.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-//88mFWSJx8lxCzwdAABTJL2MyWB12+eIY7MDL2SqLmAkeKU9qxRvWuSyTjm3FUmpBEMuFfckAIqEaVGUDxb6w=="
+}

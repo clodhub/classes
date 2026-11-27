@@ -1,0 +1,742 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/basket",
+    "version": "1.0.0",
+    "description": "The basket of a shop's booking page: lines of an item and a length added and removed in the browser, totals with a gap between items, a snapshot for React's useSyncExternalStore, text to keep it across visits, and the server's reading of the lines a request posts. Framework-free; the same functions in the browser and on the server."
+  },
+  "methods": [
+    {
+      "name": "createBasket",
+      "description": "A new basket, empty or with the given lines.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/BasketOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "basket",
+        "schema": {
+          "$ref": "#/components/schemas/Basket"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Basket.lines",
+      "description": "The lines in the order added: the same frozen list until a change.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "lines",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/BasketLine"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Basket.add",
+      "description": "Adds a line with a new id: INVALID_LINE when a field is missing or of the wrong kind, BASKET_FULL at maximumLines.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "line",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NewLine"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/AddResult"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Basket.remove",
+      "description": "Removes the line with this id; false when there is none.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "removed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Basket.clear",
+      "description": "Removes every line (listeners are called only when there was one).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Basket.totals",
+      "description": "The line count, the minutes with gaps and the price.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "totals",
+        "schema": {
+          "$ref": "#/components/schemas/BasketTotals"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Basket.subscribe",
+      "description": "Calls the listener after every change; returns the function that stops it. For useSyncExternalStore.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "listener",
+          "required": true,
+          "schema": {
+            "description": "A function of no arguments."
+          }
+        }
+      ],
+      "result": {
+        "name": "unsubscribe",
+        "schema": {
+          "description": "A function that stops the listener."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Basket.snapshot",
+      "description": "The lines and totals as one frozen object, the same object until the lines change (useSyncExternalStore's getSnapshot).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "snapshot",
+        "schema": {
+          "$ref": "#/components/schemas/BasketSnapshot"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Basket.serialise",
+      "description": "The lines as text for the page to keep (localStorage): {\"format\": 1, \"lines\": [...]}.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "restoreBasket",
+      "description": "The basket serialise() wrote. Text that is not a saved basket (null, not JSON, another format) gives an empty basket; lines that are not valid, repeat an id or pass maximumLines are left out.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/BasketOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "basket",
+        "schema": {
+          "$ref": "#/components/schemas/Basket"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "totalMinutes",
+      "description": "The sum of the lengths plus gapMinutes between each two lines; 0 for no lines.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "lines",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "minutes": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "minutes"
+              ]
+            }
+          }
+        },
+        {
+          "name": "gapMinutes",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ],
+      "result": {
+        "name": "minutes",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "totalPrice",
+      "description": "The sum of the prices, in minor units.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "lines",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "price": {
+                  "type": "integer",
+                  "description": "An amount in the currency's minor unit (cents for EUR)."
+                }
+              },
+              "required": [
+                "price"
+              ]
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "price",
+        "schema": {
+          "type": "integer",
+          "description": "An amount in the currency's minor unit (cents for EUR)."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "parseRequestedLines",
+      "description": "The lines a reservation request posted, as the server may use them: a list of 1 to maximumLines objects, each with an item slug and a positive whole number of minutes; categorySlug is kept when it is a slug and is empty otherwise. Names, prices and other fields are not read: the server prices lines from the catalogue. INVALID_LINES for anything else.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "maximumLines": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 100
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/RequestedLines"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks setting values; a missing value takes its default.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BasketSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install (the defaults before installation).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BasketSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "BasketLine": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "itemSlug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "itemName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "categorySlug": {
+            "type": "string",
+            "pattern": "^([a-z0-9]+(-[a-z0-9]+)*)?$",
+            "description": "A category slug, or empty when not known."
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "price": {
+            "type": "integer",
+            "description": "What the page showed for the line, in minor units; the server never trusts it.",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "id",
+          "itemSlug",
+          "itemName",
+          "categorySlug",
+          "minutes",
+          "price"
+        ],
+        "additionalProperties": false
+      },
+      "NewLine": {
+        "type": "object",
+        "properties": {
+          "itemSlug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "itemName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "categorySlug": {
+            "type": "string",
+            "pattern": "^([a-z0-9]+(-[a-z0-9]+)*)?$",
+            "description": "A category slug, or empty when not known."
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "price": {
+            "type": "integer",
+            "description": "What the page showed for the line, in minor units; the server never trusts it.",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "itemSlug",
+          "itemName",
+          "categorySlug",
+          "minutes",
+          "price"
+        ],
+        "description": "A line without its id; other fields are left out of the basket."
+      },
+      "BasketTotals": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "totalMinutes(lines, gapMinutes): the lengths with a gap between each two."
+          },
+          "price": {
+            "type": "integer",
+            "description": "totalPrice(lines)."
+          }
+        },
+        "required": [
+          "count",
+          "minutes",
+          "price"
+        ],
+        "additionalProperties": false
+      },
+      "BasketSnapshot": {
+        "type": "object",
+        "properties": {
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketLine"
+            }
+          },
+          "totals": {
+            "$ref": "#/components/schemas/BasketTotals"
+          }
+        },
+        "required": [
+          "lines",
+          "totals"
+        ],
+        "additionalProperties": false,
+        "description": "Frozen; the same object from snapshot() until the lines change."
+      },
+      "BasketOptions": {
+        "type": "object",
+        "properties": {
+          "gapMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 240,
+            "description": "The installed setting when omitted."
+          },
+          "maximumLines": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "description": "The installed setting when omitted."
+          },
+          "lines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BasketLine"
+            },
+            "description": "The lines to start with (createBasket only)."
+          },
+          "newId": {
+            "description": "A function returning a new line id; crypto.randomUUID by default."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Basket": {
+        "type": "object",
+        "description": "A basket of lines in the page. Lines are frozen copies; listeners are called after every change."
+      },
+      "AddResult": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "ok",
+              "id"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "enum": [
+                  "BASKET_FULL",
+                  "INVALID_LINE"
+                ]
+              }
+            },
+            "required": [
+              "ok",
+              "code"
+            ]
+          }
+        ]
+      },
+      "RequestedLine": {
+        "type": "object",
+        "properties": {
+          "itemSlug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "categorySlug": {
+            "type": "string",
+            "pattern": "^([a-z0-9]+(-[a-z0-9]+)*)?$",
+            "description": "A category slug, or empty when not known."
+          }
+        },
+        "required": [
+          "itemSlug",
+          "minutes",
+          "categorySlug"
+        ],
+        "additionalProperties": false
+      },
+      "RequestedLines": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              },
+              "lines": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RequestedLine"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "ok",
+              "lines"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "const": "INVALID_LINES"
+              }
+            },
+            "required": [
+              "ok",
+              "code"
+            ]
+          }
+        ]
+      },
+      "BasketSettings": {
+        "type": "object",
+        "properties": {
+          "gapMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 240
+          },
+          "maximumLines": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          }
+        },
+        "required": [
+          "gapMinutes",
+          "maximumLines"
+        ],
+        "additionalProperties": false,
+        "description": "The installed settings. DEFAULT_SETTINGS, an exported constant, is {gapMinutes: 5, maximumLines: 20}."
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "gapMinutes": {},
+          "maximumLines": {}
+        },
+        "additionalProperties": true,
+        "description": "Setting values as numbers or digits; a value still in its {{name}} form, as before installation, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32040,
+        "message": "RangeError: an option, starting line, listener, length or price is not of its kind, or newId gave an empty or repeated id"
+      },
+      "InvalidSettings": {
+        "code": -32041,
+        "message": "RangeError: a setting value is not a whole number in its range"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

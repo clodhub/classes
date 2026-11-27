@@ -1,0 +1,12 @@
+{
+  "name": "caniuse-lite",
+  "version": "1.0.30001828",
+  "revision": "28902abd9466fe3e9d56fb2272230edf0aafbce1",
+  "repository": "https://github.com/browserslist/caniuse-lite.git",
+  "purl": "pkg:npm/caniuse-lite@1.0.30001828",
+  "licence": "CC-BY-4.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7MWeT+3DlrpuDybTWHl4Zb1Z80Z1fLLnOXuBjDXebzDVcqnEWUlV8JcbASg8B8BhcW8QT2UiR1KAtzYFIZHZYA=="
+}

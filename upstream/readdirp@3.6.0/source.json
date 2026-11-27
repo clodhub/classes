@@ -1,0 +1,12 @@
+{
+  "name": "readdirp",
+  "version": "3.6.0",
+  "revision": "c1482f9b3b74ecf24adc2733da538ce076ddfbeb",
+  "repository": "https://github.com/paulmillr/readdirp.git",
+  "purl": "pkg:npm/readdirp@3.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA=="
+}

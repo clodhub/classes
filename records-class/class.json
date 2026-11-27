@@ -1,0 +1,89 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/records-class",
+  "version": "1.0.0",
+  "title": "Records",
+  "summary": "Collections of documents with the MongoDB query subset the web shop uses, export and import",
+  "category": "data-and-storage/documents",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0",
+      "path": "classes/records-class/records.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "database": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "uri": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/records-class/check.mjs",
+      "digest": "ac50f2e0aef05c092caa061212c4ed0fc27fec58f2b66b067770e12928ffed4b"
+    },
+    {
+      "path": "classes/records-class/driver.mjs",
+      "digest": "4ff462fa980e487dad36db47325b98901d39bbe2326e62b16deced710ddba912"
+    },
+    {
+      "path": "classes/records-class/records-line.schema.json",
+      "digest": "70370aa9e63df0cf17cc83e08d0fdfb9af5773d7b86034e93c8f9d358dcca017"
+    },
+    {
+      "path": "classes/records-class/records.json",
+      "digest": "8025f4effb36d7ae07ee0343f517cdbf5ecdf5b11fb86f6684f509037049a9ed"
+    },
+    {
+      "path": "classes/records-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/records-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/records-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/records-class/check.mjs",
+        "classes/records-class/driver.mjs",
+        "classes/records-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

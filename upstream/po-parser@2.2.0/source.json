@@ -1,0 +1,12 @@
+{
+  "name": "po-parser",
+  "version": "2.2.0",
+  "revision": "5a23724f88187db8bf6744f9c5afeb30cbdaf09b",
+  "repository": "https://github.com/amannn/po-parser.git",
+  "purl": "pkg:npm/po-parser@2.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-NdTrKgh0oO7+y+RFX8KKhOB438x/j94UGXEFzl/7pHH0JjWSn42iJ9tgmPksIO6n1JKDHmNDcejPJfKspljB9g=="
+}

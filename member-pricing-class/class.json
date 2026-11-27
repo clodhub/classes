@@ -1,0 +1,125 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/member-pricing-class",
+  "version": "1.0.0",
+  "title": "Member pricing",
+  "summary": "Member plans with discounts, fixed prices or both, sign-up by a shared link approved by staff, member vouchers, and the price resolver the storefront and the server share",
+  "category": "commerce/catalogue-and-pricing",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/member-pricing",
+      "version": "1.0.0",
+      "path": "classes/member-pricing-class/member-pricing.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/voucher-codes",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "minimumFixedPrice": {
+        "type": "integer"
+      },
+      "maximumFixedPrice": {
+        "type": "integer"
+      },
+      "fixedPriceStep": {
+        "type": "integer"
+      },
+      "minimumMinutes": {
+        "type": "integer"
+      },
+      "maximumMinutes": {
+        "type": "integer"
+      },
+      "minutesStep": {
+        "type": "integer"
+      },
+      "sessionMinutes": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/member-pricing-class/check.mjs",
+      "digest": "97b958e7e9b6292923b598744253fa5c829cf07b2ac8038f6307bd24b10c0701"
+    },
+    {
+      "path": "classes/member-pricing-class/codes.ts",
+      "digest": "38b76e67cb4941d82e052baa8a5f78fccc67ff0437c7b3dffdb5a8806ae9534f"
+    },
+    {
+      "path": "classes/member-pricing-class/member-plan.schema.json",
+      "digest": "a395bc5b115194220510dc4438246c0b72fe18b0e87b06cdb86bffa86c75d050"
+    },
+    {
+      "path": "classes/member-pricing-class/member-pricing.json",
+      "digest": "a3d95a856eeb7cda20244f9bc0906e7b81488894de68303b747567650970dd78"
+    },
+    {
+      "path": "classes/member-pricing-class/member-session.schema.json",
+      "digest": "d6c91941ef410d80a99cd09e2556ff68d7df549929d664ebc8a2323b3ab5413d"
+    },
+    {
+      "path": "classes/member-pricing-class/member-voucher.schema.json",
+      "digest": "f167a0d2face9e01b809af22198e674ca32dbde3a5cb55454bb1b4dedb9df926"
+    },
+    {
+      "path": "classes/member-pricing-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/member-pricing-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/member-pricing-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/member-pricing-class/check.mjs",
+        "classes/member-pricing-class/codes.ts",
+        "classes/member-pricing-class/member-plan.schema.json",
+        "classes/member-pricing-class/member-session.schema.json",
+        "classes/member-pricing-class/member-voucher.schema.json",
+        "classes/member-pricing-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

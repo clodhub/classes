@@ -1,0 +1,12 @@
+{
+  "name": "update-browserslist-db",
+  "version": "1.4.0",
+  "revision": "86c3d9c3480c95870b242bdcc8067aa563f9a1fd",
+  "repository": "https://github.com/browserslist/update-db.git",
+  "purl": "pkg:npm/update-browserslist-db@1.4.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-WPJuOnjI9FWDct4fB+ej4Mz8opLaw5CDcZ2t44tFZ0vIQVYWzBhWR3mkixuUj/A7+vY4V9+ApOZ2YYLwdgq46w=="
+}

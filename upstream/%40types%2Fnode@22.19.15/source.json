@@ -1,0 +1,12 @@
+{
+  "name": "@types/node",
+  "version": "22.19.15",
+  "revision": "sha512:17447f876f9db32e7024051eded014ea8a9adaa6d66394e935f2ff4469a8d72dfc862c8ed70df1da33edb7beb09ae6892380d09ce06edb570d5d0d924c85145a",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/%40types/node@22.19.15",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-F0R/h2+dsy5wJAUe3tAU6oqa2qbWY5TpNfL/RGmo1y38hiyO1w3x2jPtt76wmuaJI4DQnOBu21cNXQ2STIUUWg=="
+}

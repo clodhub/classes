@@ -1,0 +1,79 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/shop-catalogue-class",
+  "version": "1.0.0",
+  "title": "Shop catalogue",
+  "summary": "Items with price options in several languages, built from markdown files at build time and queried by the shop's pages",
+  "category": "commerce/catalogue-and-pricing",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/shop-catalogue",
+      "version": "1.0.0",
+      "path": "classes/shop-catalogue-class/shop-catalogue.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/money",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "fileLanguage": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/shop-catalogue-class/check.mjs",
+      "digest": "cb61a638450a72899737f09592fd0bb2e21f4b8ee9ff9fda9904a0879748c616"
+    },
+    {
+      "path": "classes/shop-catalogue-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/shop-catalogue-class/shop-catalogue.json",
+      "digest": "009cc587a61ac87efa76cf4de6c9d80a01a95e4177067a157efad071daff0f59"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/shop-catalogue-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/shop-catalogue-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

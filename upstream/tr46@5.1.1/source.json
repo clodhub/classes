@@ -1,0 +1,12 @@
+{
+  "name": "tr46",
+  "version": "5.1.1",
+  "revision": "1999828c4c60e8f5672f0eb1fd4387e3f194923a",
+  "repository": "https://github.com/jsdom/tr46.git",
+  "purl": "pkg:npm/tr46@5.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-hdF5ZgjTqgAntKkklYw0R03MG2x/bSzTtkxmIRw/sTNV8YXsCJ1tfLAX23lhxhHJlEf3CRCOCGGWw3vI3GaSPw=="
+}

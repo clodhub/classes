@@ -1,0 +1,88 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/booking-policy-class",
+  "version": "1.0.0",
+  "title": "Booking policy",
+  "summary": "Booking terms as pure functions: deposit and balance after a gift card, free cancellation and refunds, gift card use on late cancellation, payment holds and checkout expiry, booking lengths",
+  "category": "scheduling/booking",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/booking-policy",
+      "version": "1.0.0",
+      "path": "classes/booking-policy-class/booking-policy.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "depositPercent": {
+        "type": "integer"
+      },
+      "freeCancellationHours": {
+        "type": "integer"
+      },
+      "holdMinutes": {
+        "type": "integer"
+      },
+      "checkoutMinutes": {
+        "type": "integer"
+      },
+      "minimumMinutes": {
+        "type": "integer"
+      },
+      "maximumMinutes": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/booking-policy-class/booking-policy.json",
+      "digest": "b6bc271e481a12d1a2330fbdf2afaf22f08234a449fcc68e3dc70beb02a95985"
+    },
+    {
+      "path": "classes/booking-policy-class/check.mjs",
+      "digest": "e2773193bbc8ffb7f918c0da0c599526717c633aec502d299603f6a5017a211a"
+    },
+    {
+      "path": "classes/booking-policy-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/booking-policy-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/booking-policy-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

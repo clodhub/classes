@@ -1,0 +1,403 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/money",
+    "version": "1.0.0",
+    "description": "Money as whole numbers of a currency's minor unit, with the currency's ISO 4217 minor digits, formatting by language through Intl.NumberFormat, reading prices written in text, and percentages: the same pure functions in the browser and on the server. Amounts are integers, so 37.50 EUR is 3750 and never a binary fraction."
+  },
+  "methods": [
+    {
+      "name": "formatMoney",
+      "description": "The amount as the language writes it with Intl.NumberFormat and the currency's narrow sign: €37.50 in English and 37,50 € in Spanish; £12.50 and 12,50 £. With wholeUnits auto (the default) a whole amount has no minor digits: €45, 45 €. A negative amount that rounds to zero has no minus.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "amount",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        {
+          "name": "currency",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "A BCP 47 language tag such as en, es or de-CH."
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/FormatOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCurrency"
+        },
+        {
+          "$ref": "#/components/errors/InvalidAmount"
+        },
+        {
+          "$ref": "#/components/errors/InvalidOptions"
+        },
+        {
+          "$ref": "#/components/errors/InvalidLanguage"
+        }
+      ]
+    },
+    {
+      "name": "parseMoney",
+      "description": "The first amount in the text written with the currency's code (in capitals, small letters or with a capital first) or one of its signs before or after the number, spaces allowed between: 85€, 85 €, €85, 37,50 €, 1.200,00 €, 60,- €, EUR 60, CHF 60, CHF60, $1,200.00 (USD), £60 (GBP). Every script's decimal digits count, and direction marks are ignored. The last . or , is the decimal mark, except that a single one followed by exactly three digits groups thousands (1.200 €) unless the currency has three minor digits; spaces and apostrophes also group thousands. A number joined to a word (x60 €) is no amount. Null when no number carries the currency's code or sign: 50 minutes, 37,50, £60 for EUR, or an amount with more minor digits than the currency has. Whatever formatMoney writes reads back as the same amount, except a whole amount of 1000 or more units in a currency with three minor digits (KWD 1,000 reads as 1.000). The currency defaults to the installed setting.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "currency",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        }
+      ],
+      "result": {
+        "name": "amount",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/Money"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCurrency"
+        }
+      ]
+    },
+    {
+      "name": "fromMajor",
+      "description": "Units (37.5) as minor units (3750 for EUR, 38 for JPY 37.5), rounded with Math.round after the binary error of the product is dropped (1.005 EUR is 101).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "units",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "currency",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        }
+      ],
+      "result": {
+        "name": "amount",
+        "schema": {
+          "$ref": "#/components/schemas/Money"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCurrency"
+        },
+        {
+          "$ref": "#/components/errors/InvalidAmount"
+        }
+      ]
+    },
+    {
+      "name": "toMajor",
+      "description": "Minor units as units: 3750 EUR is 37.5, 1200 JPY is 1200, 1234 KWD is 1.234.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "amount",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        {
+          "name": "currency",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        }
+      ],
+      "result": {
+        "name": "units",
+        "schema": {
+          "type": "number"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCurrency"
+        },
+        {
+          "$ref": "#/components/errors/InvalidAmount"
+        }
+      ]
+    },
+    {
+      "name": "minorDigits",
+      "description": "The currency's ISO 4217 minor digits: JPY 0, EUR 2, KWD 3, CLF 4.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "currency",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        }
+      ],
+      "result": {
+        "name": "digits",
+        "schema": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCurrency"
+        }
+      ]
+    },
+    {
+      "name": "percentOf",
+      "description": "Math.round(amount * percent / 100): half a minor unit rounds up (50% of 1005 is 503).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "amount",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Money"
+          }
+        },
+        {
+          "name": "percent",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }
+      ],
+      "result": {
+        "name": "amount",
+        "schema": {
+          "$ref": "#/components/schemas/Money"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidAmount"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks setting values; a missing value takes its default.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/MoneySettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install (the defaults before installation).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/MoneySettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Money": {
+        "type": "integer",
+        "description": "An amount as a whole number of the currency's minor unit (cents for EUR, yen for JPY, fils for KWD)."
+      },
+      "CurrencyCode": {
+        "type": "string",
+        "pattern": "^[A-Z]{3}$",
+        "description": "An upper-case ISO 4217 code with a minor unit (EUR, GBP, CHF, JPY, KWD); lower case and unknown codes are refused."
+      },
+      "FormatOptions": {
+        "type": "object",
+        "properties": {
+          "wholeUnits": {
+            "enum": [
+              "auto",
+              "always",
+              "never"
+            ],
+            "default": "auto",
+            "description": "auto: no minor digits when the amount is a whole number of units (€45, €37.50); always: rounded to whole units, halves away from zero (€38 for 37.50); never: every minor digit (€45.00)."
+          },
+          "symbolBefore": {
+            "type": "boolean",
+            "default": false,
+            "description": "The sign before the number whatever the language, with no space unless the sign is written in letters (€37,50 in Spanish, CHF 60)."
+          },
+          "grouping": {
+            "type": "boolean",
+            "default": true,
+            "description": "false writes no thousands separators (€1234.56)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "MoneySettings": {
+        "type": "object",
+        "properties": {
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An upper-case ISO 4217 code with a minor unit (EUR, GBP, CHF, JPY, KWD); lower case and unknown codes are refused."
+          }
+        },
+        "required": [
+          "currency"
+        ],
+        "additionalProperties": false,
+        "description": "The installed settings: the shop's currency. DEFAULT_SETTINGS, an exported constant, is {currency: EUR}."
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "currency": {}
+        },
+        "additionalProperties": true,
+        "description": "Setting values; a value still in its {{name}} form, as before installation, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidCurrency": {
+        "code": -32020,
+        "message": "RangeError: the currency is not an upper-case ISO 4217 code with a minor unit"
+      },
+      "InvalidAmount": {
+        "code": -32021,
+        "message": "RangeError: an amount is not a whole number of minor units, or a number is not finite"
+      },
+      "InvalidOptions": {
+        "code": -32022,
+        "message": "RangeError: wholeUnits is not auto, always or never"
+      },
+      "InvalidLanguage": {
+        "code": -32023,
+        "message": "RangeError: the language is not a well-formed language tag"
+      },
+      "InvalidSettings": {
+        "code": -32024,
+        "message": "RangeError: a setting value does not fit"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

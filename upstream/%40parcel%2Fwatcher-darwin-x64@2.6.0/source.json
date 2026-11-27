@@ -1,0 +1,12 @@
+{
+  "name": "@parcel/watcher-darwin-x64",
+  "version": "2.6.0",
+  "revision": "b46c53feb075c9dfd2c87d2183eb259df384d90b",
+  "repository": "https://github.com/parcel-bundler/watcher.git",
+  "purl": "pkg:npm/%40parcel/watcher-darwin-x64@2.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Ohv6OpzhUfKYD7Beb8kDvG0jbIxORCYY1JRdZnaBtnjjkJxgD7ZVL0nw2sCYd0yTMKTvz3nnTnOF3cDifK+kvw=="
+}

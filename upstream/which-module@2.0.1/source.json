@@ -1,0 +1,12 @@
+{
+  "name": "which-module",
+  "version": "2.0.1",
+  "revision": "9dcb8cc3d4c46e97209894a6c36ee7a352d6f97e",
+  "repository": "https://github.com/nexdrew/which-module.git",
+  "purl": "pkg:npm/which-module@2.0.1",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-iBdZ57RDvnOR9AGBhML2vFZf7h8vmBjhoaZqODJBFWHVtKkDmKuHai3cx5PgVMrX5YDNp27AofYbAwctSS+vhQ=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@swc/core-linux-arm-gnueabihf",
+  "version": "1.16.22",
+  "revision": "sha512:188e952028ae61cee66fad577a72ed8841a83974d70dd51d6bcc346eedbd321dd9eab86e4e4022040743169770c3640d574880098e7295448bd76ec8e8dc7cc9",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/core-linux-arm-gnueabihf@1.16.22",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-GI6VICiuYc7mb61XenLtiEGoOXTXDdUda8w0bu29Mh3Z6rhuTkAiBAdDFpdww2QNV0iACY5ylUSL127I6Nx8yQ=="
+}

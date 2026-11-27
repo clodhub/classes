@@ -1,0 +1,12 @@
+{
+  "name": "postcss-value-parser",
+  "version": "4.2.0",
+  "revision": "d4a582692533fc87cbab348136e1dbea365d5a94",
+  "repository": "https://github.com/TrySound/postcss-value-parser.git",
+  "purl": "pkg:npm/postcss-value-parser@4.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ=="
+}

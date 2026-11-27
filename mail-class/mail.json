@@ -1,0 +1,324 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/mail",
+    "version": "1.0.0",
+    "description": "Transactional email from the shop's server: booking confirmations, gift cards and owner notices. Addresses come from environment variables the settings name, because no setting grammar holds an email address. Every implementation has a simulated mode that keeps messages in an outbox, so the shop and the class checks run without a provider account. Server only."
+  },
+  "methods": [
+    {
+      "name": "createMail",
+      "description": "A mail client with the installed settings, or `options.settings` over them: live with the provider, or simulated when `simulate` is true. The addresses are read from the environment when it is created. Returns the client itself, not a promise.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/CreateOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "mail",
+        "schema": {
+          "$ref": "#/components/schemas/Mail"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "Mail.send",
+      "description": "Sends the message from `from` and resolves to its id. A message outside MailMessage is INVALID_MESSAGE, whatever the configuration, and nothing is sent or kept. A live client without its API key or a from address is NOT_CONFIGURED; the provider refusing the message or not being reached is PROVIDER_ERROR. A simulated client keeps the message in its outbox instead, with or without a from address.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "message",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/MailMessage"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "id"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "INVALID_MESSAGE",
+                    "NOT_CONFIGURED",
+                    "PROVIDER_ERROR"
+                  ]
+                },
+                "message": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ok",
+                "code",
+                "message"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Mail.outbox",
+      "description": "Copies of the last 1,000 messages a simulated client kept, oldest first, each as it was given; always empty for a live client.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "messages",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/MailMessage"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "escapeHtml",
+      "description": "Text made safe to put in HTML, as element content or a quoted attribute value: & < > \" and ' become entities. null and undefined give the empty text; any other value its String form.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "html",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "isEmailAddress",
+      "description": "Whether the value is an email address as MailMessage takes one.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "isAddress",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Attachment": {
+        "type": "object",
+        "properties": {
+          "filename": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 255,
+            "description": "The file name shown to the recipient."
+          },
+          "content": {
+            "type": "string",
+            "minLength": 4,
+            "description": "The file's bytes in base64, padded."
+          },
+          "contentType": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9!#$&^_.+-]+/[A-Za-z0-9!#$&^_.+-]+$",
+            "description": "A media type such as image/png."
+          },
+          "contentId": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9._@-]{1,127}$",
+            "description": "Makes the attachment an inline image: the HTML shows it with <img src=\"cid:<contentId>\">."
+          }
+        },
+        "required": [
+          "filename",
+          "content",
+          "contentType"
+        ],
+        "additionalProperties": false
+      },
+      "MailMessage": {
+        "type": "object",
+        "properties": {
+          "to": {
+            "oneOf": [
+              {
+                "type": "string",
+                "description": "An email address: a local part, @ and a domain with a dot, in ASCII, at most 254 characters, without a name (not Ana <ana@example.com>)."
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "An email address: a local part, @ and a domain with a dot, in ASCII, at most 254 characters, without a name (not Ana <ana@example.com>)."
+                },
+                "minItems": 1,
+                "maxItems": 50
+              }
+            ],
+            "description": "One address, or 1 to 50; a provider counts each as one email against its quota."
+          },
+          "subject": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Not only spaces, and no line breaks or other control characters."
+          },
+          "html": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The message as HTML, not only spaces; escape any text it includes with escapeHtml."
+          },
+          "text": {
+            "type": "string",
+            "description": "The message as plain text; the provider may derive one from the HTML when it is omitted."
+          },
+          "replyTo": {
+            "type": "string",
+            "description": "An email address: a local part, @ and a domain with a dot, in ASCII, at most 254 characters, without a name (not Ana <ana@example.com>)."
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            },
+            "description": "At most 40,000,000 characters of base64 in all."
+          }
+        },
+        "required": [
+          "to",
+          "subject",
+          "html"
+        ],
+        "additionalProperties": false
+      },
+      "CreateOptions": {
+        "type": "object",
+        "properties": {
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Where the addresses and the API key are read, in the variables the settings name; the server's environment by default."
+          },
+          "settings": {
+            "type": "object",
+            "description": "Settings that replace the installed ones, such as fromVariable or senderName."
+          },
+          "senderName": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "description": "The name in from, in any characters but control characters, such as the shop's name from its content; it replaces the senderName setting, whose grammar allows only ASCII letters, digits, spaces and hyphens."
+          },
+          "fetch": {
+            "description": "The fetch function for provider requests; the global fetch by default. A simulated client never calls it."
+          },
+          "simulate": {
+            "type": "boolean",
+            "default": false,
+            "description": "Send nothing: every message goes to the client's outbox. For local use and checks."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Mail": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "enum": [
+              "live",
+              "simulated"
+            ]
+          },
+          "from": {
+            "type": "string",
+            "description": "The sender as messages carry it: the sender name, then the address the variable fromVariable names in angle brackets (Example Studio <noreply@example.com>). A name with a character other than ASCII letters, digits, spaces and hyphens is in double quotes, with a backslash before each double quote or backslash in it. Empty when the variable holds no email address."
+          },
+          "business": {
+            "type": "string",
+            "description": "The shop's own address, from the variable businessVariable names, for the owner's copies and for replies; empty when the variable holds no email address."
+          }
+        },
+        "required": [
+          "mode",
+          "from",
+          "business"
+        ]
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32030,
+        "message": "RangeError: a setting outside its grammar, or a senderName option that is empty, over 200 characters or has a control character"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "server": "server/index.ts"
+  }
+}

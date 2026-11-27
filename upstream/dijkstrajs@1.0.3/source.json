@@ -1,0 +1,12 @@
+{
+  "name": "dijkstrajs",
+  "version": "1.0.3",
+  "revision": "49ad1ecd5c519281ee3c4711bb78db4d96e19c83",
+  "repository": "https://github.com/tcort/dijkstrajs.git",
+  "purl": "pkg:npm/dijkstrajs@1.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-qiSlmBq9+BCdCA/L46dw8Uy93mloxsPSbwnm5yrKn2vMPiy8KyAskTF6zuV/j5BMsmOGZDPs7KjU+mjb670kfA=="
+}

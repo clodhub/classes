@@ -1,0 +1,82 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/booking-reminders-class",
+  "version": "1.0.0",
+  "title": "Booking reminders",
+  "summary": "Local notifications before each booking, planned the same way on the website, Apple devices and Android, with no server",
+  "category": "communication/notifications",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/booking-reminders",
+      "version": "1.0.0",
+      "path": "classes/booking-reminders-class/booking-reminders.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "android": [
+          "android/src/main/java"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "firstLeadMinutes": {
+        "type": "integer"
+      },
+      "secondLeadMinutes": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/booking-reminders-class/booking-reminders.json",
+      "digest": "a7bb0ade9f72d5228be9565b97ca64832ba53d555856f06a9b59f5079568c033"
+    },
+    {
+      "path": "classes/booking-reminders-class/check.mjs",
+      "digest": "a2c347ea70e1bfa076b08812452b1d63fa8cd6898091962ed18c6e9d6a8d14a2"
+    },
+    {
+      "path": "classes/booking-reminders-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/booking-reminders-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/booking-reminders-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

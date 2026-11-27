@@ -1,0 +1,1143 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/shop-catalogue",
+    "version": "1.0.0",
+    "description": "A shop's catalogue of items with their price options, built at build time from a folder of markdown files (one per item and language) and asked by the pages in the browser and on the server. Prices are minor units of the shop's currency, read by the money component's parseMoney, which the application passes in."
+  },
+  "methods": [
+    {
+      "name": "createCatalogueQuery",
+      "description": "Questions about the catalogues buildCatalogues made, keyed by language.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "catalogues",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Catalogue"
+            }
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/QueryOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "query",
+        "schema": {
+          "$ref": "#/components/schemas/CatalogueQuery"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCatalogue"
+        },
+        {
+          "$ref": "#/components/errors/InvalidOptions"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.languages",
+      "description": "The languages with a catalogue, in the order given.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "languages",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-br."
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.categories",
+      "description": "Each category with its item count and lowest price.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "Answered by its catalogue, else its base language's, else the fallback's."
+          }
+        }
+      ],
+      "result": {
+        "name": "categories",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CategorySummary"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.category",
+      "description": "The category with this slug, or null.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "slug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "Answered by its catalogue, else its base language's, else the fallback's."
+          }
+        }
+      ],
+      "result": {
+        "name": "category",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CatalogueCategory"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.item",
+      "description": "The item with this slug, or null.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "slug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "Answered by its catalogue, else its base language's, else the fallback's."
+          }
+        }
+      ],
+      "result": {
+        "name": "item",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CatalogueItem"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.items",
+      "description": "Every item, category by category.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "Answered by its catalogue, else its base language's, else the fallback's."
+          }
+        }
+      ],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/CatalogueItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.option",
+      "description": "The item's first price option lasting this many minutes, or null: what a booking of the item for that length costs.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "slug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "minutes",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "Answered by its catalogue, else its base language's, else the fallback's."
+          }
+        }
+      ],
+      "result": {
+        "name": "option",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/PriceOption"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.search",
+      "description": "Categories, then items, whose name holds every word of the text, without regard to case or accents; nothing for an empty text; at most limit results.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "language",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "description": "Answered by its catalogue, else its base language's, else the fallback's."
+          }
+        },
+        {
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ],
+      "result": {
+        "name": "results",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/SearchResult"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidOptions"
+        }
+      ]
+    },
+    {
+      "name": "CatalogueQuery.index",
+      "description": "Every item's slug and category slug, from the fallback language's catalogue (the same in every language).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "index",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/IndexEntry"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "minutesOf",
+      "description": "The length a price option's label gives, in whole minutes: 45 minutes, 60 minutos (Half), 1 h 30, 1,5 horas, 2 hours, 90', 45; null when it gives none (Small area, Pack of 5).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "label",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "minutes",
+        "schema": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "validateCatalogue",
+      "description": "Every way the value differs from a Catalogue, one text each; an empty list when it is one.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "value",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "problems",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "slugify",
+      "description": "Lower case, accents and other marks removed, ß æ œ ø ł đ ð þ ı written out, runs of anything but a-z and 0-9 as one hyphen, no hyphen at either end: Hands & Feet Care is hands-feet-care.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "name",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "slug",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks setting values; a missing value takes its default.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/CatalogueSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install (the defaults before installation).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/CatalogueSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "parseItemMarkdown",
+      "description": "One item file: the first # title; the first paragraph after it before any ## section (the description); under ## sections the headings name: price tables (every row after the header; the price is the first cell parsePrice reads in the currency, the label the other cells), the benefits, recommended and aftercare lists (each item's first paragraph), and the expect paragraphs. Other sections, code, quotes, HTML blocks and images are not content.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "markdown",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "headings",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/HeadingsByLanguage"
+          }
+        },
+        {
+          "name": "parsePrice",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ParsePrice"
+          }
+        },
+        {
+          "name": "currency",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An upper-case ISO 4217 code."
+          }
+        }
+      ],
+      "result": {
+        "name": "item",
+        "schema": {
+          "$ref": "#/components/schemas/ParsedItem"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidOptions"
+        }
+      ]
+    },
+    {
+      "name": "buildCatalogues",
+      "description": "Reads the content folder into one catalogue per language. A category is a folder at the root (names starting with _ or . are skipped); an item is the files in one folder below it with the same name before the language suffix, or, when a folder holds no such set but one file in each language, those files whatever their names (the item's slug from the fileLanguage file). Item.md is in fileLanguage and Item.<language>.md in that language; a language without its file shows the fileLanguage text. Asynchronous.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/BuildOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/BuildResult"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidOptions"
+        }
+      ]
+    },
+    {
+      "name": "writeCatalogues",
+      "description": "Writes catalogue-<language>.json for each catalogue into outDir (created when missing), each through a temporary file; returns the paths written. Asynchronous.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "outDir",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "catalogues",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Catalogue"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "paths",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCatalogue"
+        },
+        {
+          "$ref": "#/components/errors/InvalidOptions"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Money": {
+        "type": "integer",
+        "description": "An amount in the currency's minor unit (cents for EUR).",
+        "minimum": 0
+      },
+      "PriceOption": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "The row's other cells joined by \" - \": \"45 minutes\", \"Back - 30 minutes\", \"Small area\"."
+          },
+          "minutes": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "minutesOf(label): what a booking of this option lasts; null when the label gives no length."
+          },
+          "price": {
+            "$ref": "#/components/schemas/Money"
+          },
+          "priceText": {
+            "type": "string",
+            "description": "The price cell as written: \"60 €\", \"€60\", \"CHF 60\"."
+          }
+        },
+        "required": [
+          "label",
+          "minutes",
+          "price",
+          "priceText"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogueItem": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "categorySlug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PriceOption"
+            }
+          },
+          "benefits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "whatToExpect": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The paragraphs of the expect section, separated by a blank line; null when it has none."
+          },
+          "recommendedFor": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aftercare": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "icon": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The public address of the item's icon."
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The public address of the item's image."
+          }
+        },
+        "required": [
+          "slug",
+          "categorySlug",
+          "title",
+          "description",
+          "options",
+          "benefits",
+          "whatToExpect",
+          "recommendedFor",
+          "aftercare",
+          "icon",
+          "image"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogueCategory": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CatalogueItem"
+            }
+          }
+        },
+        "required": [
+          "slug",
+          "name",
+          "image",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "Catalogue": {
+        "type": "object",
+        "properties": {
+          "format": {
+            "const": 1
+          },
+          "language": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-br."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "The currency of every price, as given to buildCatalogues."
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CatalogueCategory"
+            }
+          }
+        },
+        "required": [
+          "format",
+          "language",
+          "currency",
+          "categories"
+        ],
+        "additionalProperties": false,
+        "description": "One language's catalogue, as buildCatalogues makes it and writeCatalogues writes it to catalogue-<language>.json: categories in slug order, each with its items in the order of their files (folders and files by name, depth first). Slugs are unique across the catalogue, and every language's catalogue has the same categories and items."
+      },
+      "CategorySummary": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "itemCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minPrice": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Money"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The lowest price of any option in the category; null when none has one."
+          }
+        },
+        "required": [
+          "slug",
+          "name",
+          "image",
+          "itemCount",
+          "minPrice"
+        ],
+        "additionalProperties": false
+      },
+      "SearchResult": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "category",
+              "item"
+            ]
+          },
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "categorySlug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+            "description": "For a category, its own slug."
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "kind",
+          "slug",
+          "categorySlug",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "IndexEntry": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "categorySlug": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "required": [
+          "slug",
+          "categorySlug"
+        ],
+        "additionalProperties": false
+      },
+      "QueryOptions": {
+        "type": "object",
+        "properties": {
+          "fallbackLanguage": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "The language that answers for a language with no catalogue (after its base language: es for es-MX); the first catalogue's language when omitted."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CatalogueQuery": {
+        "type": "object",
+        "description": "Questions about the catalogues, answered with frozen copies: the same object for the same question, and never the objects passed in."
+      },
+      "Headings": {
+        "type": "object",
+        "properties": {
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Price table sections (\"Treatment details\", \"Prices\")."
+          },
+          "benefits": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "expect": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "recommended": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "aftercare": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "details",
+          "benefits",
+          "expect",
+          "recommended",
+          "aftercare"
+        ],
+        "additionalProperties": false,
+        "description": "The ## headings that open each section. A heading opens the section when it starts with one of them, without regard to case (\"Benefits of the massage\" opens benefits)."
+      },
+      "HeadingsByLanguage": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/Headings"
+        },
+        "description": "Headings by language. The exported constant defaultHeadings has en (Treatment details, Prices; Benefits; What to expect; Recommended for; Aftercare recommendations), es (Detalles del tratamiento, Precios; Beneficios; Qué esperar; Recomendado para; Recomendaciones post-tratamiento, Recomendaciones post tratamiento), fr (Détails du soin, Prix; Bienfaits; À quoi s'attendre; Recommandé pour; Conseils après le soin) and de (Details der Behandlung, Preise; Vorteile; Was Sie erwartet; Empfohlen für; Pflegehinweise). Every language's headings apply to every file."
+      },
+      "ParsePrice": {
+        "description": "A function (text, currency) returning the price in minor units, or null when the text holds no price in that currency: money's parseMoney."
+      },
+      "ParsedItem": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PriceOption"
+            }
+          },
+          "benefits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "whatToExpect": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "recommendedFor": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aftercare": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "\"no # title\", \"no price table under a details heading\", \"no price in the price tables\", and each table row without a price in the currency."
+          }
+        },
+        "required": [
+          "title",
+          "description",
+          "options",
+          "benefits",
+          "whatToExpect",
+          "recommendedFor",
+          "aftercare",
+          "warnings"
+        ],
+        "additionalProperties": false
+      },
+      "AssetOptions": {
+        "type": "object",
+        "properties": {
+          "iconDir": {
+            "type": "string",
+            "description": "Folder of item icons <item slug>.png, .svg, .jpg, .jpeg or .webp (the first found)."
+          },
+          "iconUrl": {
+            "type": "string",
+            "description": "The address iconDir is served at; needed with iconDir."
+          },
+          "imageDir": {
+            "type": "string",
+            "description": "Folder of item image folders <item slug>/image.jpg, image.jpeg, image.png, image.webp, main.jpg or main.png."
+          },
+          "imageUrl": {
+            "type": "string"
+          },
+          "categoryImageDir": {
+            "type": "string",
+            "description": "Folder of category images <category slug>.svg, .png, .jpg, .jpeg or .webp."
+          },
+          "categoryImageUrl": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Folders are resolved from the working folder. Without a folder its images are null."
+      },
+      "BuildOptions": {
+        "type": "object",
+        "properties": {
+          "root": {
+            "type": "string",
+            "description": "The content folder: <Category folder>/**/<Item>.md, and categories.json at its root ({\"<Category folder>\": {\"<language>\": \"<name>\"}}; a category without a name keeps its folder name)."
+          },
+          "languages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+              "description": "A language code such as en, es or pt-br."
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "fileLanguage": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "The language of files without a language suffix (Item.md); <Item>.<language>.md is always in that language. One of languages; the installed setting when omitted."
+          },
+          "currency": {
+            "type": "string",
+            "pattern": "^[A-Z]{3}$",
+            "description": "An upper-case ISO 4217 code."
+          },
+          "parsePrice": {
+            "$ref": "#/components/schemas/ParsePrice"
+          },
+          "headings": {
+            "$ref": "#/components/schemas/HeadingsByLanguage"
+          },
+          "assets": {
+            "$ref": "#/components/schemas/AssetOptions"
+          }
+        },
+        "required": [
+          "root",
+          "languages",
+          "currency",
+          "parsePrice"
+        ],
+        "additionalProperties": false
+      },
+      "BuildResult": {
+        "type": "object",
+        "properties": {
+          "catalogues": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/Catalogue"
+            },
+            "description": "One catalogue per language, keyed by language."
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "What was skipped or is missing; the catalogues are usable: an item without a file in a language (its fileLanguage text is used there) or without a fileLanguage file (left out), a file in another language or outside a category folder (skipped), a price table row without a price, an item without prices, prices that differ between languages, a missing icon or image, a category without items (left out), a name in categories.json for no folder."
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "What the content must fix before the catalogues are written: two files of one item in one language (Item.md and Item.en.md when fileLanguage is en), a file without a # title, two items or categories with the same slug, a name giving no slug, an unreadable content folder or categories.json. The items concerned are left out."
+          }
+        },
+        "required": [
+          "catalogues",
+          "warnings",
+          "errors"
+        ],
+        "additionalProperties": false
+      },
+      "CatalogueSettings": {
+        "type": "object",
+        "properties": {
+          "fileLanguage": {
+            "type": "string",
+            "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+            "description": "A language code such as en, es or pt-br."
+          }
+        },
+        "required": [
+          "fileLanguage"
+        ],
+        "additionalProperties": false,
+        "description": "The installed settings. DEFAULT_SETTINGS, an exported constant, is {fileLanguage: en}."
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "fileLanguage": {}
+        },
+        "additionalProperties": true,
+        "description": "Setting values; a value still in its {{name}} form, as before installation, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidCatalogue": {
+        "code": -32030,
+        "message": "RangeError: a catalogue is not one (validateCatalogue lists why), is under another language's key, or the catalogues are in different currencies"
+      },
+      "InvalidOptions": {
+        "code": -32031,
+        "message": "RangeError: an option or argument is not of its kind (a language, currency, function, folder or limit)"
+      },
+      "InvalidSettings": {
+        "code": -32032,
+        "message": "RangeError: a setting value does not fit"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

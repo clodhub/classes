@@ -1,0 +1,12 @@
+{
+  "name": "@types/qrcode",
+  "version": "1.5.6",
+  "revision": "sha512:b5eecd41c57604ebdd8f66f5842007cc0a0c36e8fae64341333d0a05ac4ce9cdd51813a153475445028eb47f0214d23f76c2a4c25bf7da9dbaa984135a80796f",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/%40types/qrcode@1.5.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-te7NQcV2BOvdj2b1hCAHzAoMNuj65kNBMz0KBaxM6c3VGBOhU0dURQKOtH8CFNI/dsKkwlv32p26qYQTWoB5bw=="
+}

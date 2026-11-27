@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/active-schedule",
+  "x-version": "1.0.0",
+  "description": "The document of the records `settings` collection that names the schedule in force, as com.clodhub/records exports it.",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "const": "activeSchedule"
+    },
+    "value": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{0,63}$",
+      "description": "The id of a schedule of the booking calendar."
+    },
+    "updatedAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date as com.clodhub/records exports it."
+    }
+  },
+  "required": [
+    "_id",
+    "value",
+    "updatedAt"
+  ],
+  "additionalProperties": false,
+  "x-clodhub-modules": {}
+}

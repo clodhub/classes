@@ -1,0 +1,12 @@
+{
+  "name": "@nodelib/fs.scandir",
+  "version": "2.1.5",
+  "revision": "d6a7960d5281d3dd5f8e2efba49bb552d090f562",
+  "repository": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.scandir",
+  "purl": "pkg:npm/%40nodelib/fs.scandir@2.1.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g=="
+}

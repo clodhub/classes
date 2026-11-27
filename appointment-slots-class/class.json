@@ -1,0 +1,91 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/appointment-slots-class",
+  "version": "1.0.0",
+  "title": "Appointment slots",
+  "summary": "Free start times of a day for a booking of a given length, from opening windows and calendar busy blocks, with a buffer after each booking and a fixed step",
+  "category": "scheduling/booking",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/appointment-slots",
+      "version": "1.0.0",
+      "path": "classes/appointment-slots-class/appointment-slots.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/opening-hours",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "stepMinutes": {
+        "type": "integer"
+      },
+      "bufferMinutes": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/appointment-slots-class/appointment-slots.json",
+      "digest": "0599bd31817886eba92479e7d6358f3340a5224907ae002368cb20347c0c8d34"
+    },
+    {
+      "path": "classes/appointment-slots-class/check.mjs",
+      "digest": "1a478b179c4c06c29d690c1a197f52ffaa8f3cf763074f470f774126ab4a36f1"
+    },
+    {
+      "path": "classes/appointment-slots-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/appointment-slots-class/source-slots.ts",
+      "digest": "3d97cacd46210445e4ab12c3967eea12104b9de955289ee19bd02ff70e1e909d"
+    },
+    {
+      "path": "classes/appointment-slots-class/zone.ts",
+      "digest": "2390b5b8be0598efe08d71f0e7b464234002fa40fa3eae0be5c003531c228c84"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/appointment-slots-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/appointment-slots-class/check.mjs",
+        "classes/appointment-slots-class/source-slots.ts",
+        "classes/appointment-slots-class/zone.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

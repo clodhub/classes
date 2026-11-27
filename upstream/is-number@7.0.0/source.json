@@ -1,0 +1,12 @@
+{
+  "name": "is-number",
+  "version": "7.0.0",
+  "revision": "98e8ff1da1a89f93d1397a24d7413ed15421c139",
+  "repository": "https://github.com/jonschlinkert/is-number.git",
+  "purl": "pkg:npm/is-number@7.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng=="
+}

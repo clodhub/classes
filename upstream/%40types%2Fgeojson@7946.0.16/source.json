@@ -1,0 +1,12 @@
+{
+  "name": "@types/geojson",
+  "version": "7946.0.16",
+  "revision": "sha512:e82f27a96babde3f7c53afa55c37d351621f82f654f84ba6be91ca7188ee8ca1fbc286322e3dac5267dfd2d461aea33b068854c3b3f3dd90758e3da05bd16f9a",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/%40types/geojson@7946.0.16",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-6C8nqWur3j98U6+lXDfTUWIfgvZU+EumvpHKcYjujKH7woYyLj2sUmff0tRhrqM7BohUw7Pz3ZB1jj2gW9Fvmg=="
+}

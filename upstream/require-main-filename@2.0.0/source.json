@@ -1,0 +1,12 @@
+{
+  "name": "require-main-filename",
+  "version": "2.0.0",
+  "revision": "1acaf42e8ababa22c191319b319f25df833ffd79",
+  "repository": "https://github.com/yargs/require-main-filename.git",
+  "purl": "pkg:npm/require-main-filename@2.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-NKN5kMDylKuldxYLSUfrbo5Tuzh4hd+2E8NPPX02mZtn1VuREQToYe/ZdlJy+J3uCpfaiGF05e7B8W0iXbQHmg=="
+}

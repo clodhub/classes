@@ -1,0 +1,12 @@
+{
+  "name": "@formatjs/fast-memoize",
+  "version": "3.1.8",
+  "revision": "sha512:63d60515f7810e401698b583dcb54d1db1e5c842ec3f695844da18ebe421b4f875fee8c2897e50601cc0a9ed1c59d902c4a55ecc72edd2a8d6cf5bde11457b50",
+  "repository": "https://github.com/formatjs/formatjs.git",
+  "purl": "pkg:npm/%40formatjs/fast-memoize@3.1.8",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-Y9YFFfeBDkAWmLWD3LVNHbHlyELsP2lYRNoY6+QhtPh1/ujCiX5QYBzAqe0cWdkCxKVezHLt0qjWz1veEUV7UA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "run-parallel",
+  "version": "1.2.0",
+  "revision": "8e514fee209d56707cb6c232813b3d56280dde3f",
+  "repository": "https://github.com/feross/run-parallel.git",
+  "purl": "pkg:npm/run-parallel@1.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA=="
+}

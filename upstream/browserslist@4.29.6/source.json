@@ -1,0 +1,12 @@
+{
+  "name": "browserslist",
+  "version": "4.29.6",
+  "revision": "786cd515d285bc41351f241a64422e924f87c4c9",
+  "repository": "https://github.com/browserslist/browserslist.git",
+  "purl": "pkg:npm/browserslist@4.29.6",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-CmVVIQ3RVc5HxYEc9X84GvxK/C8C1wH8TlKAiO7uTxF8PDwt7r8t9Qk3J9NkMOVzX5O/HbLv3yzxZg9HPrnI9w=="
+}

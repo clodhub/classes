@@ -1,0 +1,134 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/reservations-class",
+  "version": "1.0.0",
+  "title": "Reservations",
+  "summary": "Bookings from availability to cancellation: checked against the hours and the calendars, priced from the catalogue with member prices, gift cards and home visits, paid through a deposit checkout and refunded by policy",
+  "category": "scheduling/booking",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/reservations",
+      "version": "1.0.0",
+      "path": "classes/reservations-class/reservations.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/payments",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/calendar",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/opening-hours",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/appointment-slots",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/booking-policy",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/shop-catalogue",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/basket",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/money",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/gift-cards",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/member-pricing",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/home-visits",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/reservations-class/check.mjs",
+      "digest": "7fac4fd67932644eaf63be0188fa9948fb14f4d71d77c01d4a7e6e7178340d65"
+    },
+    {
+      "path": "classes/reservations-class/doubles.ts",
+      "digest": "09b32762962257625bbaa9bd43fa9d5c5a4062186d58e7920b9739dc3b95401f"
+    },
+    {
+      "path": "classes/reservations-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/reservations-class/reservation.schema.json",
+      "digest": "fbfe83240e4fce8fe682b644cb41ee58cb564512cf92b4eee5bbc1eeeb3d6d76"
+    },
+    {
+      "path": "classes/reservations-class/reservations.json",
+      "digest": "c5e6c055c82bea76aef95dc62bb22e81b56bf81bf4d64068694ff7ea07fe9a98"
+    },
+    {
+      "path": "classes/reservations-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/reservations-class/zone.ts",
+      "digest": "2390b5b8be0598efe08d71f0e7b464234002fa40fa3eae0be5c003531c228c84"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/reservations-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/reservations-class/check.mjs",
+        "classes/reservations-class/doubles.ts",
+        "classes/reservations-class/records.ts",
+        "classes/reservations-class/zone.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

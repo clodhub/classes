@@ -1,0 +1,12 @@
+{
+  "name": "is-core-module",
+  "version": "2.18.0",
+  "revision": "335346560808d35b44a2bded673c0cc3376e29bb",
+  "repository": "https://github.com/inspect-js/is-core-module.git",
+  "purl": "pkg:npm/is-core-module@2.18.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-qyax9fgaKOEC4qK8WZn7Q4IcoZC9RC1O1fFxRcRTq/oMMkWT/uXpqpXa12kzWR409zAt1drYN9N9BO26UmBCmw=="
+}

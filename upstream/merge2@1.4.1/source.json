@@ -1,0 +1,12 @@
+{
+  "name": "merge2",
+  "version": "1.4.1",
+  "revision": "a7300d42983d668f61d751ad2bfc42c880a29a36",
+  "repository": "https://github.com/teambition/merge2.git",
+  "purl": "pkg:npm/merge2@1.4.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg=="
+}

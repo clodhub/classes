@@ -1,0 +1,407 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/calendar",
+    "version": "1.0.0",
+    "description": "Events on calendars the owner names, the busy times of those calendars, and deletion: what the shop's booking needs from a calendar. records-calendar keeps the events in the shop's own records store and serves them as an iCalendar feed; google-calendar keeps them in Google Calendar, with a copy in the records store. Both write the same com.clodhub/calendar-event documents, so a shop moves from one to the other with its events. Every implementation has a simulated mode, so the shop and the class checks run without a store, an account or a network. Server only."
+  },
+  "methods": [
+    {
+      "name": "createCalendar",
+      "description": "A calendar with the installed settings (or `options.settings`). records-calendar keeps the events in the records store it is given, or in the server process without one; google-calendar calls the Google Calendar API with the service account the environment names and keeps a copy of its events in the records store when it is given one. With `simulate` true every implementation keeps the events in the process and uses no store.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/CreateOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "calendar",
+        "schema": {
+          "$ref": "#/components/schemas/Calendar"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "Calendar.busy",
+      "description": "The busy times of the calendars within the range, cut to it, sorted by start then end; an event that only touches the range (ends at from or starts at to) is not in it. An empty calendar list gives []. Null when the calendars cannot be reached, the implementation has no account configured, or no calendar in the list has a name; the failure is logged. A calendar the provider reports an error for counts as free and the error is logged.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "query",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/BusyQuery"
+          }
+        }
+      ],
+      "result": {
+        "name": "blocks",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/BusyBlock"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Calendar.createEvent",
+      "description": "Adds an event to a calendar; it is busy from start to end from then on. Null when the calendar has no name, the implementation has no account configured, or the calendar cannot be reached; the failure is logged.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "event",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/NewEvent"
+          }
+        }
+      ],
+      "result": {
+        "name": "created",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/CreatedEvent"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Calendar.deleteEvent",
+      "description": "Removes an event; true when it was removed. False when there is no such event on that calendar (an unknown id, another calendar's event, an event already removed), and when the calendar cannot be reached (logged).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "event",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/EventReference"
+          }
+        }
+      ],
+      "result": {
+        "name": "deleted",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Calendar.ics",
+      "description": "Present only on implementations that keep the events themselves (records-calendar; Google Calendar has its own secret iCal address): one calendar's events that overlap the range as iCalendar text (RFC 5545), for the owner to subscribe to from any calendar application. Lines end with CRLF and are folded at 75 octets, times are UTC, text is escaped, each event's UID is its id. Null when the calendar has no name or the events cannot be read (logged).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "calendar",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A calendar the owner names: any text for records-calendar (such as bookings), the calendar's id for google-calendar. A name that is empty or not text counts as not configured."
+          }
+        },
+        {
+          "name": "from",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "to",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "BusyBlock": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "An instant as ISO 8601 text in UTC, as Date.toISOString writes it."
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "An instant as ISO 8601 text in UTC, as Date.toISOString writes it."
+          }
+        },
+        "required": [
+          "start",
+          "end"
+        ],
+        "additionalProperties": false,
+        "description": "A time when one of the calendars is busy, cut to the queried range, so start is before end and both lie within it."
+      },
+      "BusyQuery": {
+        "type": "object",
+        "properties": {
+          "calendars": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "description": "A calendar the owner names: any text for records-calendar (such as bookings), the calendar's id for google-calendar. A name that is empty or not text counts as not configured."
+            },
+            "description": "The calendars to look at. Names that are empty or not text are left out with a warning in the log."
+          },
+          "from": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The start of the range (a JavaScript Date)."
+          },
+          "to": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The end of the range (a JavaScript Date), after from."
+          }
+        },
+        "required": [
+          "calendars",
+          "from",
+          "to"
+        ],
+        "additionalProperties": false
+      },
+      "NewEvent": {
+        "type": "object",
+        "properties": {
+          "calendar": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A calendar the owner names: any text for records-calendar (such as bookings), the calendar's id for google-calendar. A name that is empty or not text counts as not configured."
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the event starts (a JavaScript Date)."
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the event ends (a JavaScript Date), after start."
+          },
+          "summary": {
+            "type": "string",
+            "description": "The event's title, such as the treatment and the client's name."
+          },
+          "description": {
+            "type": "string",
+            "description": "The event's details as plain text; lines are separated by newlines."
+          },
+          "timeZone": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid: the shop's wall clock for the event."
+          }
+        },
+        "required": [
+          "calendar",
+          "start",
+          "end",
+          "summary",
+          "description",
+          "timeZone"
+        ],
+        "additionalProperties": false
+      },
+      "CreatedEvent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "The event's id on its calendar; deleteEvent takes it."
+          },
+          "link": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Where the owner opens the event (Google Calendar's event page); null when there is none."
+          },
+          "calendar": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A calendar the owner names: any text for records-calendar (such as bookings), the calendar's id for google-calendar. A name that is empty or not text counts as not configured."
+          }
+        },
+        "required": [
+          "id",
+          "link",
+          "calendar"
+        ],
+        "additionalProperties": false
+      },
+      "EventReference": {
+        "type": "object",
+        "properties": {
+          "calendar": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A calendar the owner names: any text for records-calendar (such as bookings), the calendar's id for google-calendar. A name that is empty or not text counts as not configured."
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "calendar",
+          "id"
+        ],
+        "additionalProperties": false,
+        "description": "An event as createEvent returned it: its calendar and id."
+      },
+      "CreateOptions": {
+        "type": "object",
+        "properties": {
+          "env": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "description": "Environment variables to read the service account from (google-calendar); the server's environment by default."
+          },
+          "settings": {
+            "type": "object",
+            "description": "Settings that replace the installed ones."
+          },
+          "fetch": {
+            "description": "The fetch function for provider requests (google-calendar); the global fetch by default."
+          },
+          "records": {
+            "description": "A com.clodhub/records store (an object with collection(name)). Every implementation keeps its events there as com.clodhub/calendar-event documents in the collection its collection setting names: records-calendar keeps the events themselves; google-calendar keeps a copy of each event it creates and removes the copy when it deletes the event, and never reads the copies for busy times. Without a store records-calendar keeps the events in the process and google-calendar keeps no copies. Not used in simulated mode."
+          },
+          "now": {
+            "description": "A function returning the current Date."
+          },
+          "simulate": {
+            "type": "boolean",
+            "default": false,
+            "description": "Keep events in the server process instead: no store, account or network. Every simulated calendar with the same settings in one process shares them. For local use and checks."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Calendar": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Which implementation: records or google."
+          }
+        },
+        "required": [
+          "kind"
+        ],
+        "description": "A calendar client. Its operations fail open: when the calendars cannot be reached they log the failure and give null or false instead of throwing, and callers decide (a booking goes ahead when busy is null)."
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32020,
+        "message": "RangeError: an argument outside its documented shape: not an object, a calendar list that is not a list, a Date that is not valid, an end that is not after its start, text that is not text, an unknown time zone"
+      },
+      "InvalidSettings": {
+        "code": -32021,
+        "message": "RangeError: a setting outside its grammar, or a records option that is not a store"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "server": "server/index.ts"
+  }
+}

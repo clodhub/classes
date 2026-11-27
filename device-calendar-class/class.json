@@ -1,0 +1,75 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/device-calendar-class",
+  "version": "1.0.0",
+  "title": "Device calendar",
+  "summary": "A booking added to the customer's own calendar: the system's event editor on Apple devices and Android, an .ics file on the website",
+  "category": "scheduling/calendars",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/device-calendar",
+      "version": "1.0.0",
+      "path": "classes/device-calendar-class/device-calendar.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "android": [
+          "android/src/main/java"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/device-calendar-class/check.mjs",
+      "digest": "56fb79cdd756465ab638213c8b1fdf8f07e87d6124ca565a63002813ba282b73"
+    },
+    {
+      "path": "classes/device-calendar-class/device-calendar.json",
+      "digest": "db378175944df23e00e272e0c1872219e99daa3a89baeae9eff3265ca2a57810"
+    },
+    {
+      "path": "classes/device-calendar-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/device-calendar-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/device-calendar-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

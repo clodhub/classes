@@ -1,0 +1,844 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/customer-wallet",
+    "version": "1.0.0",
+    "description": "The customer's bookings (with their cancel tokens), gift cards, gift card purchases and member codes kept on their device, each with its server's last answer about it, so the component knows nothing of the server: merge and prune written the same way in TypeScript, Swift and Kotlin (checked against one set of fixtures), kept in the Keychain on Apple devices, in a file sealed with an Android Keystore key on Android, and in the browser's storage on the website. The application refreshes the items from its server, and puts in the items a server gives back (to an app installed later), each with its snapshot."
+  },
+  "methods": [
+    {
+      "name": "merge",
+      "description": "The items of both lists, one per kind and id, in kind order (booking, giftCard, giftCardPurchase, member) then id order (UTF-16 code units). Of two items with one kind and id the later refresh wins (no refresh is the earliest; a tie goes to the one later in the lists), but a secret is never replaced by an empty one. Swift WalletItems.merge(_:_:); Kotlin merge(current, incoming).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "current",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WalletItem"
+            }
+          }
+        },
+        {
+          "name": "incoming",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WalletItem"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidItem"
+        }
+      ]
+    },
+    {
+      "name": "prune",
+      "description": "The items to keep, in their order: those with no expiry, or that expired at most keepDays before now. Swift WalletItems.prune(_:now:keepDays:); Kotlin prune(items, now, keepDays).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "items",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WalletItem"
+            }
+          }
+        },
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "keepDays",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3650
+          }
+        }
+      ],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidItem"
+        }
+      ]
+    },
+    {
+      "name": "createWallet",
+      "description": "Web: the wallet kept in the browser's storage under options.key as {format: 1, items} with ISO 8601 instants, unencrypted (the browser has no secret store); text that cannot be read counts as an empty wallet.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "storage",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/KeyValueStorage"
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/WalletOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "wallet",
+        "schema": {
+          "$ref": "#/components/schemas/Wallet"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidItem"
+        }
+      ]
+    },
+    {
+      "name": "Wallet.items",
+      "description": "The items, read from the storage each time (another page may have changed them).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Wallet.put",
+      "description": "Merges the items in and keeps the result; listeners hear it when the wallet changed.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "items",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WalletItem"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidItem"
+        }
+      ]
+    },
+    {
+      "name": "Wallet.remove",
+      "description": "Removes the item of that kind and id; false when there is none.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "kind",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WalletItemKind"
+          }
+        },
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "removed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Wallet.prune",
+      "description": "Removes the items that expired more than keepDays ago.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Wallet.clear",
+      "description": "Removes every item.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "none",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "Wallet.subscribe",
+      "description": "Adds a listener (items) => void; returns a function () => void that removes it.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "listener",
+          "required": true,
+          "schema": {
+            "description": "Function (items: WalletItem[]) => void."
+          }
+        }
+      ],
+      "result": {
+        "name": "unsubscribe",
+        "schema": {
+          "description": "Function () => void."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "exportAll",
+      "description": "Web: every item as one com.clodhub/wallet-item record per line (wallet-item.schema.json), to move a wallet to another browser.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "storage",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/KeyValueStorage"
+          }
+        },
+        {
+          "name": "key",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "ndjson",
+        "schema": {
+          "type": "string",
+          "description": "ndjson"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "importAll",
+      "description": "Web: merges the records of an export into the wallet and lists the lines that were not records.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "storage",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/KeyValueStorage"
+          }
+        },
+        {
+          "name": "ndjson",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "key",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "$ref": "#/components/schemas/ImportResult"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.init",
+      "description": "Swift: @MainActor CustomerWallet(storage: WalletStorage = KeychainWalletStorage(), keepDays: 30, now:), an ObservableObject whose @Published items SwiftUI views observe. Kotlin: CustomerWallet(storage, keepDays = 30, now) with subscribe(listener). Bytes that cannot be read or opened count as an empty wallet; an import from the application's server brings the items back.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "storage",
+          "required": true,
+          "schema": {
+            "description": "WalletStorage: load, save and clear of the wallet's bytes."
+          }
+        },
+        {
+          "name": "keepDays",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3650,
+            "default": 30
+          }
+        },
+        {
+          "name": "now",
+          "required": false,
+          "schema": {
+            "description": "A function giving the current Date or Instant."
+          }
+        }
+      ],
+      "result": {
+        "name": "wallet",
+        "schema": {
+          "description": "CustomerWallet."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.items",
+      "description": "The items (Swift @Published, Kotlin a read-only property).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.put",
+      "description": "Merges the items in (a purchase, a refresh, an import from a server), as merge does, and keeps the result.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "items",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WalletItem"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StorageFailure"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.remove",
+      "description": "Removes the item of that kind and id; false when there is none.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "kind",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WalletItemKind"
+          }
+        },
+        {
+          "name": "id",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "removed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StorageFailure"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.prune",
+      "description": "Removes the items that expired more than keepDays ago.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/WalletItem"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StorageFailure"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.clear",
+      "description": "Removes every item and the kept bytes.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "none",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/StorageFailure"
+        }
+      ]
+    },
+    {
+      "name": "CustomerWallet.subscribe",
+      "description": "Kotlin: adds a listener (List<WalletItem>) -> Unit told after every change; returns a function that removes it (wrap it in a Compose state or a StateFlow in the application).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "listener",
+          "required": true,
+          "schema": {
+            "description": "Function (List<WalletItem>) -> Unit."
+          }
+        }
+      ],
+      "result": {
+        "name": "unsubscribe",
+        "schema": {
+          "description": "Function () -> Unit."
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "KeychainWalletStorage.init",
+      "description": "Swift: the wallet as one generic password item of the Keychain (service com.clodhub.customer-wallet, account wallet), kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly and the data protection keychain, so it never leaves the device.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "service",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "account",
+          "required": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "storage",
+        "schema": {
+          "description": "KeychainWalletStorage."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        }
+      ]
+    },
+    {
+      "name": "EncryptedFileWalletStorage.init",
+      "description": "Kotlin: the wallet in a file of the application's private folder (customer-wallet.sealed), sealed with AES-GCM under a 256-bit key the Android Keystore makes and keeps on the device (alias com.clodhub.customer-wallet); written beside the file and moved over it. EncryptedFileWalletStorage(context) or (file, keyAlias).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "context",
+          "required": true,
+          "schema": {
+            "description": "android.content.Context, or a java.io.File and a key alias."
+          }
+        }
+      ],
+      "result": {
+        "name": "storage",
+        "schema": {
+          "description": "EncryptedFileWalletStorage."
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "MemoryWalletStorage.init",
+      "description": "The wallet in memory, for previews and checks.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "storage",
+        "schema": {
+          "description": "MemoryWalletStorage."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "WalletItemKind": {
+        "enum": [
+          "booking",
+          "giftCard",
+          "giftCardPurchase",
+          "member"
+        ],
+        "description": "In this order. Swift WalletItemKind cases of the same names; Kotlin BOOKING, GIFT_CARD, GIFT_CARD_PURCHASE, MEMBER with these codes."
+      },
+      "WalletItem": {
+        "type": "object",
+        "description": "One thing the customer keeps (Swift struct WalletItem, Codable; Kotlin data class WalletItem with java.time.Instant). The wallet knows nothing of the server: snapshot is its last answer about the item, as JSON text.",
+        "properties": {
+          "kind": {
+            "$ref": "#/components/schemas/WalletItemKind"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "secret": {
+            "type": "string",
+            "description": "A booking's cancel token, a card's code; may be empty until known."
+          },
+          "snapshot": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "JSON text; null before the first refresh."
+          },
+          "refreshedAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the snapshot was answered; null before the first refresh."
+          },
+          "expiresAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the item stops mattering (a booking's end, a card's expiry or last use); null keeps it."
+          }
+        },
+        "required": [
+          "kind",
+          "id",
+          "secret",
+          "snapshot",
+          "refreshedAt",
+          "expiresAt"
+        ],
+        "additionalProperties": false
+      },
+      "KeyValueStorage": {
+        "type": "object",
+        "description": "localStorage or anything with the same three functions.",
+        "required": [
+          "getItem",
+          "setItem",
+          "removeItem"
+        ],
+        "properties": {
+          "getItem": {
+            "description": "Function (key) => string | null."
+          },
+          "setItem": {
+            "description": "Function (key, value) => void."
+          },
+          "removeItem": {
+            "description": "Function (key) => void."
+          }
+        }
+      },
+      "WalletOptions": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "default": "clodhub.customer-wallet",
+            "description": "The storage key."
+          },
+          "keepDays": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 3650,
+            "default": 30,
+            "description": "Days an expired item stays."
+          },
+          "now": {
+            "description": "A function giving the current Date."
+          }
+        },
+        "additionalProperties": false
+      },
+      "Wallet": {
+        "type": "object",
+        "description": "createWallet's object; its functions are the Wallet.* methods.",
+        "required": [
+          "items",
+          "put",
+          "remove",
+          "prune",
+          "clear",
+          "subscribe"
+        ]
+      },
+      "ImportResult": {
+        "type": "object",
+        "properties": {
+          "imported": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "rejected": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Lines that were not wallet-item records."
+          }
+        },
+        "required": [
+          "imported",
+          "rejected"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "errors": {
+      "InvalidItem": {
+        "code": -32080,
+        "message": "RangeError (Swift: precondition failure; Kotlin: IllegalArgumentException): an unknown kind, an empty id, a value of the wrong type or keepDays outside 0 to 3650 (programmer error)"
+      },
+      "StorageFailure": {
+        "code": -32081,
+        "message": "Swift KeychainWalletStorage.Failure with the Keychain's OSStatus; Kotlin IOException or GeneralSecurityException from the file or the Keystore"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "apple": "apple/Sources",
+    "android": "android/src/main/java"
+  }
+}

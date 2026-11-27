@@ -1,0 +1,12 @@
+{
+  "name": "object-hash",
+  "version": "3.0.0",
+  "revision": "04db18b253f62d9ef88203b64560693b33812868",
+  "repository": "https://github.com/puleos/object-hash.git",
+  "purl": "pkg:npm/object-hash@3.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw=="
+}

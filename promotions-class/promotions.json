@@ -1,0 +1,1680 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/promotions",
+    "version": "1.0.0",
+    "description": "Promotions of a shop: a pack of sessions of a covered catalogue item at a discount, with a title and conditions in each language, an optional image kept in the document and a schedule that switches it on and off. The pack is sold as a gift card for that many sessions (the application passes packOffer's pack to gift cards' checkout; promotions never calls gift cards). Coverage, pack prices, links, input checks and due schedules are pure and run in the browser and on the server; the server keeps the promotions in a records store (com.clodhub/records)."
+  },
+  "methods": [
+    {
+      "name": "coversItem",
+      "description": "Whether the promotion covers an item: it covers all items, names the item, or names the item's own category.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promo",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        },
+        {
+          "name": "slug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "categorySlug",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "covered",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "coveredItems",
+      "description": "The catalogue items the promotion covers: its named items first, then the items of its categories in catalogue order, each once; for all items, the whole index. Named items the catalogue no longer has are left out.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promo",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        },
+        {
+          "name": "index",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IndexEntry"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "items",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/IndexEntry"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "packPrice",
+      "description": "The price of a pack: itemPrice x packSize less discountPercent, rounded half up to whole currency units (10^minorDigits minor units).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "itemPrice",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR)."
+          }
+        },
+        {
+          "name": "packSize",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        },
+        {
+          "name": "discountPercent",
+          "required": true,
+          "schema": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          }
+        },
+        {
+          "name": "minorDigits",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4,
+            "default": 2
+          },
+          "description": "The currency's minor digits (money's minorDigits): 2 for EUR, 0 for JPY."
+        }
+      ],
+      "result": {
+        "name": "price",
+        "schema": {
+          "type": "integer",
+          "description": "An amount in the currency's minor unit (cents for EUR)."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "packOffer",
+      "description": "The pack a gift card checkout sells for one item and length, priced from the catalogue option: INACTIVE when the promotion is off, NOT_COVERED when it does not cover the item, UNKNOWN_OPTION when the item has no option of that many minutes.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promo",
+          "required": true,
+          "schema": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Coverage"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "_id": {
+                    "type": "string",
+                    "minLength": 1,
+                    "description": "A records document id."
+                  },
+                  "active": {
+                    "type": "boolean"
+                  },
+                  "packSize": {
+                    "type": "integer"
+                  },
+                  "discountPercent": {
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "_id",
+                  "active",
+                  "packSize",
+                  "discountPercent"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "name": "item",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CatalogueItem"
+          }
+        },
+        {
+          "name": "minutes",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        },
+        {
+          "name": "minorDigits",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4,
+            "default": 2
+          }
+        }
+      ],
+      "result": {
+        "name": "offer",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "pack": {
+                  "$ref": "#/components/schemas/PackOffer"
+                },
+                "itemPrice": {
+                  "type": "integer",
+                  "description": "An amount in the currency's minor unit (cents for EUR)."
+                },
+                "minutes": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ok",
+                "pack",
+                "itemPrice",
+                "minutes"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "INACTIVE",
+                    "NOT_COVERED",
+                    "UNKNOWN_OPTION"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "linkTarget",
+      "description": "The item a promotion's card links to: its first named item the catalogue has, else the first item of its first category that has any, else for a promotion on all items the fallback item when the catalogue has it; null otherwise.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promo",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Coverage"
+          }
+        },
+        {
+          "name": "index",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IndexEntry"
+            }
+          }
+        },
+        {
+          "name": "fallbackSlug",
+          "required": true,
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "name": "target",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "itemSlug": {
+                  "type": "string"
+                },
+                "categorySlug": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "itemSlug",
+                "categorySlug"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "validatePromotionInput",
+      "description": "Checks the owner's form. MISSING_FIELDS: no title in any language, a pack size or discount that is missing, 0 or not a number, malformed texts or slug lists, or nothing covered. IMAGE_TOO_LARGE: more than maximumImageBytes. IMAGE_TYPE: not base64 or not one of imageTypes. INVALID_DATES: a date that is not an instant with its zone, or an end not after the start. Pack size and discount are rounded and kept within bounds. With partial, only the fields given are checked and returned, for an update.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PromotionInput"
+          }
+        },
+        {
+          "name": "settings",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/PromotionSettings"
+          },
+          "description": "The installed settings by default."
+        },
+        {
+          "name": "partial",
+          "required": false,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "checked",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "value": {
+                  "$ref": "#/components/schemas/PromotionValues"
+                }
+              },
+              "required": [
+                "ok",
+                "value"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "MISSING_FIELDS",
+                    "IMAGE_TOO_LARGE",
+                    "IMAGE_TYPE",
+                    "INVALID_DATES"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "checkValues",
+      "description": "The checks that need a whole promotion, as an update makes it: something covered and a title (MISSING_FIELDS), the end after the start (INVALID_DATES); null when it holds.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "values",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PromotionValues"
+          }
+        }
+      ],
+      "result": {
+        "name": "code",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/InputCode"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "dueChanges",
+      "description": "The schedule switches due at now: inactive promotions whose start has passed and whose end has not (activate), active promotions whose end has passed (deactivate). A promotion whose start and end have both passed stays off.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promos",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScheduleState"
+            }
+          }
+        },
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        }
+      ],
+      "result": {
+        "name": "changes",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "activate": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A records document id."
+              }
+            },
+            "deactivate": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "description": "A records document id."
+              }
+            }
+          },
+          "required": [
+            "activate",
+            "deactivate"
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings given as numbers and lists or as rendered template text; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/PromotionSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/PromotionSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "createPromotions",
+      "description": "The shop's promotions in the records store, with the installed settings or options.settings over them.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CreateOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "promotions",
+        "schema": {
+          "$ref": "#/components/schemas/Promotions"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.ensureIndexes",
+      "description": "Creates the index the storefront's lists use.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.applySchedules",
+      "description": "Switches on the promotions whose start has passed (and end has not) and switches off those whose end has passed, setting updatedAt; resolves to how many changed. list, featured and get call it first.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "changed",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "activated": {
+              "type": "integer"
+            },
+            "deactivated": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "activated",
+            "deactivated"
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.list",
+      "description": "Every promotion, or the active ones with activeOnly, newest first.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "filter",
+          "required": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "activeOnly": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "promotions",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Promotion"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.featured",
+      "description": "The newest active promotions, limit of them (featuredCount by default).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "limit",
+          "required": false,
+          "schema": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      ],
+      "result": {
+        "name": "promotions",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Promotion"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.get",
+      "description": "One promotion for the storefront; an inactive one is INACTIVE.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promotionId",
+          "required": true,
+          "schema": {},
+          "description": "A promotion's _id; anything else is NOT_FOUND."
+        }
+      ],
+      "result": {
+        "name": "found",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "promotion": {
+                  "$ref": "#/components/schemas/Promotion"
+                }
+              },
+              "required": [
+                "ok",
+                "promotion"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "NOT_FOUND",
+                    "INACTIVE"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.create",
+      "description": "Checks the input (validatePromotionInput) and stores a new promotion, switched off; its schedule or setActive switches it on.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PromotionInput"
+          }
+        }
+      ],
+      "result": {
+        "name": "created",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "promotion": {
+                  "$ref": "#/components/schemas/Promotion"
+                }
+              },
+              "required": [
+                "ok",
+                "promotion"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "MISSING_FIELDS",
+                    "IMAGE_TOO_LARGE",
+                    "IMAGE_TYPE",
+                    "INVALID_DATES"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.update",
+      "description": "Checks the fields given (validatePromotionInput with partial) and the promotion they make (checkValues), then changes them and updatedAt.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promotionId",
+          "required": true,
+          "schema": {},
+          "description": "A promotion's _id; anything else is NOT_FOUND."
+        },
+        {
+          "name": "input",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/PromotionInput"
+          }
+        }
+      ],
+      "result": {
+        "name": "updated",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "promotion": {
+                  "$ref": "#/components/schemas/Promotion"
+                }
+              },
+              "required": [
+                "ok",
+                "promotion"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "MISSING_FIELDS",
+                    "IMAGE_TOO_LARGE",
+                    "IMAGE_TYPE",
+                    "INVALID_DATES",
+                    "NOT_FOUND"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.remove",
+      "description": "Deletes a promotion. Gift cards already sold for it keep their sessions.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promotionId",
+          "required": true,
+          "schema": {},
+          "description": "A promotion's _id; anything else is NOT_FOUND."
+        }
+      ],
+      "result": {
+        "name": "removed",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                }
+              },
+              "required": [
+                "ok"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "NOT_FOUND"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "Promotions.setActive",
+      "description": "Switches a promotion on or off by hand. Switching off clears a start that has passed and switching on clears an end that has passed, so applySchedules does not undo it; schedules still to come are kept. An active that is not a boolean is MISSING_FIELDS.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "promotionId",
+          "required": true,
+          "schema": {},
+          "description": "A promotion's _id; anything else is NOT_FOUND."
+        },
+        {
+          "name": "active",
+          "required": true,
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "switched",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "promotion": {
+                  "$ref": "#/components/schemas/Promotion"
+                }
+              },
+              "required": [
+                "ok",
+                "promotion"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "enum": [
+                    "NOT_FOUND",
+                    "MISSING_FIELDS"
+                  ]
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "LocalText": {
+        "type": "object",
+        "propertyNames": {
+          "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+        },
+        "additionalProperties": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+      },
+      "PromotionImage": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "string",
+            "description": "The image bytes in standard base64 with padding."
+          },
+          "mimeType": {
+            "type": "string",
+            "pattern": "^image/[a-z0-9-]+$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "The decoded size, measured from data."
+          }
+        },
+        "required": [
+          "data",
+          "mimeType",
+          "bytes"
+        ],
+        "additionalProperties": false,
+        "description": "An image kept in the document itself, as the source kept it."
+      },
+      "Coverage": {
+        "type": "object",
+        "properties": {
+          "itemSlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "categorySlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "allItems": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "itemSlugs",
+          "categorySlugs",
+          "allItems"
+        ],
+        "description": "Which catalogue items a promotion covers: all items, the items named, and the items of the categories named."
+      },
+      "PromotionValues": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "object",
+            "propertyNames": {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+          },
+          "conditions": {
+            "type": "object",
+            "propertyNames": {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+          },
+          "itemSlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "categorySlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "allItems": {
+            "type": "boolean"
+          },
+          "packSize": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "How many sessions of the item the pack holds."
+          },
+          "discountPercent": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          },
+          "activateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the schedule switches the promotion on; null for none."
+          },
+          "deactivateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the schedule switches it off; after activateAt when both are set."
+          },
+          "image": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PromotionImage"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "title",
+          "conditions",
+          "itemSlugs",
+          "categorySlugs",
+          "allItems",
+          "packSize",
+          "discountPercent",
+          "activateAt",
+          "deactivateAt",
+          "image"
+        ],
+        "additionalProperties": false,
+        "description": "What the owner edits."
+      },
+      "Promotion": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A records document id."
+          },
+          "title": {
+            "type": "object",
+            "propertyNames": {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+          },
+          "conditions": {
+            "type": "object",
+            "propertyNames": {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+          },
+          "itemSlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "categorySlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "allItems": {
+            "type": "boolean"
+          },
+          "packSize": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "How many sessions of the item the pack holds."
+          },
+          "discountPercent": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 99
+          },
+          "activateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the schedule switches the promotion on; null for none."
+          },
+          "deactivateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When the schedule switches it off; after activateAt when both are set."
+          },
+          "image": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/PromotionImage"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        "required": [
+          "_id",
+          "title",
+          "conditions",
+          "itemSlugs",
+          "categorySlugs",
+          "allItems",
+          "packSize",
+          "discountPercent",
+          "activateAt",
+          "deactivateAt",
+          "image",
+          "active",
+          "createdAt",
+          "updatedAt"
+        ],
+        "additionalProperties": false,
+        "description": "A promotion as stored (com.clodhub/promotion): a pack of packSize sessions of one covered item at discountPercent off, sold as a gift card for that many sessions."
+      },
+      "PromotionInput": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "object",
+            "propertyNames": {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+          },
+          "conditions": {
+            "type": "object",
+            "propertyNames": {
+              "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"
+            },
+            "additionalProperties": {
+              "type": "string",
+              "minLength": 1
+            },
+            "description": "Text by language code, such as {\"en\": ..., \"es\": ...}; any number of languages."
+          },
+          "itemSlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "categorySlugs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uniqueItems": true
+          },
+          "allItems": {
+            "type": "boolean"
+          },
+          "packSize": {
+            "type": "number",
+            "description": "Rounded and kept from 1 to maximumPackSize; 0 or missing is MISSING_FIELDS."
+          },
+          "discountPercent": {
+            "type": "number",
+            "description": "Rounded and kept from 1 to 99; 0 or missing is MISSING_FIELDS."
+          },
+          "activateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "string",
+                "maxLength": 0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A Date or date-time text with its zone (Z or +hh:mm); empty or null for none."
+          },
+          "deactivateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "string",
+                "maxLength": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "image": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "type": "string"
+                  },
+                  "mimeType": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "data",
+                  "mimeType"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "Base64 data and its MIME type; the size is measured from the data. null removes the image."
+          }
+        },
+        "description": "What the owner's form sends. Unknown fields are ignored."
+      },
+      "IndexEntry": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "categorySlug": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "slug",
+          "categorySlug"
+        ],
+        "description": "One catalogue item, as shop-catalogue's index() lists them."
+      },
+      "CatalogueItem": {
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "categorySlug": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "minutes": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "price": {
+                  "type": "integer",
+                  "description": "An amount in the currency's minor unit (cents for EUR)."
+                }
+              },
+              "required": [
+                "minutes",
+                "price"
+              ]
+            }
+          }
+        },
+        "required": [
+          "slug",
+          "categorySlug",
+          "options"
+        ],
+        "description": "A catalogue item with its price options (shop-catalogue's CatalogueItem)."
+      },
+      "PackOffer": {
+        "type": "object",
+        "properties": {
+          "promotionId": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A records document id."
+          },
+          "packSize": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "discountPercent": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "price": {
+            "type": "integer",
+            "description": "The whole pack's price."
+          }
+        },
+        "required": [
+          "promotionId",
+          "packSize",
+          "discountPercent",
+          "price"
+        ],
+        "additionalProperties": false,
+        "description": "The pack gift cards' checkout takes as its option pack."
+      },
+      "ScheduleState": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "A records document id."
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "activateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A Date, or its ISO 8601 text as JSON gives it."
+          },
+          "deactivateAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "_id",
+          "active",
+          "activateAt",
+          "deactivateAt"
+        ]
+      },
+      "PromotionSettings": {
+        "type": "object",
+        "properties": {
+          "maximumPackSize": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 100
+          },
+          "maximumImageBytes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10485760,
+            "default": 524288
+          },
+          "featuredCount": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "default": 2
+          },
+          "imageTypes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "default": [
+              "jpeg",
+              "png",
+              "webp",
+              "gif"
+            ],
+            "description": "Accepted image subtypes: image/<type>."
+          }
+        },
+        "required": [
+          "maximumPackSize",
+          "maximumImageBytes",
+          "featuredCount",
+          "imageTypes"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "maximumPackSize": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "maximumImageBytes": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "featuredCount": {
+            "type": [
+              "integer",
+              "string"
+            ]
+          },
+          "imageTypes": {
+            "oneOf": [
+              {
+                "type": "string",
+                "description": "Subtypes separated by spaces, such as jpeg png webp gif."
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          }
+        },
+        "description": "Settings as numbers and lists or as the rendered template's text; unset and unrendered ({{name}}) values take the defaults."
+      },
+      "CreateOptions": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "description": "The records store (com.clodhub/records); the promotions live in its collection promotions (PROMOTIONS_COLLECTION)."
+          },
+          "now": {
+            "description": "Returns the current Date, for timestamps and schedules; the system clock by default."
+          },
+          "settings": {
+            "$ref": "#/components/schemas/RawSettings",
+            "description": "Settings that replace the installed ones."
+          }
+        },
+        "required": [
+          "records"
+        ],
+        "additionalProperties": false
+      },
+      "Promotions": {
+        "type": "object",
+        "properties": {
+          "settings": {
+            "$ref": "#/components/schemas/PromotionSettings"
+          }
+        },
+        "required": [
+          "settings"
+        ],
+        "description": "The shop's promotions in a records store."
+      },
+      "InputCode": {
+        "enum": [
+          "MISSING_FIELDS",
+          "IMAGE_TOO_LARGE",
+          "IMAGE_TYPE",
+          "INVALID_DATES"
+        ]
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32030,
+        "message": "RangeError: a setting outside its range or grammar"
+      },
+      "InvalidArgument": {
+        "code": -32031,
+        "message": "RangeError: an amount, pack size, percentage, minor digits or limit outside its range"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

@@ -1,0 +1,649 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/booking-reminders",
+    "version": "1.0.0",
+    "description": "Local notifications before each booking, with no server: a plan that is the same on every platform (TypeScript, Swift and Kotlin, checked against one set of fixtures) and the platforms' own schedulers: UNUserNotificationCenter on iPhone, iPad and Mac, AlarmManager and NotificationManager on Android. The website uses the plan only. Lead times are the settings firstLeadMinutes and secondLeadMinutes; the application gives the texts, already in the customer's language."
+  },
+  "methods": [
+    {
+      "name": "reminderPlan",
+      "description": "The reminders to schedule now: one per confirmed booking and lead time, at the start less the lead time. Times not after now and bookings in any other state are left out; a booking id given twice counts once (the first) and a lead time given twice once. The soonest 60 come back (iOS keeps at most 64 pending notifications for an app), in time order and, at the same time, in id order (UTF-16 code units). TypeScript MAXIMUM_REMINDERS, Swift PlannedReminder.maximumPending and Kotlin MAXIMUM_REMINDERS hold the 60. Swift reminderPlan(_:leadMinutes:now:); Kotlin reminderPlan(bookings, leadMinutes, now) with java.time.Instant.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "bookings",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReminderBooking"
+            }
+          }
+        },
+        {
+          "name": "leadMinutes",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 40320,
+              "description": "Minutes before the start."
+            }
+          }
+        },
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        }
+      ],
+      "result": {
+        "name": "plan",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/PlannedReminder"
+          },
+          "maxItems": 60
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "reminderId",
+      "description": "booking-<bookingId>-<minutes>: the id of a booking's reminder, as the platform's notification id. Swift reminderId(bookingId:minutes:).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "bookingId",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        {
+          "name": "minutes",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 40320,
+            "description": "Minutes before the start."
+          }
+        }
+      ],
+      "result": {
+        "name": "id",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks raw settings; the defaults are 1440 and 120 minutes.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BookingRemindersSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered into web/settings.ts at install.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BookingRemindersSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "leadMinutes",
+      "description": "The lead times the settings ask for, first then second, without 0 and without a repeat: what reminderPlan takes.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "settings",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/BookingRemindersSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "leadMinutes",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 40320,
+            "description": "Minutes before the start."
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "BookingRemindersSettings.from",
+      "description": "Swift static func from(_ raw: [String: String]) throws; Kotlin companion from(raw: Map<String, String>): as settingsFrom, for the rendered text.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BookingRemindersSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "BookingRemindersSettings.installed",
+      "description": "The settings clod rendered at install into apple/Sources/BookingRemindersRawSettings.swift or android/.../Settings.kt. Swift static func installed() throws; Kotlin companion installed().",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BookingRemindersSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "BookingRemindersSettings.leadMinutes",
+      "description": "The property: as leadMinutes(settings).",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "leadMinutes",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 40320,
+            "description": "Minutes before the start."
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminders.init",
+      "description": "Swift: BookingReminders(center: ReminderCenter = UNUserNotificationCenter.current(), leadMinutes:, now:), on iOS and Mac Catalyst, absent on Apple TV. Kotlin: BookingReminders(context, leadMinutes, channelName, smallIcon = the application's icon, now), which creates the notification channel booking-reminders with the name given in the customer's language.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "leadMinutes",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 40320,
+              "description": "Minutes before the start."
+            }
+          }
+        },
+        {
+          "name": "center",
+          "required": false,
+          "schema": {
+            "description": "Swift only: the notification center, or a double conforming to ReminderCenter."
+          }
+        },
+        {
+          "name": "context",
+          "required": false,
+          "schema": {
+            "description": "Kotlin only: android.content.Context."
+          }
+        },
+        {
+          "name": "channelName",
+          "required": false,
+          "schema": {
+            "type": "string"
+          },
+          "description": "Kotlin only: the channel's name the person sees in the system settings."
+        },
+        {
+          "name": "smallIcon",
+          "required": false,
+          "schema": {
+            "type": "integer"
+          },
+          "description": "Kotlin only: a drawable resource id for the status bar."
+        },
+        {
+          "name": "now",
+          "required": false,
+          "schema": {
+            "description": "A function giving the current Date or Instant."
+          }
+        }
+      ],
+      "result": {
+        "name": "reminders",
+        "schema": {
+          "description": "BookingReminders."
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminders.authorize",
+      "description": "Swift: asks the person, once, to allow alerts and sounds (UNUserNotificationCenter.requestAuthorization); true when allowed. On Android 13 and later the application asks for POST_NOTIFICATIONS itself.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "allowed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminders.canNotify",
+      "description": "Whether reminders can appear now: allowed (Swift: authorized or provisional; async) or, on Android, notifications on for the application and the channel not muted.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "allowed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminders.replaceAll",
+      "description": "Schedules the plan for these bookings with the texts the application gives for each reminder, and removes every booking reminder scheduled before that is not in the plan; returns the plan. Swift: async throws, one UNNotificationRequest per reminder with a time-interval trigger (the instant holds across time zone changes) and userInfo bookingId; requests whose id does not start with booking- stay. Kotlin: one AlarmManager alarm per reminder (exact when the application may set exact alarms, else allowed while idle), the reminders and texts kept in the application's preferences.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "bookings",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReminderBooking"
+            }
+          }
+        },
+        {
+          "name": "texts",
+          "required": true,
+          "schema": {
+            "description": "A function (PlannedReminder) -> ReminderText."
+          }
+        }
+      ],
+      "result": {
+        "name": "plan",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/PlannedReminder"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminders.cancel",
+      "description": "Removes the booking's scheduled and shown reminders, as when it is cancelled (Swift async).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "bookingId",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      ],
+      "result": {
+        "name": "none",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "swift"
+        },
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminders.restore",
+      "description": "Kotlin companion restore(context): schedules again the kept reminders still to come and forgets the rest; BookingReminderReceiver calls it after a restart (BOOT_COMPLETED) or an update (MY_PACKAGE_REPLACED).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "context",
+          "required": true,
+          "schema": {
+            "description": "android.content.Context."
+          }
+        }
+      ],
+      "result": {
+        "name": "none",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    },
+    {
+      "name": "BookingReminderReceiver.onReceive",
+      "description": "Kotlin: the BroadcastReceiver the application's manifest declares (android/src/main/AndroidManifest.xml lists it with RECEIVE_BOOT_COMPLETED and POST_NOTIFICATIONS): shows a reminder when its alarm goes off (opening the application's launch activity with the extra BookingReminders.EXTRA_BOOKING_ID) and restores after a restart.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "context",
+          "required": true,
+          "schema": {
+            "description": "android.content.Context."
+          }
+        },
+        {
+          "name": "intent",
+          "required": true,
+          "schema": {
+            "description": "android.content.Intent."
+          }
+        }
+      ],
+      "result": {
+        "name": "none",
+        "schema": {
+          "type": "null"
+        }
+      },
+      "tags": [
+        {
+          "name": "kotlin"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "ReminderBooking": {
+        "type": "object",
+        "description": "A booking reduced to what a reminder needs.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "type": "string",
+            "description": "Only confirmed gets reminders."
+          },
+          "startsAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The start (Swift Date, Kotlin java.time.Instant)."
+          }
+        },
+        "required": [
+          "id",
+          "status",
+          "startsAt"
+        ],
+        "additionalProperties": false
+      },
+      "PlannedReminder": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "booking-<bookingId>-<minutes>, the notification's id on every platform."
+          },
+          "bookingId": {
+            "type": "string"
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 40320,
+            "description": "Minutes before the start."
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When it is shown: the start less the minutes."
+          }
+        },
+        "required": [
+          "id",
+          "bookingId",
+          "minutes",
+          "at"
+        ],
+        "additionalProperties": false
+      },
+      "ReminderText": {
+        "type": "object",
+        "description": "What a reminder says, in the customer's language; the application writes it.",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "body"
+        ],
+        "additionalProperties": false
+      },
+      "BookingRemindersSettings": {
+        "type": "object",
+        "properties": {
+          "firstLeadMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 40320,
+            "description": "Minutes before the start; 0 sends no reminder.",
+            "default": 1440
+          },
+          "secondLeadMinutes": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 40320,
+            "description": "Minutes before the start; 0 sends no reminder.",
+            "default": 120
+          }
+        },
+        "required": [
+          "firstLeadMinutes",
+          "secondLeadMinutes"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": {},
+        "description": "Settings as the text clod renders into the settings templates (or, in TypeScript, numbers); a missing value, or one still in its {{name}} form, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32060,
+        "message": "RangeError (Swift: precondition failure; Kotlin: IllegalArgumentException): a lead time outside 1 to 40320 minutes, an empty booking id or a Date that is not valid (programmer error)"
+      },
+      "InvalidSettings": {
+        "code": -32061,
+        "message": "RangeError (Swift: BookingRemindersSettings.OutOfRange; Kotlin: IllegalArgumentException): a setting that is not a whole number from 0 to 40320"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "apple": "apple/Sources",
+    "android": "android/src/main/java"
+  }
+}

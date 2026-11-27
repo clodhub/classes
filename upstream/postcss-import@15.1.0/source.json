@@ -1,0 +1,12 @@
+{
+  "name": "postcss-import",
+  "version": "15.1.0",
+  "revision": "3f06816f2a10b25f59ae0c6afd71abd48a1f65a2",
+  "repository": "https://github.com/postcss/postcss-import.git",
+  "purl": "pkg:npm/postcss-import@15.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-hpr+J05B2FVYUAXHeK1YyI267J/dDDhMU6B6civm8hSY1jYJnBXxzKDKDswzJmtLHryrjhnDjqqp/49t8FALew=="
+}

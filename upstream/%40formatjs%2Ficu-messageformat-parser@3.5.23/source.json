@@ -1,0 +1,12 @@
+{
+  "name": "@formatjs/icu-messageformat-parser",
+  "version": "3.5.23",
+  "revision": "sha512:881d5f61f86d48677cb87f40f1bd66d3552372fe90b509c96ac79f3f78cf0299b3ef62ffccd8a9cdfdc17688a74cc775c6ebe254286350958beb4893c23510fb",
+  "repository": "https://github.com/formatjs/formatjs.git",
+  "purl": "pkg:npm/%40formatjs/icu-messageformat-parser@3.5.23",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-iB1fYfhtSGd8uH9A8b1m01Ujcv6QtQnJasefP3jPApmz72L/zNipzf3BdoinTMd1xuviVChjUJWL60iTwjUQ+w=="
+}

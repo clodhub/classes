@@ -1,0 +1,12 @@
+{
+  "name": "@swc/core",
+  "version": "1.16.22",
+  "revision": "sha512:905aa1b529a635266a25720ad25f6b17ea0d83679f699a1e35b37fe2ac1b35359f311280a5cea7eeb2b1f36edbc3c2bee249aeee21f42d9d78e10253433ba51f",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/core@1.16.22",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-kFqhtSmmNSZqJXIK0l9rF+oNg2efaZoeNbN/4qwbNTWfMRKApc6n7rKx827bw8K+4kmu7iH0LZ144QJTQzulHw=="
+}

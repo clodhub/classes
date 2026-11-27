@@ -1,0 +1,12 @@
+{
+  "name": "set-blocking",
+  "version": "2.0.0",
+  "revision": "7eec10577b5fff264de477ba3b9d07f404946eff",
+  "repository": "https://github.com/yargs/set-blocking.git",
+  "purl": "pkg:npm/set-blocking@2.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw=="
+}

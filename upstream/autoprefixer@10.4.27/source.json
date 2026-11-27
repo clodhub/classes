@@ -1,0 +1,12 @@
+{
+  "name": "autoprefixer",
+  "version": "10.4.27",
+  "revision": "360f2d9ecbad3315fbabc61fb2131ac939fee211",
+  "repository": "https://github.com/postcss/autoprefixer.git",
+  "purl": "pkg:npm/autoprefixer@10.4.27",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-NP9APE+tO+LuJGn7/9+cohklunJsXWiaWEfV3si4Gi/XHDwVNgkwr1J3RQYFIvPy76GmJ9/bW8vyoU1LcxwKHA=="
+}

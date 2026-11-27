@@ -1,0 +1,1106 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/opening-hours",
+    "version": "1.0.0",
+    "description": "A shop's weekly opening hours in its own time zone: named schedules, the schedule in force, which dates and times can be booked, the wall-clock arithmetic every booking component shares (any IANA zone, correct across daylight saving changes, with Intl.DateTimeFormat only), and the hours as schema.org texts and in words."
+  },
+  "methods": [
+    {
+      "name": "isDate",
+      "description": "Whether the value is a calendar date in the form YYYY-MM-DD.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "isTime",
+      "description": "Whether the value is a time of day from 00:00 to 23:59.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "dayOfWeek",
+      "description": "The day of the week of a calendar date (0 Sunday to 6 Saturday); the same in every time zone.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          }
+        }
+      ],
+      "result": {
+        "name": "day",
+        "schema": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 6,
+          "description": "A day of the week: 0 Sunday to 6 Saturday."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "addDays",
+      "description": "The date a whole number of days after (or, when negative, before) a date.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          }
+        },
+        {
+          "name": "days",
+          "required": true,
+          "schema": {
+            "type": "integer"
+          }
+        }
+      ],
+      "result": {
+        "name": "date",
+        "schema": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "today",
+      "description": "Today's date on the zone's wall clock.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          }
+        },
+        {
+          "name": "now",
+          "required": false,
+          "schema": {
+            "description": "A function returning the current Date; the clock by default."
+          }
+        }
+      ],
+      "result": {
+        "name": "date",
+        "schema": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "wallTime",
+      "description": "The time (HH:MM) an instant shows on the zone's wall clock.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "instant",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          }
+        }
+      ],
+      "result": {
+        "name": "time",
+        "schema": {
+          "type": "string",
+          "pattern": "^\\d{2}:\\d{2}$",
+          "description": "A time on the shop's wall clock, HH:MM from 00:00 to 23:59."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "zonedInstant",
+      "description": "The instant a wall-clock date and time name in a zone, computed with Intl.DateTimeFormat for any IANA zone and correct on the days the clocks change. As RFC 5545 reads local times, a time skipped when the clocks go forward is read with the offset before the change (02:30 becomes 03:30) and a time that happens twice when they go back is its first occurrence. The time may be 24:00, the end of the day.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          }
+        },
+        {
+          "name": "time",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$"
+          }
+        },
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          }
+        }
+      ],
+      "result": {
+        "name": "instant",
+        "schema": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A JavaScript Date; shown here as its ISO 8601 text."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "offsetOf",
+      "description": "The zone's UTC offset, such as +02:00, -03:00 or +05:30, at a wall-clock time of a date (noon by default).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          }
+        },
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          }
+        },
+        {
+          "name": "time",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM from 00:00 to 23:59."
+          }
+        }
+      ],
+      "result": {
+        "name": "offset",
+        "schema": {
+          "type": "string",
+          "pattern": "^[+-]\\d{2}:\\d{2}$"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "validateCalendar",
+      "description": "Every problem with a booking calendar, as text naming where it is; an empty list when it is valid. Checks the time zone, unique schedule ids, the days and windows of each week, by-appointment days that have no windows, and the default schedule.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "value",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "problems",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "scheduleFor",
+      "description": "The schedule with this id, or the default schedule when the id is missing or unknown.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "calendar",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/BookingCalendar"
+          }
+        },
+        {
+          "name": "id",
+          "required": false,
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "name": "schedule",
+        "schema": {
+          "$ref": "#/components/schemas/Schedule"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCalendar"
+        }
+      ]
+    },
+    {
+      "name": "closedDays",
+      "description": "The days of the week with no opening window.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WeekHours"
+          }
+        }
+      ],
+      "result": {
+        "name": "days",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 6,
+            "description": "A day of the week: 0 Sunday to 6 Saturday."
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "windowsOn",
+      "description": "The opening windows of a date.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WeekHours"
+          }
+        },
+        {
+          "name": "date",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+            "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+          }
+        }
+      ],
+      "result": {
+        "name": "windows",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Window"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "earliestBookableDate",
+      "description": "Today on the zone's wall clock plus the lead days.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          }
+        },
+        {
+          "name": "leadDays",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "name": "now",
+          "required": false,
+          "schema": {
+            "description": "A function returning the current Date; the clock by default."
+          }
+        }
+      ],
+      "result": {
+        "name": "date",
+        "schema": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "firstBookableDate",
+      "description": "The first date with an opening window from the earliest bookable date, looking a week ahead; the earliest bookable date when the whole week is closed.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WeekHours"
+          }
+        },
+        {
+          "name": "timeZone",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          }
+        },
+        {
+          "name": "leadDays",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        {
+          "name": "now",
+          "required": false,
+          "schema": {
+            "description": "A function returning the current Date; the clock by default."
+          }
+        }
+      ],
+      "result": {
+        "name": "date",
+        "schema": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+          "description": "A calendar date on the shop's wall clock, YYYY-MM-DD."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "checkBooking",
+      "description": "Whether a booking may start at a date and time, checked in this order: the form of both, the earliest bookable date (and, with no lead days, a start still to come), an open day, a window that holds the start time (open <= time < close).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "date",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "time",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WeekHours"
+          }
+        },
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/BookingOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "check",
+        "schema": {
+          "$ref": "#/components/schemas/BookingCheck"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "openingHoursSpecification",
+      "description": "The schema.org openingHours texts of a week, Monday first: days in a row with the same windows share a day range, one text per window (\"Tu-Fr 09:30-13:30\", \"Tu-Fr 16:00-19:30\", \"Sa 09:00-14:00\").",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/WeekHours"
+          }
+        }
+      ],
+      "result": {
+        "name": "openingHours",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "describeHours",
+      "description": "The opening hours in words, Monday first, with the language's short day names: days with the same windows share an entry, three or more days in a row become a range, entries are joined by \" | \" (\"Tue–Fri: 09:30–13:30, 16:00–19:30 | Sat: 09:00–14:00\"). Days open by appointment show `byAppointment`, closed days show `closed`, and days without such a text are left out. French puts a no-break space before the colon.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "schedule",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Schedule"
+          }
+        },
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/DescribeOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "text",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings given as numbers or as rendered template text; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/OpeningHoursSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/OpeningHoursSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "createActiveSchedule",
+      "description": "Which schedule of the calendar is in force. With a records store the choice is kept in the settings collection, so every server process sees it; without one it is kept by the returned object. A missing, unknown or unreadable choice gives the default schedule.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "deps",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ActiveScheduleDeps"
+          }
+        }
+      ],
+      "result": {
+        "name": "activeSchedule",
+        "schema": {
+          "$ref": "#/components/schemas/ActiveSchedule"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCalendar"
+        }
+      ]
+    },
+    {
+      "name": "ActiveSchedule.get",
+      "description": "The schedule in force and when it was chosen.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "state",
+        "schema": {
+          "$ref": "#/components/schemas/ActiveScheduleState"
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    },
+    {
+      "name": "ActiveSchedule.set",
+      "description": "Puts a schedule of the calendar in force; an id the calendar does not have is UNKNOWN_SCHEDULE. Errors of the store are thrown.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "id",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "result",
+        "schema": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": true
+                },
+                "id": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "description": "A JavaScript Date; shown here as its ISO 8601 text."
+                }
+              },
+              "required": [
+                "ok",
+                "id",
+                "updatedAt"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ok": {
+                  "const": false
+                },
+                "code": {
+                  "const": "UNKNOWN_SCHEDULE"
+                }
+              },
+              "required": [
+                "ok",
+                "code"
+              ]
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "server"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Window": {
+        "type": "object",
+        "properties": {
+          "open": {
+            "type": "string",
+            "pattern": "^\\d{2}:\\d{2}$",
+            "description": "A time on the shop's wall clock, HH:MM from 00:00 to 23:59."
+          },
+          "close": {
+            "type": "string",
+            "pattern": "^(?:(?:[01]\\d|2[0-3]):[0-5]\\d|24:00)$",
+            "description": "HH:MM after open; 24:00 is the end of the day."
+          }
+        },
+        "required": [
+          "open",
+          "close"
+        ],
+        "additionalProperties": false,
+        "description": "One opening window of a day: bookings may start from open until before close."
+      },
+      "WeekHours": {
+        "type": "object",
+        "propertyNames": {
+          "pattern": "^[0-6]$"
+        },
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Window"
+          }
+        },
+        "description": "Opening windows by day of the week, keys \"0\" (Sunday) to \"6\" (Saturday); a missing or empty day is closed. A day's windows are in order and do not overlap."
+      },
+      "Schedule": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "name": {
+            "type": "object",
+            "description": "The schedule's name by language code.",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "hours": {
+            "$ref": "#/components/schemas/WeekHours"
+          },
+          "byAppointmentDays": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6,
+              "description": "A day of the week: 0 Sunday to 6 Saturday."
+            },
+            "uniqueItems": true,
+            "description": "Closed days that are open by prior appointment, outside online booking."
+          }
+        },
+        "required": [
+          "id",
+          "hours"
+        ],
+        "additionalProperties": false,
+        "description": "A named week of opening hours."
+      },
+      "BookingCalendar": {
+        "type": "object",
+        "properties": {
+          "timeZone": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          },
+          "schedules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Schedule"
+            },
+            "minItems": 1
+          },
+          "defaultSchedule": {
+            "type": "string",
+            "description": "The id of the schedule in force when none is chosen."
+          }
+        },
+        "required": [
+          "timeZone",
+          "schedules",
+          "defaultSchedule"
+        ],
+        "additionalProperties": false,
+        "description": "The shop's time zone and its schedules, one of them in force at a time (summer and winter hours)."
+      },
+      "BookingCheck": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              }
+            },
+            "required": [
+              "ok"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "enum": [
+                  "INVALID_FORMAT",
+                  "TOO_SOON",
+                  "CLOSED_DAY",
+                  "OUTSIDE_HOURS"
+                ]
+              }
+            },
+            "required": [
+              "ok",
+              "code"
+            ]
+          }
+        ],
+        "description": "INVALID_FORMAT: not a YYYY-MM-DD date and an HH:MM time; TOO_SOON: before the earliest bookable date or not in the future; CLOSED_DAY: no window that day; OUTSIDE_HOURS: the time is in no window."
+      },
+      "BookingOptions": {
+        "type": "object",
+        "properties": {
+          "timeZone": {
+            "type": "string",
+            "minLength": 1,
+            "description": "An IANA time zone name, such as Europe/Madrid or Australia/Sydney."
+          },
+          "leadDays": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "now": {
+            "description": "A function returning the current Date; the clock by default."
+          }
+        },
+        "required": [
+          "timeZone",
+          "leadDays"
+        ],
+        "additionalProperties": false
+      },
+      "DescribeOptions": {
+        "type": "object",
+        "properties": {
+          "language": {
+            "type": "string",
+            "description": "A language code for the day names, such as en or es."
+          },
+          "byAppointment": {
+            "type": "string",
+            "description": "What days open by appointment show; without it they count as closed."
+          },
+          "closed": {
+            "type": "string",
+            "description": "What closed days show; without it they are left out."
+          }
+        },
+        "required": [
+          "language"
+        ],
+        "additionalProperties": false
+      },
+      "OpeningHoursSettings": {
+        "type": "object",
+        "properties": {
+          "leadDays": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 365,
+            "default": 1,
+            "description": "Whole days between today and the first bookable date: 1 books from tomorrow, 0 from later today."
+          }
+        },
+        "required": [
+          "leadDays"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "properties": {
+          "leadDays": {}
+        },
+        "description": "Settings as numbers or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      },
+      "ActiveScheduleDeps": {
+        "type": "object",
+        "properties": {
+          "records": {
+            "description": "A com.clodhub/records store (optional requirement); the choice is kept in its `settings` collection, document `activeSchedule` (the exported constants SETTINGS_COLLECTION and ACTIVE_SCHEDULE_ID), as com.clodhub/active-schedule. Without one the choice lives in this object only."
+          },
+          "calendar": {
+            "$ref": "#/components/schemas/BookingCalendar"
+          },
+          "now": {
+            "description": "A function returning the current Date; the clock by default."
+          },
+          "onError": {
+            "description": "Called with the error when the store cannot be read; console.error by default."
+          }
+        },
+        "required": [
+          "calendar"
+        ],
+        "additionalProperties": false
+      },
+      "ActiveSchedule": {
+        "type": "object",
+        "description": "The schedule in force, kept in the records store when there is one."
+      },
+      "ActiveScheduleState": {
+        "type": "object",
+        "properties": {
+          "schedule": {
+            "$ref": "#/components/schemas/Schedule"
+          },
+          "updatedAt": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time",
+                "description": "A JavaScript Date; shown here as its ISO 8601 text."
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "When it was chosen; null for the default."
+          }
+        },
+        "required": [
+          "schedule",
+          "updatedAt"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32030,
+        "message": "RangeError: a date, time, time zone, language or number outside its form (programmer error)"
+      },
+      "InvalidSettings": {
+        "code": -32031,
+        "message": "RangeError: leadDays is not a whole number from 0 to 365"
+      },
+      "InvalidCalendar": {
+        "code": -32032,
+        "message": "RangeError: the booking calendar fails validateCalendar, or its default schedule is missing"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

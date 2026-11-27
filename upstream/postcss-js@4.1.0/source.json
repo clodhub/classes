@@ -1,0 +1,12 @@
+{
+  "name": "postcss-js",
+  "version": "4.1.0",
+  "revision": "9c9237d023c39930140cf7432e7b826c114019cb",
+  "repository": "https://github.com/postcss/postcss-js.git",
+  "purl": "pkg:npm/postcss-js@4.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-oIAOTqgIo7q2EOwbhb8UalYePMvYoIeRY2YKntdpFQXNosSu3vLrniGgmH9OKs/qAkfoj5oB3le/7mINW1LCfw=="
+}

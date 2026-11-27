@@ -1,0 +1,12 @@
+{
+  "name": "@eloqnt/extractor",
+  "version": "0.1.0",
+  "revision": "sha512:65eb06a341fb8c2a862ef084d9ed2fc9436144f067211737c6e0ad08cb2b4974dcf834ed8e15dfc85f81b429839365951201312f47bc6376c94328239abdea77",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/%40eloqnt/extractor@0.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ZesGo0H7jCqGLvCE2e0vyUNhRPBnIRc3xuCtCMsrSXTc+DTtjhXfyF+BtCmDk2WVEgExL0e8Y3bJQygjmr3qdw=="
+}

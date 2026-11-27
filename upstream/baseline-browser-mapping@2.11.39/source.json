@@ -1,0 +1,12 @@
+{
+  "name": "baseline-browser-mapping",
+  "version": "2.11.39",
+  "revision": "9b0e73d8e1c1a00385a4a6f5d84d95857c85fd24",
+  "repository": "https://github.com/web-platform-dx/baseline-browser-mapping.git",
+  "purl": "pkg:npm/baseline-browser-mapping@2.11.39",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-Q9buOYhr2ggrEZpImICecZTJHCCd8yXkRUokFlUEQ8uiD6oP82F4W4jWnhOHZYV+wlvrC51V7Wy0ULyWjil5Wg=="
+}

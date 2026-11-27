@@ -1,0 +1,401 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/reservation",
+  "x-version": "1.0.0",
+  "description": "One booking in the reservations collection, as a records export writes it: the document of a com.clodhub/records-line, dates as {\"$date\": ISO text}.",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The records id; the checkout's metadata.reservationId."
+    },
+    "status": {
+      "enum": [
+        "awaiting_payment",
+        "confirmed",
+        "cancelled",
+        "completed"
+      ],
+      "description": "awaiting_payment until the deposit is paid; completed is set by the application."
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "itemSlug": {
+            "type": "string",
+            "minLength": 1
+          },
+          "itemName": {
+            "type": "string",
+            "description": "The catalogue title in the booking's language."
+          },
+          "categorySlug": {
+            "type": "string"
+          },
+          "minutes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "price": {
+            "type": "integer",
+            "description": "What this item costs the customer.",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "itemSlug",
+          "itemName",
+          "categorySlug",
+          "minutes",
+          "price"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "A date on the shop's wall clock, YYYY-MM-DD."
+    },
+    "time": {
+      "type": "string",
+      "pattern": "^\\d{2}:\\d{2}$",
+      "description": "A time on the shop's wall clock, HH:MM."
+    },
+    "timeZone": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The shop's IANA time zone when the booking was made."
+    },
+    "startsAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "The start as an instant."
+    },
+    "minutes": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The whole booking: the items and the gaps between them."
+    },
+    "clientName": {
+      "type": "string"
+    },
+    "clientPhone": {
+      "type": "string"
+    },
+    "clientEmail": {
+      "type": "string",
+      "description": "Trimmed and in lower case."
+    },
+    "message": {
+      "type": "string",
+      "description": "May be empty."
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+      "description": "A language code such as en or es."
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "An upper-case ISO 4217 code."
+    },
+    "total": {
+      "type": "integer",
+      "description": "The items and the call-out fee.",
+      "minimum": 0
+    },
+    "deposit": {
+      "type": "integer",
+      "description": "Paid online; 0 confirms the booking at once.",
+      "minimum": 0
+    },
+    "balance": {
+      "type": "integer",
+      "description": "Paid at the appointment.",
+      "minimum": 0
+    },
+    "calloutFee": {
+      "type": "integer",
+      "description": "An amount in the currency's minor unit (cents for EUR).",
+      "minimum": 0
+    },
+    "homeVisit": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "address": {
+              "type": "object",
+              "properties": {
+                "street": {
+                  "type": "string"
+                },
+                "city": {
+                  "type": "string"
+                },
+                "postalCode": {
+                  "type": "string"
+                },
+                "notes": {
+                  "type": "string",
+                  "description": "Directions for the visit; may be empty."
+                },
+                "lat": {
+                  "type": "number",
+                  "minimum": -90,
+                  "maximum": 90
+                },
+                "lng": {
+                  "type": "number",
+                  "minimum": -180,
+                  "maximum": 180
+                }
+              },
+              "required": [
+                "street",
+                "city",
+                "postalCode",
+                "notes",
+                "lat",
+                "lng"
+              ],
+              "additionalProperties": false,
+              "description": "The address as home-visits' parseAddress gives it."
+            },
+            "distanceKm": {
+              "type": "number",
+              "minimum": 0
+            },
+            "travelMinutes": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Travel time kept free before and after the visit."
+            }
+          },
+          "required": [
+            "address",
+            "distanceKm",
+            "travelMinutes"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "memberCode": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "memberName": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "giftCardCode": {
+      "oneOf": [
+        {
+          "type": "string",
+          "description": "The card's code as the gift cards service stores it."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "giftCardValue": {
+      "type": "integer",
+      "description": "What the card takes off the total; 0 without a card.",
+      "minimum": 0
+    },
+    "giftCardConsumed": {
+      "type": "boolean",
+      "description": "A late customer cancellation used up the card's session."
+    },
+    "cancelToken": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The customer's cancellation secret."
+    },
+    "ownerCancelToken": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The owner's cancellation secret."
+    },
+    "calendarEvent": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "calendar": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "calendar"
+          ],
+          "additionalProperties": false,
+          "description": "The calendar event as com.clodhub/calendar createEvent returned it."
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "createdAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "checkoutId": {
+      "type": "string",
+      "description": "The deposit's payment: a checkout, or an app's sheet payment; absent without a deposit."
+    },
+    "paymentReference": {
+      "type": "string",
+      "description": "What a refund names (com.clodhub/payments CheckoutSummary.paymentReference)."
+    },
+    "paidAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "refundStatus": {
+      "enum": [
+        "pending",
+        "refunded",
+        "not_eligible",
+        "failed"
+      ]
+    },
+    "refundId": {
+      "type": "string"
+    },
+    "refundedAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "cancelledAt": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date, written as a records export writes dates."
+    },
+    "cancelledBy": {
+      "enum": [
+        "customer",
+        "owner",
+        "shop"
+      ],
+      "description": "shop: the booking was cancelled when its payment arrived or its checkout failed."
+    },
+    "cancelReason": {
+      "enum": [
+        "too_late",
+        "slot_lost",
+        "business",
+        "checkout_failed"
+      ],
+      "description": "Absent when the customer cancelled."
+    }
+  },
+  "required": [
+    "_id",
+    "status",
+    "items",
+    "date",
+    "time",
+    "timeZone",
+    "startsAt",
+    "minutes",
+    "clientName",
+    "clientPhone",
+    "clientEmail",
+    "message",
+    "language",
+    "currency",
+    "total",
+    "deposit",
+    "balance",
+    "calloutFee",
+    "homeVisit",
+    "memberCode",
+    "memberName",
+    "giftCardCode",
+    "giftCardValue",
+    "giftCardConsumed",
+    "cancelToken",
+    "ownerCancelToken",
+    "calendarEvent",
+    "createdAt"
+  ],
+  "additionalProperties": false,
+  "x-clodhub-modules": {}
+}

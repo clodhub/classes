@@ -1,0 +1,12 @@
+{
+  "name": "jiti",
+  "version": "1.21.7",
+  "revision": "e420d48300a1d23a5468e5ea9239e2c5b96413ab",
+  "repository": "https://github.com/unjs/jiti.git",
+  "purl": "pkg:npm/jiti@1.21.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "p-locate",
+  "version": "4.1.0",
+  "revision": "a650b26e49713a8cca58f669a7f8aef9b655554c",
+  "repository": "https://github.com/sindresorhus/p-locate.git",
+  "purl": "pkg:npm/p-locate@4.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-R79ZZ/0wAxKGu3oYMlz8jy/kbhsNrS7SKZ7PxEHBgJ5+F2mtFW2fK2cOtBh1cHYkQsbzFV7I+EoRKe6Yt0oK7A=="
+}

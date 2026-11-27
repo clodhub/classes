@@ -1,0 +1,12 @@
+{
+  "name": "ts-interface-checker",
+  "version": "0.1.13",
+  "revision": "56e855cc28aa2a49544119b1731dd1e3f6e48f90",
+  "repository": "https://github.com/gristlabs/ts-interface-checker.git",
+  "purl": "pkg:npm/ts-interface-checker@0.1.13",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA=="
+}

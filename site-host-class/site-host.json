@@ -1,0 +1,482 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/site-host",
+    "version": "1.0.0",
+    "description": "Where and how the shop's Next.js application runs: on the owner's machine behind a TLS proxy, or on a hosting provider. Gives the security headers and next.config, checks the environment before a deployment, lists the deployment steps for each provider and states their costs and limits. Server only."
+  },
+  "methods": [
+    {
+      "name": "providers",
+      "description": "The providers this component can deploy to, in the order of its suitability profiles.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "providers",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Provider"
+          },
+          "minItems": 1
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "securityHeaders",
+      "description": "The response headers for every path: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, and Strict-Transport-Security (two years, subdomains included) when the address is https.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "siteAddress",
+          "required": false,
+          "schema": {
+            "type": "string",
+            "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$",
+            "description": "The shop's public address, such as https://studio.example.com; a site may live under a path."
+          }
+        }
+      ],
+      "result": {
+        "name": "headers",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "key",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "nextConfig",
+      "description": "The application's next.config with poweredByHeader false and the security headers on every path, before the application's own header rules, so a rule of its own overrides a header of the same name on its paths.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "base",
+          "required": false,
+          "schema": {
+            "type": "object"
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "siteAddress": {
+                "type": "string",
+                "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$",
+                "description": "The shop's public address, such as https://studio.example.com; a site may live under a path."
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      ],
+      "result": {
+        "name": "config",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "poweredByHeader": {
+              "const": false
+            }
+          },
+          "required": [
+            "poweredByHeader"
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "checkEnvironment",
+      "description": "Which required variables are unset or blank in the environment (the server's by default), in declaration order.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "declarations",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Declaration"
+            }
+          }
+        },
+        {
+          "name": "env",
+          "required": false,
+          "schema": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        }
+      ],
+      "result": {
+        "name": "check",
+        "schema": {
+          "$ref": "#/components/schemas/EnvironmentCheck"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "deploySteps",
+      "description": "What to run, in order, to put the shop online with the provider, from installing to the health check at <siteAddress>/api/health. Commands never hold secret values; a hosting provider needs the shop's public address, not localhost.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "provider",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Provider"
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/DeployOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "steps",
+        "schema": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DeployStep"
+          },
+          "minItems": 1
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "providerNotes",
+      "description": "What the provider costs and limits, and what happens at the limits, as read from the provider's pages, with their addresses.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "provider",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Provider"
+          }
+        }
+      ],
+      "result": {
+        "name": "notes",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "health",
+      "description": "The response of the shop's /api/health route: 200 with {\"ok\": true}, never cached.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "response",
+        "schema": {
+          "description": "A Fetch API Response."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks the settings; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/SiteHostSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/SiteHostSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Provider": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$",
+        "description": "Where the shop runs: one of providers(), which are the component's suitability profile ids. The recipe's hosting job writes the selected profile's id into the provider setting."
+      },
+      "SiteHostSettings": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "$ref": "#/components/schemas/Provider"
+          },
+          "siteAddress": {
+            "type": "string",
+            "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$",
+            "description": "The shop's public address, such as https://studio.example.com; a site may live under a path."
+          },
+          "accountReference": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,63}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The provider's team or account slug; the setting none is null."
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535,
+            "description": "The port next start listens on, on the owner's machine."
+          }
+        },
+        "required": [
+          "provider",
+          "siteAddress",
+          "accountReference"
+        ],
+        "additionalProperties": true
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "Settings as values or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      },
+      "Declaration": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+          },
+          "secret": {
+            "type": "boolean"
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "secret",
+          "required",
+          "description"
+        ],
+        "additionalProperties": false,
+        "description": "An environment variable the application reads; values never pass through this interface."
+      },
+      "EnvironmentCheck": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "missing": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+            }
+          }
+        },
+        "required": [
+          "ok",
+          "missing"
+        ],
+        "additionalProperties": false
+      },
+      "DeployOptions": {
+        "type": "object",
+        "properties": {
+          "siteAddress": {
+            "type": "string",
+            "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$",
+            "description": "The shop's public address, such as https://studio.example.com; a site may live under a path."
+          },
+          "accountReference": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,63}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "port": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 65535
+          },
+          "project": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]{0,62}$",
+            "description": "The provider's project name; derived from the address when absent."
+          },
+          "variables": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+            },
+            "description": "The names of the variables the deployment must set."
+          }
+        },
+        "additionalProperties": false,
+        "description": "Values that replace the installed settings."
+      },
+      "DeployStep": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "command": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The argument list to run; empty for a step done by hand."
+          }
+        },
+        "required": [
+          "description",
+          "command"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32070,
+        "message": "RangeError: a provider this component does not offer, an address, account, port, project or variable name not of its form"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "server": "server/index.ts"
+  }
+}

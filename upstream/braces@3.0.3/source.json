@@ -1,0 +1,12 @@
+{
+  "name": "braces",
+  "version": "3.0.3",
+  "revision": "74b2db2938fad48a2ea54a9c8bf27a37a62c350d",
+  "repository": "https://github.com/micromatch/braces.git",
+  "purl": "pkg:npm/braces@3.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-yQbXgO/OSZVD2IsiLlro+7Hf6Q18EJrKSEsdoMzKePKXct3gvD8oLcOQdIzGupr5Fj+EDe8gO/lxc1BzfMpxvA=="
+}

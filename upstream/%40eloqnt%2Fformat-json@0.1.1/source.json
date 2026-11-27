@@ -1,0 +1,12 @@
+{
+  "name": "@eloqnt/format-json",
+  "version": "0.1.1",
+  "revision": "sha512:3e9f0364f312581672f02c9d676f772e15e7a2976221574a3b4cfffdf58503e0aad422bdbe4d837688a0105c635a5e02a987d7ad14183dd68a10a4c2ffd7b509",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/%40eloqnt/format-json@0.1.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-Pp8DZPMSWBZy8CydZ293LhXnopdiIVdKO0z//fWFA+Cq1CK9vk2DdoigEFxjWl4CqYfXrRQYPdaKEKTC/9e1CQ=="
+}

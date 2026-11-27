@@ -1,0 +1,12 @@
+{
+  "name": "@swc/helpers",
+  "version": "0.5.15",
+  "revision": "9dfa3f541d7452d07c0849918f599237d1489d32",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/helpers@0.5.15",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g=="
+}

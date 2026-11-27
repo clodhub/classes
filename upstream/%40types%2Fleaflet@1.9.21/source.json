@@ -1,0 +1,12 @@
+{
+  "name": "@types/leaflet",
+  "version": "1.9.21",
+  "revision": "sha512:4db01df4368f1929f3a7a42fb589e09ed31981c464fa280510bc11d8df7d5d99fb45751d2a0b17311fb6f1b50ed2b3ec5a9f0c22efdfe3b96e2c842e48b62fff",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/%40types/leaflet@1.9.21",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-TbAd9DaPGSnzp6QvtYngntMZgcRk+igFELwR2N99XZn7RXUdKgsXMR+28bUO0rPsWp8MIu/f47luLIQuSLYv/w=="
+}

@@ -1,0 +1,82 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/voucher-codes-class",
+  "version": "1.0.0",
+  "title": "Voucher codes",
+  "summary": "Readable bearer codes in hyphenated groups, drawn without bias from a random source, and the reading of typed codes",
+  "category": "commerce/catalogue-and-pricing",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/voucher-codes",
+      "version": "1.0.0",
+      "path": "classes/voucher-codes-class/voucher-codes.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/random-source",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "groups": {
+        "type": "integer"
+      },
+      "groupLength": {
+        "type": "integer"
+      },
+      "alphabet": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/voucher-codes-class/check.mjs",
+      "digest": "ddf500638a0f0ae611c7ba8e8abffa35a26904fb1fb97efdfca6dcf58e042fa3"
+    },
+    {
+      "path": "classes/voucher-codes-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/voucher-codes-class/voucher-codes.json",
+      "digest": "ee531e3610f99af787429287390a9aaa875c293722bf0b67ba2c074bbacaaa71"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/voucher-codes-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/voucher-codes-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

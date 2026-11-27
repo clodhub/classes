@@ -1,0 +1,85 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/home-visits-class",
+  "version": "1.0.0",
+  "title": "Home visits",
+  "summary": "Treatments at the customer's home: qualifying baskets, distance, callout fee and travel time within the service area, home addresses, and geocoding through a Nominatim search service at one request a second",
+  "category": "maps-and-places/geocoding",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/home-visits",
+      "version": "1.0.0",
+      "path": "classes/home-visits-class/home-visits.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "radiusKm": {
+        "type": "integer"
+      },
+      "calloutFee": {
+        "type": "integer"
+      },
+      "travelMinutes": {
+        "type": "integer"
+      },
+      "minimumMinutes": {
+        "type": "integer"
+      },
+      "gapMinutes": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/home-visits-class/check.mjs",
+      "digest": "6498e42d922b39d02107acf2eaa4094d548d4cfbfebb6e89f07f36d99da46f25"
+    },
+    {
+      "path": "classes/home-visits-class/home-visits.json",
+      "digest": "b62776cd980b023a3471901bf0ca6279e271aca50c05903386f9b2a3caf66ab3"
+    },
+    {
+      "path": "classes/home-visits-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/home-visits-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/home-visits-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

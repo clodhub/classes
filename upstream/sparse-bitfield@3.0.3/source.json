@@ -1,0 +1,12 @@
+{
+  "name": "sparse-bitfield",
+  "version": "3.0.3",
+  "revision": "922ad0e94c4134fa1de17ae456551f950eef528f",
+  "repository": "https://github.com/mafintosh/sparse-bitfield.git",
+  "purl": "pkg:npm/sparse-bitfield@3.0.3",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-kvzhi7vqKTfkh0PZU+2D2PIllw2ymqJKujUcyPMd9Y75Nv4nPbGJZXNhxsgdQab2BmlDct1YnfQCguEvHr7VsQ=="
+}

@@ -1,0 +1,79 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/site-host-class",
+  "version": "1.0.0",
+  "title": "Site host",
+  "summary": "Runs a shop's Next.js application on the owner's machine or a hosting provider: security headers, environment check, deployment steps and provider costs",
+  "category": "devices-and-hosts/web",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/site-host",
+      "version": "1.0.0",
+      "path": "classes/site-host-class/site-host.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "provider": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      },
+      "siteAddress": {
+        "type": "string",
+        "pattern": "^https?://[A-Za-z0-9.-]+(:[0-9]{1,5})?(/[A-Za-z0-9_/-]*)?$"
+      },
+      "accountReference": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9-]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/site-host-class/check.mjs",
+      "digest": "350f99df710cddfdcee2e524ac7846ee1eed2520ff26be4971ce40bdd9ce3bd9"
+    },
+    {
+      "path": "classes/site-host-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/site-host-class/site-host.json",
+      "digest": "2bf2c2ffceb2eae5818a4bbe57b9f2bd8382312ce3e33d349ac29fb88050a035"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/site-host-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/site-host-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

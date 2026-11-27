@@ -1,0 +1,12 @@
+{
+  "name": "@next/swc-win32-x64-msvc",
+  "version": "15.5.29",
+  "revision": "sha512:a6eb5643e093109ba700f20f0cf7dbd3a29ce1e9a162974ce45a020c74a40bfca6ec3cb6c4e04c3e006305b464c361e9e7fe79d00098c42994b55e24e2e8b723",
+  "repository": "https://github.com/vercel/next.js.git",
+  "purl": "pkg:npm/%40next/swc-win32-x64-msvc@15.5.29",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-putWQ+CTEJunAPIPDPfb06Kc4emhYpdM5FoCDHSkC/ym7Dy2xOBMPgBjBbRkw2Hp5/550ACYxCmUtV4k4ui3Iw=="
+}

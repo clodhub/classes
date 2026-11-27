@@ -1,0 +1,83 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/mail-class",
+  "version": "1.0.0",
+  "title": "Mail",
+  "summary": "Transactional email from the shop's server, with addresses from the environment and a simulated outbox",
+  "category": "communication/email",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/mail",
+      "version": "1.0.0",
+      "path": "classes/mail-class/mail.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "apiKey": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "senderName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      },
+      "fromVariable": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+      },
+      "businessVariable": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/mail-class/check.mjs",
+      "digest": "3c91eec388883373193ec32dbe3f2d88b952f0675a961144e3843849b5baa8c4"
+    },
+    {
+      "path": "classes/mail-class/mail.json",
+      "digest": "8617def7c7de201cf06c19a4c8c6d8bea5b5f606e5abce0aacbadc715768f907"
+    },
+    {
+      "path": "classes/mail-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/mail-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/mail-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

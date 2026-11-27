@@ -1,0 +1,102 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/email-verification-class",
+  "version": "1.0.0",
+  "title": "Email verification",
+  "summary": "Short codes sent to an email address, kept in a records store until they expire, and a signed token that names the confirmed address, as a browser's cookie or for an app",
+  "category": "people-and-accounts/identity-verification",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/email-verification",
+      "version": "1.0.0",
+      "path": "classes/email-verification-class/email-verification.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/voucher-codes",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "codeLength": {
+        "type": "integer"
+      },
+      "expiryMinutes": {
+        "type": "integer"
+      },
+      "cookieName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "tokenMinutes": {
+        "type": "integer"
+      },
+      "tokenSecret": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/email-verification-class/check.mjs",
+      "digest": "ee4571526e1a7ecafa0ebe47532d51c88df7b5ba290445a5fc1145ba5d2a070a"
+    },
+    {
+      "path": "classes/email-verification-class/email-code.schema.json",
+      "digest": "0dbd2ef6d6f9dd5af6619153af077525cc6682a4ad25a75f549851b6d1f5a89b"
+    },
+    {
+      "path": "classes/email-verification-class/email-verification.json",
+      "digest": "5e77286dc455df43d473b4f4c0187a43a1395337a37a47d47d8d05d1cd224027"
+    },
+    {
+      "path": "classes/email-verification-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/email-verification-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/email-verification-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/email-verification-class/check.mjs",
+        "classes/email-verification-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

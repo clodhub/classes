@@ -1,0 +1,12 @@
+{
+  "name": "leaflet",
+  "version": "1.9.4",
+  "revision": "d15112c9e8ac339f0f74f563959d0423d291308d",
+  "repository": "https://github.com/Leaflet/Leaflet.git",
+  "purl": "pkg:npm/leaflet@1.9.4",
+  "licence": "BSD-2-Clause",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA=="
+}

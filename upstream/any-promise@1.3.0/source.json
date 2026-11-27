@@ -1,0 +1,12 @@
+{
+  "name": "any-promise",
+  "version": "1.3.0",
+  "revision": "39a1034e7345ca5f0f0a2e6cc82f3bf8e308b2cc",
+  "repository": "https://github.com/kevinbeaty/any-promise.git",
+  "purl": "pkg:npm/any-promise@1.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7UvmKalWRt1wgjL1RrGxoSJW/0QZFIegpeGvZG9kjp8vrRu55XTHbwnqq2GpXm9uLbcuhxm3IqX9OB4MZR1b2A=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@swc/core-linux-x64-gnu",
+  "version": "1.16.22",
+  "revision": "sha512:bbd85d7cd108de823f753449f889fc1b7d8481f169643bcca08e5e94811197afd77da23313d829bf85a89a129b9405c0d7e118c8b7c3092d441452909415d341",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/core-linux-x64-gnu@1.16.22",
+  "licence": "Apache-2.0 AND MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-u9hdfNEI3oI/dTRJ+In8G32EgfFpZDvMoI5elIERl6/XfaIzE9gpv4WomhKblAXA1+EYyLfDCS1EFFKQlBXTQQ=="
+}

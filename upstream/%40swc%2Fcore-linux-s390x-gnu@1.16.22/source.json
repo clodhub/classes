@@ -1,0 +1,12 @@
+{
+  "name": "@swc/core-linux-s390x-gnu",
+  "version": "1.16.22",
+  "revision": "sha512:6f7190a8a98704750541bcb5b21fd02ed35030c5d34815219e65dc279a92ad66e46278658c85b763edf478caebc427f2ec75cb2c3ba0d6c8e58490e17f7b4f84",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/core-linux-s390x-gnu@1.16.22",
+  "licence": "Apache-2.0 AND MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-b3GQqKmHBHUFQby1sh/QLtNQMMXTSBUhnmXcJ5qSrWbkYnhljIW3Y+30eMrrxCfy7HXLLDug1sjlhJDhf3tPhA=="
+}

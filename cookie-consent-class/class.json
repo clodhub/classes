@@ -1,0 +1,83 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/cookie-consent-class",
+  "version": "1.0.0",
+  "title": "Cookie consent",
+  "summary": "The visitor's cookie consent by category, kept in a cookie shared by the sites under one parent domain, for a banner the application renders",
+  "category": "people-and-accounts/preferences",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/cookie-consent",
+      "version": "1.0.0",
+      "path": "classes/cookie-consent-class/cookie-consent.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "cookieName": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "maxAgeDays": {
+        "type": "integer"
+      },
+      "categories": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9 -]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/cookie-consent-class/check.mjs",
+      "digest": "1d84341b3e0355bb4ac6ca07b5e3724f0d72341b54748e8796612b79cf538b06"
+    },
+    {
+      "path": "classes/cookie-consent-class/cookie-consent.json",
+      "digest": "20e449987fd9ce621ce3fd1bc9aea091d3b5768dd7dff1e3f33b606b7d270edb"
+    },
+    {
+      "path": "classes/cookie-consent-class/jar.mjs",
+      "digest": "b8a4eb79d763c422164e72583b117a77ce33088a82ae320272ed9f6c15eb0ebd"
+    },
+    {
+      "path": "classes/cookie-consent-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/cookie-consent-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/cookie-consent-class/check.mjs",
+        "classes/cookie-consent-class/jar.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "pngjs",
+  "version": "5.0.0",
+  "revision": "sha512:e34416e586a504d7d0a39c916268b0ed8cfa4ca295af787af7bd01d9813eddf429b1672b6e3d4fcc9831789d7d0d142384c6ca3c8b8c63cac569773c9a8a2557",
+  "repository": "https://github.com/lukeapage/pngjs.git",
+  "purl": "pkg:npm/pngjs@5.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-40QW5YalBNfQo5yRYmiw7Yz6TKKVr3h6970B2YE+3fQpsWcrbj1PzJgxeJ19DRQjhMbKPIuMY8rFaXc8moolVw=="
+}

@@ -1,0 +1,79 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/customer-wallet-class",
+  "version": "1.0.0",
+  "title": "Customer wallet",
+  "summary": "A customer's bookings, gift cards and member codes kept on their device with their secrets, merged and pruned the same way on every platform",
+  "category": "data-and-storage/local-first-and-sync",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/customer-wallet",
+      "version": "1.0.0",
+      "path": "classes/customer-wallet-class/customer-wallet.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "ios": [
+          "apple/Sources"
+        ],
+        "macos": [
+          "apple/Sources"
+        ],
+        "android": [
+          "android/src/main/java"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/customer-wallet-class/check.mjs",
+      "digest": "226a9231900023c81a76ea915cb0132c81f1033a62130fb15a9a9d0f52e857ba"
+    },
+    {
+      "path": "classes/customer-wallet-class/customer-wallet.json",
+      "digest": "00f835ada6a85e485e6c379f840358a2db2c5b1eab6a81bd6304cabb6d5ca2da"
+    },
+    {
+      "path": "classes/customer-wallet-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/customer-wallet-class/wallet-item.schema.json",
+      "digest": "df81fc35e337b8420f46f332a4a2bc0e4bdbfba9bd82b45512968fded9c79d7d"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/customer-wallet-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/customer-wallet-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

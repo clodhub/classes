@@ -1,0 +1,572 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/cookie-consent",
+    "version": "1.0.0",
+    "description": "The visitor's cookie consent for a shop: which categories (analytics, marketing) may set cookies, kept in a cookie shared by the sites under one parent domain. The application renders the banner; this is the consent model and its cookie handling, with no framework. Web only."
+  },
+  "methods": [
+    {
+      "name": "readConsent",
+      "description": "The consent stored in the named cookie of a document.cookie string or a Cookie header; null when there is none or it cannot be read. Of two cookies with the name, the first that reads wins.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "cookieText",
+          "required": true,
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        {
+          "name": "name",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$",
+            "description": "The consent cookie's name."
+          }
+        }
+      ],
+      "result": {
+        "name": "consent",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/Consent"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "consentCookies",
+      "description": "The cookie strings that store a consent, for document.cookie or Set-Cookie: one for the host's parent domain when it has one, written first so its sibling sites share the choice, then one for the host alone. Path /, SameSite=Lax, Max-Age of maxAgeDays.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "consent",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Consent"
+          }
+        },
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CookieOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "cookies",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        },
+        {
+          "$ref": "#/components/errors/InvalidConsent"
+        }
+      ]
+    },
+    {
+      "name": "parentDomain",
+      "description": "The domain one level above the host (shop.example.com gives example.com); null for localhost, IP addresses, single-label hosts and hosts directly under a top-level domain.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "hostname",
+          "required": true,
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      ],
+      "result": {
+        "name": "domain",
+        "schema": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "acceptAll",
+      "description": "A consent allowing every category.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "categories",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,31}$",
+              "description": "A lower-case word other than essential, such as analytics."
+            },
+            "uniqueItems": true
+          }
+        }
+      ],
+      "result": {
+        "name": "consent",
+        "schema": {
+          "$ref": "#/components/schemas/Consent"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCategory"
+        }
+      ]
+    },
+    {
+      "name": "rejectAll",
+      "description": "A consent refusing every category; essential cookies stay allowed.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "categories",
+          "required": true,
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,31}$",
+              "description": "A lower-case word other than essential, such as analytics."
+            },
+            "uniqueItems": true
+          }
+        }
+      ],
+      "result": {
+        "name": "consent",
+        "schema": {
+          "$ref": "#/components/schemas/Consent"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidCategory"
+        }
+      ]
+    },
+    {
+      "name": "allows",
+      "description": "Whether cookies of the category may be set: essential always, any other only when the consent says true.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "consent",
+          "required": true,
+          "schema": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Consent"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        {
+          "name": "category",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "allowed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "createConsentStore",
+      "description": "A consent store for the page.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "options",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/StoreOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "store",
+        "schema": {
+          "$ref": "#/components/schemas/ConsentStore"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        },
+        {
+          "$ref": "#/components/errors/InvalidCategory"
+        }
+      ]
+    },
+    {
+      "name": "ConsentStore.current",
+      "description": "The stored consent when it answers every category, else null so the banner shows (also after a category is added). With no categories it is always a consent of essential alone. The same object until the cookie changes.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "consent",
+        "schema": {
+          "oneOf": [
+            {
+              "$ref": "#/components/schemas/Consent"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "ConsentStore.save",
+      "description": "Stores the answer for each of the store's categories (true only where the consent says true; a category the consent leaves out is refused, one the store does not ask about is not stored), writes its cookies, tells every listener and returns what was stored.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "consent",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/Consent"
+          }
+        }
+      ],
+      "result": {
+        "name": "consent",
+        "schema": {
+          "$ref": "#/components/schemas/Consent"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidConsent"
+        }
+      ]
+    },
+    {
+      "name": "ConsentStore.subscribe",
+      "description": "Calls the listener after each save; returns the function that stops it.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "listener",
+          "required": true,
+          "schema": {
+            "description": "A function called with no arguments."
+          }
+        }
+      ],
+      "result": {
+        "name": "unsubscribe",
+        "schema": {
+          "description": "A function that unsubscribes."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings given as values or as rendered template text (categories as a space-separated list or none); unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/CookieConsentSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        },
+        {
+          "$ref": "#/components/errors/InvalidCategory"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/CookieConsentSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        },
+        {
+          "$ref": "#/components/errors/InvalidCategory"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Consent": {
+        "type": "object",
+        "properties": {
+          "essential": {
+            "const": true
+          }
+        },
+        "required": [
+          "essential"
+        ],
+        "additionalProperties": {
+          "type": "boolean"
+        },
+        "propertyNames": {
+          "pattern": "^[a-z][a-z0-9-]{0,31}$"
+        },
+        "description": "The visitor's choice: essential is always true; every other category is true (allowed) or false."
+      },
+      "CookieConsentSettings": {
+        "type": "object",
+        "properties": {
+          "cookieName": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$",
+            "description": "The consent cookie's name.",
+            "default": "shop_cookie_consent"
+          },
+          "maxAgeDays": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 400,
+            "description": "How long the choice is kept; browsers keep no cookie longer than 400 days.",
+            "default": 365
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,31}$",
+              "description": "A lower-case word other than essential, such as analytics."
+            },
+            "uniqueItems": true,
+            "default": [
+              "analytics",
+              "marketing"
+            ],
+            "description": "The categories the banner asks about; the setting is a space-separated list, or none for no categories."
+          }
+        },
+        "required": [
+          "cookieName",
+          "maxAgeDays",
+          "categories"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "Settings as values or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      },
+      "CookieOptions": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$",
+            "description": "The consent cookie's name."
+          },
+          "maxAgeDays": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 400,
+            "description": "How long the choice is kept; browsers keep no cookie longer than 400 days."
+          },
+          "hostname": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The page's host name (location.hostname); null or absent writes the host-only cookie alone."
+          }
+        },
+        "required": [
+          "name",
+          "maxAgeDays"
+        ],
+        "additionalProperties": false
+      },
+      "StoreOptions": {
+        "type": "object",
+        "properties": {
+          "document": {
+            "description": "An object with a cookie property read and written as document.cookie is: the page's document."
+          },
+          "name": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$",
+            "description": "The consent cookie's name."
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{0,31}$",
+              "description": "A lower-case word other than essential, such as analytics."
+            },
+            "uniqueItems": true
+          },
+          "maxAgeDays": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 400,
+            "description": "How long the choice is kept; browsers keep no cookie longer than 400 days."
+          },
+          "hostname": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "The page's host name; location.hostname when absent."
+          }
+        },
+        "required": [
+          "document",
+          "name",
+          "categories",
+          "maxAgeDays"
+        ],
+        "additionalProperties": false
+      },
+      "ConsentStore": {
+        "type": "object",
+        "description": "The visitor's consent for a page, read from and written to its cookies, for a banner rendered by the application (React reads it with useSyncExternalStore(store.subscribe, store.current))."
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32040,
+        "message": "RangeError: a setting is not of its form, or maxAgeDays is outside 1 to 400"
+      },
+      "InvalidCategory": {
+        "code": -32041,
+        "message": "RangeError: a category is not a lower-case word, is essential, or is listed twice"
+      },
+      "InvalidConsent": {
+        "code": -32042,
+        "message": "RangeError: a consent value is not true or false, or essential is false"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts"
+  }
+}

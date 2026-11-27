@@ -1,0 +1,12 @@
+{
+  "name": "react",
+  "version": "19.2.4",
+  "revision": "sha512:f677e9da16290b03a300dfbc4d914686d584c20bd61d7a84487f2a4fcf404ff956925a4b38ddb62dcf2912d9e9b19cfb5666b069b494d200a39e3f1a0b47ae1d",
+  "repository": "https://github.com/facebook/react.git",
+  "purl": "pkg:npm/react@19.2.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-9nfp2hYpCwOjAN+8TZFGhtWEwgvWHXqESH8qT89AT/lWklpLON22Lc8pEtnpsZz7VmawabSU0gCjnj8aC0euHQ=="
+}

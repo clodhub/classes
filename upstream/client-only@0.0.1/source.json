@@ -1,0 +1,12 @@
+{
+  "name": "client-only",
+  "version": "0.0.1",
+  "revision": "sha512:215dcebb48d233366b777a59e3c9cb913f4303b020d699cfcda8908695bb73745b72aab3bf3cd5bbe2fc81fa8ca7ff08336310b528aa682c6badc7eef08f2b30",
+  "repository": "https://reactjs.org/",
+  "purl": "pkg:npm/client-only@0.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA=="
+}

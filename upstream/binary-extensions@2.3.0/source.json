@@ -1,0 +1,12 @@
+{
+  "name": "binary-extensions",
+  "version": "2.3.0",
+  "revision": "3ad032e195467df417009bdfc847856829a00085",
+  "repository": "https://github.com/sindresorhus/binary-extensions.git",
+  "purl": "pkg:npm/binary-extensions@2.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw=="
+}

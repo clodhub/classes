@@ -1,0 +1,12 @@
+{
+  "name": "@parcel/watcher-linux-arm-musl",
+  "version": "2.6.0",
+  "revision": "b46c53feb075c9dfd2c87d2183eb259df384d90b",
+  "repository": "https://github.com/parcel-bundler/watcher.git",
+  "purl": "pkg:npm/%40parcel/watcher-linux-arm-musl@2.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-9c6AUHgHoG+IY88MRIHupztQiQnrbqHYQjkM2btA+Bf/wQnQMuiD0Wfk1EVv3TlNT3x41uU71rn6E4xh/+zvkw=="
+}

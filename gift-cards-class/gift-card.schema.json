@@ -1,0 +1,221 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/gift-card",
+  "x-version": "1.0.0",
+  "description": "A document of the giftCards collection as com.clodhub/records exports it.",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "code": {
+      "type": "string",
+      "description": "The card's code as com.clodhub/voucher-codes generates it, such as ABCD-EFGH-JKMN."
+    },
+    "kind": {
+      "enum": [
+        "amount",
+        "item"
+      ],
+      "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+    },
+    "amount": {
+      "type": "integer",
+      "description": "What the card cost: the face value of an amount card, the price paid for an item card or pack.",
+      "minimum": 1
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "An ISO 4217 code in upper case, such as EUR."
+    },
+    "itemName": {
+      "type": "string",
+      "description": "The service's name; empty for an amount card."
+    },
+    "itemSlug": {
+      "description": "The service's catalogue slug when known.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "minutes": {
+      "description": "The service's length when chosen.",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "recipientName": {
+      "type": "string"
+    },
+    "recipientEmail": {
+      "type": "string",
+      "description": "An email address, trimmed and in lower case."
+    },
+    "senderName": {
+      "type": "string"
+    },
+    "senderEmail": {
+      "type": "string",
+      "description": "An email address, trimmed and in lower case."
+    },
+    "message": {
+      "type": "string",
+      "description": "The sender's message; may be empty."
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+      "description": "A language code such as en or es."
+    },
+    "status": {
+      "enum": [
+        "issued",
+        "redeemed"
+      ],
+      "description": "Stored state; views report an issued card past expiresAt as expired."
+    },
+    "checkoutId": {
+      "type": "string",
+      "description": "The payment checkout that bought the card (unique); admin-<code> for a card the shop issued free."
+    },
+    "paymentReference": {
+      "description": "What a refund of the purchase names (com.clodhub/payments CheckoutSummary.paymentReference); null for a free card.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "issuedBy": {
+      "enum": [
+        "payment",
+        "admin"
+      ]
+    },
+    "issuedAt": {
+      "$ref": "#/$defs/date"
+    },
+    "redeemedAt": {
+      "description": "When the last session was used.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "expiresAt": {
+      "$ref": "#/$defs/date"
+    },
+    "promotionId": {
+      "description": "The promotion a pack was bought under; null for a single card.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "discountPercent": {
+      "description": "A pack's discount; null otherwise.",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sessionsTotal": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "1, or a pack's number of sessions."
+    },
+    "sessionsUsed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "balance": {
+      "description": "What is left on an amount card (its amount when issued, 0 once used up); null for an item card or pack, which keep sessions.",
+      "oneOf": [
+        {
+          "type": "integer",
+          "description": "An amount in the currency's minor unit (cents for EUR).",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "_id",
+    "code",
+    "kind",
+    "amount",
+    "currency",
+    "itemName",
+    "itemSlug",
+    "minutes",
+    "recipientName",
+    "recipientEmail",
+    "senderName",
+    "senderEmail",
+    "message",
+    "language",
+    "status",
+    "checkoutId",
+    "paymentReference",
+    "issuedBy",
+    "issuedAt",
+    "redeemedAt",
+    "expiresAt",
+    "promotionId",
+    "discountPercent",
+    "sessionsTotal",
+    "sessionsUsed",
+    "balance"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "date": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date as a records export writes it."
+    }
+  },
+  "x-clodhub-modules": {}
+}

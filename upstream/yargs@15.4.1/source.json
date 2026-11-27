@@ -1,0 +1,12 @@
+{
+  "name": "yargs",
+  "version": "15.4.1",
+  "revision": "0b519a4672c8493d72838292ed0d60b63b88f33e",
+  "repository": "https://github.com/yargs/yargs.git",
+  "purl": "pkg:npm/yargs@15.4.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A=="
+}

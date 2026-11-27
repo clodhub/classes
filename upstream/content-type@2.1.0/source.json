@@ -1,0 +1,12 @@
+{
+  "name": "content-type",
+  "version": "2.1.0",
+  "revision": "8c2fedda8b40bd519c3ca49cc2a80aebaa1446e3",
+  "repository": "https://github.com/jshttp/content-type.git",
+  "purl": "pkg:npm/content-type@2.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-mj7UPXE0jaqaOsukNZRUEfEi2AcL7C/vwmwcHV0O97eO1E1pxBZuyjlZrx5seTaNBg1U6+o35wpa35Qfcc+7ag=="
+}

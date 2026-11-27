@@ -1,0 +1,12 @@
+{
+  "name": "cliui",
+  "version": "6.0.0",
+  "revision": "7761da3e8cddd1f49024252a6b0195a94565b357",
+  "repository": "https://github.com/yargs/cliui.git",
+  "purl": "pkg:npm/cliui@6.0.0",
+  "licence": "ISC",
+  "notices": [
+    "0-LICENSE.txt"
+  ],
+  "integrity": "sha512-t6wbgtoCXvAzst7QgXxJYqPt0usEfbgQdftEPbLL/cvv6HPE5VgvqCuAIDR0NgU52ds6rFwqrgakNLrHEjCbrQ=="
+}

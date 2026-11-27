@@ -1,0 +1,12 @@
+{
+  "name": "thenify-all",
+  "version": "1.6.0",
+  "revision": "f436113d8076adb9138c222a61689acdef6f6bd9",
+  "repository": "https://github.com/thenables/thenify-all",
+  "purl": "pkg:npm/thenify-all@1.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "chokidar",
+  "version": "3.6.0",
+  "revision": "7c50e25d10a497ce4409f6e52eb630f0d7647b97",
+  "repository": "https://github.com/paulmillr/chokidar.git",
+  "purl": "pkg:npm/chokidar@3.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw=="
+}

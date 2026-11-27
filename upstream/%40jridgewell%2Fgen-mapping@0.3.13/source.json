@@ -1,0 +1,12 @@
+{
+  "name": "@jridgewell/gen-mapping",
+  "version": "0.3.13",
+  "revision": "095a5825c482003597a30aa380b50159219f3618",
+  "repository": "https://github.com/jridgewell/sourcemaps.git",
+  "purl": "pkg:npm/%40jridgewell/gen-mapping@0.3.13",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="
+}

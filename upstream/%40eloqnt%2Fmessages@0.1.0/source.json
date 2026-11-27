@@ -1,0 +1,12 @@
+{
+  "name": "@eloqnt/messages",
+  "version": "0.1.0",
+  "revision": "sha512:fd822bfdb3da4422663c64793aba95a1a768d23e628dc0fbabde63665908cddd22a6610ce2cfbcd3973d3da7e82d4282aee74c108e20a8852c676e21674776a5",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/%40eloqnt/messages@0.1.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-/YIr/bPaRCJmPGR5OrqVoado0j5ijcD7q95jZlkIzd0ipmEM4s+805c9PafoLUKCrudMEI4gqIUsZ24hZ0d2pQ=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "camelcase-css",
+  "version": "2.0.1",
+  "revision": "5fe025f5e8fdad5b1a347f2a4b301e1e32cc2723",
+  "repository": "https://github.com/stevenvachon/camelcase-css.git",
+  "purl": "pkg:npm/camelcase-css@2.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA=="
+}

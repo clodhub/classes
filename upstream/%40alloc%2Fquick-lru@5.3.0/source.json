@@ -1,0 +1,12 @@
+{
+  "name": "@alloc/quick-lru",
+  "version": "5.3.0",
+  "revision": "49a87e835c6e657d0df87a031e88d1e0342e6c30",
+  "repository": "https://github.com/aleclarson/quick-lru.git",
+  "purl": "pkg:npm/%40alloc/quick-lru@5.3.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-U4+70Pc5ZS9osnCBCE5Jha/ciHM+Yp+CNMNC/7HvYbNRk1Ldd+f7qO65W5qfhu/TCv+/ozljlXXe9Nj8419DMA=="
+}

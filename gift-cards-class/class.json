@@ -1,0 +1,110 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/gift-cards-class",
+  "version": "1.0.0",
+  "title": "Gift cards",
+  "summary": "Gift cards for an amount, a service or a pack of sessions: online purchase and one-time fulfilment, free cards, lookup and redemption",
+  "category": "payments/checkout",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/gift-cards",
+      "version": "1.0.0",
+      "path": "classes/gift-cards-class/gift-cards.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/voucher-codes",
+      "version": "1.0.0"
+    },
+    {
+      "type": "com.clodhub/payments",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "minimumAmount": {
+        "type": "integer"
+      },
+      "maximumAmount": {
+        "type": "integer"
+      },
+      "validityDays": {
+        "type": "integer"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/gift-cards-class/check.mjs",
+      "digest": "1f965752be99ec75142aabb62c769c5065cf877665b544988205da5ee084df89"
+    },
+    {
+      "path": "classes/gift-cards-class/doubles.mjs",
+      "digest": "4fdfde843c77ab2bb51b31c70ae25a2de58418b722bc2167cbe2a9d51138f259"
+    },
+    {
+      "path": "classes/gift-cards-class/gift-card-purchase.schema.json",
+      "digest": "b35713f921270d4207344d1f5d8e761a264b61a5f761b925a9519f34184f0433"
+    },
+    {
+      "path": "classes/gift-cards-class/gift-card.schema.json",
+      "digest": "4c45ada5a5c83810fb52be2ef5da802db5e89ef26a6293e4be2cc105eedfca37"
+    },
+    {
+      "path": "classes/gift-cards-class/gift-cards.json",
+      "digest": "9c89f9d2b231413700fbc514df639e72926cfe4cc313723ba16c4d3532167771"
+    },
+    {
+      "path": "classes/gift-cards-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/gift-cards-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/gift-cards-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/gift-cards-class/check.mjs",
+        "classes/gift-cards-class/doubles.mjs",
+        "classes/gift-cards-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

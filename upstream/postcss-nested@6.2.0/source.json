@@ -1,0 +1,12 @@
+{
+  "name": "postcss-nested",
+  "version": "6.2.0",
+  "revision": "2abd928a713f94dfd48bf957e8a6647a11382450",
+  "repository": "https://github.com/postcss/postcss-nested.git",
+  "purl": "pkg:npm/postcss-nested@6.2.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-HQbt28KulC5AJzG+cZtj9kvKB93CFCdLvog1WFLf1D+xmMvPGlBstkpTEZfK5+AN9hfJocyBFCNiqyS48bpgzQ=="
+}

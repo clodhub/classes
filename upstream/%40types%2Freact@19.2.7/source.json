@@ -1,0 +1,12 @@
+{
+  "name": "@types/react",
+  "version": "19.2.7",
+  "revision": "sha512:316b6f1eb1992c5b6d81e123dbc5571f1a66c186e8aff0133d86c17d215910844ad1e70214b976428e79cf9d87b2cf9457d09137bb6b49eab5cdb831ed80d65a",
+  "repository": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+  "purl": "pkg:npm/%40types/react@19.2.7",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg=="
+}

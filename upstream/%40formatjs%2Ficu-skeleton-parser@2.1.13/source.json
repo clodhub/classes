@@ -1,0 +1,12 @@
+{
+  "name": "@formatjs/icu-skeleton-parser",
+  "version": "2.1.13",
+  "revision": "sha512:21d009f4dac79fb005d33aa7703f54a71428cd363226d6f0c2b66724c10a5714dc38e5ed56451bd97613a4d3864c0bf9f0d0ac934ae3441f46fa2d92bc198601",
+  "repository": "https://github.com/formatjs/formatjs.git",
+  "purl": "pkg:npm/%40formatjs/icu-skeleton-parser@2.1.13",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-IdAJ9NrHn7AF0zqncD9UpxQozTYyJtbwwrZnJMEKVxTcOOXtVkUb2XYTpNOGTAv58NCsk0rjRB9G+i2SvBmGAQ=="
+}

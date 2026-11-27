@@ -1,0 +1,12 @@
+{
+  "name": "scheduler",
+  "version": "0.27.0",
+  "revision": "861811347b8fa936b4a114fc022db9b8253b3d86",
+  "repository": "https://github.com/facebook/react.git",
+  "purl": "pkg:npm/scheduler@0.27.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q=="
+}

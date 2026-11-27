@@ -1,0 +1,12 @@
+{
+  "name": "@parcel/watcher-win32-arm64",
+  "version": "2.6.0",
+  "revision": "b46c53feb075c9dfd2c87d2183eb259df384d90b",
+  "repository": "https://github.com/parcel-bundler/watcher.git",
+  "purl": "pkg:npm/%40parcel/watcher-win32-arm64@2.6.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-gIZAP23jaHjGWasY/TY6yL7NHFClf0Ga7FN+iINvk+KN94rhm94lYZhFsbYFNcA04/onvGD9kKmiJLJB2HbNwQ=="
+}

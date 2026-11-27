@@ -1,0 +1,12 @@
+{
+  "name": "react-dom",
+  "version": "19.2.4",
+  "revision": "sha512:01725d2e8f2480c6e2998f793b668a42ab33da25a2f63320289851040c44084e081717dc6b30762e6ce5a08a226c92370b5d88958db4f8a15a2effbbd5b50979",
+  "repository": "https://github.com/facebook/react.git",
+  "purl": "pkg:npm/react-dom@19.2.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-AXJdLo8kgMbimY95O2aKQqsz2iWi9jMgKJhRBAxECE4IFxfcazB2LmzloIoibJI3C12IlY20+KFaLv+71bUJeQ=="
+}

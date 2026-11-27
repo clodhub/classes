@@ -1,0 +1,12 @@
+{
+  "name": "read-cache",
+  "version": "1.0.2",
+  "revision": "37f8285474b2abba6775fd4b3e68f9830f29ffd9",
+  "repository": "https://github.com/TrySound/read-cache.git",
+  "purl": "pkg:npm/read-cache@1.0.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-/peqiBB/n07gQGLsWaHho3WfvUyRscw0gYTsEFMhrIe/nWLkYaf5SbKYjGYqtRV3aPwykJgF2VEMo1ac4bnsGA=="
+}

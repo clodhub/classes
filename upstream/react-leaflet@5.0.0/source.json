@@ -1,0 +1,12 @@
+{
+  "name": "react-leaflet",
+  "version": "5.0.0",
+  "revision": "sha512:0966d3a6be6f707c396edf62e334a53c455075355c30bdfdd138de0c6d1c2b9f73d7295ec69a82e8cd4f2458d5f230fb085f8008116c2c80ece8344ca0b1287f",
+  "repository": "https://github.com/PaulLeCam/react-leaflet.git",
+  "purl": "pkg:npm/react-leaflet@5.0.0",
+  "licence": "Hippocratic-2.1",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-CWbTpr5vcHw5bt9i4zSlPEVQdTVcML390TjeDG0cK59z1ylexpqC6M1PJFjV8jD7CF+ACBFsLIDs6DRMoLEofw=="
+}

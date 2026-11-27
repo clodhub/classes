@@ -1,0 +1,12 @@
+{
+  "name": "micromatch",
+  "version": "4.0.8",
+  "revision": "8bd704ec0d9894693d35da425d827819916be920",
+  "repository": "https://github.com/micromatch/micromatch.git",
+  "purl": "pkg:npm/micromatch@4.0.8",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA=="
+}

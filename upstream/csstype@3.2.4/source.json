@@ -1,0 +1,12 @@
+{
+  "name": "csstype",
+  "version": "3.2.4",
+  "revision": "d5d747bb385fb1d6554ec43785580fec03e5e558",
+  "repository": "https://github.com/frenic/csstype.git",
+  "purl": "pkg:npm/csstype@3.2.4",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-PoKaoPzQapnEoqUSnHx1u6W6ku8CVEgKsnpmmzU3m1nwkidpPBQ8V/Zq2+bWNrsOKoKLwTGdbx6xF7BXP1zLVQ=="
+}

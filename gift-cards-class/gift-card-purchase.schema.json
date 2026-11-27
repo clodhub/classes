@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/gift-card-purchase",
+  "x-version": "1.0.0",
+  "description": "A document of the giftCardPurchases collection as com.clodhub/records exports it.",
+  "type": "object",
+  "properties": {
+    "_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "amount",
+        "item"
+      ],
+      "description": "amount: worth its face value; item: one service (or a pack of sessions of it), worth that service's full price whatever it costs at booking."
+    },
+    "amount": {
+      "type": "integer",
+      "description": "What the card cost: the face value of an amount card, the price paid for an item card or pack.",
+      "minimum": 1
+    },
+    "itemName": {
+      "type": "string",
+      "description": "The service's name; empty for an amount card."
+    },
+    "itemSlug": {
+      "description": "The service's catalogue slug when known.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "minutes": {
+      "description": "The service's length when chosen.",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "recipientName": {
+      "type": "string"
+    },
+    "recipientEmail": {
+      "type": "string",
+      "description": "An email address, trimmed and in lower case."
+    },
+    "senderName": {
+      "type": "string"
+    },
+    "senderEmail": {
+      "type": "string",
+      "description": "An email address, trimmed and in lower case."
+    },
+    "message": {
+      "type": "string",
+      "description": "The sender's message; may be empty."
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$",
+      "description": "A language code such as en or es."
+    },
+    "promotionId": {
+      "description": "The promotion a pack was bought under; null for a single card.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "discountPercent": {
+      "description": "A pack's discount; null otherwise.",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "sessionsTotal": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "1, or a pack's number of sessions."
+    },
+    "token": {
+      "type": "string",
+      "minLength": 1,
+      "description": "The buyer's secret: with the id it reads the purchase (newToken, crypto.randomUUID by default)."
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "paid"
+      ],
+      "description": "Stored state; views report a pending checkout past expiresAt as expired."
+    },
+    "currency": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}$",
+      "description": "An ISO 4217 code in upper case, such as EUR."
+    },
+    "payment": {
+      "enum": [
+        "checkout",
+        "sheet"
+      ],
+      "description": "checkout: the provider's page; sheet: an app's payment sheet."
+    },
+    "checkoutId": {
+      "description": "The payment's id (a checkout, or a sheet payment), which the issued card keeps as its checkoutId; null only while the payment is being started.",
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "createdAt": {
+      "$ref": "#/$defs/date"
+    },
+    "expiresAt": {
+      "description": "When a checkout stops accepting payment: 24 hours after createdAt, as com.clodhub/payments gives a checkout without an end; null for a sheet payment, which does not expire.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "paidAt": {
+      "description": "When the payment issued the card.",
+      "oneOf": [
+        {
+          "$ref": "#/$defs/date"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "_id",
+    "kind",
+    "amount",
+    "itemName",
+    "itemSlug",
+    "minutes",
+    "recipientName",
+    "recipientEmail",
+    "senderName",
+    "senderEmail",
+    "message",
+    "language",
+    "promotionId",
+    "discountPercent",
+    "sessionsTotal",
+    "token",
+    "status",
+    "currency",
+    "payment",
+    "checkoutId",
+    "createdAt",
+    "expiresAt",
+    "paidAt"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "date": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "$date"
+      ],
+      "additionalProperties": false,
+      "description": "A date as a records export writes it."
+    }
+  },
+  "x-clodhub-modules": {}
+}

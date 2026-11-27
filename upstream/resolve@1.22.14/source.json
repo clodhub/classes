@@ -1,0 +1,12 @@
+{
+  "name": "resolve",
+  "version": "1.22.14",
+  "revision": "aa0d9e573c347ba035a9e6315fcf69747fe33f99",
+  "repository": "https://github.com/browserify/resolve.git",
+  "purl": "pkg:npm/resolve@1.22.14",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-1ZjYvR9sbkiwC5+9QHetqW5HmA2pHRMaoupD01t2HlYnV/vydC2zPwLixhsMieSWVZt0JJRg5LVIk0Ow1D/TrA=="
+}

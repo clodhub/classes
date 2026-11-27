@@ -1,0 +1,12 @@
+{
+  "name": "qrcode",
+  "version": "1.5.4",
+  "revision": "3848ed2c17de5bcdead487417dbf14c5dd017f8d",
+  "repository": "https://github.com/soldair/node-qrcode.git",
+  "purl": "pkg:npm/qrcode@1.5.4",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-1ca71Zgiu6ORjHqFBDpnSMTR2ReToX4l1Au1VFLyVeBTFavzQnv5JxMFr3ukHVKpSrSA2MCk0lNJSykjUfz7Zg=="
+}

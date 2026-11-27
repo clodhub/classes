@@ -1,0 +1,12 @@
+{
+  "name": "locate-path",
+  "version": "5.0.0",
+  "revision": "630c0bbd609055c1895089c715649e21000a1ab7",
+  "repository": "https://github.com/sindresorhus/locate-path.git",
+  "purl": "pkg:npm/locate-path@5.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g=="
+}

@@ -1,0 +1,12 @@
+{
+  "name": "@swc/core-win32-arm64-msvc",
+  "version": "1.16.22",
+  "revision": "sha512:f8ca4db84e392cc168fba445f2f314a993e668e7d1408bb30941c9fa3497c04862479287799890f4c6898256510de32e30bebbbe80a214baf1a984ea1826dc09",
+  "repository": "https://github.com/swc-project/swc.git",
+  "purl": "pkg:npm/%40swc/core-win32-arm64-msvc@1.16.22",
+  "licence": "Apache-2.0 AND MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-+MpNuE45LMFo+6RF8vMUqZPmaOfRQIuzCUHJ+jSXwEhiR5KHeZiQ9MaJglZRDeMuML67voCiFLrxqYTqGCbcCQ=="
+}

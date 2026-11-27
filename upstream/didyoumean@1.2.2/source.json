@@ -1,0 +1,12 @@
+{
+  "name": "didyoumean",
+  "version": "1.2.2",
+  "revision": "f58cc8d9d3d127f31aa88b9e23b6daf4ead34abb",
+  "repository": "https://github.com/dcporter/didyoumean.js.git",
+  "purl": "pkg:npm/didyoumean@1.2.2",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-gxtyfqMg7GKyhQmb056K7M3xszy/myH8w+B4RT+QXBQsvAOdc3XymqDDPHx1BgPgsdAA5SIifona89YtRATDzw=="
+}

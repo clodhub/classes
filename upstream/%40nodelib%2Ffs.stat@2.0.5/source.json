@@ -1,0 +1,12 @@
+{
+  "name": "@nodelib/fs.stat",
+  "version": "2.0.5",
+  "revision": "d6a7960d5281d3dd5f8e2efba49bb552d090f562",
+  "repository": "https://github.com/nodelib/nodelib/tree/master/packages/fs/fs.stat",
+  "purl": "pkg:npm/%40nodelib/fs.stat@2.0.5",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-RkhPPp2zrqDAQA/2jNhnztcPAlv64XdhIp7a7454A5ovI7Bukxgt7MX7udwAu3zg1DcpPU0rz3VV1SeaqvY4+A=="
+}

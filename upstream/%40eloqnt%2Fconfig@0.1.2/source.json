@@ -1,0 +1,12 @@
+{
+  "name": "@eloqnt/config",
+  "version": "0.1.2",
+  "revision": "sha512:d2976388216eaf73357f1ba83c8a0b4bf1254cd7ab39d9a48d3a222e2dfdf484ce2c4fc746f1f12793a3b8e3d0a8f21971b617af6f96016bb77675cc8edfd666",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/%40eloqnt/config@0.1.2",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-0pdjiCFur3M1fxuoPIoLS/ElTNerOdmkjToiLi399ITOLE/HRvHxJ5OjuOPQqPIZcbYXr2+WAWu3dnXMjt/WZg=="
+}

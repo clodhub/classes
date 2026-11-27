@@ -1,0 +1,12 @@
+{
+  "name": "memory-pager",
+  "version": "1.5.0",
+  "revision": "bccc3652145f9ceaaf1035ff1258580ca39d465d",
+  "repository": "https://github.com/mafintosh/memory-pager.git",
+  "purl": "pkg:npm/memory-pager@1.5.0",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-ZS4Bp4r/Zoeq6+NLJpP+0Zzm0pR8whtGPf1XExKLJBAczGMnSi3It14OiNCStjQjM6NU1okjQGSxgEZN8eBYKg=="
+}

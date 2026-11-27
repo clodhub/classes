@@ -1,0 +1,12 @@
+{
+  "name": "@next/swc-darwin-arm64",
+  "version": "15.5.29",
+  "revision": "sha512:be8cd10ee336dd3d1f6914743b7a0dd5e46a8c4a94b9ee049638646fd7fbbab420ce6cb3bdeee3ddab734efdd9d409e343d21e558d17dda4b5fda9f9e933a24e",
+  "repository": "https://github.com/vercel/next.js.git",
+  "purl": "pkg:npm/%40next/swc-darwin-arm64@15.5.29",
+  "licence": "MIT",
+  "notices": [
+    "0-package.json"
+  ],
+  "integrity": "sha512-vozRDuM23T0faRR0O3oN1eRqjEqUue4Eljhkb9f7urQgzmyzve7j3atzTv3Z1AnjQ9IeVY0X3aS1/an56TOiTg=="
+}

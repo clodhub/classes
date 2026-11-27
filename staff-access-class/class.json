@@ -1,0 +1,110 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/staff-access-class",
+  "version": "1.0.0",
+  "title": "Staff access",
+  "summary": "PIN sign-in for a shop's admin and staff roles with signed sessions as cookies or bearer tokens, wrong PINs counted in a records store, closed whenever a PIN, the secret or the session is missing or wrong",
+  "category": "people-and-accounts/permissions",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/staff-access",
+      "version": "1.0.0",
+      "path": "classes/staff-access-class/staff-access.json",
+      "modules": {
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [
+    {
+      "type": "com.clodhub/records",
+      "version": "1.0.0"
+    }
+  ],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "adminCookie": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "staffCookie": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "sessionDays": {
+        "type": "integer"
+      },
+      "maximumAttempts": {
+        "type": "integer"
+      },
+      "attemptWindowMinutes": {
+        "type": "integer"
+      },
+      "adminPin": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "staffPin": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "sessionSecret": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/staff-access-class/check.mjs",
+      "digest": "fe6e490f3f8470abeeb0003faf2dbfba006a0cbecc15788c7ce2f7117ba446e9"
+    },
+    {
+      "path": "classes/staff-access-class/records.ts",
+      "digest": "f4989bd36054bae7fd4fe56744d16050d9bb464d5f79081fbd372635975c91c3"
+    },
+    {
+      "path": "classes/staff-access-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    },
+    {
+      "path": "classes/staff-access-class/staff-access.json",
+      "digest": "d2a4b5294400809699d7882d539434ac2c0afa5f059ba02f0d8f0bb0429c9335"
+    },
+    {
+      "path": "classes/staff-access-class/staff-attempt.schema.json",
+      "digest": "6e44335664a5e639f792f23456c0d06f1dd7a35b2b0ddc6a0ab47b8920caf8a7"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/staff-access-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/staff-access-class/check.mjs",
+        "classes/staff-access-class/records.ts"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

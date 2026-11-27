@@ -1,0 +1,12 @@
+{
+  "name": "postcss-load-config",
+  "version": "6.0.1",
+  "revision": "a00cad85aa02020d78106b0656b1d6f19eb56dac",
+  "repository": "https://github.com/postcss/postcss-load-config.git",
+  "purl": "pkg:npm/postcss-load-config@6.0.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-oPtTM4oerL+UXmx+93ytZVN82RrlY/wPUV8IeDxFrzIjXOLF1pN+EmKPLbubvKHT2HC20xXsCAH2Z+CKV6Oz/g=="
+}

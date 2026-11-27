@@ -1,0 +1,12 @@
+{
+  "name": "path-exists",
+  "version": "4.0.0",
+  "revision": "26b1adf80aa6761a7db35927a20cf59e0fd1a00d",
+  "repository": "https://github.com/sindresorhus/path-exists.git",
+  "purl": "pkg:npm/path-exists@4.0.0",
+  "licence": "MIT",
+  "notices": [
+    "0-license"
+  ],
+  "integrity": "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w=="
+}

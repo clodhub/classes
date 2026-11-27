@@ -1,0 +1,74 @@
+{
+  "format": 3,
+  "name": "pkg:clod/com.clodhub/money-class",
+  "version": "1.0.0",
+  "title": "Money",
+  "summary": "Amounts in a currency's minor units: formatting by language, reading written prices, minor digits and percentages",
+  "category": "commerce/catalogue-and-pricing",
+  "presentation": "none",
+  "provides": [
+    {
+      "type": "com.clodhub/money",
+      "version": "1.0.0",
+      "path": "classes/money-class/money.json",
+      "modules": {
+        "web": [
+          "web/index.ts"
+        ],
+        "server": [
+          "server/index.ts"
+        ]
+      }
+    }
+  ],
+  "requires": [],
+  "settings": {
+    "type": "object",
+    "properties": {
+      "currency": {
+        "type": "string",
+        "pattern": "^[A-Z][A-Z0-9_]{0,63}$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "inventory": [
+    {
+      "path": "classes/money-class/check.mjs",
+      "digest": "f640502ceed2c38811cc65bde273eb4a674fe832e32a9ea411fc9a26429d91e5"
+    },
+    {
+      "path": "classes/money-class/money.json",
+      "digest": "559e6886976304022c2d24fa7cda09b7825014af8b05b463e5c315ca67383cd8"
+    },
+    {
+      "path": "classes/money-class/runtime.mjs",
+      "digest": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0"
+    }
+  ],
+  "verification": [
+    {
+      "id": "shared",
+      "root": "package",
+      "argv": [
+        "node",
+        "classes/money-class/check.mjs"
+      ],
+      "cwd": ".",
+      "prepare": [],
+      "tools": {
+        "node": "26.5"
+      },
+      "fixtures": [
+        "classes/money-class/check.mjs"
+      ],
+      "locks": [],
+      "network": false,
+      "timeoutSeconds": 60,
+      "expectedExit": 0,
+      "scope": "required-local",
+      "requirements": []
+    }
+  ]
+}

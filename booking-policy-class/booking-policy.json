@@ -1,0 +1,581 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/booking-policy",
+    "version": "1.0.0",
+    "description": "A shop's booking terms as pure functions: the deposit and the balance after a gift card, the free cancellation period and who gets a refund, when a late cancellation uses up a gift card, how long an unpaid booking holds its time, when a payment checkout expires, and the allowed booking lengths."
+  },
+  "methods": [
+    {
+      "name": "depositAndBalance",
+      "description": "What the customer pays now and at the appointment: the deposit is round(total x depositPercent / 100) less the gift card's value, at least 0; the balance is the total less the card (at most the total) less the deposit, at least 0.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "total",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR).",
+            "minimum": 0
+          }
+        },
+        {
+          "name": "cardValue",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "description": "An amount in the currency's minor unit (cents for EUR).",
+            "minimum": 0
+          }
+        },
+        {
+          "name": "depositPercent",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          }
+        }
+      ],
+      "result": {
+        "name": "amounts",
+        "schema": {
+          "$ref": "#/components/schemas/Amounts"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "freeCancellationDeadline",
+      "description": "The last moment a customer may cancel and get the deposit back: the start less the free period.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "startsAt",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "hours",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ],
+      "result": {
+        "name": "deadline",
+        "schema": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A JavaScript Date; shown here as its ISO 8601 text."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "freeCancellation",
+      "description": "Whether cancelling now costs nothing: the owner cancels, or the customer cancels more than freeCancellationHours before the start (exactly at the deadline is late).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "terms",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CancellationTerms"
+          }
+        }
+      ],
+      "result": {
+        "name": "free",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "refundEligible",
+      "description": "Whether cancelling now gives the deposit back: there is a deposit and the cancellation is free.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RefundQuestion"
+          }
+        }
+      ],
+      "result": {
+        "name": "eligible",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "cardConsumedByCancellation",
+      "description": "Whether cancelling now uses up the gift card: there is a card and the cancellation is not free, whether or not there is a deposit.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "input",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/CardQuestion"
+          }
+        }
+      ],
+      "result": {
+        "name": "consumed",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "holdActive",
+      "description": "Whether a booking still waiting for payment holds its time and its gift card: it was created less than holdMinutes before now.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "createdAt",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "holdMinutes",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      ],
+      "result": {
+        "name": "active",
+        "schema": {
+          "type": "boolean"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "checkoutExpiry",
+      "description": "When a payment checkout opened now stops accepting payment: checkoutMinutes (31 to 1440) after now, in whole seconds.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "now",
+          "required": true,
+          "schema": {
+            "type": "string",
+            "format": "date-time",
+            "description": "A JavaScript Date; shown here as its ISO 8601 text."
+          }
+        },
+        {
+          "name": "checkoutMinutes",
+          "required": true,
+          "schema": {
+            "type": "integer",
+            "minimum": 31,
+            "maximum": 1440
+          }
+        }
+      ],
+      "result": {
+        "name": "expiresAt",
+        "schema": {
+          "type": "string",
+          "format": "date-time",
+          "description": "A JavaScript Date; shown here as its ISO 8601 text."
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidArgument"
+        }
+      ]
+    },
+    {
+      "name": "checkDuration",
+      "description": "Whether a booking may last this many minutes: a whole number from minimumMinutes to maximumMinutes.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "minutes",
+          "required": true,
+          "schema": {}
+        },
+        {
+          "name": "settings",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/DurationLimits"
+          }
+        }
+      ],
+      "result": {
+        "name": "check",
+        "schema": {
+          "$ref": "#/components/schemas/DurationCheck"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks settings given as numbers or as rendered template text; unset and unrendered values take the defaults (DEFAULT_SETTINGS).",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BookingPolicySettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/BookingPolicySettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "CancellationTerms": {
+        "type": "object",
+        "properties": {
+          "startsAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the booking starts."
+          },
+          "now": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the cancellation is made."
+          },
+          "by": {
+            "enum": [
+              "customer",
+              "owner"
+            ],
+            "description": "Who cancels: the customer's link or the owner's."
+          },
+          "freeCancellationHours": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "How long before the start a customer may still cancel for free."
+          }
+        },
+        "required": [
+          "startsAt",
+          "now",
+          "by",
+          "freeCancellationHours"
+        ]
+      },
+      "RefundQuestion": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CancellationTerms"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "hasDeposit": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "hasDeposit"
+            ]
+          }
+        ]
+      },
+      "CardQuestion": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CancellationTerms"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "hasCard": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "hasCard"
+            ],
+            "description": "hasCard: a gift card pays for part or all of the booking."
+          }
+        ]
+      },
+      "Amounts": {
+        "type": "object",
+        "properties": {
+          "deposit": {
+            "type": "integer",
+            "description": "Paid now, online.",
+            "minimum": 0
+          },
+          "balance": {
+            "type": "integer",
+            "description": "Paid at the appointment.",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "deposit",
+          "balance"
+        ],
+        "additionalProperties": false
+      },
+      "DurationLimits": {
+        "type": "object",
+        "properties": {
+          "minimumMinutes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "maximumMinutes": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "minimumMinutes",
+          "maximumMinutes"
+        ],
+        "description": "The duration settings (BookingPolicySettings fits)."
+      },
+      "DurationCheck": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": true
+              }
+            },
+            "required": [
+              "ok"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "ok": {
+                "const": false
+              },
+              "code": {
+                "const": "INVALID_DURATION"
+              }
+            },
+            "required": [
+              "ok",
+              "code"
+            ]
+          }
+        ]
+      },
+      "BookingPolicySettings": {
+        "type": "object",
+        "properties": {
+          "depositPercent": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100,
+            "default": 50,
+            "description": "The share of the total paid online."
+          },
+          "freeCancellationHours": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 720,
+            "default": 24
+          },
+          "holdMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2880,
+            "default": 40,
+            "description": "How long a booking waiting for payment holds its time and gift card; at least checkoutMinutes."
+          },
+          "checkoutMinutes": {
+            "type": "integer",
+            "minimum": 31,
+            "maximum": 1440,
+            "default": 35,
+            "description": "How long a payment checkout stays open; the provider takes 30 minutes to 24 hours."
+          },
+          "minimumMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1440,
+            "default": 15
+          },
+          "maximumMinutes": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1440,
+            "default": 360,
+            "description": "At least minimumMinutes."
+          }
+        },
+        "required": [
+          "depositPercent",
+          "freeCancellationHours",
+          "holdMinutes",
+          "checkoutMinutes",
+          "minimumMinutes",
+          "maximumMinutes"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": {},
+        "description": "Settings as numbers or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      }
+    },
+    "errors": {
+      "InvalidArgument": {
+        "code": -32050,
+        "message": "RangeError: an amount, percentage, number of hours or minutes that is not a whole number in range, or a Date that is not valid (programmer error)"
+      },
+      "InvalidSettings": {
+        "code": -32051,
+        "message": "RangeError: a setting out of its range, holdMinutes below checkoutMinutes, or maximumMinutes below minimumMinutes"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts",
+    "server": "server/index.ts"
+  }
+}

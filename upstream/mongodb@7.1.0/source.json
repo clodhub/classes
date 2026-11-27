@@ -1,0 +1,12 @@
+{
+  "name": "mongodb",
+  "version": "7.1.0",
+  "revision": "b7cd1ef2dafd66f59fb6d9a54cbe3bc7d0a3eac1",
+  "repository": "https://github.com/mongodb/node-mongodb-native.git",
+  "purl": "pkg:npm/mongodb@7.1.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "0-LICENSE.md"
+  ],
+  "integrity": "sha512-kMfnKunbolQYwCIyrkxNJFB4Ypy91pYqua5NargS/f8ODNSJxT03ZU3n1JqL4mCzbSih8tvmMEMLpKTT7x5gCg=="
+}

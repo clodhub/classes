@@ -1,0 +1,12 @@
+{
+  "name": "next-intl-swc-plugin-extractor",
+  "version": "4.15.1",
+  "revision": "sha512:9fe0ab7f2437a1b229668687b651efb532e0e84b85726482ddcef562fd0a878ff9cde9c127c59e60fff1027b22c108d971a2bdce27b4487c167881bee4e25a07",
+  "repository": "https://github.com/amannn/next-intl.git",
+  "purl": "pkg:npm/next-intl-swc-plugin-extractor@4.15.1",
+  "licence": "MIT",
+  "notices": [
+    "0-LICENSE"
+  ],
+  "integrity": "sha512-n+CrfyQ3obIpZoaHtlHvtTLg6EuFcmSC3c71Yv0Kh4/5zenBJ8WeYP/xAnsiwQjZcaK9zie0SHwWeIG+5OJaBw=="
+}

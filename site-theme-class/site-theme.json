@@ -1,0 +1,806 @@
+{
+  "openrpc": "1.3.2",
+  "info": {
+    "title": "com.clodhub/site-theme",
+    "version": "1.0.0",
+    "description": "A shop's look: colours, fonts, corners, shadows and type scale as named themes (noir, ivory, sage), rendered to CSS custom properties that a Tailwind CSS preset reads, so one build of the shop serves every theme and accent colour, and the font files of the themes, bundled under the web folder's fonts/ with their licences, so no build downloads fonts. The entry module also exports `themes`, the built-in ThemeFile, `fontFamilies`, the bundled FontFamily of each family name, and `FONT_SOURCE`, where the files were taken from. Web only."
+  },
+  "methods": [
+    {
+      "name": "themeNames",
+      "description": "The names of a file's themes, in order.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "file",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ThemeFile"
+          }
+        }
+      ],
+      "result": {
+        "name": "names",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "resolveTheme",
+      "description": "A copy of the named theme (the file's default when none is named). An accent colour replaces the accent; the light and dark accents become the same hue and saturation 0.15 lighter and darker, the accent border follows it, and the text on it stays the theme's when its contrast is at least 4.5, else becomes black or white, whichever reads better.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "file",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/ThemeFile"
+          }
+        },
+        {
+          "name": "options",
+          "required": false,
+          "schema": {
+            "$ref": "#/components/schemas/ResolveOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "theme",
+        "schema": {
+          "$ref": "#/components/schemas/SiteTheme"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/UnknownTheme"
+        },
+        {
+          "$ref": "#/components/errors/InvalidColour"
+        },
+        {
+          "$ref": "#/components/errors/UnreadableTheme"
+        }
+      ]
+    },
+    {
+      "name": "parseColour",
+      "description": "A colour as #rrggbb in lower case, from hex rrggbb (the form a setting holds), #rrggbb or rrggbb.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "text",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "colour",
+        "schema": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidColour"
+        }
+      ]
+    },
+    {
+      "name": "cssVariables",
+      "description": "The theme as CSS custom properties: --colour-scheme; --colour-<name> for each colour in kebab case (--colour-accent-light ...) with its --colour-<name>-rgb companion of three numbers; --font-heading and --font-body as var(--font-heading-loaded, <stack>) and var(--font-body-loaded, <stack>); --radius-sm, -md, -lg, -full; --shadow-sm, -md, -lg.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "theme",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SiteTheme"
+          }
+        }
+      ],
+      "result": {
+        "name": "variables",
+        "schema": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "renderCss",
+      "description": "A stylesheet that applies the theme: :root with color-scheme and every variable of cssVariables.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "theme",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SiteTheme"
+          }
+        }
+      ],
+      "result": {
+        "name": "css",
+        "schema": {
+          "type": "string"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/UnreadableTheme"
+        }
+      ]
+    },
+    {
+      "name": "tailwindPreset",
+      "description": "The Tailwind CSS 3 preset whose shop colours, heading and body fonts, corners and shadows read the variables, so one build serves every theme: bg-shop-background, text-shop-accent, border-shop-border/50, font-heading, rounded-md, shadow-lg.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "preset",
+        "schema": {
+          "$ref": "#/components/schemas/TailwindPreset"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "validateTheme",
+      "description": "The problems with a theme, as sentences; empty when it can be used. Checks every value's form, that each font stack ends with a generic family, the contrast of text on its backgrounds, and that a dark theme's background is darker than its text and a light theme's lighter.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "theme",
+          "required": true,
+          "schema": {}
+        }
+      ],
+      "result": {
+        "name": "problems",
+        "schema": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "themeFonts",
+      "description": "The bundled files of the theme's first heading font and first body font, copied, for the application to load from its own server (next/font/local on the website, registered at run time in the apps); null for a font the component does not bundle, which then falls back along its stack. Every built-in theme's two fonts are bundled.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "theme",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/SiteTheme"
+          }
+        }
+      ],
+      "result": {
+        "name": "fonts",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "heading": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/FontFamily"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "body": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/FontFamily"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "heading",
+            "body"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ]
+    },
+    {
+      "name": "settingsFrom",
+      "description": "Converts and checks the settings; unset and unrendered values take the defaults (DEFAULT_SETTINGS), themeName names one of the built-in themes, and an accent of none is null.",
+      "paramStructure": "by-position",
+      "params": [
+        {
+          "name": "raw",
+          "required": true,
+          "schema": {
+            "$ref": "#/components/schemas/RawSettings"
+          }
+        }
+      ],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/SiteThemeSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        },
+        {
+          "$ref": "#/components/errors/InvalidColour"
+        }
+      ]
+    },
+    {
+      "name": "installedSettings",
+      "description": "The settings clod rendered at install, converted by settingsFrom.",
+      "paramStructure": "by-position",
+      "params": [],
+      "result": {
+        "name": "settings",
+        "schema": {
+          "$ref": "#/components/schemas/SiteThemeSettings"
+        }
+      },
+      "tags": [
+        {
+          "name": "typescript"
+        }
+      ],
+      "errors": [
+        {
+          "$ref": "#/components/errors/InvalidSettings"
+        },
+        {
+          "$ref": "#/components/errors/InvalidColour"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "schemas": {
+      "SiteTheme": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "scheme": {
+            "enum": [
+              "dark",
+              "light"
+            ]
+          },
+          "colour": {
+            "type": "object",
+            "properties": {
+              "background": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "surface": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "raised": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "accent": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "accentLight": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "accentDark": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "onAccent": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "text": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "textSoft": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "muted": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "border": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "borderAccent": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "success": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "error": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "warning": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              "info": {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              }
+            },
+            "required": [
+              "background",
+              "surface",
+              "raised",
+              "accent",
+              "accentLight",
+              "accentDark",
+              "onAccent",
+              "text",
+              "textSoft",
+              "muted",
+              "border",
+              "borderAccent",
+              "success",
+              "error",
+              "warning",
+              "info"
+            ],
+            "additionalProperties": false,
+            "description": "text, textSoft and muted read on background (and muted on surface) at a contrast of at least 4.5, onAccent on accent at 4.5, accent on background at 3."
+          },
+          "font": {
+            "type": "object",
+            "properties": {
+              "heading": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9 -]{0,63}$"
+                },
+                "minItems": 1,
+                "maxItems": 8,
+                "description": "Font families in order of preference; the last is a generic family such as serif or sans-serif."
+              },
+              "body": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9 -]{0,63}$"
+                },
+                "minItems": 1,
+                "maxItems": 8,
+                "description": "Font families in order of preference; the last is a generic family such as serif or sans-serif."
+              }
+            },
+            "required": [
+              "heading",
+              "body"
+            ],
+            "additionalProperties": false
+          },
+          "radius": {
+            "type": "object",
+            "properties": {
+              "sm": {
+                "type": "string",
+                "pattern": "^(0|[0-9]+(\\.[0-9]+)?(px|rem|em|%))$"
+              },
+              "md": {
+                "type": "string",
+                "pattern": "^(0|[0-9]+(\\.[0-9]+)?(px|rem|em|%))$"
+              },
+              "lg": {
+                "type": "string",
+                "pattern": "^(0|[0-9]+(\\.[0-9]+)?(px|rem|em|%))$"
+              },
+              "full": {
+                "type": "string",
+                "pattern": "^(0|[0-9]+(\\.[0-9]+)?(px|rem|em|%))$"
+              }
+            },
+            "required": [
+              "sm",
+              "md",
+              "lg",
+              "full"
+            ],
+            "additionalProperties": false
+          },
+          "shadow": {
+            "type": "object",
+            "properties": {
+              "sm": {
+                "type": "string",
+                "pattern": "^(none|[0-9A-Za-z.,()#% -]{1,200})$"
+              },
+              "md": {
+                "type": "string",
+                "pattern": "^(none|[0-9A-Za-z.,()#% -]{1,200})$"
+              },
+              "lg": {
+                "type": "string",
+                "pattern": "^(none|[0-9A-Za-z.,()#% -]{1,200})$"
+              }
+            },
+            "required": [
+              "sm",
+              "md",
+              "lg"
+            ],
+            "additionalProperties": false
+          },
+          "scale": {
+            "type": "object",
+            "properties": {
+              "display": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "h1": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "h2": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "h3": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "h4": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "body-lg": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "body": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "body-sm": {
+                "$ref": "#/components/schemas/ScaleStep"
+              },
+              "caption": {
+                "$ref": "#/components/schemas/ScaleStep"
+              }
+            },
+            "required": [
+              "display",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "body-lg",
+              "body",
+              "body-sm",
+              "caption"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "scheme",
+          "colour",
+          "font",
+          "radius",
+          "shadow",
+          "scale"
+        ],
+        "additionalProperties": false
+      },
+      "ScaleStep": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "string",
+            "pattern": "^(0|[0-9]+(\\.[0-9]+)?(px|rem|em|%))$"
+          },
+          "lineHeight": {
+            "type": "string",
+            "pattern": "^[0-9]+(\\.[0-9]+)?$"
+          },
+          "weight": {
+            "type": "string",
+            "pattern": "^[1-9]00$"
+          },
+          "family": {
+            "enum": [
+              "heading",
+              "body"
+            ]
+          }
+        },
+        "required": [
+          "size",
+          "lineHeight",
+          "weight",
+          "family"
+        ],
+        "additionalProperties": false
+      },
+      "ThemeFile": {
+        "type": "object",
+        "properties": {
+          "format": {
+            "const": 1
+          },
+          "default": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$"
+          },
+          "themes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SiteTheme"
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "format",
+          "default",
+          "themes"
+        ],
+        "additionalProperties": false,
+        "description": "Themes by name; the entry module exports the built-in ones as `themes`, with noir, ivory and sage."
+      },
+      "ResolveOptions": {
+        "type": "object",
+        "properties": {
+          "themeName": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{0,63}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The theme; the file's default when absent."
+          },
+          "accentColour": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "A colour (hex rrggbb or #rrggbb) that replaces the accent; null or none keeps the theme's."
+          }
+        },
+        "additionalProperties": false
+      },
+      "FontFile": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^fonts/[a-z0-9-]+/[A-Za-z0-9._-]+\\.(ttf|otf|woff2)$",
+            "description": "The file, relative to the component's web folder (installed at components/<slot>/web/)."
+          },
+          "weight": {
+            "type": "string",
+            "pattern": "^[1-9]00( [1-9]?[0-9]00)?$",
+            "description": "A weight, or the range of a variable font, such as 100 900."
+          },
+          "style": {
+            "const": "normal"
+          },
+          "digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$",
+            "description": "The SHA-256 of the file's bytes."
+          }
+        },
+        "required": [
+          "path",
+          "weight",
+          "style",
+          "digest"
+        ],
+        "additionalProperties": false
+      },
+      "FontFamily": {
+        "type": "object",
+        "properties": {
+          "family": {
+            "type": "string",
+            "description": "The family name a theme's font stack gives."
+          },
+          "files": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FontFile"
+            },
+            "minItems": 1
+          },
+          "licence": {
+            "type": "string",
+            "description": "The family's licence file beside its fonts, relative to the web folder."
+          }
+        },
+        "required": [
+          "family",
+          "files",
+          "licence"
+        ],
+        "additionalProperties": false,
+        "description": "A font family bundled with the component; the entry module exports every one as `fontFamilies`, by family name."
+      },
+      "SiteThemeSettings": {
+        "type": "object",
+        "properties": {
+          "themeName": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{0,63}$",
+            "default": "noir"
+          },
+          "accentColour": {
+            "oneOf": [
+              {
+                "type": "string",
+                "pattern": "^#[0-9a-fA-F]{6}$"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "description": "The setting is written hex rrggbb (such as hex C9A84C) or none; settingsFrom gives #rrggbb or null."
+          }
+        },
+        "required": [
+          "themeName",
+          "accentColour"
+        ],
+        "additionalProperties": false
+      },
+      "RawSettings": {
+        "type": "object",
+        "additionalProperties": true,
+        "description": "Settings as values or as the text clod renders into the settings template; a missing value, or one still in its {{name}} form, takes the default."
+      },
+      "TailwindPreset": {
+        "type": "object",
+        "properties": {
+          "theme": {
+            "type": "object",
+            "properties": {
+              "extend": {
+                "type": "object",
+                "properties": {
+                  "colors": {
+                    "type": "object",
+                    "properties": {
+                      "shop": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        },
+                        "description": "background surface raised accent accent-light accent-dark on-accent text text-soft muted border border-accent success error warning info, each rgb(var(--colour-<name>-rgb) / <alpha-value>)."
+                      }
+                    }
+                  },
+                  "fontFamily": {
+                    "type": "object",
+                    "description": "heading and body: var(--font-heading) and var(--font-body)."
+                  },
+                  "borderRadius": {
+                    "type": "object",
+                    "description": "sm md lg full: var(--radius-<name>)."
+                  },
+                  "boxShadow": {
+                    "type": "object",
+                    "description": "sm md lg: var(--shadow-<name>)."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "theme"
+        ],
+        "description": "A Tailwind CSS 3 preset (presets: [tailwindPreset()]) whose values are the theme's CSS variables."
+      }
+    },
+    "errors": {
+      "InvalidSettings": {
+        "code": -32060,
+        "message": "RangeError: themeName is not one of the built-in themes, or accentColour is neither none nor hex rrggbb"
+      },
+      "InvalidColour": {
+        "code": -32061,
+        "message": "RangeError: the text is not a colour of the form hex rrggbb or #rrggbb"
+      },
+      "UnknownTheme": {
+        "code": -32062,
+        "message": "RangeError: no theme of that name in the file"
+      },
+      "UnreadableTheme": {
+        "code": -32063,
+        "message": "RangeError: the theme, with its accent replaced, has a problem validateTheme reports, such as an accent that does not read on the background"
+      }
+    }
+  },
+  "x-clodhub-modules": {
+    "web": "web/index.ts"
+  }
+}

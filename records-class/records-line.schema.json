@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "com.clodhub/records-line",
+  "x-version": "1.0.0",
+  "description": "One line of a records export: an index or a document of a collection. Dates are {\"$date\": ISO 8601 text}.",
+  "type": "object",
+  "properties": {
+    "collection": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,63}$"
+    },
+    "index": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "object",
+          "additionalProperties": {
+            "enum": [
+              1,
+              -1
+            ]
+          },
+          "minProperties": 1
+        },
+        "unique": {
+          "type": "boolean"
+        },
+        "sparse": {
+          "type": "boolean"
+        },
+        "expireAfterSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2147483647
+        }
+      },
+      "required": [
+        "key"
+      ],
+      "additionalProperties": false
+    },
+    "document": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "_id"
+      ]
+    }
+  },
+  "required": [
+    "collection"
+  ],
+  "oneOf": [
+    {
+      "properties": {
+        "index": true
+      },
+      "required": [
+        "index"
+      ]
+    },
+    {
+      "properties": {
+        "document": true
+      },
+      "required": [
+        "document"
+      ]
+    }
+  ],
+  "additionalProperties": false,
+  "x-clodhub-modules": {}
+}
