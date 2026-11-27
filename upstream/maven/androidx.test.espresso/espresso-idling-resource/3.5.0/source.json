@@ -1,0 +1,11 @@
+{
+  "name": "espresso-idling-resource",
+  "version": "3.5.0",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/androidx.test.espresso/espresso-idling-resource@3.5.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

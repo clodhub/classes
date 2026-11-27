@@ -1,0 +1,11 @@
+{
+  "name": "runner",
+  "version": "1.7.0",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/androidx.test/runner@1.7.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

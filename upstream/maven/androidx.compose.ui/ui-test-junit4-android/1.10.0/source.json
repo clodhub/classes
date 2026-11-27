@@ -1,0 +1,11 @@
+{
+  "name": "ui-test-junit4-android",
+  "version": "1.10.0",
+  "revision": null,
+  "repository": "https://cs.android.com/androidx/platform/frameworks/support",
+  "purl": "pkg:maven/androidx.compose.ui/ui-test-junit4-android@1.10.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

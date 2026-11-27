@@ -1,0 +1,11 @@
+{
+  "name": "annotation",
+  "version": "1.0.1",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/androidx.test/annotation@1.0.1",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "monitor",
+  "version": "1.8.0",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/androidx.test/monitor@1.8.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "storage",
+  "version": "1.6.0",
+  "revision": null,
+  "repository": "https://developer.android.com/testing",
+  "purl": "pkg:maven/androidx.test.services/storage@1.6.0",
+  "licence": "Apache-2.0",
+  "notices": [
+    "pom.xml"
+  ]
+}
