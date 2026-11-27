@@ -58,6 +58,6 @@ These are behavioural checks of the listed operations. Complete betting/showdown
 
 ## Source declarations
 
-`upstream/` retains supplied upstream documents and exact dependency identities used by the metadata generator. npm uses package-lock version 3 package paths and integrity; Swift uses format-3 resolved source revisions; Gradle uses configuration locks and artifact checksums. Original licence documents and licence declarations remain distinct from wrapper notices. `PROVENANCE.md` in each package describes its supplied evidence. `CLOD_UPSTREAM_CACHE` names another folder for it.
+`upstream/` retains supplied upstream documents and exact dependency identities used by the metadata generator. npm uses package-lock version 3 package paths and integrity; Swift uses format-3 resolved source revisions; Gradle uses configuration locks and artifact checksums. Original licence documents and licence declarations remain distinct from wrapper notices. `PROVENANCE.md` in each package describes its supplied evidence. An entry `upstream/` holds is always read here; `CLOD_UPSTREAM_CACHE` names the folder new entries go to.
 
 Stylesheet namespaces identify actual selectors and properties, plus global keyframe names. Themes intentionally assign page-wide variables; the recipe reads those variables rather than assigning the same token properties.

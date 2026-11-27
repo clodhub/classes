@@ -11,7 +11,8 @@ import subprocess
 import sys
 
 ROOT = Path(__file__).resolve().parent
-CACHE = Path(os.environ.get('CLOD_UPSTREAM_CACHE') or ROOT / 'upstream').resolve()
+SHARED = ROOT / 'upstream'
+CACHE = Path(os.environ.get('CLOD_UPSTREAM_CACHE') or SHARED).resolve()
 sys.path.insert(0, str(ROOT.parent / 'tools'))
 import library  # noqa: E402
 parser = argparse.ArgumentParser(description=__doc__)
@@ -30,7 +31,8 @@ for pin in json.loads(resolved.read_text())['pins']:
     revision = subprocess.check_output(['git', '-C', str(checkout), 'rev-parse', 'HEAD'], text=True).strip()
     if revision != pin['state']['revision']:
         raise SystemExit(f'{identity}: checkout does not match the resolved revision')
-    target = CACHE / 'swift' / identity / version / 'provided'
+    entry = SHARED / 'swift' / identity / version
+    target = (entry if entry.is_dir() else CACHE / 'swift' / identity / version) / 'provided'
     notices = []
     for kind, directory in [('source', checkout), ('artifacts', packages / 'artifacts' / identity)]:
         for file in sorted(directory.rglob('*')) if directory.exists() else []:

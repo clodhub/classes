@@ -566,7 +566,7 @@
     "recipes/ourpoker/classes/windows-desktop-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
     "recipes/ourpoker/component.json": "5695ecd7406571b41fda5e3900962c9be7c628aea2f3b2b051b3a04dcfd69d31",
     "recipes/ourpoker/recipe.json": "42b6d609b401870593a4f19da9361707e354406c2190c10a76ff6382839dda87",
-    "recipes/webshop/authoring/foundations.json": "cdaac2aa229a2aefcd00df938d41d53df08b609a823e4fb16f097c153b9ba445",
+    "recipes/webshop/authoring/foundations.json": "fc1f90727712c37c704bc80515930a7c36583d1314d861343de07dbfe1a71f1c",
     "recipes/webshop/classes/appointment-slots-class/appointment-slots.json": "0599bd31817886eba92479e7d6358f3340a5224907ae002368cb20347c0c8d34",
     "recipes/webshop/classes/appointment-slots-class/check.mjs": "1a478b179c4c06c29d690c1a197f52ffaa8f3cf763074f470f774126ab4a36f1",
     "recipes/webshop/classes/appointment-slots-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
@@ -667,7 +667,7 @@
     "recipes/webshop/classes/voucher-codes-class/check.mjs": "ddf500638a0f0ae611c7ba8e8abffa35a26904fb1fb97efdfca6dcf58e042fa3",
     "recipes/webshop/classes/voucher-codes-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
     "recipes/webshop/classes/voucher-codes-class/voucher-codes.json": "ee531e3610f99af787429287390a9aaa875c293722bf0b67ba2c074bbacaaa71",
-    "recipes/webshop/component.json": "f069a03cefd91e1de58ddc7fb5849d2518eb32be7f9821cf05d67b8e5f73e3f6",
+    "recipes/webshop/component.json": "e833c1259be2e83d9e9f9412e0e49e755cc8990a656e9d708835cd5251f4e4e2",
     "recipes/webshop/recipe.json": "09539c777e4574df4c68c706ef4b79036dbd4c02f3c911566849af695fc1f646"
   }
 }

@@ -18,8 +18,10 @@ from urllib.request import urlopen
 from clod.model import digest
 
 ROOT = Path(__file__).resolve().parent
-# The fetched upstream sources: classes/upstream, or the folder CLOD_UPSTREAM_CACHE names.
-CACHE = Path(os.environ.get('CLOD_UPSTREAM_CACHE') or ROOT / 'upstream').resolve()
+SHARED = ROOT / 'upstream'
+# Fetched upstream sources: an entry classes/upstream holds is read there; a new one goes to the folder CLOD_UPSTREAM_CACHE
+# names (default classes/upstream).
+CACHE = Path(os.environ.get('CLOD_UPSTREAM_CACHE') or SHARED).resolve()
 # npm packages whose registry entry names no repository; each address holds the entry's gitHead commit.
 NPM_REPOSITORIES = {'@isaacs/nonrecursive-glob-match': 'https://github.com/isaacs/nonrecursive-glob-match'}
 
@@ -28,10 +30,19 @@ def read(path):
     return json.loads(path.read_text())
 
 
+def cached(*parts):
+    """The folder of an upstream entry: classes/upstream's when it holds the entry, else the cache folder's."""
+    shared = SHARED.joinpath(*parts)
+    return shared if shared.is_dir() else CACHE.joinpath(*parts)
+
+
 def write(path, value):
+    text = json.dumps(value, indent=2, ensure_ascii=False) + '\n'
+    if path.is_file() and path.read_text() == text:
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_name('.' + path.name + f'.{os.getpid()}.{threading.get_ident()}.tmp')
-    temporary.write_text(json.dumps(value, indent=2, ensure_ascii=False) + '\n')
+    temporary.write_text(text)
     temporary.replace(path)
 
 
@@ -47,7 +58,7 @@ def npm_purl(name, version=None):
 
 def npm_source(pin):
     name, version = pin
-    directory = CACHE / (quote(name, safe='') + '@' + version)
+    directory = cached(quote(name, safe='') + '@' + version)
     metadata = directory / 'source.json'
     if metadata.exists():
         return read(metadata)
@@ -161,7 +172,7 @@ def upstream(package, manifest):
             identity = source['purl']
             if identity in result:
                 continue
-            directory = CACHE / (quote(name, safe='') + '@' + version)
+            directory = cached(quote(name, safe='') + '@' + version)
             slug = quote(name, safe='') + '@' + version
             notice_paths = []
             for notice in source['notices']:
@@ -238,7 +249,7 @@ def bundled_sources(package, manifest):
         return []
     paths = ['implementation/web/icons.ts', 'implementation/apple/Sources/IconPaths.swift', 'tests/fixtures/icons.json']
     snapshot = digest((package / 'tests/fixtures/icons.json').read_bytes())
-    directory = CACHE / 'material-design-icons'
+    directory = cached('material-design-icons')
     if not (directory / 'LICENSE').exists():
         content = fetch('https://raw.githubusercontent.com/google/material-design-icons/master/LICENSE')
         directory.mkdir(parents=True, exist_ok=True)

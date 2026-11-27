@@ -11,7 +11,7 @@ from urllib.parse import quote
 from xml.etree import ElementTree as ET
 
 from clod.model import digest
-from provenance import CACHE, fetch, read, write
+from provenance import cached, fetch, read, write
 
 GRADLE_NS = {'g': 'https://schema.gradle.org/dependency-verification'}
 
@@ -84,7 +84,7 @@ def source_notice(coordinate):
 
 def maven_source(coordinate):
     group, name, version = coordinate
-    directory = CACHE / 'maven' / group / name / version
+    directory = cached('maven', group, name, version)
     if (directory / 'source.json').exists():
         source = read(directory / 'source.json')
         cached_pom = pom_root((directory / 'pom.xml').read_bytes())
@@ -105,7 +105,7 @@ def maven_source(coordinate):
         parent_pin = tuple(text_at(parent, 'm:' + key) for key in ('groupId', 'artifactId', 'version'))
         parent_source = maven_source(parent_pin)
         expression = parent_source['licence']
-        parent_dir = CACHE / 'maven' / parent_pin[0] / parent_pin[1] / parent_pin[2]
+        parent_dir = cached('maven', *parent_pin)
         for index, filename in enumerate(parent_source['notices']):
             notice.append((f'parent-{index}-{filename}', (parent_dir / filename).read_bytes()))
     elif licences:
@@ -149,7 +149,7 @@ def swift_sources(package, files):
         lock = package / path
         for pin in read(lock)['pins']:
             identity, revision, version, repository = pin['identity'], pin['state']['revision'], pin['state']['version'], pin['location']
-            directory = CACHE / 'swift' / identity / version
+            directory = cached('swift', identity, version)
             if not (directory / 'LICENSE').exists():
                 project = repository.removeprefix('https://github.com/').removesuffix('.git')
                 content = fetch(f'https://raw.githubusercontent.com/{project}/{revision}/LICENSE')
@@ -217,7 +217,7 @@ def gradle_sources(package, files):
         with ThreadPoolExecutor(max_workers=12) as pool:
             sources = list(pool.map(maven_source, [pin for pin, _ in pins]))
         for (pin, configurations), source in zip(pins, sources):
-            directory = CACHE / 'maven' / pin[0] / pin[1] / pin[2]
+            directory = cached('maven', *pin)
             notice_paths = []
             for filename in source['notices']:
                 notice = package / 'notices/maven' / pin[0] / pin[1] / pin[2] / filename
