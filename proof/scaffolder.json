@@ -12,6 +12,36 @@
     "licences": "unchanged"
   },
   {
+    "component": "appointment-slots",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "basket",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "booking-calendar",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "booking-policy",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "booking-reminders",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
     "component": "card-deck",
     "foundationFields": "matched",
     "templates": "matched",
@@ -48,6 +78,30 @@
     "licences": "unchanged"
   },
   {
+    "component": "cookie-consent",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "customer-wallet",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "device-calendar",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "email-verification",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
     "component": "fair-shuffle",
     "foundationFields": "matched",
     "templates": "matched",
@@ -55,6 +109,18 @@
   },
   {
     "component": "game-clock",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "gift-cards",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "google-calendar",
     "foundationFields": "matched",
     "templates": "matched",
     "licences": "unchanged"
@@ -78,6 +144,12 @@
     "licences": "unchanged"
   },
   {
+    "component": "home-visits",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
     "component": "invitations",
     "foundationFields": "matched",
     "templates": "matched",
@@ -85,6 +157,36 @@
   },
   {
     "component": "level-schedule",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "member-pricing",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "memory-records",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "money",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "mongodb-records",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "opening-hours",
     "foundationFields": "matched",
     "templates": "matched",
     "licences": "unchanged"
@@ -132,6 +234,30 @@
     "licences": "unchanged"
   },
   {
+    "component": "promotions",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "records-calendar",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "resend-mail",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "reservations",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
     "component": "room-directory",
     "foundationFields": "matched",
     "templates": "matched",
@@ -162,7 +288,43 @@
     "licences": "unchanged"
   },
   {
+    "component": "shop-catalogue",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "site-host",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "site-metadata",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "site-theme",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
     "component": "sound-cues",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "staff-access",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "stripe-payments",
     "foundationFields": "matched",
     "templates": "matched",
     "licences": "unchanged"
@@ -193,6 +355,12 @@
   },
   {
     "component": "turn-engine",
+    "foundationFields": "matched",
+    "templates": "matched",
+    "licences": "unchanged"
+  },
+  {
+    "component": "voucher-codes",
     "foundationFields": "matched",
     "templates": "matched",
     "licences": "unchanged"
