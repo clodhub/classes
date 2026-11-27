@@ -97,6 +97,8 @@ def metadata(package, manifest, bundles, implements):
         manifest['artefacts'].sort(key=lambda item: item['source'])
         manifest['capabilities']['writes'] = sorted({item['destination'] for item in manifest['artefacts']})
     manifest.update(foundations(package, manifest))
+    prune_notices(package, manifest)
+    indexed = {path: item for path, item in indexed.items() if (package / path).is_file()}
     provenance_document(package, manifest)
     indexed['PROVENANCE.md'] = {'path': 'PROVENANCE.md', 'executable': False}
     for bundle in bundles:
@@ -111,6 +113,19 @@ def metadata(package, manifest, bundles, implements):
             indexed[entry.relative_to(package).as_posix()] = {'path': entry.relative_to(package).as_posix(), 'executable': False}
     manifest['files'] = [indexed[key] for key in sorted(indexed)]
     return manifest
+
+
+def prune_notices(package, manifest):
+    """Removes each file under notices/ that no upstream record names, such as a notice its cache entry no longer supplies."""
+    folder = package / 'notices'
+    if not folder.is_dir():
+        return
+    named = {path for entry in manifest['upstream'] for path in entry['notices']}
+    for path in sorted(folder.rglob('*'), reverse=True):
+        if path.is_file() and path.relative_to(package).as_posix() not in named:
+            path.unlink()
+        elif path.is_dir() and not any(path.iterdir()):
+            path.rmdir()
 
 
 def chosen(bundles, references, where):

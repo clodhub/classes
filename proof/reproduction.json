@@ -157,12 +157,12 @@
     "components/private-views/classes/private-views-class/private-views.json": "86e1fb4459b4dc57a997da17a31cb40db3ce17f9e50a2bc5e4a4846a76913573",
     "components/private-views/classes/private-views-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
     "components/private-views/component.json": "42bf7f7aadf5107f6efe2f848d8c7949760298c7e8987a89b2c2fa7d800a6de0",
-    "components/realtime-rooms/authoring/foundations.json": "8efc00191cbaf10b100cad56b93d198daea6afb85b17033ad60dc2bee5ee1a57",
+    "components/realtime-rooms/authoring/foundations.json": "c489496f81c8a433085b7bb2239ad40a22e85d97ee6a14531d3c3fca01870b36",
     "components/realtime-rooms/authoring/package.json": "33a350e2cb72f94d9cc5264178d735363a9e47b6d4f8132517a0ba37d119dca4",
     "components/realtime-rooms/classes/realtime-rooms-class/check.mjs": "db268bbcfa33aac66134ce4d0f478a2b0eb6f5365ffd854840d3e2271bf6008a",
     "components/realtime-rooms/classes/realtime-rooms-class/room-session.json": "3c2dd0b77a9b956fedf05d317ba6083489eae49ccb9a3394e783685948819b4e",
     "components/realtime-rooms/classes/realtime-rooms-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
-    "components/realtime-rooms/component.json": "cbe0a615f6e9fd031040cdaa00cdc10c6d3beff43346dce751e0d620dc0d5eb8",
+    "components/realtime-rooms/component.json": "09fa798fc6ea387f00babafa26b68256771d4f3d411c398fd77aeff7841ddbe3",
     "components/room-directory/authoring/spec.json": "d4e1bfe2761745fe9ae799a5d96a410698f1c0212a2baa3e4faf3346bb4a2a95",
     "components/room-directory/classes/room-directory-class/check.mjs": "0a9eb096145a6f0928ecfc5bcc646ec2a2c778ca6d3cfb763bb9b6b2f266a06a",
     "components/room-directory/classes/room-directory-class/room-directory.json": "6004fcfb3439bc012128c9e32b2981b5cb8ac9c35e72ca5ffceb7e9a5db8191f",
@@ -243,7 +243,7 @@
     "components/windows-desktop/classes/windows-desktop-class/desktop-host.json": "8b7bc2a4d3d547308e0e79d11d4cc738db21fa57e1879075c0494d4dcbed3540",
     "components/windows-desktop/classes/windows-desktop-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
     "components/windows-desktop/component.json": "c1c236a4fef6986ba65219dfc4ec12049afb3a78ed6f68d48f56815f99474d65",
-    "recipes/ourpoker/authoring/foundations.json": "cd99ebcd35bae81cfcc4a429d2aa9878e4936a9e868078f4355dc0bed4cbc6bb",
+    "recipes/ourpoker/authoring/foundations.json": "697adbb6246e1741059abe4caae47b3dbec33db3129e22e8e92477375feb3f42",
     "recipes/ourpoker/classes/android-host-class/android-shell.json": "880c40ee4abd29ff7fa193bc4b5ddb3971c077d67b4ab08d5398769985aba75d",
     "recipes/ourpoker/classes/android-host-class/check.mjs": "42d7706a6fff054b752ba754e89ab5fd34ff3ca00e30758c41da7e3d1e750868",
     "recipes/ourpoker/classes/android-host-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
@@ -365,7 +365,7 @@
     "recipes/ourpoker/classes/windows-desktop-class/check.mjs": "d039bb1289ab0cadc560aad96b7fe64bd924988fa8932ca9a49a288bba9b1dea",
     "recipes/ourpoker/classes/windows-desktop-class/desktop-host.json": "8b7bc2a4d3d547308e0e79d11d4cc738db21fa57e1879075c0494d4dcbed3540",
     "recipes/ourpoker/classes/windows-desktop-class/runtime.mjs": "1d85f0dae92d5c6c859cd48a4211a933718ae3e168554a2b00806183c4b661f0",
-    "recipes/ourpoker/component.json": "9303e107a4c47da51b73c4d3d0de6e2c0175ad601cd7bfb8b42fd46194b8b007",
+    "recipes/ourpoker/component.json": "5695ecd7406571b41fda5e3900962c9be7c628aea2f3b2b051b3a04dcfd69d31",
     "recipes/ourpoker/recipe.json": "42b6d609b401870593a4f19da9361707e354406c2190c10a76ff6382839dda87"
   }
 }
